@@ -11729,4 +11729,2241 @@ namespace XServer {
             }
         }
     }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Web.Services.WebServiceBindingAttribute(Name="XMapWSBinding", Namespace="http://jwsdp.xmap.xserver.ptvag.com")]
+    public partial class XMapWSService : System.Web.Services.Protocols.SoapHttpClientProtocol {
+        
+        private System.Threading.SendOrPostCallback renderMapOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback renderMapBoundingBoxOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback renderMapRotOperationCompleted;
+        
+        /// <remarks/>
+        public XMapWSService() {
+            this.Url = "http://localhost:50010/xmap/ws/XMap";
+        }
+        
+        /// <remarks/>
+        public event renderMapCompletedEventHandler renderMapCompleted;
+        
+        /// <remarks/>
+        public event renderMapBoundingBoxCompletedEventHandler renderMapBoundingBoxCompleted;
+        
+        /// <remarks/>
+        public event renderMapRotCompletedEventHandler renderMapRotCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://types.xmap.xserver.ptvag.com", ResponseNamespace="http://types.xmap.xserver.ptvag.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public Map renderMap([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] MapSection MapSection_1, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] MapParams MapParams_2, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ImageInfo ImageInfo_3, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://xmap.xserver.ptvag.com")] Layer[] ArrayOfLayer_4, bool boolean_5, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CallerContext CallerContext_6) {
+            object[] results = this.Invoke("renderMap", new object[] {
+                        MapSection_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6});
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginrenderMap(MapSection MapSection_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("renderMap", new object[] {
+                        MapSection_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public Map EndrenderMap(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void renderMapAsync(MapSection MapSection_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6) {
+            this.renderMapAsync(MapSection_1, MapParams_2, ImageInfo_3, ArrayOfLayer_4, boolean_5, CallerContext_6, null);
+        }
+        
+        /// <remarks/>
+        public void renderMapAsync(MapSection MapSection_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, object userState) {
+            if ((this.renderMapOperationCompleted == null)) {
+                this.renderMapOperationCompleted = new System.Threading.SendOrPostCallback(this.OnrenderMapOperationCompleted);
+            }
+            this.InvokeAsync("renderMap", new object[] {
+                        MapSection_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, this.renderMapOperationCompleted, userState);
+        }
+        
+        private void OnrenderMapOperationCompleted(object arg) {
+            if ((this.renderMapCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.renderMapCompleted(this, new renderMapCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://types.xmap.xserver.ptvag.com", ResponseNamespace="http://types.xmap.xserver.ptvag.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public Map renderMapBoundingBox([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] BoundingBox BoundingBox_1, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] MapParams MapParams_2, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ImageInfo ImageInfo_3, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://xmap.xserver.ptvag.com")] Layer[] ArrayOfLayer_4, bool boolean_5, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CallerContext CallerContext_6) {
+            object[] results = this.Invoke("renderMapBoundingBox", new object[] {
+                        BoundingBox_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6});
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginrenderMapBoundingBox(BoundingBox BoundingBox_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("renderMapBoundingBox", new object[] {
+                        BoundingBox_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public Map EndrenderMapBoundingBox(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void renderMapBoundingBoxAsync(BoundingBox BoundingBox_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6) {
+            this.renderMapBoundingBoxAsync(BoundingBox_1, MapParams_2, ImageInfo_3, ArrayOfLayer_4, boolean_5, CallerContext_6, null);
+        }
+        
+        /// <remarks/>
+        public void renderMapBoundingBoxAsync(BoundingBox BoundingBox_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, object userState) {
+            if ((this.renderMapBoundingBoxOperationCompleted == null)) {
+                this.renderMapBoundingBoxOperationCompleted = new System.Threading.SendOrPostCallback(this.OnrenderMapBoundingBoxOperationCompleted);
+            }
+            this.InvokeAsync("renderMapBoundingBox", new object[] {
+                        BoundingBox_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, this.renderMapBoundingBoxOperationCompleted, userState);
+        }
+        
+        private void OnrenderMapBoundingBoxOperationCompleted(object arg) {
+            if ((this.renderMapBoundingBoxCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.renderMapBoundingBoxCompleted(this, new renderMapBoundingBoxCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("", RequestNamespace="http://types.xmap.xserver.ptvag.com", ResponseNamespace="http://types.xmap.xserver.ptvag.com", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("result", IsNullable=true)]
+        public Map renderMapRot([System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] MapSectionRot MapSectionRot_1, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] MapParams MapParams_2, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] ImageInfo ImageInfo_3, [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)] [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://xmap.xserver.ptvag.com")] Layer[] ArrayOfLayer_4, bool boolean_5, [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)] CallerContext CallerContext_6) {
+            object[] results = this.Invoke("renderMapRot", new object[] {
+                        MapSectionRot_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6});
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public System.IAsyncResult BeginrenderMapRot(MapSectionRot MapSectionRot_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, System.AsyncCallback callback, object asyncState) {
+            return this.BeginInvoke("renderMapRot", new object[] {
+                        MapSectionRot_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, callback, asyncState);
+        }
+        
+        /// <remarks/>
+        public Map EndrenderMapRot(System.IAsyncResult asyncResult) {
+            object[] results = this.EndInvoke(asyncResult);
+            return ((Map)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void renderMapRotAsync(MapSectionRot MapSectionRot_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6) {
+            this.renderMapRotAsync(MapSectionRot_1, MapParams_2, ImageInfo_3, ArrayOfLayer_4, boolean_5, CallerContext_6, null);
+        }
+        
+        /// <remarks/>
+        public void renderMapRotAsync(MapSectionRot MapSectionRot_1, MapParams MapParams_2, ImageInfo ImageInfo_3, Layer[] ArrayOfLayer_4, bool boolean_5, CallerContext CallerContext_6, object userState) {
+            if ((this.renderMapRotOperationCompleted == null)) {
+                this.renderMapRotOperationCompleted = new System.Threading.SendOrPostCallback(this.OnrenderMapRotOperationCompleted);
+            }
+            this.InvokeAsync("renderMapRot", new object[] {
+                        MapSectionRot_1,
+                        MapParams_2,
+                        ImageInfo_3,
+                        ArrayOfLayer_4,
+                        boolean_5,
+                        CallerContext_6}, this.renderMapRotOperationCompleted, userState);
+        }
+        
+        private void OnrenderMapRotOperationCompleted(object arg) {
+            if ((this.renderMapRotCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.renderMapRotCompleted(this, new renderMapRotCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        public new void CancelAsync(object userState) {
+            base.CancelAsync(userState);
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(MapSectionRot))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class MapSection : TransientVO {
+        
+        private Point centerField;
+        
+        private int scaleField;
+        
+        private int scrollHorizontalField;
+        
+        private int scrollVerticalField;
+        
+        private int zoomField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point center {
+            get {
+                return this.centerField;
+            }
+            set {
+                this.centerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int scale {
+            get {
+                return this.scaleField;
+            }
+            set {
+                this.scaleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int scrollHorizontal {
+            get {
+                return this.scrollHorizontalField;
+            }
+            set {
+                this.scrollHorizontalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int scrollVertical {
+            get {
+                return this.scrollVerticalField;
+            }
+            set {
+                this.scrollVerticalField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int zoom {
+            get {
+                return this.zoomField;
+            }
+            set {
+                this.zoomField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class MapSectionRot : MapSection {
+        
+        private int angleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int angle {
+            get {
+                return this.angleField;
+            }
+            set {
+                this.angleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class MapParams : TransientVO {
+        
+        private string languageField;
+        
+        private string referenceTimeField;
+        
+        private bool showScaleField;
+        
+        private bool useMilesField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string referenceTime {
+            get {
+                return this.referenceTimeField;
+            }
+            set {
+                this.referenceTimeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool showScale {
+            get {
+                return this.showScaleField;
+            }
+            set {
+                this.showScaleField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool useMiles {
+            get {
+                return this.useMilesField;
+            }
+            set {
+                this.useMilesField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class ImageInfo : TransientVO {
+        
+        private ImageFileFormat formatField;
+        
+        private int heightField;
+        
+        private string imageParameterField;
+        
+        private int widthField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ImageFileFormat format {
+            get {
+                return this.formatField;
+            }
+            set {
+                this.formatField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int height {
+            get {
+                return this.heightField;
+            }
+            set {
+                this.heightField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string imageParameter {
+            get {
+                return this.imageParameterField;
+            }
+            set {
+                this.imageParameterField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int width {
+            get {
+                return this.widthField;
+            }
+            set {
+                this.widthField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public enum ImageFileFormat {
+        
+        /// <remarks/>
+        GIF,
+        
+        /// <remarks/>
+        JPG,
+        
+        /// <remarks/>
+        BMP,
+        
+        /// <remarks/>
+        WBMP,
+        
+        /// <remarks/>
+        PNG,
+        
+        /// <remarks/>
+        SMO,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RoadEditorLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeometryLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SMOLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(CustomLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StaticLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StaticRasterLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StaticPoiLayer))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public abstract partial class Layer : TransientVO {
+        
+        private string nameField;
+        
+        private bool visibleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool visible {
+            get {
+                return this.visibleField;
+            }
+            set {
+                this.visibleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class RoadEditorLayer : Layer {
+        
+        private ObjectInfoType objectInfosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ObjectInfoType objectInfos {
+            get {
+                return this.objectInfosField;
+            }
+            set {
+                this.objectInfosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public enum ObjectInfoType {
+        
+        /// <remarks/>
+        NONE,
+        
+        /// <remarks/>
+        REFERENCEPOINT,
+        
+        /// <remarks/>
+        GEOMETRY,
+        
+        /// <remarks/>
+        GEOMETRYCLIPPED,
+        
+        /// <remarks/>
+        FULLGEOMETRY,
+        
+        /// <remarks/>
+        FULLGEOMETRYCLIPPED,
+        
+        /// <remarks/>
+        TILEGEOMETRY,
+        
+        /// <remarks/>
+        TILEGEOMETRYCLIPPED,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class GeometryLayer : Layer {
+        
+        private Geometries[] wrappedGeometriesField;
+        
+        private int drawPriorityField;
+        
+        private ObjectInfoType objectInfosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Geometries[] wrappedGeometries {
+            get {
+                return this.wrappedGeometriesField;
+            }
+            set {
+                this.wrappedGeometriesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int drawPriority {
+            get {
+                return this.drawPriorityField;
+            }
+            set {
+                this.drawPriorityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ObjectInfoType objectInfos {
+            get {
+                return this.objectInfosField;
+            }
+            set {
+                this.objectInfosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Geometries : TransientVO {
+        
+        private Geometry[] wrappedGeometriesField;
+        
+        private GeometryOption[] wrappedOptionsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Geometry[] wrappedGeometries {
+            get {
+                return this.wrappedGeometriesField;
+            }
+            set {
+                this.wrappedGeometriesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public GeometryOption[] wrappedOptions {
+            get {
+                return this.wrappedOptionsField;
+            }
+            set {
+                this.wrappedOptionsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(GeometryExt))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Geometry : TransientVO {
+        
+        private EncodedGeometry geometryField;
+        
+        private Point referencePointField;
+        
+        private string descriptionField;
+        
+        private int idField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public EncodedGeometry geometry {
+            get {
+                return this.geometryField;
+            }
+            set {
+                this.geometryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point referencePoint {
+            get {
+                return this.referencePointField;
+            }
+            set {
+                this.referencePointField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string description {
+            get {
+                return this.descriptionField;
+            }
+            set {
+                this.descriptionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                this.idField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class GeometryExt : Geometry {
+        
+        private string geometryStringField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string geometryString {
+            get {
+                return this.geometryStringField;
+            }
+            set {
+                this.geometryStringField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class GeometryOption : TransientVO {
+        
+        private GeometryOptions optionField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public GeometryOptions option {
+            get {
+                return this.optionField;
+            }
+            set {
+                this.optionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public enum GeometryOptions {
+        
+        /// <remarks/>
+        BITMAPNAME,
+        
+        /// <remarks/>
+        BITMAPTRANSPARENCYCOLOR,
+        
+        /// <remarks/>
+        TEXTINFO,
+        
+        /// <remarks/>
+        LINECOLOR,
+        
+        /// <remarks/>
+        LINEWIDTH,
+        
+        /// <remarks/>
+        LINEALPHA,
+        
+        /// <remarks/>
+        LINETYPE,
+        
+        /// <remarks/>
+        LINESTYLE,
+        
+        /// <remarks/>
+        LINEDISPLACEMENTFACTOR,
+        
+        /// <remarks/>
+        SIDELINECOLOR,
+        
+        /// <remarks/>
+        SIDELINEWIDTH,
+        
+        /// <remarks/>
+        SIDELINESTYLE,
+        
+        /// <remarks/>
+        SIDELINETYPE,
+        
+        /// <remarks/>
+        BORDERLINEWIDTH,
+        
+        /// <remarks/>
+        BORDERLINECOLOR,
+        
+        /// <remarks/>
+        BORDERLINESTYLE,
+        
+        /// <remarks/>
+        FILLCOLOR,
+        
+        /// <remarks/>
+        FILLALPHA,
+        
+        /// <remarks/>
+        HATCHSTYLE,
+        
+        /// <remarks/>
+        HATCHCOLOR,
+        
+        /// <remarks/>
+        ARROWCOLOR,
+        
+        /// <remarks/>
+        FONT,
+        
+        /// <remarks/>
+        FONTSIZE,
+        
+        /// <remarks/>
+        FONTCOLOR,
+        
+        /// <remarks/>
+        FONTSTYLE,
+        
+        /// <remarks/>
+        FONTBPP,
+        
+        /// <remarks/>
+        AUTOPLACEMENT,
+        
+        /// <remarks/>
+        AUTOCENTEROBJECTS,
+        
+        /// <remarks/>
+        LINESCALEFACTOR,
+        
+        /// <remarks/>
+        BORDERCOLOR,
+        
+        /// <remarks/>
+        BORDERWIDTH,
+        
+        /// <remarks/>
+        BORDERALPHA,
+        
+        /// <remarks/>
+        DRAWARROWS,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class SMOLayer : Layer {
+        
+        private string configurationField;
+        
+        private ObjectInfoType objectInfosField;
+        
+        private byte[] smoDataField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string configuration {
+            get {
+                return this.configurationField;
+            }
+            set {
+                this.configurationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ObjectInfoType objectInfos {
+            get {
+                return this.objectInfosField;
+            }
+            set {
+                this.objectInfosField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="base64Binary")]
+        public byte[] smoData {
+            get {
+                return this.smoDataField;
+            }
+            set {
+                this.smoDataField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class CustomLayer : Layer {
+        
+        private Bitmaps[] wrappedBitmapsField;
+        
+        private Lines[] wrappedLinesField;
+        
+        private Texts[] wrappedTextsField;
+        
+        private bool centerObjectsField;
+        
+        private int drawPriorityField;
+        
+        private ObjectInfoType objectInfosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Bitmaps[] wrappedBitmaps {
+            get {
+                return this.wrappedBitmapsField;
+            }
+            set {
+                this.wrappedBitmapsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Lines[] wrappedLines {
+            get {
+                return this.wrappedLinesField;
+            }
+            set {
+                this.wrappedLinesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Texts[] wrappedTexts {
+            get {
+                return this.wrappedTextsField;
+            }
+            set {
+                this.wrappedTextsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool centerObjects {
+            get {
+                return this.centerObjectsField;
+            }
+            set {
+                this.centerObjectsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int drawPriority {
+            get {
+                return this.drawPriorityField;
+            }
+            set {
+                this.drawPriorityField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ObjectInfoType objectInfos {
+            get {
+                return this.objectInfosField;
+            }
+            set {
+                this.objectInfosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Bitmaps : TransientVO {
+        
+        private BasicBitmap[] wrappedBitmapsField;
+        
+        private BitmapOptions optionsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public BasicBitmap[] wrappedBitmaps {
+            get {
+                return this.wrappedBitmapsField;
+            }
+            set {
+                this.wrappedBitmapsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public BitmapOptions options {
+            get {
+                return this.optionsField;
+            }
+            set {
+                this.optionsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RawBitmap))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Bitmap))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public abstract partial class BasicBitmap : TransientVO {
+        
+        private Point positionField;
+        
+        private string descrField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point position {
+            get {
+                return this.positionField;
+            }
+            set {
+                this.positionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string descr {
+            get {
+                return this.descrField;
+            }
+            set {
+                this.descrField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class RawBitmap : BasicBitmap {
+        
+        private byte[] rawBitmapField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="base64Binary")]
+        public byte[] rawBitmap {
+            get {
+                return this.rawBitmapField;
+            }
+            set {
+                this.rawBitmapField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Bitmap : BasicBitmap {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class BitmapOptions : TransientVO {
+        
+        private PlainPoint referencePointField;
+        
+        private Color transparencyColorField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public PlainPoint referencePoint {
+            get {
+                return this.referencePointField;
+            }
+            set {
+                this.referencePointField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Color transparencyColor {
+            get {
+                return this.transparencyColorField;
+            }
+            set {
+                this.transparencyColorField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Color : TransientVO {
+        
+        private int blueField;
+        
+        private int greenField;
+        
+        private int redField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int blue {
+            get {
+                return this.blueField;
+            }
+            set {
+                this.blueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int green {
+            get {
+                return this.greenField;
+            }
+            set {
+                this.greenField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int red {
+            get {
+                return this.redField;
+            }
+            set {
+                this.redField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Lines : TransientVO {
+        
+        private LineString[] wrappedLinesField;
+        
+        private LineOptions optionsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        [System.Xml.Serialization.XmlArrayItemAttribute(Namespace="http://common.xserver.ptvag.com")]
+        public LineString[] wrappedLines {
+            get {
+                return this.wrappedLinesField;
+            }
+            set {
+                this.wrappedLinesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public LineOptions options {
+            get {
+                return this.optionsField;
+            }
+            set {
+                this.optionsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class LineOptions : TransientVO {
+        
+        private BasicDrawingOptions arrowsField;
+        
+        private LinePartOptions mainLineField;
+        
+        private LinePartOptions sideLineField;
+        
+        private bool showFlagsField;
+        
+        private bool transparentField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public BasicDrawingOptions arrows {
+            get {
+                return this.arrowsField;
+            }
+            set {
+                this.arrowsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public LinePartOptions mainLine {
+            get {
+                return this.mainLineField;
+            }
+            set {
+                this.mainLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public LinePartOptions sideLine {
+            get {
+                return this.sideLineField;
+            }
+            set {
+                this.sideLineField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool showFlags {
+            get {
+                return this.showFlagsField;
+            }
+            set {
+                this.showFlagsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool transparent {
+            get {
+                return this.transparentField;
+            }
+            set {
+                this.transparentField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LinePartOptions))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class BasicDrawingOptions : TransientVO {
+        
+        private Color colorField;
+        
+        private bool visibleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Color color {
+            get {
+                return this.colorField;
+            }
+            set {
+                this.colorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool visible {
+            get {
+                return this.visibleField;
+            }
+            set {
+                this.visibleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class LinePartOptions : BasicDrawingOptions {
+        
+        private int widthField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int width {
+            get {
+                return this.widthField;
+            }
+            set {
+                this.widthField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Texts : TransientVO {
+        
+        private TextOptions optionsField;
+        
+        private Text[] wrappedTextsField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public TextOptions options {
+            get {
+                return this.optionsField;
+            }
+            set {
+                this.optionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public Text[] wrappedTexts {
+            get {
+                return this.wrappedTextsField;
+            }
+            set {
+                this.wrappedTextsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class TextOptions : TransientVO {
+        
+        private Color bgColorField;
+        
+        private Font fontField;
+        
+        private Color frameColorField;
+        
+        private Color textColorField;
+        
+        private TextAlignment alignmentField;
+        
+        private bool fillBgField;
+        
+        private int pixelXField;
+        
+        private int pixelYField;
+        
+        private int relXField;
+        
+        private int relYField;
+        
+        private bool showFrameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Color bgColor {
+            get {
+                return this.bgColorField;
+            }
+            set {
+                this.bgColorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Font font {
+            get {
+                return this.fontField;
+            }
+            set {
+                this.fontField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Color frameColor {
+            get {
+                return this.frameColorField;
+            }
+            set {
+                this.frameColorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Color textColor {
+            get {
+                return this.textColorField;
+            }
+            set {
+                this.textColorField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public TextAlignment alignment {
+            get {
+                return this.alignmentField;
+            }
+            set {
+                this.alignmentField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool fillBg {
+            get {
+                return this.fillBgField;
+            }
+            set {
+                this.fillBgField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int pixelX {
+            get {
+                return this.pixelXField;
+            }
+            set {
+                this.pixelXField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int pixelY {
+            get {
+                return this.pixelYField;
+            }
+            set {
+                this.pixelYField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int relX {
+            get {
+                return this.relXField;
+            }
+            set {
+                this.relXField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int relY {
+            get {
+                return this.relYField;
+            }
+            set {
+                this.relYField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool showFrame {
+            get {
+                return this.showFrameField;
+            }
+            set {
+                this.showFrameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Font : TransientVO {
+        
+        private bool boldField;
+        
+        private bool frameField;
+        
+        private bool italicField;
+        
+        private string nameField;
+        
+        private int sizeField;
+        
+        private bool underlineField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool bold {
+            get {
+                return this.boldField;
+            }
+            set {
+                this.boldField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool frame {
+            get {
+                return this.frameField;
+            }
+            set {
+                this.frameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool italic {
+            get {
+                return this.italicField;
+            }
+            set {
+                this.italicField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public bool underline {
+            get {
+                return this.underlineField;
+            }
+            set {
+                this.underlineField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public enum TextAlignment {
+        
+        /// <remarks/>
+        TOP_LEFT,
+        
+        /// <remarks/>
+        TOP_MID,
+        
+        /// <remarks/>
+        TOP_RIGHT,
+        
+        /// <remarks/>
+        MID_LEFT,
+        
+        /// <remarks/>
+        CENTER,
+        
+        /// <remarks/>
+        MID_RIGHT,
+        
+        /// <remarks/>
+        BOTTOM_LEFT,
+        
+        /// <remarks/>
+        BOTTOM_MID,
+        
+        /// <remarks/>
+        BOTTOM_RIGHT,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Text : TransientVO {
+        
+        private Point positionField;
+        
+        private string textField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point position {
+            get {
+                return this.positionField;
+            }
+            set {
+                this.positionField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string text {
+            get {
+                return this.textField;
+            }
+            set {
+                this.textField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StaticRasterLayer))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(StaticPoiLayer))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class StaticLayer : Layer {
+        
+        private int categoryField;
+        
+        private int detailLevelField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int category {
+            get {
+                return this.categoryField;
+            }
+            set {
+                this.categoryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int detailLevel {
+            get {
+                return this.detailLevelField;
+            }
+            set {
+                this.detailLevelField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class StaticRasterLayer : StaticLayer {
+        
+        private DrawPositions drawPositionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public DrawPositions drawPosition {
+            get {
+                return this.drawPositionField;
+            }
+            set {
+                this.drawPositionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public enum DrawPositions {
+        
+        /// <remarks/>
+        BELOWROUTE,
+        
+        /// <remarks/>
+        BELOWSTREET,
+        
+        /// <remarks/>
+        BELOWNAMES,
+        
+        /// <remarks/>
+        ONTOP,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class StaticPoiLayer : StaticLayer {
+        
+        private ObjectInfoType objectInfosField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public ObjectInfoType objectInfos {
+            get {
+                return this.objectInfosField;
+            }
+            set {
+                this.objectInfosField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Map : TransientVO {
+        
+        private Image imageField;
+        
+        private ObjectInfos[] wrappedObjectsField;
+        
+        private VisibleSection visibleSectionField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Image image {
+            get {
+                return this.imageField;
+            }
+            set {
+                this.imageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public ObjectInfos[] wrappedObjects {
+            get {
+                return this.wrappedObjectsField;
+            }
+            set {
+                this.wrappedObjectsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public VisibleSection visibleSection {
+            get {
+                return this.visibleSectionField;
+            }
+            set {
+                this.visibleSectionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class Image : TransientVO {
+        
+        private byte[] rawImageField;
+        
+        private string urlField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType="base64Binary")]
+        public byte[] rawImage {
+            get {
+                return this.rawImageField;
+            }
+            set {
+                this.rawImageField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string url {
+            get {
+                return this.urlField;
+            }
+            set {
+                this.urlField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class ObjectInfos : TransientVO {
+        
+        private LayerObject[] wrappedObjectsField;
+        
+        private string nameField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlArrayAttribute(IsNullable=true)]
+        public LayerObject[] wrappedObjects {
+            get {
+                return this.wrappedObjectsField;
+            }
+            set {
+                this.wrappedObjectsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class LayerObject : TransientVO {
+        
+        private ObjectGeometry geometryField;
+        
+        private PlainPoint pixelField;
+        
+        private Point refField;
+        
+        private string descrField;
+        
+        private int hiIdField;
+        
+        private int loIdField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public ObjectGeometry geometry {
+            get {
+                return this.geometryField;
+            }
+            set {
+                this.geometryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public PlainPoint pixel {
+            get {
+                return this.pixelField;
+            }
+            set {
+                this.pixelField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point @ref {
+            get {
+                return this.refField;
+            }
+            set {
+                this.refField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public string descr {
+            get {
+                return this.descrField;
+            }
+            set {
+                this.descrField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int hiId {
+            get {
+                return this.hiIdField;
+            }
+            set {
+                this.hiIdField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int loId {
+            get {
+                return this.loIdField;
+            }
+            set {
+                this.loIdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class ObjectGeometry : TransientVO {
+        
+        private PlainGeometryBase pixelGeometryField;
+        
+        private EncodedGeometry refGeometryField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public PlainGeometryBase pixelGeometry {
+            get {
+                return this.pixelGeometryField;
+            }
+            set {
+                this.pixelGeometryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public EncodedGeometry refGeometry {
+            get {
+                return this.refGeometryField;
+            }
+            set {
+                this.refGeometryField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(VisibleSectionRot))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class VisibleSection : TransientVO {
+        
+        private BoundingBox boundingBoxField;
+        
+        private Point centerField;
+        
+        private int scaleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public BoundingBox boundingBox {
+            get {
+                return this.boundingBoxField;
+            }
+            set {
+                this.boundingBoxField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point center {
+            get {
+                return this.centerField;
+            }
+            set {
+                this.centerField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int scale {
+            get {
+                return this.scaleField;
+            }
+            set {
+                this.scaleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://xmap.xserver.ptvag.com")]
+    public partial class VisibleSectionRot : VisibleSection {
+        
+        private Point leftBottomField;
+        
+        private Point leftTopField;
+        
+        private Point rightBottomField;
+        
+        private Point rightTopField;
+        
+        private int angleField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point leftBottom {
+            get {
+                return this.leftBottomField;
+            }
+            set {
+                this.leftBottomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point leftTop {
+            get {
+                return this.leftTopField;
+            }
+            set {
+                this.leftTopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point rightBottom {
+            get {
+                return this.rightBottomField;
+            }
+            set {
+                this.rightBottomField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(IsNullable=true)]
+        public Point rightTop {
+            get {
+                return this.rightTopField;
+            }
+            set {
+                this.rightTopField = value;
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute()]
+        public int angle {
+            get {
+                return this.angleField;
+            }
+            set {
+                this.angleField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    public delegate void renderMapCompletedEventHandler(object sender, renderMapCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class renderMapCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal renderMapCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Map Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Map)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    public delegate void renderMapBoundingBoxCompletedEventHandler(object sender, renderMapBoundingBoxCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class renderMapBoundingBoxCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal renderMapBoundingBoxCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Map Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Map)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    public delegate void renderMapRotCompletedEventHandler(object sender, renderMapRotCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("wsdl", "4.0.30319.33440")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class renderMapRotCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal renderMapRotCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Map Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Map)(this.results[0]));
+            }
+        }
+    }
 }
