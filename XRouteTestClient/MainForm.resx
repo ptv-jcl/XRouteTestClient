@@ -1,0 +1,1190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="labTime.ToolTip" xml:space="preserve">
+    <value>Travel time in seconds.
+
+ NOTE:
+
+ 1) This time includes waiting times, if the calculateTour method is used.
+
+ 2) In case of a road blocking on the static route the dynamic time on static route resp. Td(Rs) is infinite.
+
+ If so parameter time is set to -1 provided that DYNAMIC_TIME_ON_STATICROUTE is set to 'true'.
+
+ 3) Otherwise negative values show error codes.</value>
+  </data>
+  <data name="tbxTime.ToolTip" xml:space="preserve">
+    <value>Travel time in seconds.
+
+ NOTE:
+
+ 1) This time includes waiting times, if the calculateTour method is used.
+
+ 2) In case of a road blocking on the static route the dynamic time on static route resp. Td(Rs) is infinite.
+
+ If so parameter time is set to -1 provided that DYNAMIC_TIME_ON_STATICROUTE is set to 'true'.
+
+ 3) Otherwise negative values show error codes.</value>
+  </data>
+  <data name="tbxPartTime.ToolTip" xml:space="preserve">
+    <value>Travel time in seconds.
+
+ NOTE:
+
+ 1) This time includes waiting times, if the calculateTour method is used.
+
+ 2) In case of a road blocking on the static route the dynamic time on static route resp. Td(Rs) is infinite.
+
+ If so parameter time is set to -1 provided that DYNAMIC_TIME_ON_STATICROUTE is set to 'true'.
+
+ 3) Otherwise negative values show error codes.</value>
+  </data>
+  <data name="lbx_PerTypeTollPrice.ToolTip" xml:space="preserve">
+    <value>Array of toll prices based on the toll types (e.g. city toll, charge for ferry). 
+Please note that the price is given in subunits of the currency, i.e. if currency
+is Euro, the price is given in Eurocents. 
+If the currency consists of 1000 subunits, the price is given in 10 subunits.</value>
+  </data>
+  <data name="cboLinkTypeDest.ToolTip" xml:space="preserve">
+    <value>NEXT_NODE
+The Waypoint has to be linked to the geographically nearest valid node within 
+the configured link distance. A node is valid if it can be used by the configured vehicle type.
+
+NEXT_SEGMENT 	
+The Waypoint has to be linked to the geographically nearest valid segment within
+the configured link distance. A segment is valid if it can be used by the configured 
+vehicle type.
+
+NEXT_MAIN_NODE
+The Waypoint has to be linked to the geographically nearest valid main node (e.g., 
+a motorway interchange )within the configured link distance. A main node is a 
+collection of entry-nodes representing the interchange, and it is valid if it can be 
+used by the configured vehicle type. A main-node is a collection of entry-nodes
+representing the interchange.
+
+FUZZY_LINKING
+The Waypoint has to be linked by fuzzy linking according to a given radius. 
+NOTE: FUZZY_LINKING is only valid for VIA-Points.
+
+AUTO_LINKING
+The Waypoint has to be linked by auto linking according to the following three steps. 
+1. Use link-type NEXT_SEGMENT. 
+2. If the segment is not a motorway, take the segment. 
+Otherwise, we may accidentally have the segment in the wrong direction, since 
+motorways have usually seperate lanes. Because of this the segment is rejected 
+and in a second step link-type NEXT_MAIN_NODE is used. 
+3. If NEXT_MAIN_NODE is used it is checked if one entry node of the main 
+node is a toll station. In this case all toll nodes are returned which belong to 
+toll station with the minimal distance to the main node.
+
+NEXT_MAIN_TOLL_NODE
+This LinkType is not supported anymore, please use a different one.
+
+TOLL_STATION
+The Waypoint has to be linked to the geographically nearest valid toll station
+within the configured link distance. A toll station is valid if it can be used by
+the configured vehicle type.
+
+TI_LINKING
+Linking is executed in two steps: 
+1. Use link-type NEXT_MAIN_NODE. If some segments adjacent to an entry-nodes 
+of the resulting main-node has the wanted name, take all these entry-nodes. 
+2. Otherwise, consider all segments within a given radius.
+</value>
+  </data>
+  <data name="cboLinkTypeStart.ToolTip" xml:space="preserve">
+    <value>NEXT_NODE
+The Waypoint has to be linked to the geographically nearest valid node within 
+the configured link distance. A node is valid if it can be used by the configured vehicle type.
+
+NEXT_SEGMENT 	
+The Waypoint has to be linked to the geographically nearest valid segment within
+the configured link distance. A segment is valid if it can be used by the configured 
+vehicle type.
+
+NEXT_MAIN_NODE
+The Waypoint has to be linked to the geographically nearest valid main node (e.g., 
+a motorway interchange )within the configured link distance. A main node is a 
+collection of entry-nodes representing the interchange, and it is valid if it can be 
+used by the configured vehicle type. A main-node is a collection of entry-nodes
+representing the interchange.
+
+FUZZY_LINKING
+The Waypoint has to be linked by fuzzy linking according to a given radius. 
+NOTE: FUZZY_LINKING is only valid for VIA-Points.
+
+AUTO_LINKING
+The Waypoint has to be linked by auto linking according to the following three steps. 
+1. Use link-type NEXT_SEGMENT. 
+2. If the segment is not a motorway, take the segment. 
+Otherwise, we may accidentally have the segment in the wrong direction, since 
+motorways have usually seperate lanes. Because of this the segment is rejected 
+and in a second step link-type NEXT_MAIN_NODE is used. 
+3. If NEXT_MAIN_NODE is used it is checked if one entry node of the main 
+node is a toll station. In this case all toll nodes are returned which belong to 
+toll station with the minimal distance to the main node.
+
+NEXT_MAIN_TOLL_NODE
+This LinkType is not supported anymore, please use a different one.
+
+TOLL_STATION
+The Waypoint has to be linked to the geographically nearest valid toll station
+within the configured link distance. A toll station is valid if it can be used by
+the configured vehicle type.
+
+TI_LINKING
+Linking is executed in two steps: 
+1. Use link-type NEXT_MAIN_NODE. If some segments adjacent to an entry-nodes 
+of the resulting main-node has the wanted name, take all these entry-nodes. 
+2. Otherwise, consider all segments within a given radius.
+</value>
+  </data>
+  <data name="labServiceRoute.ToolTip" xml:space="preserve">
+    <value>Service address of the xRoute endpoint, e.g. http://127.0.0.1:50030/xroute/ws/XRoute
+
+Please be aware of the fact that some systems require username and password for the basic authentication.
+Username and passwort are configureable in the test clients config file. Please use the keys
+xroute_username and xroute_password </value>
+  </data>
+  <data name="tbxSPEED_INFOS.ToolTip" xml:space="preserve">
+    <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
+0       (NO low emission zone)
+1       (GREEN low emission zone)
+2       (YELLOW low emission zone)
+3       (RED low emission zone)
+Default is 1 
+Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
+"routingParameter.LowEmissionZoneType" in property file</value>
+  </data>
+  <data name="tbxGENERATE_EXTWAYPOINTS.ToolTip" xml:space="preserve">
+    <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
+0       (NO low emission zone)
+1       (GREEN low emission zone)
+2       (YELLOW low emission zone)
+3       (RED low emission zone)
+Default is 1 
+Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
+"routingParameter.LowEmissionZoneType" in property file</value>
+  </data>
+  <data name="labROUTE_LANGUAGE.ToolTip" xml:space="preserve">
+    <value>Defines the language which has to be used for the directions in the route description calculation
+legal values are (ISO 639-1-Codes)
+BG - bulgarian
+BS - bosnian
+CS - czech
+DA - danish
+DE - german
+EN - english
+ES - spanish
+FR - french
+HR - croatian
+IT - italian
+NL - dutch
+PL - polish
+PT - portuguese
+RO - romanian
+RU - russian
+SK - slovak
+SR - serbian
+SL - slovenian
+SV - swedish
+UK - ukrainian
+Additional languages can be manually added to the file conf/RLTrans_ISO639-1.xml.</value>
+  </data>
+  <data name="tbxROUTE_LANGUAGE.ToolTip" xml:space="preserve">
+    <value>Defines the language which has to used for the directions
+
+in the route description calculation
+
+legal values are (ISO 639-1-Codes)
+
+DE - german
+
+EN - english
+
+FR - french
+
+NL - dutch
+
+ES - spanish
+
+PT - portuguese
+
+IT - italian
+
+SV - swedish
+
+DA - danish</value>
+  </data>
+  <data name="tbxLOW_EMISSION_ZONE_TYPE.ToolTip" xml:space="preserve">
+    <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
+0       (NO low emission zone)
+1       (GREEN low emission zone)
+2       (YELLOW low emission zone)
+3       (RED low emission zone)
+Default is 1 
+Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
+"routingParameter.LowEmissionZoneType" in property file</value>
+  </data>
+  <data name="labLOW_EMISSION_ZONE_TYPE.ToolTip" xml:space="preserve">
+    <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
+0       (NO low emission zone)
+1       (GREEN low emission zone)
+2       (YELLOW low emission zone)
+3       (RED low emission zone)
+Default is 1 
+Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
+"routingParameter.LowEmissionZoneType" in property file</value>
+  </data>
+  <data name="tbxCOUNTRY_ENCODING.ToolTip" xml:space="preserve">
+    <value>Defines if and how the optional countryCode string-attribute in the RouteListSegment and WayPoint Objects has to be filled.
+
+If this option isn't set the countryCode string-attribute will not be set.
+
+This option can also be set in the properties file, but will be overwritten when set as RoutingParameter
+
+Possible values are:
+
+    *
+
+      ISO2
+    *
+
+      ISO3</value>
+  </data>
+  <data name="labCOUNTRY_ENCODING.ToolTip" xml:space="preserve">
+    <value>Defines if and how the optional countryCode string-attribute in the RouteListSegment and WayPoint Objects has to be filled.
+
+If this option isn't set the countryCode string-attribute will not be set.
+
+This option can also be set in the properties file, but will be overwritten when set as RoutingParameter
+
+Possible values are:
+
+    *
+
+      ISO2
+    *
+
+      ISO3</value>
+  </data>
+  <data name="tbxROUTING_COUNTRIES.ToolTip" xml:space="preserve">
+    <value>Defines a list of countries to use exclusively in route calculation
+
+the list has to be described as a string of comma separated values
+
+legal values are integration unit codes
+
+NOTE: Only one of the parameters ExludeCountries and RoutingCountries can be set
+
+see also EXCLUDE_COUNTRIES</value>
+  </data>
+  <data name="labROUTING_COUNTRIES.ToolTip" xml:space="preserve">
+    <value>Defines a list of countries to use exclusively in route calculation
+
+the list has to be described as a string of comma separated values
+
+legal values are integration unit codes
+
+NOTE: Only one of the parameters ExludeCountries and RoutingCountries can be set
+
+see also EXCLUDE_COUNTRIES</value>
+  </data>
+  <data name="labEXCLUDE_COUNTRIES.ToolTip" xml:space="preserve">
+    <value>Defines a list of countries to ban in route calculation
+
+the list has to be described as a string of comma separated values
+
+legal values are integration unit codes
+
+NOTE: Only one of the parameters ExludeCountries and RoutingCountries can be set
+
+see also ROUTING_COUNTRIES</value>
+  </data>
+  <data name="tbxEXCLUDE_COUNTRIES.ToolTip" xml:space="preserve">
+    <value>Defines a list of countries to ban in route calculation
+
+the list has to be described as a string of comma separated values
+
+legal values are integration unit codes
+
+NOTE: Only one of the parameters ExludeCountries and RoutingCountries can be set
+
+see also ROUTING_COUNTRIES</value>
+  </data>
+  <data name="tbxSPEEDPROFILE.ToolTip" xml:space="preserve">
+    <value>Defines the speed profile
+In general the speed profile is part of a vehicle profile
+if this option is set in the request it dominates the value defined in the profile
+the speed profile has to be described as a string of 16 comma separated values
+representing the 2 speed per network class</value>
+  </data>
+  <data name="labSPEEDPROFILE.ToolTip" xml:space="preserve">
+    <value>Defines the speed profile
+In general the speed profile is part of a vehicle profile
+if this option is set in the request it dominates the value defined in the profile
+the speed profile has to be described as a string of 16 comma separated values
+representing the 2 speed per network class</value>
+  </data>
+  <data name="labOPTIMIZATION.ToolTip" xml:space="preserve">
+    <value>Defines the optimization
+In general the optimization is part of a vehicle profile
+if this option is set in the request it dominates the value 
+defined in the profile
+Legal values are integers in the range 0..100
+30 - shortest
+90 - fastest</value>
+  </data>
+  <data name="tbxOPTIMIZATION.ToolTip" xml:space="preserve">
+    <value>Defines the optimization
+In general the optimization is part of a vehicle profile
+if this option is set in the request it dominates the value 
+defined in the profile
+Legal values are integers in the range 0..100
+30 - shortest
+90 - fastest</value>
+  </data>
+  <data name="gbxRoutingOptions.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
+  </data>
+  <data name="tbxROADEDITOR_LAYERNAME.ToolTip" xml:space="preserve">
+    <value>This parameter has to be used for roadeditor routing. 
+Legal values are strings representing: 
+1) a valid roadeditor layer name without extension 
+2) the name of the sub-folder in which an adequate roadeditor layer should be present 
+3) an attribute set, indicated by the extension ".db" such as "attribute1.db". Given
+attribute must correspond with database entry. In this case the roadeditor has to be in 
+database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="labROADEDITOR_LAYERNAME.ToolTip" xml:space="preserve">
+    <value>This parameter has to be used for roadeditor routing. 
+Legal values are strings representing: 
+1) a valid roadeditor layer name without extension 
+2) the name of the sub-folder in which an adequate roadeditor layer should be present 
+3) an attribute set, indicated by the extension ".db" such as "attribute1.db". Given
+attribute must correspond with database entry. In this case the roadeditor has to be in 
+database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="labSTART_TIME_ROADEDITOR.ToolTip" xml:space="preserve">
+    <value>Represents the starting time of the route
+
+in case of roadeditor routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="tbxSTART_TIME_ROADEDITOR.ToolTip" xml:space="preserve">
+    <value>Represents the starting time of the route
+
+in case of roadeditor routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="tbxROADEDITOR_ADDITIONAL_OPTIONS.ToolTip" xml:space="preserve">
+    <value>Describes additional RoadEditor options. This is a free text option field to set 
+several additional RoadEditor options. 
+Additional options are comma separated &lt;key&gt;=&lt;value&gt; pairs. 
+Legal values are described in the the enum RoadEditorOptions. 
+NOTE: These options don't have any effect on CountryInfoVehicleOptions.
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.
+</value>
+  </data>
+  <data name="labROADEDITOR_ADDITIONAL_OPTIONS.ToolTip" xml:space="preserve">
+    <value>Describes additional RoadEditor options. This is a free text option field to set 
+several additional RoadEditor options. 
+Additional options are comma separated &lt;key&gt;=&lt;value&gt; pairs. 
+Legal values are described in the the enum RoadEditorOptions. 
+NOTE: These options don't have any effect on CountryInfoVehicleOptions.
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.
+</value>
+  </data>
+  <data name="labDYNAMIC_PROFILE.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="tbxDYNAMIC_PROFILE.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="tbxSTART_TIME.ToolTip" xml:space="preserve">
+    <value>Represents the starting time or the arrival time (if IS_DESTTIME is set to true) of the route
+
+in case of dynamic routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.</value>
+  </data>
+  <data name="labSTART_TIME.ToolTip" xml:space="preserve">
+    <value>Represents the starting time or the arrival time (if IS_DESTTIME is set to true) of the route
+
+in case of dynamic routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.</value>
+  </data>
+  <data name="labAVOID_RAMPS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of ramps.
+Legal values are -99 to 2501 and BAN. The default is 10.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_URBAN_AREAS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of road segments in urban areas.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_RAMPS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of ramps.
+Legal values are -99 to 2501 and BAN. The default is 10.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_URBAN_AREAS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of road segments in urban areas.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_RESIDENTS_ONLY.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of residents-only streets.
+Legal values are -99 to 2501 and BAN. The default is 2500.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_FERRIES.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of ferries.
+Legal values are -99 to 2501 and BAN. The default is 100.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_HIGHWAYS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of highways.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_RESIDENTS_ONLY.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of residents-only streets.
+Legal values are -99 to 2501 and BAN. The default is 2500.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_FERRIES.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of ferries.
+Legal values are -99 to 2501 and BAN. The default is 100.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_HIGHWAYS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of highways.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_VIGNETTEROADS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of vignette roads.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_VIGNETTEROADS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of vignette roads.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAVOID_TOLLROADS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of toll roads.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxAVOID_TOLLROADS.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of toll roads.
+Legal values are -99 to 2501 and BAN.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labServiceMap.ToolTip" xml:space="preserve">
+    <value>Service address of the xRoute endpoint, e.g. http://127.0.0.1:50010/xmap/ws/XMap
+
+Please be aware of the fact that some systems require username and password for the basic authentication.
+Username and passwort are configureable in the test clients config file. Please use the keys
+xmap_username and xmap_password
+</value>
+  </data>
+  <data name="tollPriceDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
+    <value>Price for the toll section (can be 0 for citytoll/vignette 
+in case of reentering). Please note that the price is given in subunits 
+of the currency, i.e. if currency is Euro, the price is given in Eurocents. If the 
+currency consists of 1000 subunits, the price is given in 10 subunits.</value>
+  </data>
+  <data name="tollSectionNameDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
+    <value>The name for the toll section according to the 
+sectionID, empty if this country has global toll (vignette).
+NOTE: This is an optional attribute and is set only if the REQUEST_VERSION is set to 1.4.5 or higher</value>
+  </data>
+  <metadata name="tollCostInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>129, 17</value>
+  </metadata>
+  <data name="gbxOutCountries.ToolTip" xml:space="preserve">
+    <value>Displays the total amount of toll price to be payed in the
+passed countries. If all the occuring currencies are given 
+in €, the client computes an additional aggregate:
+The concatenation of all the country infos to a global list.</value>
+  </data>
+  <data name="cboCoordFormat.ToolTip" xml:space="preserve">
+    <value>NEXT_NODE
+The Waypoint has to be linked to the geographically nearest valid node within 
+the configured link distance. A node is valid if it can be used by the configured vehicle type.
+
+NEXT_SEGMENT 	
+The Waypoint has to be linked to the geographically nearest valid segment within
+the configured link distance. A segment is valid if it can be used by the configured 
+vehicle type.
+
+NEXT_MAIN_NODE
+The Waypoint has to be linked to the geographically nearest valid main node (e.g., 
+a motorway interchange )within the configured link distance. A main node is a 
+collection of entry-nodes representing the interchange, and it is valid if it can be 
+used by the configured vehicle type. A main-node is a collection of entry-nodes
+representing the interchange.
+
+FUZZY_LINKING
+The Waypoint has to be linked by fuzzy linking according to a given radius. 
+NOTE: FUZZY_LINKING is only valid for VIA-Points.
+
+AUTO_LINKING
+The Waypoint has to be linked by auto linking according to the following three steps. 
+1. Use link-type NEXT_SEGMENT. 
+2. If the segment is not a motorway, take the segment. 
+Otherwise, we may accidentally have the segment in the wrong direction, since 
+motorways have usually seperate lanes. Because of this the segment is rejected 
+and in a second step link-type NEXT_MAIN_NODE is used. 
+3. If NEXT_MAIN_NODE is used it is checked if one entry node of the main 
+node is a toll station. In this case all toll nodes are returned which belong to 
+toll station with the minimal distance to the main node.
+
+NEXT_MAIN_TOLL_NODE
+This LinkType is not supported anymore, please use a different one.
+
+TOLL_STATION
+The Waypoint has to be linked to the geographically nearest valid toll station
+within the configured link distance. A toll station is valid if it can be used by
+the configured vehicle type.
+
+TI_LINKING
+Linking is executed in two steps: 
+1. Use link-type NEXT_MAIN_NODE. If some segments adjacent to an entry-nodes 
+of the resulting main-node has the wanted name, take all these entry-nodes. 
+2. Otherwise, consider all segments within a given radius.
+</value>
+  </data>
+  <data name="tbxTolldate.ToolTip" xml:space="preserve">
+    <value>The underlying map may contain different toll scenarios for each country. 
+These scenarios are valid from a specified date. If toll date is set, xRoute
+will use the according scenario for each country.
+Note that individual scenarios can be overwritten with the attribute tollScenarios.
+
+The scenarios can be found in the file TollScenarios.ini in your map path (if available). 
+The first column specifies the scenario id. The second column represents the country 
+id and the 7th coulumn 'VALIDFROM' defines the starting date for this scenario given 
+in the form YYYYMMDD.</value>
+  </data>
+  <data name="gbxCountryInfoOptions.ToolTip" xml:space="preserve">
+    <value>Defines a set of reduction types being relevant for calculating toll costs either in 
+its currency or in euro if desired. All of the costs are calculated per cent.
+Furthermore the generation of detailed toll costs can be activated.</value>
+  </data>
+  <data name="labDYNAMIC_TIME_ON_STATICROUTE.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="labENABLE_DYNAMIC.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="tbxENABLE_DYNAMIC.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="tbxDYNAMIC_TIME_ON_STATICROUTE.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="labIS_DESTTIME.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="tbxIS_DESTTIME.ToolTip" xml:space="preserve">
+    <value>Represents the dynamic profile which has to be used for dynamic routing.
+
+NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
+
+Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="gbxDynamic.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
+  </data>
+  <data name="gbxRouteInfo.ToolTip" xml:space="preserve">
+    <value>Summary information about a single route 
+NOTE: negative values in either the distance, time or costfield show error codes 
+Example: If for example a 100 x 100 Matrix should be calculated and only one 
+location cannot be linked to the roadnetwork due to linking restrictions, then 
+only one single row and one single column cannot be calculated. In this case 
+all these relations have negative values (error codes) in the distance  and time
+fields.
+NOTE: cost / distance / time will be set to "0" when all stations are identical in request</value>
+  </data>
+  <data name="labPerTypeTollPrice.ToolTip" xml:space="preserve">
+    <value>Array of toll prices based on the toll types (e.g. city toll, charge for ferry). 
+Please note that the price is given in subunits of the currency, i.e. if currency
+is Euro, the price is given in Eurocents. 
+If the currency consists of 1000 subunits, the price is given in 10 subunits.</value>
+  </data>
+  <data name="cboHBEFAVersion.ToolTip" xml:space="preserve">
+    <value>This enumeration holds constants for different HBEFA versions.
+
+Attributes:
+name	type	value	description
+HBEFA_2_1	 HBEFAVersion	 0	HBEFA 2.1. This is the default.
+HBEFA_3_1	 HBEFAVersion	 1	HBEFA 3.1.</value>
+  </data>
+  <data name="cboEmissionLevel.ToolTip" xml:space="preserve">
+    <value>Enumeration EmissionLevel
+
+Determines at which level the emissions of the route are to be calculated,
+i.e. which result list elements are to be returned.
+
+Attributes:
+name	type	value	description
+NONE	 EmissionLevel	 0	No emission calculation.
+BASIC	 EmissionLevel	 1	Only the total amount of emissions.
+SEGMENTS	 EmissionLevel	 2	The total amount of emissions and the emissions per segment.
+STATIONS	 EmissionLevel	 3	The total amount of emissions and the emissions per station.
+ALL	 EmissionLevel	 4	The total amount of emissions and the emissions per segment and per station.</value>
+  </data>
+  <data name="labManoeuvreGroupsRatio.ToolTip" xml:space="preserve">
+    <value>Optional value representing the height/width ratio of the ManoevreGroup.extend representing the bounding rectangle.
+If the ratio is 1 height and width are equal.
+NOTE: This parameter is only interpreted if manoeuvreGroups is true</value>
+  </data>
+  <data name="tbxManoeuvreGroupsRatio.ToolTip" xml:space="preserve">
+    <value>Optional value representing the height/width ratio of the ManoevreGroup.extend representing the bounding rectangle.
+If the ratio is 1 height and width are equal.
+NOTE: This parameter is only interpreted if manoeuvreGroups is true</value>
+  </data>
+  <data name="radCalcRoute.ToolTip" xml:space="preserve">
+    <value>Calculates the detailed route for the given stations, using the specified routing 
+options respecting the defined exceptionPaths  
+NOTE: just info.cost / info.distance / info.time will be set to "0" in Route response 
+when all stations are identical</value>
+  </data>
+  <data name="radCalcExtRoute.ToolTip" xml:space="preserve">
+    <value>Calculates the detailed route for the given stations, using the specified routing 
+options respecting both the defined exceptionPaths and CountryInfoOptions  
+NOTE: just route.info.cost / route.info.distance / route.info.time will be set
+to "0" in ExtendedRoute response when all stations are identical</value>
+  </data>
+  <data name="radCalcTour.ToolTip" xml:space="preserve">
+    <value>Calculates a tour considering break and rest rules (defined by the native 
+profile configured in the xRoute profile). All arrival times at stations and 
+segments will be extended by break, rest, waiting times and so on. 
+Please note that the driver is always considered as being rested. 
+Restrictions: A tour point must not use fuzzy linking. 
+The routing option IS_DESTTIME must be false. 
+Dynamic and road editor routing must also be disabled.</value>
+  </data>
+  <data name="cboDetailLevel.ToolTip" xml:space="preserve">
+    <value>BORDERS : Only Borders
+VERY_IMPORTANT	: entering, leaving and changing highways; entering ferries
+STANDARD : all manoeuvres
+LESS_IMPORTANT : all road changes
+OTHER_OPPORTUNITIES : nodes with more than one trailing segment
+ORTHOGONAL : additional optional manouvre
+NOTE: This level cannot be requested. All manoeuvres which are additonal manoeuvres like 
+brunnel manoeuvres have detail ORTHOGONAL.
+ALL : all the rest</value>
+  </data>
+  <data name="labCostsDistance.ToolTip" xml:space="preserve">
+    <value>This textbox expects a comma separated list of 8 cost values.
+They will be multiplied with the distance values of the RouteInfo objects
+and therefore simulate cost computation based on cost/km.
+This is client logic and may be used e.g. for
+20 Euros / 100km highway
+15 Euros / 100km country road.... and so on.</value>
+  </data>
+  <data name="tbxCostsPeriod.ToolTip" xml:space="preserve">
+    <value>This textbox expects a comma separated list of 8 cost values.
+They will be multiplied with the period values of the RouteInfo objects
+and therefore simulate cost computation based on cost/minute.
+This is client logic and may be used e.g. for
+20 Euros / 1hour highway
+15 Euros / 1hour country road.... and so on.
+The basevalue is 1 second, so /hour has to be multiplied with 3600.</value>
+  </data>
+  <data name="tbxCostsDistance.ToolTip" xml:space="preserve">
+    <value>This textbox expects a comma separated list of 8 cost values.
+They will be multiplied with the distance values of the RouteInfo objects
+and therefore simulate cost computation based on cost/km.
+This is client logic and may be used e.g. for
+20 Euros / 100km highway
+15 Euros / 100km country road.... and so on.
+The basevalue is 1 meter, so /100km has to be multiplied with 100000.</value>
+  </data>
+  <data name="labEMISSION_TECHNOLOGY.ToolTip" xml:space="preserve">
+    <value>Describes the technology type of emission reduction for trucks. 
+(emission only, from HBEFA version 3.1).
+Legal Values are:
+NONE - no emission reduction technology (default)
+EGR - exhaust gas recirculation
+SCR - selective catalytic reduction</value>
+  </data>
+  <data name="tbxVP_EMISSION_TECHNOLOGY.ToolTip" xml:space="preserve">
+    <value>Describes the technology type of emission reduction for trucks. 
+(emission only, from HBEFA version 3.1).
+Legal Values are:
+NONE - no emission reduction technology (default)
+EGR - exhaust gas recirculation
+SCR - selective catalytic reduction</value>
+  </data>
+  <data name="labTRAILER_HAS_BREAKS.ToolTip" xml:space="preserve">
+    <value>Deprecated parameter. (toll only) This parameter now will not be evaluated. 
+Defines whether the trailer has brakes or not. 
+NOTE for later use:  in Version 2, this parameter will be reactivated as
+TRAILER_HAS_BRAKES, when being evaluated eventually.</value>
+  </data>
+  <data name="labCYLINDER_CAPACITY.ToolTip" xml:space="preserve">
+    <value>the cylinder capacity of this vehicle [ccm] (toll and emission) 
+Legal values are &gt;= 0   
+Default capacity is 3000 ccm (suitable for trucks) 
+Note: Set 0 when a car is in focus, because cylinder capacity is not specified for cars</value>
+  </data>
+  <data name="tbxVP_TRAILER_HAS_BREAKS.ToolTip" xml:space="preserve">
+    <value>Deprecated parameter. (toll only) This parameter now will not be evaluated. 
+Defines whether the trailer has brakes or not. 
+NOTE for later use:  in Version 2, this parameter will be reactivated as
+TRAILER_HAS_BRAKES, when being evaluated eventually.</value>
+  </data>
+  <data name="tbxVP_CYLINDER_CAPACITY.ToolTip" xml:space="preserve">
+    <value>the cylinder capacity of this vehicle [ccm] (toll and emission) 
+Legal values are &gt;= 0   
+Default capacity is 3000 ccm (suitable for trucks) 
+Note: Set 0 when a car is in focus, because cylinder capacity is not specified for cars
+</value>
+  </data>
+  <data name="labTYPE.ToolTip" xml:space="preserve">
+    <value>The vehicle type (toll and emission) Legal values are: 
+CAR   - car 
+VAN   - truck less than 7.5 t total weight 
+TRU   - truck more than 7.5 t total weight 
+TRL   - truck with trailer COM  - combustable 
+TRU HAZ   - water hazardous 
+TRU MOT  - motorbike 
+BIK - bicycle 
+CAM - camper/minivan 
+BUS - bus 
+PED - pedestrian</value>
+  </data>
+  <data name="tbxVP_TYPE.ToolTip" xml:space="preserve">
+    <value>The vehicle type (toll and emission) Legal values are: 
+CAR   - car 
+VAN   - truck less than 7.5 t total weight 
+TRU   - truck more than 7.5 t total weight 
+TRL   - truck with trailer COM  - combustable 
+TRU HAZ   - water hazardous 
+TRU MOT  - motorbike 
+BIK - bicycle 
+CAM - camper/minivan 
+BUS - bus 
+PED - pedestrian</value>
+  </data>
+  <data name="tbxVP_TOTAL_WEIGHT.ToolTip" xml:space="preserve">
+    <value>The total weight of the vehicle in [kg] -including the trailer's weight- (toll and emission)
+Legal values are &gt; 0 
+Default is 15 tons (suitable for trucks) 
+Note: Set about 1.5 tons as a guide value for cars</value>
+  </data>
+  <data name="labTOTAL_WEIGTH.ToolTip" xml:space="preserve">
+    <value>The total weight of the vehicle in [kg] -including the trailer's weight- (toll and emission)
+Legal values are &gt; 0 
+Default is 15 tons (suitable for trucks) 
+Note: Set about 1.5 tons as a guide value for cars</value>
+  </data>
+  <data name="gbxVehicleParameters.ToolTip" xml:space="preserve">
+    <value>The CountryInfoVehicleOptions object is derived form the CountryInfoOptions with an additional 
+VehicleOption array in order to set vehicle options via request. These vehicle options are used for 
+both, toll calculation and emission calculation. The default values for all vehicle options are taken 
+from the profile used. 
+Vehicle parameters for toll and emission calculation. All VehicleOptions have corresponding 
+default values defined in the properties definition files. Each VehicleOption can be assigned to
+a certain vehicle profile. 
+If a VehicleOption is set in the request it dominates the entry in the appropriate properties 
+definition file.</value>
+  </data>
+  <data name="tbxBoundingRectanglesOffset.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
+
+Legal values are -99 to 2501 and BAN. The default is 2500.
+
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+
+=0: No change (Default)
+
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxBoundingRectanglesC.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
+
+Legal values are -99 to 2501 and BAN. The default is 2500.
+
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+
+=0: No change (Default)
+
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labBoundingRectanglesC.ToolTip" xml:space="preserve">
+    <value>Defines whether and how much bounding rectangles for the route has to generated.
+If the count is set to 0, no bounding rectangles are computed
+Legal values are &gt; 0, if the value is greater as the max number of polypoints for this route
+max number of polypoints -1 bounding rectangles are computed
+Default is 0</value>
+  </data>
+  <data name="tbxALLOW_SEGMENT_VIOLATIONS.ToolTip" xml:space="preserve">
+    <value>Represents the starting time of the route
+
+in case of roadeditor routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="labENABLE_ROADEDITOR.ToolTip" xml:space="preserve">
+    <value>This parameter has to be used for roadeditor routing. 
+Legal values are strings representing: 
+1) a valid roadeditor layer name without extension 
+2) the name of the sub-folder in which an adequate roadeditor layer should be present 
+3) an attribute set, indicated by the extension ".db" such as "attribute1.db". Given
+attribute must correspond with database entry. In this case the roadeditor has to be in 
+database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="tbxCOST_OF_SEGMENT_VIOLATIONS.ToolTip" xml:space="preserve">
+    <value>Represents the starting time of the route
+
+in case of roadeditor routing
+
+the time has to be described as a string using the TimeInstant syntax
+
+Example: 1999-05-31T13:20:00-05:00
+
+if this parameter isn't set it is assumed as now.
+
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="tbxENABLE_ROADEDITOR.ToolTip" xml:space="preserve">
+    <value>This parameter has to be used for roadeditor routing. 
+Legal values are strings representing: 
+1) a valid roadeditor layer name without extension 
+2) the name of the sub-folder in which an adequate roadeditor layer should be present 
+3) an attribute set, indicated by the extension ".db" such as "attribute1.db". Given
+attribute must correspond with database entry. In this case the roadeditor has to be in 
+database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
+NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
+  </data>
+  <data name="gbxRoadEditor.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
+  </data>
+  <data name="tbxAVOID_LOW_EMISSION_ZONES.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
+Legal values are -99 to 2501 and BAN. The default is 2500.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="labAvoid_Lowemissionzones.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
+Legal values are -99 to 2501 and BAN. The default is 2500.
+&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
+=0: No change (Default)
+&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="gbxAvoid.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
+  </data>
+  <data name="labGEODATASOURCE_LAYER.ToolTip" xml:space="preserve">
+    <value>Adds a geodatasource layer which will be considered when executing the service method in question. 
+The format is &lt;geodatasource configuration&gt;.&lt;layer name&gt;[.&lt;geodata profile&gt;][;&lt;SQL filter&gt;]. 
+When using attribute names, put them into brackets, such as [id] = 42. 
+Examples: 'default.traffic' - 'default.traffic.avoid-all' - 'default.traffic.avoid-all;[id] in (0815,4711)'.
+The SQL filter will be attached at the end of the WHERE clause.
+Valid expressions are comparisons (&lt;, &gt;, =, like, ...). 
+Concatinations of expressions are possible with the SQL operators AND and OR.</value>
+  </data>
+  <data name="labExtSegments.ToolTip" xml:space="preserve">
+    <value>Alternative description representing a route path (optional). This is an external representiation consisting of a list of provider's segment ID's (e.g. NavTeq).
+
+The syntax for this description is: LINESTRINGSEG(&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;[,&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;]*)
+
+&lt;segID&gt; = provider ID &lt;dir&gt; = the digitalization direction &lt;countryCode&gt; = the countryCode representing the country the segment belongs to
+
+Example: LINESTRINGSEG(78620413 0 49,540932189 1 49,540933595 1 49)
+
+NOTE: The SegmentIDs of certain countries will only be taken into account when the corresponding IDMapping layer could be initialized. (see logging of list of countries  initialized when xRoute Server is started)</value>
+  </data>
+  <data name="tbxExtSegments.ToolTip" xml:space="preserve">
+    <value>Alternative description representing a route path (optional). This is an external representiation consisting of a list of provider's segment ID's (e.g. NavTeq).
+
+The syntax for this description is: LINESTRINGSEG(&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;[,&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;]*)
+
+&lt;segID&gt; = provider ID &lt;dir&gt; = the digitalization direction &lt;countryCode&gt; = the countryCode representing the country the segment belongs to
+
+Example: LINESTRINGSEG(78620413 0 49,540932189 1 49,540933595 1 49)
+
+NOTE: The SegmentIDs of certain countries will only be taken into account when the corresponding IDMapping layer could be initialized. (see logging of list of countries  initialized when xRoute Server is started)</value>
+  </data>
+  <data name="tbxAbsMalus.ToolTip" xml:space="preserve">
+    <value>Describes an absolute optional Malus in seconds which will be added in total to the segments in the according ExceptionPath. If absTimeMalus is negative, its absolute value will be added to each of the segments in the according ExceptionPath.
+
+Default: 0
+
+NOTE: If the absolute time malus is set and does not equal 0, relMalus will be ignored.</value>
+  </data>
+  <data name="tbxRelMalus.ToolTip" xml:space="preserve">
+    <value>The malus or bonus value in percent which has to be added to the base cost value.
+
+Legal values are -99 to 2501.
+
+&lt;0: Bonus (the minumum value -99
+
+=0: No change (Default)
+
+&gt;0: Malus (the maximum value 2501 is interpreted as road segments blocked)</value>
+  </data>
+  <data name="tbxStreet.ToolTip" xml:space="preserve">
+    <value>Alternative description representing an optional list of segments which match certain street names resp. street numbers.
+
+The list of segments includes all segments which match at least one of the street names resp. street numbers
+
+The syntax for this description is:
+
+&lt;streetname&gt;[/&lt;streetname&gt;]*
+
+NOTE: absTimeMalus will be ignored, if this attribute is non-empty, instead relMalus will be considered.
+
+NOTE: If more than one ExceptionPath elements contain a non-empty 'street' attribute, only the last occurrence will be considered.</value>
+  </data>
+  <data name="labStreet.ToolTip" xml:space="preserve">
+    <value>Alternative description representing an optional list of segments which match certain street names resp. street numbers.
+
+The list of segments includes all segments which match at least one of the street names resp. street numbers
+
+The syntax for this description is:
+
+&lt;streetname&gt;[/&lt;streetname&gt;]*
+
+NOTE: absTimeMalus will be ignored, if this attribute is non-empty, instead relMalus will be considered.
+
+NOTE: If more than one ExceptionPath elements contain a non-empty 'street' attribute, only the last occurrence will be considered.</value>
+  </data>
+  <data name="gbxExceptionPath.ToolTip" xml:space="preserve">
+    <value>Describes a route path which has to be treated as ExceptionPath in the next route calculation. Use this option to calculate alternative routes, for example. NOTE: Only the first non-empty attribute 'nodes', 'extSegments', 'street', and 'binaryPathDesc' is considered. NOTE: If a street segment occurs in more than one instance of ExceptionPath, the final malus for this street segment will be computed as the average of the given maluses. There is on exception to this rule: If the street segment in question occurs in an ExceptionPath element with a malus of -99, the final malus will also be -99. This mechanism allows the client to compute an alternative route by still forcing xRoute to use a special street segment (e.g. a ferry).
+</value>
+  </data>
+</root>

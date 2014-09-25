@@ -1,0 +1,51 @@
+This file contains a little history of the newly invented features of the tool.
+Latest news appear on top of the list. Have fun, yours sincerely Bernd Welter
+-------------------------------------------------------------------------------
+Intention: the tools is for xServer clients who want to check and understand
+the capabilities of the xRoute interface. It can be used to compute a route
+based on two coordinates.
+Available parameters are
+- the coordinate system
+- the request profile
+- linking type (per waypoint)
+- toll level
+- the server addresses (xroute is mandatory. If xmap is empty no map will be computed)
+- several routing options
+- detail level of the turning list
+Most of the parameters are to be configured within the settings configuration file
+About the routing options: as the routing options are (key,value)-pairs that have to
+be provided as an array within the xml request I decided to forward only those options
+to the request whose text boxes are not empty. 
+Output: if a map is generated it displays the route in two colors: green means no 
+toll for trucks, red means toll for trucks. Be careful: this means even when you 
+compute a non truck request you might see red sections though the car doesn't have to 
+pay.
+-------------------------------------------------------------------------------
+2009-02-11
+==>	If the textbof with the xMap-Url is empty the request will not display
+	a map afterwards.
+==>	The detail level of the turning list can be selected and the list can also
+	be disabled
+==> Toll station descriptions appear in the grid 	
+==> ROUTE_LANGUAGE, LOW_EMISSION_ZONE_TYPE as new options
+-------------------------------------------------------------------------------
+2009-12-02
+==> Now also displays tour output data (TimeEvents, TourPoints, meta Times)
+-------------------------------------------------------------------------------
+2010-03-19
+==> Retour
+-------------------------------------------------------------------------------
+2010-03-23 
+==> new layer in map invented: Segments and segmentAttributes
+-------------------------------------------------------------------------------
+2010-05-31
+==> UniqueGeoIDs available
+-------------------------------------------------------------------------------
+2011-01-17
+==> empty result list elements do no longer cause an exception in the GUI
+-------------------------------------------------------------------------------
+2011-02-24
+==> supports dynamic info...
+-------------------------------------------------------------------------------
+2011-04-19 
+==> supports 1.12 TollDate

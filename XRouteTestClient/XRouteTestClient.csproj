@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{576DC5B4-161B-43D2-8F47-2942889EF482}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XRouteTestClient</RootNamespace>
+    <AssemblyName>XRouteTestClient</AssemblyName>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DynamicInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DynamicInfoForm.Designer.cs">
+      <DependentUpon>DynamicInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Emissions_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Emissions_Form.Designer.cs">
+      <DependentUpon>Emissions_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NodesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NodesForm.Designer.cs">
+      <DependentUpon>NodesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteListSegment_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteListSegment_Form.Designer.cs">
+      <DependentUpon>RouteListSegment_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RouteManoeuvre_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RouteManoeuvre_Form.Designer.cs">
+      <DependentUpon>RouteManoeuvre_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TextsForm.Designer.cs">
+      <DependentUpon>TextsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TimeEventsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TimeEventsForm.Designer.cs">
+      <DependentUpon>TimeEventsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Waypoint_Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Waypoint_Form.Designer.cs">
+      <DependentUpon>Waypoint_Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MapForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapForm.Designer.cs">
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XServer-partial.cs" />
+    <Compile Include="XServer_1_16.cs" />
+    <EmbeddedResource Include="DynamicInfoForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DynamicInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Emissions_Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Emissions_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MapForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>MapForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NodesForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>NodesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteListSegment_Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RouteListSegment_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RouteManoeuvre_Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>RouteManoeuvre_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SegmentAttributesForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SegmentAttributesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TextsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TextsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TimeEventsForm.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>TimeEventsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Waypoint_Form.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Waypoint_Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="Properties\DataSources\XServer.Emissions.datasource" />
+    <None Include="Properties\DataSources\XServer.ExtWayPoint.datasource" />
+    <None Include="Properties\DataSources\XServer.Route.datasource" />
+    <None Include="Properties\DataSources\XServer.RouteListSegment.datasource" />
+    <None Include="Properties\DataSources\XServer.RouteManoeuvre.datasource" />
+    <None Include="Properties\DataSources\XServer.SegmentAttributes.datasource" />
+    <None Include="Properties\DataSources\XServer.TimeEvent.datasource" />
+    <None Include="Properties\DataSources\XServer.TollCostInfo.datasource" />
+    <None Include="Properties\DataSources\XServer.UniqueGeoID.datasource" />
+    <None Include="Properties\DataSources\XServer.WayPoint.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SegmentAttributesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SegmentAttributesForm.Designer.cs">
+      <DependentUpon>SegmentAttributesForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Versions.info.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
