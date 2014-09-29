@@ -29,8 +29,8 @@ namespace XRouteTestClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteManoeuvre_Form));
             this.dgvRouteManoeuvre = new System.Windows.Forms.DataGridView();
-            this.routeManoeuvreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.brunnelManoeuvreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.manoeuvreAttrDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.urbanlManoeuvreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,6 +53,7 @@ namespace XRouteTestClient
             this.turnOrientDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.turnWeightDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.viaIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routeManoeuvreBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvRouteManoeuvre)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeManoeuvreBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -90,10 +91,6 @@ namespace XRouteTestClient
             this.dgvRouteManoeuvre.Name = "dgvRouteManoeuvre";
             this.dgvRouteManoeuvre.Size = new System.Drawing.Size(941, 266);
             this.dgvRouteManoeuvre.TabIndex = 0;
-            // 
-            // routeManoeuvreBindingSource
-            // 
-            this.routeManoeuvreBindingSource.DataSource = typeof(XServer.RouteManoeuvre);
             // 
             // brunnelManoeuvreDataGridViewTextBoxColumn
             // 
@@ -250,12 +247,17 @@ namespace XRouteTestClient
             this.viaIdxDataGridViewTextBoxColumn.Name = "viaIdxDataGridViewTextBoxColumn";
             this.viaIdxDataGridViewTextBoxColumn.ToolTipText = "array-index of the corresponding WayPoint if any";
             // 
+            // routeManoeuvreBindingSource
+            // 
+            this.routeManoeuvreBindingSource.DataSource = typeof(XServer.RouteManoeuvre);
+            // 
             // RouteManoeuvre_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(941, 266);
             this.Controls.Add(this.dgvRouteManoeuvre);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RouteManoeuvre_Form";
             this.Text = "RouteManoeuvre_Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RouteManoeuvre_Form_FormClosing);

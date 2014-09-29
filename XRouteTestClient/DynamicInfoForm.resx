@@ -152,4 +152,15 @@ Td(Rd) = the dynamic travel time on the dynamic route
 Td(Rs) = the dynamic travel time on the static route (i.e. the travel time 
 including traffic jams), might be invalid, if a street segment is blocked</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAA
+        AAApIeAAAAAAAIqIhwD///8AyMfGAK+s8wCZl5YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAIiIhEREiIiEiIiIiIiIiISJFQiIiIiIhIlBTIiIiIiEiRUQ0NCIiIRIiIiNDIiIiEiIiJDQi
+        IiISIiIjYiIiIhIiIiMiIiIiEiIkNCIiIiIiIiNDIiIiISIiJDQzJFQhIiIiIiQ1BSEiIiIiIiRUISIi
+        IiIiIiIhERESIiIREREHwQAAAAEAAAABAAAAAQAAAAEAAIAAAACAAAAAgAAAAIAAAACAAAAAAAEAAAAB
+        AAAAAQAAAAEAAAABAAD4PwAA
+</value>
+  </data>
 </root>

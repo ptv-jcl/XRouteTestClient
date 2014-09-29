@@ -8,6 +8,46 @@ using System.Collections.Generic;
 
 namespace XServer
 {
+
+
+    // 2014-09-16
+    // make segment attrbitues directly vieable from routelistsegment so we can easily populuate datagrid
+    public partial class RouteListSegment
+    {
+        [XmlIgnore]
+        public BrunnelCode brunnelCode { get { if (this.segmentAttr != null) return this.segmentAttr.brunnelCode; else return BrunnelCode.NOTHING; } private set { } }
+        [XmlIgnore]
+        public bool isFerry { get { if (this.segmentAttr != null) return this.segmentAttr.isFerry; else return false; } private set { } }
+        [XmlIgnore]
+        public bool isBlockedCar { get { if (this.segmentAttr != null) return this.segmentAttr.isBlockedCar; else return false; } private set { } }
+        [XmlIgnore]
+        public bool isBlockedTruck { get { if (this.segmentAttr != null) return this.segmentAttr.isBlockedTruck; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasTollCar { get { if (this.segmentAttr != null) return this.segmentAttr.hasTollCar; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasTollTruck { get { if (this.segmentAttr != null) return this.segmentAttr.hasTollTruck; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasVignetteCar { get { if (this.segmentAttr != null) return this.segmentAttr.hasVignetteCar; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasVignetteTruck { get { if (this.segmentAttr != null) return this.segmentAttr.hasVignetteTruck; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasExtraToll { get { if (this.segmentAttr != null) return this.segmentAttr.hasExtraToll; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasNamedToll { get { if (this.segmentAttr != null) return this.segmentAttr.hasNamedToll; else return false; } private set { } }
+        [XmlIgnore]
+        public bool hasSeparator { get { if (this.segmentAttr != null) return this.segmentAttr.hasSeparator; else return false; } private set { } }
+        [XmlIgnore]
+        public bool isPedestrianZone { get { if (this.segmentAttr != null) return this.segmentAttr.isPedestrianZone; else return false; } private set { } }
+        [XmlIgnore]
+        public bool isPiggyback { get { if (this.segmentAttr != null) return this.segmentAttr.isPiggyback; else return false; } private set { } }
+        [XmlIgnore]
+        public string additionalRE { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+        [XmlIgnore]
+        public string additionalInfo { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+        [XmlIgnore]
+        public string lowEmissionZoneType { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+    }
+
     // 2012.10.18 - SpeedLimit (invented with 1.14.1)
     public partial class SpeedLimit
     {

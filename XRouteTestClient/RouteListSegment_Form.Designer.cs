@@ -31,28 +31,46 @@ namespace XRouteTestClient
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteListSegment_Form));
             this.dgvRouteListSegment = new System.Windows.Forms.DataGridView();
+            this.accDistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.additionalREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.violationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.speedLimitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vCalcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vNormDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.normSpeedDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brunnelCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.isFerryDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isBlockedCarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isBlockedTruckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasTollCarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasTollTruckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasVignetteCarDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasVignetteTruckDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasExtraTollDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasNamedTollDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.hasSeparatorDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isPedestrianZoneDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.isPiggybackDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.additionalInfoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dirInfoIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstNodeIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.firstPolyIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iuCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nodeCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.polyCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNameIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNoIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.utcOffsetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routeListSegmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routeListSegmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.accDistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iuCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vCalcDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vNormDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.speedLimitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.violationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstPolyIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.polyCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.firstNodeIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nodeCDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dirInfoIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNameIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNoIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRouteListSegment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeListSegmentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -64,26 +82,268 @@ namespace XRouteTestClient
             this.dgvRouteListSegment.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.accDistDataGridViewTextBoxColumn,
             this.accTimeDataGridViewTextBoxColumn,
+            this.additionalREDataGridViewTextBoxColumn,
+            this.violationsDataGridViewTextBoxColumn,
+            this.speedLimitsDataGridViewTextBoxColumn,
             this.countryCodeDataGridViewTextBoxColumn,
-            this.iuCodeDataGridViewTextBoxColumn,
             this.nCDataGridViewTextBoxColumn,
             this.vCalcDataGridViewTextBoxColumn,
             this.vNormDataGridViewTextBoxColumn,
-            this.speedLimitsDataGridViewTextBoxColumn,
-            this.violationsDataGridViewTextBoxColumn,
-            this.firstPolyIdxDataGridViewTextBoxColumn,
-            this.polyCDataGridViewTextBoxColumn,
-            this.firstNodeIdxDataGridViewTextBoxColumn,
-            this.nodeCDataGridViewTextBoxColumn,
+            this.normSpeedDataGridViewTextBoxColumn,
+            this.brunnelCodeDataGridViewTextBoxColumn,
+            this.isFerryDataGridViewCheckBoxColumn,
+            this.isBlockedCarDataGridViewCheckBoxColumn,
+            this.isBlockedTruckDataGridViewCheckBoxColumn,
+            this.hasTollCarDataGridViewCheckBoxColumn,
+            this.hasTollTruckDataGridViewCheckBoxColumn,
+            this.hasVignetteCarDataGridViewCheckBoxColumn,
+            this.hasVignetteTruckDataGridViewCheckBoxColumn,
+            this.hasExtraTollDataGridViewCheckBoxColumn,
+            this.hasNamedTollDataGridViewCheckBoxColumn,
+            this.hasSeparatorDataGridViewCheckBoxColumn,
+            this.isPedestrianZoneDataGridViewCheckBoxColumn,
+            this.isPiggybackDataGridViewCheckBoxColumn,
+            this.additionalInfoDataGridViewTextBoxColumn,
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn,
             this.dirInfoIdxDataGridViewTextBoxColumn,
+            this.firstNodeIdxDataGridViewTextBoxColumn,
+            this.firstPolyIdxDataGridViewTextBoxColumn,
+            this.iuCodeDataGridViewTextBoxColumn,
+            this.nodeCDataGridViewTextBoxColumn,
+            this.polyCDataGridViewTextBoxColumn,
             this.streetNameIdxDataGridViewTextBoxColumn,
-            this.streetNoIdxDataGridViewTextBoxColumn});
+            this.streetNoIdxDataGridViewTextBoxColumn,
+            this.utcOffsetDataGridViewTextBoxColumn});
             this.dgvRouteListSegment.DataSource = this.routeListSegmentBindingSource;
             this.dgvRouteListSegment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvRouteListSegment.Location = new System.Drawing.Point(0, 0);
             this.dgvRouteListSegment.Name = "dgvRouteListSegment";
             this.dgvRouteListSegment.Size = new System.Drawing.Size(732, 256);
             this.dgvRouteListSegment.TabIndex = 0;
+            // 
+            // accDistDataGridViewTextBoxColumn
+            // 
+            this.accDistDataGridViewTextBoxColumn.DataPropertyName = "accDist";
+            this.accDistDataGridViewTextBoxColumn.HeaderText = "accDist";
+            this.accDistDataGridViewTextBoxColumn.Name = "accDistDataGridViewTextBoxColumn";
+            // 
+            // accTimeDataGridViewTextBoxColumn
+            // 
+            this.accTimeDataGridViewTextBoxColumn.DataPropertyName = "accTime";
+            this.accTimeDataGridViewTextBoxColumn.HeaderText = "accTime";
+            this.accTimeDataGridViewTextBoxColumn.Name = "accTimeDataGridViewTextBoxColumn";
+            // 
+            // additionalREDataGridViewTextBoxColumn
+            // 
+            this.additionalREDataGridViewTextBoxColumn.DataPropertyName = "additionalRE";
+            this.additionalREDataGridViewTextBoxColumn.HeaderText = "additionalRE";
+            this.additionalREDataGridViewTextBoxColumn.Name = "additionalREDataGridViewTextBoxColumn";
+            this.additionalREDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // violationsDataGridViewTextBoxColumn
+            // 
+            this.violationsDataGridViewTextBoxColumn.DataPropertyName = "Violations";
+            this.violationsDataGridViewTextBoxColumn.HeaderText = "Violations";
+            this.violationsDataGridViewTextBoxColumn.Name = "violationsDataGridViewTextBoxColumn";
+            // 
+            // speedLimitsDataGridViewTextBoxColumn
+            // 
+            this.speedLimitsDataGridViewTextBoxColumn.DataPropertyName = "speedLimits";
+            this.speedLimitsDataGridViewTextBoxColumn.HeaderText = "speedLimits";
+            this.speedLimitsDataGridViewTextBoxColumn.Name = "speedLimitsDataGridViewTextBoxColumn";
+            // 
+            // countryCodeDataGridViewTextBoxColumn
+            // 
+            this.countryCodeDataGridViewTextBoxColumn.DataPropertyName = "countryCode";
+            this.countryCodeDataGridViewTextBoxColumn.HeaderText = "countryCode";
+            this.countryCodeDataGridViewTextBoxColumn.Name = "countryCodeDataGridViewTextBoxColumn";
+            // 
+            // nCDataGridViewTextBoxColumn
+            // 
+            this.nCDataGridViewTextBoxColumn.DataPropertyName = "nC";
+            this.nCDataGridViewTextBoxColumn.HeaderText = "nC";
+            this.nCDataGridViewTextBoxColumn.Name = "nCDataGridViewTextBoxColumn";
+            // 
+            // vCalcDataGridViewTextBoxColumn
+            // 
+            this.vCalcDataGridViewTextBoxColumn.DataPropertyName = "vCalc";
+            this.vCalcDataGridViewTextBoxColumn.HeaderText = "vCalc";
+            this.vCalcDataGridViewTextBoxColumn.Name = "vCalcDataGridViewTextBoxColumn";
+            // 
+            // vNormDataGridViewTextBoxColumn
+            // 
+            this.vNormDataGridViewTextBoxColumn.DataPropertyName = "vNorm";
+            this.vNormDataGridViewTextBoxColumn.HeaderText = "vNorm";
+            this.vNormDataGridViewTextBoxColumn.Name = "vNormDataGridViewTextBoxColumn";
+            // 
+            // normSpeedDataGridViewTextBoxColumn
+            // 
+            this.normSpeedDataGridViewTextBoxColumn.DataPropertyName = "normSpeed";
+            this.normSpeedDataGridViewTextBoxColumn.HeaderText = "normSpeed";
+            this.normSpeedDataGridViewTextBoxColumn.Name = "normSpeedDataGridViewTextBoxColumn";
+            // 
+            // brunnelCodeDataGridViewTextBoxColumn
+            // 
+            this.brunnelCodeDataGridViewTextBoxColumn.DataPropertyName = "brunnelCode";
+            this.brunnelCodeDataGridViewTextBoxColumn.HeaderText = "brunnelCode";
+            this.brunnelCodeDataGridViewTextBoxColumn.Name = "brunnelCodeDataGridViewTextBoxColumn";
+            this.brunnelCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // isFerryDataGridViewCheckBoxColumn
+            // 
+            this.isFerryDataGridViewCheckBoxColumn.DataPropertyName = "isFerry";
+            this.isFerryDataGridViewCheckBoxColumn.HeaderText = "isFerry";
+            this.isFerryDataGridViewCheckBoxColumn.Name = "isFerryDataGridViewCheckBoxColumn";
+            this.isFerryDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // isBlockedCarDataGridViewCheckBoxColumn
+            // 
+            this.isBlockedCarDataGridViewCheckBoxColumn.DataPropertyName = "isBlockedCar";
+            this.isBlockedCarDataGridViewCheckBoxColumn.HeaderText = "isBlockedCar";
+            this.isBlockedCarDataGridViewCheckBoxColumn.Name = "isBlockedCarDataGridViewCheckBoxColumn";
+            this.isBlockedCarDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // isBlockedTruckDataGridViewCheckBoxColumn
+            // 
+            this.isBlockedTruckDataGridViewCheckBoxColumn.DataPropertyName = "isBlockedTruck";
+            this.isBlockedTruckDataGridViewCheckBoxColumn.HeaderText = "isBlockedTruck";
+            this.isBlockedTruckDataGridViewCheckBoxColumn.Name = "isBlockedTruckDataGridViewCheckBoxColumn";
+            this.isBlockedTruckDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasTollCarDataGridViewCheckBoxColumn
+            // 
+            this.hasTollCarDataGridViewCheckBoxColumn.DataPropertyName = "hasTollCar";
+            this.hasTollCarDataGridViewCheckBoxColumn.HeaderText = "hasTollCar";
+            this.hasTollCarDataGridViewCheckBoxColumn.Name = "hasTollCarDataGridViewCheckBoxColumn";
+            this.hasTollCarDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasTollTruckDataGridViewCheckBoxColumn
+            // 
+            this.hasTollTruckDataGridViewCheckBoxColumn.DataPropertyName = "hasTollTruck";
+            this.hasTollTruckDataGridViewCheckBoxColumn.HeaderText = "hasTollTruck";
+            this.hasTollTruckDataGridViewCheckBoxColumn.Name = "hasTollTruckDataGridViewCheckBoxColumn";
+            this.hasTollTruckDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasVignetteCarDataGridViewCheckBoxColumn
+            // 
+            this.hasVignetteCarDataGridViewCheckBoxColumn.DataPropertyName = "hasVignetteCar";
+            this.hasVignetteCarDataGridViewCheckBoxColumn.HeaderText = "hasVignetteCar";
+            this.hasVignetteCarDataGridViewCheckBoxColumn.Name = "hasVignetteCarDataGridViewCheckBoxColumn";
+            this.hasVignetteCarDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasVignetteTruckDataGridViewCheckBoxColumn
+            // 
+            this.hasVignetteTruckDataGridViewCheckBoxColumn.DataPropertyName = "hasVignetteTruck";
+            this.hasVignetteTruckDataGridViewCheckBoxColumn.HeaderText = "hasVignetteTruck";
+            this.hasVignetteTruckDataGridViewCheckBoxColumn.Name = "hasVignetteTruckDataGridViewCheckBoxColumn";
+            this.hasVignetteTruckDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasExtraTollDataGridViewCheckBoxColumn
+            // 
+            this.hasExtraTollDataGridViewCheckBoxColumn.DataPropertyName = "hasExtraToll";
+            this.hasExtraTollDataGridViewCheckBoxColumn.HeaderText = "hasExtraToll";
+            this.hasExtraTollDataGridViewCheckBoxColumn.Name = "hasExtraTollDataGridViewCheckBoxColumn";
+            this.hasExtraTollDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasNamedTollDataGridViewCheckBoxColumn
+            // 
+            this.hasNamedTollDataGridViewCheckBoxColumn.DataPropertyName = "hasNamedToll";
+            this.hasNamedTollDataGridViewCheckBoxColumn.HeaderText = "hasNamedToll";
+            this.hasNamedTollDataGridViewCheckBoxColumn.Name = "hasNamedTollDataGridViewCheckBoxColumn";
+            this.hasNamedTollDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // hasSeparatorDataGridViewCheckBoxColumn
+            // 
+            this.hasSeparatorDataGridViewCheckBoxColumn.DataPropertyName = "hasSeparator";
+            this.hasSeparatorDataGridViewCheckBoxColumn.HeaderText = "hasSeparator";
+            this.hasSeparatorDataGridViewCheckBoxColumn.Name = "hasSeparatorDataGridViewCheckBoxColumn";
+            this.hasSeparatorDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // isPedestrianZoneDataGridViewCheckBoxColumn
+            // 
+            this.isPedestrianZoneDataGridViewCheckBoxColumn.DataPropertyName = "isPedestrianZone";
+            this.isPedestrianZoneDataGridViewCheckBoxColumn.HeaderText = "isPedestrianZone";
+            this.isPedestrianZoneDataGridViewCheckBoxColumn.Name = "isPedestrianZoneDataGridViewCheckBoxColumn";
+            this.isPedestrianZoneDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // isPiggybackDataGridViewCheckBoxColumn
+            // 
+            this.isPiggybackDataGridViewCheckBoxColumn.DataPropertyName = "isPiggyback";
+            this.isPiggybackDataGridViewCheckBoxColumn.HeaderText = "isPiggyback";
+            this.isPiggybackDataGridViewCheckBoxColumn.Name = "isPiggybackDataGridViewCheckBoxColumn";
+            this.isPiggybackDataGridViewCheckBoxColumn.ReadOnly = true;
+            // 
+            // additionalInfoDataGridViewTextBoxColumn
+            // 
+            this.additionalInfoDataGridViewTextBoxColumn.DataPropertyName = "additionalInfo";
+            this.additionalInfoDataGridViewTextBoxColumn.HeaderText = "additionalInfo";
+            this.additionalInfoDataGridViewTextBoxColumn.Name = "additionalInfoDataGridViewTextBoxColumn";
+            this.additionalInfoDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lowEmissionZoneTypeDataGridViewTextBoxColumn
+            // 
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn.DataPropertyName = "lowEmissionZoneType";
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn.HeaderText = "lowEmissionZoneType";
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn.Name = "lowEmissionZoneTypeDataGridViewTextBoxColumn";
+            this.lowEmissionZoneTypeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dirInfoIdxDataGridViewTextBoxColumn
+            // 
+            this.dirInfoIdxDataGridViewTextBoxColumn.DataPropertyName = "dirInfoIdx";
+            this.dirInfoIdxDataGridViewTextBoxColumn.HeaderText = "dirInfoIdx";
+            this.dirInfoIdxDataGridViewTextBoxColumn.Name = "dirInfoIdxDataGridViewTextBoxColumn";
+            // 
+            // firstNodeIdxDataGridViewTextBoxColumn
+            // 
+            this.firstNodeIdxDataGridViewTextBoxColumn.DataPropertyName = "firstNodeIdx";
+            this.firstNodeIdxDataGridViewTextBoxColumn.HeaderText = "firstNodeIdx";
+            this.firstNodeIdxDataGridViewTextBoxColumn.Name = "firstNodeIdxDataGridViewTextBoxColumn";
+            // 
+            // firstPolyIdxDataGridViewTextBoxColumn
+            // 
+            this.firstPolyIdxDataGridViewTextBoxColumn.DataPropertyName = "firstPolyIdx";
+            this.firstPolyIdxDataGridViewTextBoxColumn.HeaderText = "firstPolyIdx";
+            this.firstPolyIdxDataGridViewTextBoxColumn.Name = "firstPolyIdxDataGridViewTextBoxColumn";
+            // 
+            // iuCodeDataGridViewTextBoxColumn
+            // 
+            this.iuCodeDataGridViewTextBoxColumn.DataPropertyName = "iuCode";
+            this.iuCodeDataGridViewTextBoxColumn.HeaderText = "iuCode";
+            this.iuCodeDataGridViewTextBoxColumn.Name = "iuCodeDataGridViewTextBoxColumn";
+            // 
+            // nodeCDataGridViewTextBoxColumn
+            // 
+            this.nodeCDataGridViewTextBoxColumn.DataPropertyName = "nodeC";
+            this.nodeCDataGridViewTextBoxColumn.HeaderText = "nodeC";
+            this.nodeCDataGridViewTextBoxColumn.Name = "nodeCDataGridViewTextBoxColumn";
+            // 
+            // polyCDataGridViewTextBoxColumn
+            // 
+            this.polyCDataGridViewTextBoxColumn.DataPropertyName = "polyC";
+            this.polyCDataGridViewTextBoxColumn.HeaderText = "polyC";
+            this.polyCDataGridViewTextBoxColumn.Name = "polyCDataGridViewTextBoxColumn";
+            // 
+            // streetNameIdxDataGridViewTextBoxColumn
+            // 
+            this.streetNameIdxDataGridViewTextBoxColumn.DataPropertyName = "streetNameIdx";
+            this.streetNameIdxDataGridViewTextBoxColumn.HeaderText = "streetNameIdx";
+            this.streetNameIdxDataGridViewTextBoxColumn.Name = "streetNameIdxDataGridViewTextBoxColumn";
+            // 
+            // streetNoIdxDataGridViewTextBoxColumn
+            // 
+            this.streetNoIdxDataGridViewTextBoxColumn.DataPropertyName = "streetNoIdx";
+            this.streetNoIdxDataGridViewTextBoxColumn.HeaderText = "streetNoIdx";
+            this.streetNoIdxDataGridViewTextBoxColumn.Name = "streetNoIdxDataGridViewTextBoxColumn";
+            // 
+            // utcOffsetDataGridViewTextBoxColumn
+            // 
+            this.utcOffsetDataGridViewTextBoxColumn.DataPropertyName = "utcOffset";
+            this.utcOffsetDataGridViewTextBoxColumn.HeaderText = "utcOffset";
+            this.utcOffsetDataGridViewTextBoxColumn.Name = "utcOffsetDataGridViewTextBoxColumn";
+            // 
+            // routeListSegmentBindingSource
+            // 
+            this.routeListSegmentBindingSource.DataSource = typeof(XServer.RouteListSegment);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -117,112 +377,13 @@ namespace XRouteTestClient
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
             this.dataGridViewTextBoxColumn5.ToolTipText = resources.GetString("dataGridViewTextBoxColumn5.ToolTipText");
             // 
-            // routeListSegmentBindingSource
-            // 
-            this.routeListSegmentBindingSource.DataSource = typeof(XServer.RouteListSegment);
-            // 
-            // accDistDataGridViewTextBoxColumn
-            // 
-            this.accDistDataGridViewTextBoxColumn.DataPropertyName = "accDist";
-            this.accDistDataGridViewTextBoxColumn.HeaderText = "accDist";
-            this.accDistDataGridViewTextBoxColumn.Name = "accDistDataGridViewTextBoxColumn";
-            // 
-            // accTimeDataGridViewTextBoxColumn
-            // 
-            this.accTimeDataGridViewTextBoxColumn.DataPropertyName = "accTime";
-            this.accTimeDataGridViewTextBoxColumn.HeaderText = "accTime";
-            this.accTimeDataGridViewTextBoxColumn.Name = "accTimeDataGridViewTextBoxColumn";
-            // 
-            // countryCodeDataGridViewTextBoxColumn
-            // 
-            this.countryCodeDataGridViewTextBoxColumn.DataPropertyName = "countryCode";
-            this.countryCodeDataGridViewTextBoxColumn.HeaderText = "countryCode";
-            this.countryCodeDataGridViewTextBoxColumn.Name = "countryCodeDataGridViewTextBoxColumn";
-            // 
-            // iuCodeDataGridViewTextBoxColumn
-            // 
-            this.iuCodeDataGridViewTextBoxColumn.DataPropertyName = "iuCode";
-            this.iuCodeDataGridViewTextBoxColumn.HeaderText = "iuCode";
-            this.iuCodeDataGridViewTextBoxColumn.Name = "iuCodeDataGridViewTextBoxColumn";
-            // 
-            // nCDataGridViewTextBoxColumn
-            // 
-            this.nCDataGridViewTextBoxColumn.DataPropertyName = "nC";
-            this.nCDataGridViewTextBoxColumn.HeaderText = "nC";
-            this.nCDataGridViewTextBoxColumn.Name = "nCDataGridViewTextBoxColumn";
-            // 
-            // vCalcDataGridViewTextBoxColumn
-            // 
-            this.vCalcDataGridViewTextBoxColumn.DataPropertyName = "vCalc";
-            this.vCalcDataGridViewTextBoxColumn.HeaderText = "vCalc";
-            this.vCalcDataGridViewTextBoxColumn.Name = "vCalcDataGridViewTextBoxColumn";
-            // 
-            // vNormDataGridViewTextBoxColumn
-            // 
-            this.vNormDataGridViewTextBoxColumn.DataPropertyName = "vNorm";
-            this.vNormDataGridViewTextBoxColumn.HeaderText = "vNorm";
-            this.vNormDataGridViewTextBoxColumn.Name = "vNormDataGridViewTextBoxColumn";
-            // 
-            // speedLimitsDataGridViewTextBoxColumn
-            // 
-            this.speedLimitsDataGridViewTextBoxColumn.DataPropertyName = "speedLimits";
-            this.speedLimitsDataGridViewTextBoxColumn.HeaderText = "speedLimits";
-            this.speedLimitsDataGridViewTextBoxColumn.Name = "speedLimitsDataGridViewTextBoxColumn";
-            // 
-            // violationsDataGridViewTextBoxColumn
-            // 
-            this.violationsDataGridViewTextBoxColumn.DataPropertyName = "Violations";
-            this.violationsDataGridViewTextBoxColumn.HeaderText = "Violations";
-            this.violationsDataGridViewTextBoxColumn.Name = "violationsDataGridViewTextBoxColumn";
-            // 
-            // firstPolyIdxDataGridViewTextBoxColumn
-            // 
-            this.firstPolyIdxDataGridViewTextBoxColumn.DataPropertyName = "firstPolyIdx";
-            this.firstPolyIdxDataGridViewTextBoxColumn.HeaderText = "firstPolyIdx";
-            this.firstPolyIdxDataGridViewTextBoxColumn.Name = "firstPolyIdxDataGridViewTextBoxColumn";
-            // 
-            // polyCDataGridViewTextBoxColumn
-            // 
-            this.polyCDataGridViewTextBoxColumn.DataPropertyName = "polyC";
-            this.polyCDataGridViewTextBoxColumn.HeaderText = "polyC";
-            this.polyCDataGridViewTextBoxColumn.Name = "polyCDataGridViewTextBoxColumn";
-            // 
-            // firstNodeIdxDataGridViewTextBoxColumn
-            // 
-            this.firstNodeIdxDataGridViewTextBoxColumn.DataPropertyName = "firstNodeIdx";
-            this.firstNodeIdxDataGridViewTextBoxColumn.HeaderText = "firstNodeIdx";
-            this.firstNodeIdxDataGridViewTextBoxColumn.Name = "firstNodeIdxDataGridViewTextBoxColumn";
-            // 
-            // nodeCDataGridViewTextBoxColumn
-            // 
-            this.nodeCDataGridViewTextBoxColumn.DataPropertyName = "nodeC";
-            this.nodeCDataGridViewTextBoxColumn.HeaderText = "nodeC";
-            this.nodeCDataGridViewTextBoxColumn.Name = "nodeCDataGridViewTextBoxColumn";
-            // 
-            // dirInfoIdxDataGridViewTextBoxColumn
-            // 
-            this.dirInfoIdxDataGridViewTextBoxColumn.DataPropertyName = "dirInfoIdx";
-            this.dirInfoIdxDataGridViewTextBoxColumn.HeaderText = "dirInfoIdx";
-            this.dirInfoIdxDataGridViewTextBoxColumn.Name = "dirInfoIdxDataGridViewTextBoxColumn";
-            // 
-            // streetNameIdxDataGridViewTextBoxColumn
-            // 
-            this.streetNameIdxDataGridViewTextBoxColumn.DataPropertyName = "streetNameIdx";
-            this.streetNameIdxDataGridViewTextBoxColumn.HeaderText = "streetNameIdx";
-            this.streetNameIdxDataGridViewTextBoxColumn.Name = "streetNameIdxDataGridViewTextBoxColumn";
-            // 
-            // streetNoIdxDataGridViewTextBoxColumn
-            // 
-            this.streetNoIdxDataGridViewTextBoxColumn.DataPropertyName = "streetNoIdx";
-            this.streetNoIdxDataGridViewTextBoxColumn.HeaderText = "streetNoIdx";
-            this.streetNoIdxDataGridViewTextBoxColumn.Name = "streetNoIdxDataGridViewTextBoxColumn";
-            // 
             // RouteListSegment_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(732, 256);
             this.Controls.Add(this.dgvRouteListSegment);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "RouteListSegment_Form";
             this.Text = "RouteListSegment";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.RouteListSegment_Form_FormClosing);
@@ -243,19 +404,37 @@ namespace XRouteTestClient
         private System.Windows.Forms.BindingSource routeListSegmentBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn accDistDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn additionalREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn violationsDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn speedLimitsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn iuCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vCalcDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn vNormDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn speedLimitsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn violationsDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstPolyIdxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn polyCDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNodeIdxDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nodeCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn normSpeedDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brunnelCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isFerryDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isBlockedCarDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isBlockedTruckDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasTollCarDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasTollTruckDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasVignetteCarDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasVignetteTruckDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasExtraTollDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasNamedTollDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn hasSeparatorDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPedestrianZoneDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn isPiggybackDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn additionalInfoDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lowEmissionZoneTypeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn dirInfoIdxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNodeIdxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstPolyIdxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn iuCodeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nodeCDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn polyCDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn streetNameIdxDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn streetNoIdxDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn utcOffsetDataGridViewTextBoxColumn;
     }
 }

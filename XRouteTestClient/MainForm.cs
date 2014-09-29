@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Xml;
 using XServer;
+using System.Globalization;
 
 
 
@@ -21,7 +22,6 @@ namespace XRouteTestClient
     {
         Map,
         Segments,
-        SegmentAttributes,
         Nodes,
         RouteListManoeuvres,
         Texts,
@@ -31,15 +31,12 @@ namespace XRouteTestClient
         ManoeuvreGroups
     };
 
-
-
-
     public partial class MainForm : Form
     {
 
         WaypointDesc wpdStart, wpdDestination, wpdVia;
-        XServer.CallerContext cc;
-        XServer.CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
+        CallerContext cc;
+        CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
         //2012-08-10 XML Snippet
         public const string XmlSnippet_NEUTRAL = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
         XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
@@ -50,11 +47,9 @@ namespace XRouteTestClient
 
         XRouteWSService service = new XRouteWSService() { Credentials = new NetworkCredential(Properties.Settings.Default.xroute_username, Properties.Settings.Default.xroute_password) };
 
-
         ResultListOptions rlo;
         // the extended forms
         RouteListSegment_Form routeListSegment_Form = null;
-        SegmentAttributesForm segmentAttributesForm = null;
         TextsForm textForm = null;
         TimeEventsForm timeEventForm = null;
         NodesForm nodesForm = null;
@@ -134,8 +129,8 @@ namespace XRouteTestClient
             };
             cc = new XServer.CallerContext()
             {
-                //                wrappedProperties = new CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry, ccpXmlSnippet }
-                wrappedProperties = new XServer.CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry }
+                wrappedProperties = new CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry, ccpXmlSnippet }
+                // wrappedProperties = new XServer.CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry }
             };
 
             tbxAVOID_FERRIES.Text = Properties.Settings.Default.AVOID_FERRIES;
@@ -226,6 +221,10 @@ namespace XRouteTestClient
             // 2012-10-18: SpeedLimits!
             rlo.speedLimitsSpecified = true;
             rlo.speedLimits = cbxSpeedLimits.Checked;
+            //2014-09-26 FeatureLayerDescriptions
+            rlo.featureDescriptionsSpecified = true;
+            rlo.featureDescriptions = cbxFeatureLayerDescriptions.Checked;
+
 
             radCalcExtRoute.Checked = Properties.Settings.Default.ExtendedRoute;
             //2010-03-19 Retour
@@ -261,11 +260,14 @@ namespace XRouteTestClient
                 btnAction.BackColor = System.Drawing.Color.Yellow;
                 btnAction.Update();
 
-                wpdStart.wrappedCoords[0].point.x = Convert.ToDouble(tbxStartX.Text);
-                wpdStart.wrappedCoords[0].point.y = Convert.ToDouble(tbxStartY.Text);
+                char decimalSeparator = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
+                char notDecimalSeparator = decimalSeparator == '.' ? ',' : '.';
+
+                wpdStart.wrappedCoords[0].point.x = Convert.ToDouble(tbxStartX.Text.Replace(notDecimalSeparator,decimalSeparator));
+                wpdStart.wrappedCoords[0].point.y = Convert.ToDouble(tbxStartY.Text.Replace(notDecimalSeparator, decimalSeparator));
                 wpdStart.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeStart.SelectedItem.ToString()));
-                wpdDestination.wrappedCoords[0].point.x = Convert.ToDouble(tbxDestX.Text);
-                wpdDestination.wrappedCoords[0].point.y = Convert.ToDouble(tbxDestY.Text);
+                wpdDestination.wrappedCoords[0].point.x = Convert.ToDouble(tbxDestX.Text.Replace(notDecimalSeparator, decimalSeparator));
+                wpdDestination.wrappedCoords[0].point.y = Convert.ToDouble(tbxDestY.Text.Replace(notDecimalSeparator, decimalSeparator));
                 wpdDestination.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeDest.SelectedItem.ToString()));
 
                 List<WaypointDesc> lstWaypointDesc = new List<WaypointDesc>();
@@ -284,25 +286,26 @@ namespace XRouteTestClient
                 }
                 else if ((tbxViaX.Text != "") && (tbxViaY.Text != "") && (tbxFuzzyRadius.Text != ""))
                 {
-                    XServer.Point ptVia = new XServer.Point()
-                    {
-                        point = new PlainPoint()
-                        {
-                            x = Convert.ToDouble(tbxViaX.Text),
-                            y = Convert.ToDouble(tbxViaY.Text)
-                        }
-                    };
                     wpdVia = new WaypointDesc()
                     {
                         fuzzyRadius = Convert.ToInt32(tbxFuzzyRadius.Text),
-                        linkType = LinkType.FUZZY_LINKING,
-                        wrappedCoords = new XServer.Point[] { ptVia }
+                        wrappedCoords = new XServer.Point[] 
+                        { 
+                            new XServer.Point()
+                            {
+                                point = new PlainPoint()
+                                    {
+                                        x = Convert.ToDouble(tbxViaX.Text.Replace(notDecimalSeparator,decimalSeparator)),
+                                        y = Convert.ToDouble(tbxViaY.Text.Replace(notDecimalSeparator,decimalSeparator)),
+                                    },
+                            },
+                        },
+                        viaType = new ViaType()
+                        {
+                            viaType = ViaTypeEnum.FUZZY,
+                        },
                     };
                     lstWaypointDesc.Add(wpdVia);
-                }
-                else
-                {
-                    wpdVia = null;
                 }
                 lstWaypointDesc.Add(wpdDestination);
 
@@ -310,7 +313,11 @@ namespace XRouteTestClient
                 if (cbxRetour.Checked)
                 {
                     for (int index = lstWaypointDesc.Count - 1; index >= 0; index--)
+                    {
+                        //2014-09-26 remove ferry from retour
+                        if (lstWaypointDesc[index].combinedTransportID != null && lstWaypointDesc[index].combinedTransportID != "") continue;
                         lstWaypointDesc.Add(lstWaypointDesc[index]);
+                    }
                 }
 
                 WaypointDesc[] waypointDesc = lstWaypointDesc.ToArray();
@@ -535,7 +542,7 @@ namespace XRouteTestClient
                 lbxOutCountry.Focus();
 
                 //20090717: RouteListSegment Form?
-                //if (cbxSegments.Checked)
+
                 if (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Segments))
                 {
                     if (routeListSegment_Form == null)
@@ -568,21 +575,6 @@ namespace XRouteTestClient
                 // since 2009-04.17: BinaryPath in output
                 tbxBinaryPathDescription.Text = tour.route.binaryPathDesc;
 
-                // since 2009-04-22: SegmentAttributes
-                //if (cbxSegmentAttributes.Checked)
-                if (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.SegmentAttributes))
-                {
-                    if (segmentAttributesForm == null)
-                    {
-                        segmentAttributesForm = new SegmentAttributesForm(tour.route);
-                        segmentAttributesForm.Show();
-                    }
-                    else
-                    {
-                        segmentAttributesForm.updateDGV(tour.route);
-                        segmentAttributesForm.Visible = true;
-                    }
-                }
                 // since 2009-09-17: Texts
                 //if (cbxTexts.Checked)
                 if (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Texts))

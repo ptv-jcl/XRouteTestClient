@@ -136,7 +136,7 @@ namespace XRouteTestClient
             this.boundingRectanglesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.boundingRectanglesToolStripMenuItem.Text = "BoundingRectangles";
             this.boundingRectanglesToolStripMenuItem.ToolTipText = "Enables/disables visualization of bounding rectangles. \r\nThese rectangles are hel" +
-                "pful for a corridor search.";
+    "pful for a corridor search.";
             this.boundingRectanglesToolStripMenuItem.Click += new System.EventHandler(this.layerToolStripMenuItem_Click);
             // 
             // manoeuvresToolStripMenuItem
@@ -146,7 +146,7 @@ namespace XRouteTestClient
             this.manoeuvresToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.manoeuvresToolStripMenuItem.Text = "Manoeuvres";
             this.manoeuvresToolStripMenuItem.ToolTipText = "Enables/disables visualization of manoeuvres, i.e. the concrete coordinate \r\nwher" +
-                "e the driver is expected to perform a specific manoeuvre.";
+    "e the driver is expected to perform a specific manoeuvre.";
             this.manoeuvresToolStripMenuItem.Click += new System.EventHandler(this.layerToolStripMenuItem_Click);
             // 
             // manoeuvreGroupsToolStripMenuItem
@@ -205,6 +205,7 @@ namespace XRouteTestClient
             this.ClientSize = new System.Drawing.Size(635, 501);
             this.Controls.Add(this.pbxMap);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MapForm";
             this.Text = "MapForm";

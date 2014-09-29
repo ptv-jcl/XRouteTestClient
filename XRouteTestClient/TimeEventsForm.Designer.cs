@@ -28,6 +28,7 @@ namespace XRouteTestClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TimeEventsForm));
             this.dgvTimeEvents = new System.Windows.Forms.DataGridView();
             this.gbxTourSummary = new System.Windows.Forms.GroupBox();
             this.label7 = new System.Windows.Forms.Label();
@@ -67,8 +68,8 @@ namespace XRouteTestClient
             // 
             // gbxTourSummary
             // 
-            this.gbxTourSummary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxTourSummary.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxTourSummary.Controls.Add(this.label7);
             this.gbxTourSummary.Controls.Add(this.label6);
             this.gbxTourSummary.Controls.Add(this.label5);
@@ -182,7 +183,6 @@ namespace XRouteTestClient
             this.tbxDrivingPeriod.Size = new System.Drawing.Size(60, 20);
             this.tbxDrivingPeriod.TabIndex = 3;
             this.tbxDrivingPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.tbxDrivingPeriod.TextChanged += new System.EventHandler(this.tbxDrivingPeriod_TextChanged);
             // 
             // label2
             // 
@@ -209,7 +209,6 @@ namespace XRouteTestClient
             this.tbxTotalPeriod.Size = new System.Drawing.Size(60, 20);
             this.tbxTotalPeriod.TabIndex = 0;
             this.tbxTotalPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            //this.tbxTotalPeriod.TextChanged += new System.EventHandler(this.tbxTotalPeriod_TextChanged);
             // 
             // dgvTourPoints
             // 
@@ -224,9 +223,9 @@ namespace XRouteTestClient
             // 
             // gbxTimeEvents
             // 
-            this.gbxTimeEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxTimeEvents.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxTimeEvents.Controls.Add(this.dgvTimeEvents);
             this.gbxTimeEvents.Location = new System.Drawing.Point(12, 259);
             this.gbxTimeEvents.Name = "gbxTimeEvents";
@@ -237,9 +236,9 @@ namespace XRouteTestClient
             // 
             // gbxTourPoints
             // 
-            this.gbxTourPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                        | System.Windows.Forms.AnchorStyles.Left)
-                        | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbxTourPoints.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxTourPoints.Controls.Add(this.dgvTourPoints);
             this.gbxTourPoints.Location = new System.Drawing.Point(12, 121);
             this.gbxTourPoints.Name = "gbxTourPoints";
@@ -252,17 +251,18 @@ namespace XRouteTestClient
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(704, 425);
+            this.ClientSize = new System.Drawing.Size(696, 431);
             this.Controls.Add(this.gbxTourPoints);
             this.Controls.Add(this.gbxTimeEvents);
             this.Controls.Add(this.gbxTourSummary);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(712, 469);
             this.MinimumSize = new System.Drawing.Size(712, 469);
             this.Name = "TimeEventsForm";
             this.Text = "Tour";
-            this.Load += new System.EventHandler(this.TimeEventsForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TimeEventsForm_FormClosing);
+            this.Load += new System.EventHandler(this.TimeEventsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTimeEvents)).EndInit();
             this.gbxTourSummary.ResumeLayout(false);
             this.gbxTourSummary.PerformLayout();

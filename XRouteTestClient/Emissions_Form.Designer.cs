@@ -29,6 +29,7 @@ namespace XRouteTestClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emissions_Form));
             this.dgvEmissions = new System.Windows.Forms.DataGridView();
             this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.carbonDioxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -192,6 +193,7 @@ namespace XRouteTestClient
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(617, 164);
             this.Controls.Add(this.dgvEmissions);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Emissions_Form";
             this.Text = "Emissions_Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmissionsForm_FormClosing);

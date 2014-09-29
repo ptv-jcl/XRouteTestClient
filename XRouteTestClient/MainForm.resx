@@ -1187,4 +1187,15 @@ NOTE: If more than one ExceptionPath elements contain a non-empty 'street' attri
     <value>Describes a route path which has to be treated as ExceptionPath in the next route calculation. Use this option to calculate alternative routes, for example. NOTE: Only the first non-empty attribute 'nodes', 'extSegments', 'street', and 'binaryPathDesc' is considered. NOTE: If a street segment occurs in more than one instance of ExceptionPath, the final malus for this street segment will be computed as the average of the given maluses. There is on exception to this rule: If the street segment in question occurs in an ExceptionPath element with a malus of -99, the final malus will also be -99. This mechanism allows the client to compute an alternative route by still forcing xRoute to use a special street segment (e.g. a ferry).
 </value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAA
+        AAApIeAAAAAAAIqIhwD///8AyMfGAK+s8wCZl5YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAIiIhEREiIiEiIiIiIiIiISJFQiIiIiIhIlBTIiIiIiEiRUQ0NCIiIRIiIiNDIiIiEiIiJDQi
+        IiISIiIjYiIiIhIiIiMiIiIiEiIkNCIiIiIiIiNDIiIiISIiJDQzJFQhIiIiIiQ1BSEiIiIiIiRUISIi
+        IiIiIiIhERESIiIREREHwQAAAAEAAAABAAAAAQAAAAEAAIAAAACAAAAAgAAAAIAAAACAAAAAAAEAAAAB
+        AAAAAQAAAAEAAAABAAD4PwAA
+</value>
+  </data>
 </root>

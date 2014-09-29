@@ -29,6 +29,7 @@ namespace XRouteTestClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(NodesForm));
             this.dgvUniqueGeoIDs = new System.Windows.Forms.DataGridView();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUniqueGeoIDs)).BeginInit();
@@ -44,20 +45,17 @@ namespace XRouteTestClient
             this.dgvUniqueGeoIDs.Size = new System.Drawing.Size(700, 256);
             this.dgvUniqueGeoIDs.TabIndex = 0;
             // 
-            // bindingSource1
-            // 
-
-            // 
             // NodesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(700, 256);
             this.Controls.Add(this.dgvUniqueGeoIDs);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "NodesForm";
             this.Text = "Nodes / UniqueGeoIDs";
-            this.Load += new System.EventHandler(this.NodesForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.NodesForm_FormClosing);
+            this.Load += new System.EventHandler(this.NodesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvUniqueGeoIDs)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);

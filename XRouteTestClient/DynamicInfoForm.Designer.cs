@@ -31,15 +31,15 @@ namespace XRouteTestClient
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(DynamicInfoForm));
             this.DynamicInfo = new System.Windows.Forms.GroupBox();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.tbxTimeBenefit = new System.Windows.Forms.TextBox();
-            this.tbxDistanceDiff = new System.Windows.Forms.TextBox();
-            this.tbxTimeLoss2 = new System.Windows.Forms.TextBox();
-            this.tbxTimeLoss = new System.Windows.Forms.TextBox();
-            this.labTimeBenefit = new System.Windows.Forms.Label();
-            this.labDistanceDiff = new System.Windows.Forms.Label();
-            this.labTimeLoss2 = new System.Windows.Forms.Label();
             this.labTimeLoss = new System.Windows.Forms.Label();
+            this.labTimeLoss2 = new System.Windows.Forms.Label();
+            this.labDistanceDiff = new System.Windows.Forms.Label();
+            this.labTimeBenefit = new System.Windows.Forms.Label();
+            this.tbxTimeLoss = new System.Windows.Forms.TextBox();
+            this.tbxTimeLoss2 = new System.Windows.Forms.TextBox();
+            this.tbxDistanceDiff = new System.Windows.Forms.TextBox();
+            this.tbxTimeBenefit = new System.Windows.Forms.TextBox();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.DynamicInfo.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -63,59 +63,16 @@ namespace XRouteTestClient
             this.toolTip1.SetToolTip(this.DynamicInfo, resources.GetString("DynamicInfo.ToolTip"));
             this.DynamicInfo.Enter += new System.EventHandler(this.DynamicInfo_Enter);
             // 
-            // tbxTimeBenefit
+            // labTimeLoss
             // 
-            this.tbxTimeBenefit.Location = new System.Drawing.Point(75, 19);
-            this.tbxTimeBenefit.Name = "tbxTimeBenefit";
-            this.tbxTimeBenefit.Size = new System.Drawing.Size(86, 20);
-            this.tbxTimeBenefit.TabIndex = 0;
-            this.tbxTimeBenefit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbxDistanceDiff
-            // 
-            this.tbxDistanceDiff.Location = new System.Drawing.Point(241, 45);
-            this.tbxDistanceDiff.Name = "tbxDistanceDiff";
-            this.tbxDistanceDiff.Size = new System.Drawing.Size(86, 20);
-            this.tbxDistanceDiff.TabIndex = 1;
-            this.tbxDistanceDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbxTimeLoss2
-            // 
-            this.tbxTimeLoss2.Location = new System.Drawing.Point(241, 19);
-            this.tbxTimeLoss2.Name = "tbxTimeLoss2";
-            this.tbxTimeLoss2.Size = new System.Drawing.Size(86, 20);
-            this.tbxTimeLoss2.TabIndex = 2;
-            this.tbxTimeLoss2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbxTimeLoss
-            // 
-            this.tbxTimeLoss.Location = new System.Drawing.Point(75, 45);
-            this.tbxTimeLoss.Name = "tbxTimeLoss";
-            this.tbxTimeLoss.Size = new System.Drawing.Size(86, 20);
-            this.tbxTimeLoss.TabIndex = 3;
-            this.tbxTimeLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // labTimeBenefit
-            // 
-            this.labTimeBenefit.AutoSize = true;
-            this.labTimeBenefit.Location = new System.Drawing.Point(6, 22);
-            this.labTimeBenefit.Name = "labTimeBenefit";
-            this.labTimeBenefit.Size = new System.Drawing.Size(63, 13);
-            this.labTimeBenefit.TabIndex = 4;
-            this.labTimeBenefit.Text = "TimeBenefit";
-            this.toolTip1.SetToolTip(this.labTimeBenefit, resources.GetString("labTimeBenefit.ToolTip"));
-            // 
-            // labDistanceDiff
-            // 
-            this.labDistanceDiff.AutoSize = true;
-            this.labDistanceDiff.Location = new System.Drawing.Point(167, 48);
-            this.labDistanceDiff.Name = "labDistanceDiff";
-            this.labDistanceDiff.Size = new System.Drawing.Size(65, 13);
-            this.labDistanceDiff.TabIndex = 5;
-            this.labDistanceDiff.Text = "DistanceDiff";
-            this.toolTip1.SetToolTip(this.labDistanceDiff, "The distance difference between the dynamic \r\nand the static route in meters.\r\n\r\n" +
-                    "NOTE: This is an optional attribute and is set only \r\nif the REQUEST_VERSION is " +
-                    "set to 1.4.5 or higher");
+            this.labTimeLoss.AutoSize = true;
+            this.labTimeLoss.Location = new System.Drawing.Point(6, 48);
+            this.labTimeLoss.Name = "labTimeLoss";
+            this.labTimeLoss.Size = new System.Drawing.Size(52, 13);
+            this.labTimeLoss.TabIndex = 7;
+            this.labTimeLoss.Text = "TimeLoss";
+            this.toolTip1.SetToolTip(this.labTimeLoss, "The time loss you will have when taking the dynamic \r\nroute in contrast to the st" +
+        "atic route. \r\ntimeLoss = Td(Rd) - Ts(Rs)");
             // 
             // labTimeLoss2
             // 
@@ -127,16 +84,59 @@ namespace XRouteTestClient
             this.labTimeLoss2.Text = "TimeLoss2";
             this.toolTip1.SetToolTip(this.labTimeLoss2, resources.GetString("labTimeLoss2.ToolTip"));
             // 
-            // labTimeLoss
+            // labDistanceDiff
             // 
-            this.labTimeLoss.AutoSize = true;
-            this.labTimeLoss.Location = new System.Drawing.Point(6, 48);
-            this.labTimeLoss.Name = "labTimeLoss";
-            this.labTimeLoss.Size = new System.Drawing.Size(52, 13);
-            this.labTimeLoss.TabIndex = 7;
-            this.labTimeLoss.Text = "TimeLoss";
-            this.toolTip1.SetToolTip(this.labTimeLoss, "The time loss you will have when taking the dynamic \r\nroute in contrast to the st" +
-                    "atic route. \r\ntimeLoss = Td(Rd) - Ts(Rs)");
+            this.labDistanceDiff.AutoSize = true;
+            this.labDistanceDiff.Location = new System.Drawing.Point(167, 48);
+            this.labDistanceDiff.Name = "labDistanceDiff";
+            this.labDistanceDiff.Size = new System.Drawing.Size(65, 13);
+            this.labDistanceDiff.TabIndex = 5;
+            this.labDistanceDiff.Text = "DistanceDiff";
+            this.toolTip1.SetToolTip(this.labDistanceDiff, "The distance difference between the dynamic \r\nand the static route in meters.\r\n\r\n" +
+        "NOTE: This is an optional attribute and is set only \r\nif the REQUEST_VERSION is " +
+        "set to 1.4.5 or higher");
+            // 
+            // labTimeBenefit
+            // 
+            this.labTimeBenefit.AutoSize = true;
+            this.labTimeBenefit.Location = new System.Drawing.Point(6, 22);
+            this.labTimeBenefit.Name = "labTimeBenefit";
+            this.labTimeBenefit.Size = new System.Drawing.Size(63, 13);
+            this.labTimeBenefit.TabIndex = 4;
+            this.labTimeBenefit.Text = "TimeBenefit";
+            this.toolTip1.SetToolTip(this.labTimeBenefit, resources.GetString("labTimeBenefit.ToolTip"));
+            // 
+            // tbxTimeLoss
+            // 
+            this.tbxTimeLoss.Location = new System.Drawing.Point(75, 45);
+            this.tbxTimeLoss.Name = "tbxTimeLoss";
+            this.tbxTimeLoss.Size = new System.Drawing.Size(86, 20);
+            this.tbxTimeLoss.TabIndex = 3;
+            this.tbxTimeLoss.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbxTimeLoss2
+            // 
+            this.tbxTimeLoss2.Location = new System.Drawing.Point(241, 19);
+            this.tbxTimeLoss2.Name = "tbxTimeLoss2";
+            this.tbxTimeLoss2.Size = new System.Drawing.Size(86, 20);
+            this.tbxTimeLoss2.TabIndex = 2;
+            this.tbxTimeLoss2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbxDistanceDiff
+            // 
+            this.tbxDistanceDiff.Location = new System.Drawing.Point(241, 45);
+            this.tbxDistanceDiff.Name = "tbxDistanceDiff";
+            this.tbxDistanceDiff.Size = new System.Drawing.Size(86, 20);
+            this.tbxDistanceDiff.TabIndex = 1;
+            this.tbxDistanceDiff.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbxTimeBenefit
+            // 
+            this.tbxTimeBenefit.Location = new System.Drawing.Point(75, 19);
+            this.tbxTimeBenefit.Name = "tbxTimeBenefit";
+            this.tbxTimeBenefit.Size = new System.Drawing.Size(86, 20);
+            this.tbxTimeBenefit.TabIndex = 0;
+            this.tbxTimeBenefit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // DynamicInfoForm
             // 
@@ -144,10 +144,11 @@ namespace XRouteTestClient
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(339, 79);
             this.Controls.Add(this.DynamicInfo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DynamicInfoForm";
             this.Text = "DynamicInfoForm";
-            this.Load += new System.EventHandler(this.DynamicInfoForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.DynamicInfoForm_FormClosing);
+            this.Load += new System.EventHandler(this.DynamicInfoForm_Load);
             this.DynamicInfo.ResumeLayout(false);
             this.DynamicInfo.PerformLayout();
             this.ResumeLayout(false);

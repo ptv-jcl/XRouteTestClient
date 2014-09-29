@@ -29,7 +29,20 @@ namespace XRouteTestClient
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Waypoint_Form));
             this.dgvWaypoints = new System.Windows.Forms.DataGridView();
+            this.locationCoordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.matchCoordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accDistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.accTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iuCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.manoeuvreIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nodeIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.polyIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.segmentIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wayPointTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wayPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dgvExtWaypoints = new System.Windows.Forms.DataGridView();
             this.exitAngleDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.exitAngleNorthDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,22 +65,10 @@ namespace XRouteTestClient
             this.segmentIdxDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wayPointTypeDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.extWayPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.locationCoordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.matchCoordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accDistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.accTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iuCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.manoeuvreIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nodeIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.polyIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.segmentIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wayPointTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.wayPointBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWaypoints)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayPointBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtWaypoints)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.extWayPointBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayPointBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvWaypoints
@@ -92,6 +93,76 @@ namespace XRouteTestClient
             this.dgvWaypoints.Name = "dgvWaypoints";
             this.dgvWaypoints.Size = new System.Drawing.Size(699, 260);
             this.dgvWaypoints.TabIndex = 0;
+            // 
+            // locationCoordDataGridViewTextBoxColumn
+            // 
+            this.locationCoordDataGridViewTextBoxColumn.DataPropertyName = "locationCoord";
+            this.locationCoordDataGridViewTextBoxColumn.HeaderText = "locationCoord";
+            this.locationCoordDataGridViewTextBoxColumn.Name = "locationCoordDataGridViewTextBoxColumn";
+            // 
+            // matchCoordDataGridViewTextBoxColumn
+            // 
+            this.matchCoordDataGridViewTextBoxColumn.DataPropertyName = "matchCoord";
+            this.matchCoordDataGridViewTextBoxColumn.HeaderText = "matchCoord";
+            this.matchCoordDataGridViewTextBoxColumn.Name = "matchCoordDataGridViewTextBoxColumn";
+            // 
+            // accDistDataGridViewTextBoxColumn
+            // 
+            this.accDistDataGridViewTextBoxColumn.DataPropertyName = "accDist";
+            this.accDistDataGridViewTextBoxColumn.HeaderText = "accDist";
+            this.accDistDataGridViewTextBoxColumn.Name = "accDistDataGridViewTextBoxColumn";
+            // 
+            // accTimeDataGridViewTextBoxColumn
+            // 
+            this.accTimeDataGridViewTextBoxColumn.DataPropertyName = "accTime";
+            this.accTimeDataGridViewTextBoxColumn.HeaderText = "accTime";
+            this.accTimeDataGridViewTextBoxColumn.Name = "accTimeDataGridViewTextBoxColumn";
+            // 
+            // countryCodeDataGridViewTextBoxColumn
+            // 
+            this.countryCodeDataGridViewTextBoxColumn.DataPropertyName = "countryCode";
+            this.countryCodeDataGridViewTextBoxColumn.HeaderText = "countryCode";
+            this.countryCodeDataGridViewTextBoxColumn.Name = "countryCodeDataGridViewTextBoxColumn";
+            // 
+            // iuCodeDataGridViewTextBoxColumn
+            // 
+            this.iuCodeDataGridViewTextBoxColumn.DataPropertyName = "iuCode";
+            this.iuCodeDataGridViewTextBoxColumn.HeaderText = "iuCode";
+            this.iuCodeDataGridViewTextBoxColumn.Name = "iuCodeDataGridViewTextBoxColumn";
+            // 
+            // manoeuvreIdxDataGridViewTextBoxColumn
+            // 
+            this.manoeuvreIdxDataGridViewTextBoxColumn.DataPropertyName = "manoeuvreIdx";
+            this.manoeuvreIdxDataGridViewTextBoxColumn.HeaderText = "manoeuvreIdx";
+            this.manoeuvreIdxDataGridViewTextBoxColumn.Name = "manoeuvreIdxDataGridViewTextBoxColumn";
+            // 
+            // nodeIdxDataGridViewTextBoxColumn
+            // 
+            this.nodeIdxDataGridViewTextBoxColumn.DataPropertyName = "nodeIdx";
+            this.nodeIdxDataGridViewTextBoxColumn.HeaderText = "nodeIdx";
+            this.nodeIdxDataGridViewTextBoxColumn.Name = "nodeIdxDataGridViewTextBoxColumn";
+            // 
+            // polyIdxDataGridViewTextBoxColumn
+            // 
+            this.polyIdxDataGridViewTextBoxColumn.DataPropertyName = "polyIdx";
+            this.polyIdxDataGridViewTextBoxColumn.HeaderText = "polyIdx";
+            this.polyIdxDataGridViewTextBoxColumn.Name = "polyIdxDataGridViewTextBoxColumn";
+            // 
+            // segmentIdxDataGridViewTextBoxColumn
+            // 
+            this.segmentIdxDataGridViewTextBoxColumn.DataPropertyName = "segmentIdx";
+            this.segmentIdxDataGridViewTextBoxColumn.HeaderText = "segmentIdx";
+            this.segmentIdxDataGridViewTextBoxColumn.Name = "segmentIdxDataGridViewTextBoxColumn";
+            // 
+            // wayPointTypeDataGridViewTextBoxColumn
+            // 
+            this.wayPointTypeDataGridViewTextBoxColumn.DataPropertyName = "wayPointType";
+            this.wayPointTypeDataGridViewTextBoxColumn.HeaderText = "wayPointType";
+            this.wayPointTypeDataGridViewTextBoxColumn.Name = "wayPointTypeDataGridViewTextBoxColumn";
+            // 
+            // wayPointBindingSource
+            // 
+            this.wayPointBindingSource.DataSource = typeof(XServer.WayPoint);
             // 
             // dgvExtWaypoints
             // 
@@ -249,76 +320,6 @@ namespace XRouteTestClient
             // 
             this.extWayPointBindingSource.DataSource = typeof(XServer.ExtWayPoint);
             // 
-            // locationCoordDataGridViewTextBoxColumn
-            // 
-            this.locationCoordDataGridViewTextBoxColumn.DataPropertyName = "locationCoord";
-            this.locationCoordDataGridViewTextBoxColumn.HeaderText = "locationCoord";
-            this.locationCoordDataGridViewTextBoxColumn.Name = "locationCoordDataGridViewTextBoxColumn";
-            // 
-            // matchCoordDataGridViewTextBoxColumn
-            // 
-            this.matchCoordDataGridViewTextBoxColumn.DataPropertyName = "matchCoord";
-            this.matchCoordDataGridViewTextBoxColumn.HeaderText = "matchCoord";
-            this.matchCoordDataGridViewTextBoxColumn.Name = "matchCoordDataGridViewTextBoxColumn";
-            // 
-            // accDistDataGridViewTextBoxColumn
-            // 
-            this.accDistDataGridViewTextBoxColumn.DataPropertyName = "accDist";
-            this.accDistDataGridViewTextBoxColumn.HeaderText = "accDist";
-            this.accDistDataGridViewTextBoxColumn.Name = "accDistDataGridViewTextBoxColumn";
-            // 
-            // accTimeDataGridViewTextBoxColumn
-            // 
-            this.accTimeDataGridViewTextBoxColumn.DataPropertyName = "accTime";
-            this.accTimeDataGridViewTextBoxColumn.HeaderText = "accTime";
-            this.accTimeDataGridViewTextBoxColumn.Name = "accTimeDataGridViewTextBoxColumn";
-            // 
-            // countryCodeDataGridViewTextBoxColumn
-            // 
-            this.countryCodeDataGridViewTextBoxColumn.DataPropertyName = "countryCode";
-            this.countryCodeDataGridViewTextBoxColumn.HeaderText = "countryCode";
-            this.countryCodeDataGridViewTextBoxColumn.Name = "countryCodeDataGridViewTextBoxColumn";
-            // 
-            // iuCodeDataGridViewTextBoxColumn
-            // 
-            this.iuCodeDataGridViewTextBoxColumn.DataPropertyName = "iuCode";
-            this.iuCodeDataGridViewTextBoxColumn.HeaderText = "iuCode";
-            this.iuCodeDataGridViewTextBoxColumn.Name = "iuCodeDataGridViewTextBoxColumn";
-            // 
-            // manoeuvreIdxDataGridViewTextBoxColumn
-            // 
-            this.manoeuvreIdxDataGridViewTextBoxColumn.DataPropertyName = "manoeuvreIdx";
-            this.manoeuvreIdxDataGridViewTextBoxColumn.HeaderText = "manoeuvreIdx";
-            this.manoeuvreIdxDataGridViewTextBoxColumn.Name = "manoeuvreIdxDataGridViewTextBoxColumn";
-            // 
-            // nodeIdxDataGridViewTextBoxColumn
-            // 
-            this.nodeIdxDataGridViewTextBoxColumn.DataPropertyName = "nodeIdx";
-            this.nodeIdxDataGridViewTextBoxColumn.HeaderText = "nodeIdx";
-            this.nodeIdxDataGridViewTextBoxColumn.Name = "nodeIdxDataGridViewTextBoxColumn";
-            // 
-            // polyIdxDataGridViewTextBoxColumn
-            // 
-            this.polyIdxDataGridViewTextBoxColumn.DataPropertyName = "polyIdx";
-            this.polyIdxDataGridViewTextBoxColumn.HeaderText = "polyIdx";
-            this.polyIdxDataGridViewTextBoxColumn.Name = "polyIdxDataGridViewTextBoxColumn";
-            // 
-            // segmentIdxDataGridViewTextBoxColumn
-            // 
-            this.segmentIdxDataGridViewTextBoxColumn.DataPropertyName = "segmentIdx";
-            this.segmentIdxDataGridViewTextBoxColumn.HeaderText = "segmentIdx";
-            this.segmentIdxDataGridViewTextBoxColumn.Name = "segmentIdxDataGridViewTextBoxColumn";
-            // 
-            // wayPointTypeDataGridViewTextBoxColumn
-            // 
-            this.wayPointTypeDataGridViewTextBoxColumn.DataPropertyName = "wayPointType";
-            this.wayPointTypeDataGridViewTextBoxColumn.HeaderText = "wayPointType";
-            this.wayPointTypeDataGridViewTextBoxColumn.Name = "wayPointTypeDataGridViewTextBoxColumn";
-            // 
-            // wayPointBindingSource
-            // 
-            this.wayPointBindingSource.DataSource = typeof(XServer.WayPoint);
-            // 
             // Waypoint_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -326,14 +327,15 @@ namespace XRouteTestClient
             this.ClientSize = new System.Drawing.Size(699, 260);
             this.Controls.Add(this.dgvExtWaypoints);
             this.Controls.Add(this.dgvWaypoints);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Waypoint_Form";
             this.Text = "Waypoints[]";
-            this.Load += new System.EventHandler(this.Waypoint_Form_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Waypoint_Form_FormClosing);
+            this.Load += new System.EventHandler(this.Waypoint_Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvWaypoints)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.wayPointBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvExtWaypoints)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.extWayPointBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.wayPointBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

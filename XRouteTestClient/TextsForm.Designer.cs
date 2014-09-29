@@ -28,6 +28,7 @@ namespace XRouteTestClient
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TextsForm));
             this.dgvTexts = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTexts)).BeginInit();
             this.SuspendLayout();
@@ -51,10 +52,11 @@ namespace XRouteTestClient
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(756, 256);
             this.Controls.Add(this.dgvTexts);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TextsForm";
             this.Text = "TextsForm";
-            this.Load += new System.EventHandler(this.TextsForm_Load);
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TextsForm_FormClosing);
+            this.Load += new System.EventHandler(this.TextsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTexts)).EndInit();
             this.ResumeLayout(false);
 

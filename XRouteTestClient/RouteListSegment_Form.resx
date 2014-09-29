@@ -142,4 +142,15 @@ Please note also that these speed limits represent the signs on the roads,
 they have not been used to calculate the travel speed on this segment during routing calculation. 
 For more information on format of the condition string see the use-case documentation.</value>
   </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAA
+        AAApIeAAAAAAAIqIhwD///8AyMfGAK+s8wCZl5YAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+        AAAAAAAAIiIhEREiIiEiIiIiIiIiISJFQiIiIiIhIlBTIiIiIiEiRUQ0NCIiIRIiIiNDIiIiEiIiJDQi
+        IiISIiIjYiIiIhIiIiMiIiIiEiIkNCIiIiIiIiNDIiIiISIiJDQzJFQhIiIiIiQ1BSEiIiIiIiRUISIi
+        IiIiIiIhERESIiIREREHwQAAAAEAAAABAAAAAQAAAAEAAIAAAACAAAAAgAAAAIAAAACAAAAAAAEAAAAB
+        AAAAAQAAAAEAAAABAAD4PwAA
+</value>
+  </data>
 </root>
