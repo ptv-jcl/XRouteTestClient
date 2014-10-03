@@ -157,7 +157,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.16")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.18.1")]
         public string REQUEST_VERSION {
             get {
                 return ((string)(this["REQUEST_VERSION"]));
@@ -1696,7 +1696,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PTVBenelux")]
+        [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
         public string xroute_username {
             get {
                 return ((string)(this["xroute_username"]));
@@ -1708,7 +1708,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PTVBenelux")]
+        [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
         public string xroute_password {
             get {
                 return ((string)(this["xroute_password"]));

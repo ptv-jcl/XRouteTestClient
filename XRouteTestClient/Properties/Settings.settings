@@ -36,7 +36,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="REQUEST_VERSION" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1.16</Value>
+      <Value Profile="(Default)">1.18.1</Value>
     </Setting>
     <Setting Name="COUNTRY_ENCODING" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -423,10 +423,10 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="xroute_username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PTVBenelux</Value>
+      <Value Profile="(Default)">xtok</Value>
     </Setting>
     <Setting Name="xroute_password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PTVBenelux</Value>
+      <Value Profile="(Default)">xtok</Value>
     </Setting>
     <Setting Name="xmap_username" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
