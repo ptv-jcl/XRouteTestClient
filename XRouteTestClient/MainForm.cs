@@ -34,12 +34,11 @@ namespace XRouteTestClient
 
     public partial class MainForm : Form
     {
-        TourPointDesc startTourPoint, destinationTourPoint; 
+        TourPointDesc startTourPoint, destinationTourPoint;
         WaypointDesc viaWaypoint;
         CallerContext cc;
         CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
-        //2012-08-10 XML Snippet
-        public const string XmlSnippet_NEUTRAL = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
+        public const string xmlSnippetNeutral = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
         XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
         {
             key = "ProfileXMLSnippet",
@@ -131,7 +130,6 @@ namespace XRouteTestClient
             cc = new XServer.CallerContext()
             {
                 wrappedProperties = new CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry, ccpXmlSnippet }
-                // wrappedProperties = new XServer.CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry }
             };
 
             tbxAVOID_FERRIES.Text = Properties.Settings.Default.AVOID_FERRIES;
@@ -226,8 +224,9 @@ namespace XRouteTestClient
             rlo.featureDescriptionsSpecified = true;
             rlo.featureDescriptions = cbxFeatureLayerDescriptions.Checked;
 
-
-            radCalcExtRoute.Checked = Properties.Settings.Default.ExtendedRoute;
+            // radCalcExtRoute.Checked = Properties.Settings.Default.ExtendedRoute;
+            // TODO find better way for default operation
+            radCalcAdvTour.Checked = true;
             //2010-03-19 Retour
             cbxRetour.Checked = Properties.Settings.Default.RETOUR;
 
@@ -244,7 +243,10 @@ namespace XRouteTestClient
             {
                 lbxResultListOptions.Items.Add(curMyResultListOptions);
             }
-            lbxResultListOptions.SelectedIndex = 0;
+            //lbxResultListOptions.SelectedIndex = 0;
+
+            lbxResultListOptions.SelectedIndices.Add(6);
+
             // 2012-12-29 HBEFA and Emissions
             foreach (HBEFAVersion curHBEFAVersion in Enum.GetValues(typeof(HBEFAVersion)))
                 cboHBEFAVersion.Items.Add(curHBEFAVersion);
@@ -336,7 +338,7 @@ namespace XRouteTestClient
                 }
                 else
                 {
-                    ccpXmlSnippet.value = XmlSnippet_NEUTRAL;
+                    ccpXmlSnippet.value = xmlSnippetNeutral;
                 }
 
                 List<RoutingOption> listRoutingOption = new List<RoutingOption>();
@@ -529,12 +531,13 @@ namespace XRouteTestClient
                             dailyRestRuleDisabledSpecified = true,
                             weeklyRestRuleDisabled = !weeklyRestRuleChkBx.Checked,
                             weeklyRestRuleDisabledSpecified = true,
-                            workingRuleDisabled = true,
-                            workingRuleDisabledSpecified = true,
+                            // TODO check if I can do something with working rule
+                            //workingRuleDisabled = !workingRuleChkBx.Checked,
+                            //workingRuleDisabledSpecified = true,
                         },
                         regulations = new DriverRegulations()
                         {
-                            
+
                             breakRule = new BreakRule()
                             {
                                 breakPeriod1 = int.Parse(breakPeriod1TxtBx.Text),
@@ -560,6 +563,17 @@ namespace XRouteTestClient
                                 maximumWeeklyDrivingPeriod = int.Parse(maximumWeeklyDrivingPeriodTxtBx.Text),
                                 weeklyRestPeriod = int.Parse(weeklyRestPeriodTxtBx.Text),
                             },
+                            //workingRule = new WorkingRule()
+                            //{
+                            //    breakPeriod = int.Parse(breakPeriodTxtBx.Text),
+                            //    extendedBreakPeriod = int.Parse(extendedBreakPeriodTxtBx.Text),
+                            //    maxWorkingPeriodWithoutBreak = int.Parse(maxWorkingPeriodWithoutBreakTxtBx.Text),
+                            //    maxWorkingPeriodWithoutExtendedBreak = int.Parse(maxWorkingPeriodWithoutExtendedBreakTxtBx.Text),
+                            //    minPartialBreakLength = int.Parse(minPartialBreakLengthTxtBx.Text),
+                            //    maxWorkingPeriodWithoutDailyRest = int.Parse(maxWorkingPeriodWithoutDailyRestTxtBx.Text),
+                            //    maxWorkingPeriodPerWeek = int.Parse(maxWorkingPeriodPerWeekTxtBx.Text),
+                            //    dailyRestPeriod = int.Parse(dailyRestPeriodTxtBx.Text),
+                            //},
                         },
                     };
 
@@ -1715,18 +1729,6 @@ namespace XRouteTestClient
             catch (Exception)
             {
             }
-        }
-
-        private void label19_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void breakRuleChkBx_CheckedChanged(object sender, EventArgs e)
-        {
-            drivingPeriodTxtBx.Enabled = ((CheckBox)sender).Checked;
-            breakPeriod1TxtBx.Enabled = ((CheckBox)sender).Checked;
-            breakPeriod2TxtBx.Enabled = ((CheckBox)sender).Checked;
         }
 
         private void load1DriverRegulationsBtn_Click(object sender, EventArgs e)

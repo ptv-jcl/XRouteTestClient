@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TourEventForm));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.isViolatedTxtBx = new System.Windows.Forms.TextBox();
@@ -51,9 +52,7 @@
             this.remainingPeriodsTxtBx = new System.Windows.Forms.TextBox();
             this.tourResultSpltCntr = new System.Windows.Forms.SplitContainer();
             this.tourPointResultsGrpBx = new System.Windows.Forms.GroupBox();
-            this.tourEventsGrpBx = new System.Windows.Forms.GroupBox();
             this.tourPointResultsDtGrdVw = new System.Windows.Forms.DataGridView();
-            this.tourEventDtGrdVw = new System.Windows.Forms.DataGridView();
             this.stationIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.arrivalTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startServiceTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -67,6 +66,8 @@
             this.dailyRestPeriodAtTourPointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.weeklyRestPeriodAtTourPointDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tourPointResultBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tourEventsGrpBx = new System.Windows.Forms.GroupBox();
+            this.tourEventDtGrdVw = new System.Windows.Forms.DataGridView();
             this.tourPointIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.segmentIndexDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.startTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,10 +83,10 @@
             this.tourResultSpltCntr.Panel2.SuspendLayout();
             this.tourResultSpltCntr.SuspendLayout();
             this.tourPointResultsGrpBx.SuspendLayout();
-            this.tourEventsGrpBx.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tourPointResultsDtGrdVw)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tourEventDtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tourPointResultBindingSource)).BeginInit();
+            this.tourEventsGrpBx.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tourEventDtGrdVw)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tourEventBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -305,19 +306,6 @@
             this.tourPointResultsGrpBx.TabStop = false;
             this.tourPointResultsGrpBx.Text = "Tour point results";
             // 
-            // tourEventsGrpBx
-            // 
-            this.tourEventsGrpBx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tourEventsGrpBx.Controls.Add(this.tourEventDtGrdVw);
-            this.tourEventsGrpBx.Location = new System.Drawing.Point(0, 0);
-            this.tourEventsGrpBx.Name = "tourEventsGrpBx";
-            this.tourEventsGrpBx.Size = new System.Drawing.Size(1258, 183);
-            this.tourEventsGrpBx.TabIndex = 1;
-            this.tourEventsGrpBx.TabStop = false;
-            this.tourEventsGrpBx.Text = "Tour events";
-            // 
             // tourPointResultsDtGrdVw
             // 
             this.tourPointResultsDtGrdVw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -344,27 +332,6 @@
             this.tourPointResultsDtGrdVw.Name = "tourPointResultsDtGrdVw";
             this.tourPointResultsDtGrdVw.Size = new System.Drawing.Size(1246, 163);
             this.tourPointResultsDtGrdVw.TabIndex = 0;
-            // 
-            // tourEventDtGrdVw
-            // 
-            this.tourEventDtGrdVw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tourEventDtGrdVw.AutoGenerateColumns = false;
-            this.tourEventDtGrdVw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.tourEventDtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tourEventDtGrdVw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.tourPointIndexDataGridViewTextBoxColumn,
-            this.segmentIndexDataGridViewTextBoxColumn,
-            this.startTimeDataGridViewTextBoxColumn,
-            this.periodDataGridViewTextBoxColumn,
-            this.descriptionsDataGridViewTextBoxColumn,
-            this.violationsDataGridViewTextBoxColumn});
-            this.tourEventDtGrdVw.DataSource = this.tourEventBindingSource;
-            this.tourEventDtGrdVw.Location = new System.Drawing.Point(6, 19);
-            this.tourEventDtGrdVw.Name = "tourEventDtGrdVw";
-            this.tourEventDtGrdVw.Size = new System.Drawing.Size(1246, 158);
-            this.tourEventDtGrdVw.TabIndex = 1;
             // 
             // stationIndexDataGridViewTextBoxColumn
             // 
@@ -459,6 +426,40 @@
             // 
             this.tourPointResultBindingSource.DataSource = typeof(XServer.TourPointResult);
             // 
+            // tourEventsGrpBx
+            // 
+            this.tourEventsGrpBx.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tourEventsGrpBx.Controls.Add(this.tourEventDtGrdVw);
+            this.tourEventsGrpBx.Location = new System.Drawing.Point(0, 0);
+            this.tourEventsGrpBx.Name = "tourEventsGrpBx";
+            this.tourEventsGrpBx.Size = new System.Drawing.Size(1258, 183);
+            this.tourEventsGrpBx.TabIndex = 1;
+            this.tourEventsGrpBx.TabStop = false;
+            this.tourEventsGrpBx.Text = "Tour events";
+            // 
+            // tourEventDtGrdVw
+            // 
+            this.tourEventDtGrdVw.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tourEventDtGrdVw.AutoGenerateColumns = false;
+            this.tourEventDtGrdVw.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.tourEventDtGrdVw.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tourEventDtGrdVw.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tourPointIndexDataGridViewTextBoxColumn,
+            this.segmentIndexDataGridViewTextBoxColumn,
+            this.startTimeDataGridViewTextBoxColumn,
+            this.periodDataGridViewTextBoxColumn,
+            this.descriptionsDataGridViewTextBoxColumn,
+            this.violationsDataGridViewTextBoxColumn});
+            this.tourEventDtGrdVw.DataSource = this.tourEventBindingSource;
+            this.tourEventDtGrdVw.Location = new System.Drawing.Point(6, 19);
+            this.tourEventDtGrdVw.Name = "tourEventDtGrdVw";
+            this.tourEventDtGrdVw.Size = new System.Drawing.Size(1246, 158);
+            this.tourEventDtGrdVw.TabIndex = 1;
+            // 
             // tourPointIndexDataGridViewTextBoxColumn
             // 
             this.tourPointIndexDataGridViewTextBoxColumn.DataPropertyName = "tourPointIndex";
@@ -513,6 +514,7 @@
             this.ClientSize = new System.Drawing.Size(1282, 555);
             this.Controls.Add(this.tourResultSpltCntr);
             this.Controls.Add(this.tourResultsGrpBx);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TourEventForm";
             this.Text = "TourEventForm";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.TourEventForm_FormClosing);
@@ -527,10 +529,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.tourResultSpltCntr)).EndInit();
             this.tourResultSpltCntr.ResumeLayout(false);
             this.tourPointResultsGrpBx.ResumeLayout(false);
-            this.tourEventsGrpBx.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.tourPointResultsDtGrdVw)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tourEventDtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tourPointResultBindingSource)).EndInit();
+            this.tourEventsGrpBx.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tourEventDtGrdVw)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tourEventBindingSource)).EndInit();
             this.ResumeLayout(false);
 
