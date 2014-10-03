@@ -18,6 +18,7 @@ using System.Globalization;
 namespace XRouteTestClient
 {
     enum MySegmentAttributes { hasTollTruck, hasTollCar };
+
     enum MyResultListOptions
     {
         Map,
@@ -26,15 +27,15 @@ namespace XRouteTestClient
         RouteListManoeuvres,
         Texts,
         Waypoints,
-        TimeEvents,
+        TourEvents,
         DynamicInfo,
         ManoeuvreGroups
     };
 
     public partial class MainForm : Form
     {
-
-        WaypointDesc wpdStart, wpdDestination, wpdVia;
+        TourPointDesc startTourPoint, destinationTourPoint; 
+        WaypointDesc viaWaypoint;
         CallerContext cc;
         CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
         //2012-08-10 XML Snippet
@@ -51,13 +52,13 @@ namespace XRouteTestClient
         // the extended forms
         RouteListSegment_Form routeListSegment_Form = null;
         TextsForm textForm = null;
-        TimeEventsForm timeEventForm = null;
+        TourEventForm tourEventForm = null;
         NodesForm nodesForm = null;
         RouteManoeuvre_Form routeListManoeuvre_Form = null; // 2010-09-07
         //CountryInfoOptions countryInfoOptions; obsolete 2010-03-19
         CountryInfoVehicleOptions countryInfoVehicleOptions;
         //ExtendedRoute extendedRoute;
-        Tour tour = null;
+        AdvancedTour advancedTour = null;
         // 2010-08-26: Cost Computation
         double[] costVectorDistance = new double[8], costVectorPeriod = new double[8];
         // 2010-09-11 Waypoints
@@ -100,14 +101,14 @@ namespace XRouteTestClient
 
 
             //wpdStart = new WaypointDesc();
-            wpdStart = new TourPointDesc()
+            startTourPoint = new TourPointDesc()
             {
                 wrappedCoords = new XServer.Point[]{new XServer.Point(){
                     point = new XServer.PlainPoint()
                 }}
             };
             //wpdDestination = new WaypointDesc();
-            wpdDestination = new TourPointDesc()
+            destinationTourPoint = new TourPointDesc()
             {
                 wrappedCoords = new XServer.Point[]{new XServer.Point(){
                     point = new XServer.PlainPoint()
@@ -260,18 +261,22 @@ namespace XRouteTestClient
                 btnAction.BackColor = System.Drawing.Color.Yellow;
                 btnAction.Update();
 
+                // accepting both , and . as decimal separators for easier copy/past from other sources
                 char decimalSeparator = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
                 char notDecimalSeparator = decimalSeparator == '.' ? ',' : '.';
 
-                wpdStart.wrappedCoords[0].point.x = Convert.ToDouble(tbxStartX.Text.Replace(notDecimalSeparator,decimalSeparator));
-                wpdStart.wrappedCoords[0].point.y = Convert.ToDouble(tbxStartY.Text.Replace(notDecimalSeparator, decimalSeparator));
-                wpdStart.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeStart.SelectedItem.ToString()));
-                wpdDestination.wrappedCoords[0].point.x = Convert.ToDouble(tbxDestX.Text.Replace(notDecimalSeparator, decimalSeparator));
-                wpdDestination.wrappedCoords[0].point.y = Convert.ToDouble(tbxDestY.Text.Replace(notDecimalSeparator, decimalSeparator));
-                wpdDestination.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeDest.SelectedItem.ToString()));
+                //setting up waypointdesc
+                startTourPoint.wrappedCoords[0].point.x = Convert.ToDouble(tbxStartX.Text.Replace(notDecimalSeparator, decimalSeparator));
+                startTourPoint.wrappedCoords[0].point.y = Convert.ToDouble(tbxStartY.Text.Replace(notDecimalSeparator, decimalSeparator));
+                startTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeStart.SelectedItem.ToString()));
+                destinationTourPoint.wrappedCoords[0].point.x = Convert.ToDouble(tbxDestX.Text.Replace(notDecimalSeparator, decimalSeparator));
+                destinationTourPoint.wrappedCoords[0].point.y = Convert.ToDouble(tbxDestY.Text.Replace(notDecimalSeparator, decimalSeparator));
+                destinationTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeDest.SelectedItem.ToString()));
 
                 List<WaypointDesc> lstWaypointDesc = new List<WaypointDesc>();
-                lstWaypointDesc.Add(wpdStart);
+                lstWaypointDesc.Add(startTourPoint);
+
+                //check if we need the via point or not. If so add it
                 if (tbxFerryId.Text != "")
                 {
                     WaypointDesc wpdFerry = new WaypointDesc()
@@ -286,7 +291,7 @@ namespace XRouteTestClient
                 }
                 else if ((tbxViaX.Text != "") && (tbxViaY.Text != "") && (tbxFuzzyRadius.Text != ""))
                 {
-                    wpdVia = new WaypointDesc()
+                    viaWaypoint = new WaypointDesc()
                     {
                         fuzzyRadius = Convert.ToInt32(tbxFuzzyRadius.Text),
                         wrappedCoords = new XServer.Point[] 
@@ -305,9 +310,9 @@ namespace XRouteTestClient
                             viaType = ViaTypeEnum.FUZZY,
                         },
                     };
-                    lstWaypointDesc.Add(wpdVia);
+                    lstWaypointDesc.Add(viaWaypoint);
                 }
-                lstWaypointDesc.Add(wpdDestination);
+                lstWaypointDesc.Add(destinationTourPoint);
 
                 // 2010-03-19 Retour
                 if (cbxRetour.Checked)
@@ -321,7 +326,6 @@ namespace XRouteTestClient
                 }
 
                 WaypointDesc[] waypointDesc = lstWaypointDesc.ToArray();
-
 
                 ccpCoordFormat.value = cboCoordFormat.SelectedItem.ToString();
                 ccpProfile.value = tbxProfileRoute.Text;
@@ -445,11 +449,9 @@ namespace XRouteTestClient
                 // 2009-09-16 Texts 
                 rlo.texts = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Texts);
                 //2010-05-31 Nodes available
-                //rlo.nodes = cbxNodes.Checked;
                 rlo.nodes = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Nodes);
 
                 // 2011-02-24 DynamicInfo?
-                //rlo.dynamicInfo = cbxDynamicInfo.Checked;
                 rlo.dynamicInfo = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo);
 
 
@@ -479,6 +481,8 @@ namespace XRouteTestClient
 
                 //
                 countryInfoVehicleOptions.allEuro = cbxAllEuro.Checked;
+                countryInfoVehicleOptions.namedToll = true;
+                countryInfoVehicleOptions.namedTollSpecified = true;
                 countryInfoVehicleOptions.detailedTollCosts = cbxDetailedTollCosts.Checked;
                 countryInfoVehicleOptions.wrappedReductionIDs = null;
                 if (tbxTolldate.Text != "")
@@ -511,30 +515,74 @@ namespace XRouteTestClient
                 service.Url = tbxServiceRoute.Text;
                 DateTime dtStart = DateTime.Now;
 
-                if (radCalcTour.Checked)
+                if (radCalcAdvTour.Checked)
                 {
+                    TourOptions tourOptions = null;
 
-                    tour = service.calculateTour(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, countryInfoVehicleOptions, cc);
+                    tourOptions = new TourOptions()
+                    {
+                        driverSettings = new DriverSettings()
+                        {
+                            breakRuleDisabled = !breakRuleChkBx.Checked,
+                            breakRuleDisabledSpecified = true,
+                            dailyRestRuleDisabled = !dailyRestRuleChkBx.Checked,
+                            dailyRestRuleDisabledSpecified = true,
+                            weeklyRestRuleDisabled = !weeklyRestRuleChkBx.Checked,
+                            weeklyRestRuleDisabledSpecified = true,
+                            workingRuleDisabled = true,
+                            workingRuleDisabledSpecified = true,
+                        },
+                        regulations = new DriverRegulations()
+                        {
+                            
+                            breakRule = new BreakRule()
+                            {
+                                breakPeriod1 = int.Parse(breakPeriod1TxtBx.Text),
+                                breakPeriod2 = int.Parse(breakPeriod2TxtBx.Text),
+                                drivingPeriod = int.Parse(drivingPeriodTxtBx.Text),
+                            },
+                            dailyRestRule = new DailyRestRule()
+                            {
+                                extendedDrivingPeriod = int.Parse(extendedDrivingPeriodTxtBx.Text),
+                                firstSplitRestPeriod = int.Parse(firstSplitRestPeriodTxtbx.Text),
+                                maximumPeriodBetweenEndOfDailyRests = int.Parse(maximumPeriodBetweenEndOfDailyRestsTxtBx.Text),
+                                numberOfExtendedDrivingPeriods = int.Parse(numberOfExtendedDrivingPeriodsTxtBx.Text),
+                                numberOfReducedRestPeriods = int.Parse(numberOfReducedRestPeriodsTxtBx.Text),
+                                reducedRestPeriod = int.Parse(reducedRestPeriodTxtBx.Text),
+                                regularDrivingPeriod = int.Parse(regularDrivingPeriodTxtBx.Text),
+                                regularRestPeriod = int.Parse(regularRestPeriodTxtBx.Text),
+                                secondSplitRestPeriod = int.Parse(secondSplitRestPeriodTxtBx.Text),
+                            },
+                            weeklyRestRule = new WeeklyRestRule()
+                            {
+                                maximumBiweeklyDrivingPeriod = int.Parse(maximumBiweeklyDrivingPeriodTxtBx.Text),
+                                maximumPeriodBetweenWeeklyRests = int.Parse(maximumPeriodBetweenWeeklyRestsTxtBx.Text),
+                                maximumWeeklyDrivingPeriod = int.Parse(maximumWeeklyDrivingPeriodTxtBx.Text),
+                                weeklyRestPeriod = int.Parse(weeklyRestPeriodTxtBx.Text),
+                            },
+                        },
+                    };
+
+                    advancedTour = service.calculateAdvancedTour(waypointDesc, tourOptions, listRoutingOption.ToArray(), arrExceptionpath, rlo, countryInfoVehicleOptions, cc);
                 }
                 else if (radCalcExtRoute.Checked)
                 {
                     ExtendedRoute extRoute = service.calculateExtendedRoute(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, countryInfoVehicleOptions, cc); ;
-                    tour = new Tour();
-                    tour.route = extRoute.route;
-                    tour.wrappedCountryInfos = extRoute.wrappedCountryInfos;
-                    tour.tourSummary = null;
-                    tour.wrappedTimeEvents = null;
-                    tour.wrappedTourPoints = null;
+                    advancedTour = new AdvancedTour();
+                    advancedTour.route = extRoute.route;
+                    advancedTour.wrappedCountryInfos = extRoute.wrappedCountryInfos;
+                    advancedTour.wrappedTourEvents = null;
+                    advancedTour.wrappedTourPointResults = null;
                 }
-                else
+                else if (radCalcRoute.Checked)
                 {
-                    tour = new Tour();
-                    tour.route = service.calculateRoute(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, cc);
-                    tour.tourSummary = null;
-                    tour.wrappedCountryInfos = null;
-                    tour.wrappedTimeEvents = null;
-                    tour.wrappedTourPoints = null;
+                    advancedTour = new AdvancedTour();
+                    advancedTour.route = service.calculateRoute(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, cc);
+                    advancedTour.wrappedCountryInfos = null;
+                    advancedTour.wrappedTourEvents = null;
+                    advancedTour.wrappedTourPointResults = null;
                 }
+
                 DateTime dtStop = DateTime.Now;
                 TimeSpan ts = dtStop.Subtract(dtStart);
                 this.Text = ts.TotalMilliseconds.ToString();
@@ -547,20 +595,20 @@ namespace XRouteTestClient
                 {
                     if (routeListSegment_Form == null)
                     {
-                        routeListSegment_Form = new RouteListSegment_Form(tour.route);
+                        routeListSegment_Form = new RouteListSegment_Form(advancedTour.route);
                         routeListSegment_Form.Show();
                     }
                     else
                     {
-                        routeListSegment_Form.updateDGV(tour.route);
+                        routeListSegment_Form.updateDGV(advancedTour.route);
                         routeListSegment_Form.Visible = true;
                     }
                 }
 
-                if ((tour.wrappedCountryInfos != null) && (tour.wrappedCountryInfos.Length > 1))
+                if ((advancedTour.wrappedCountryInfos != null) && (advancedTour.wrappedCountryInfos.Length > 1))
                 {
                     bool checkAllEuro = true;
-                    foreach (CountryInfo curCountryInfo in tour.wrappedCountryInfos)
+                    foreach (CountryInfo curCountryInfo in advancedTour.wrappedCountryInfos)
                     {
                         if ((curCountryInfo.currency != Currency.EUR) && (curCountryInfo.currency != Currency.NONE))
                         {
@@ -569,11 +617,11 @@ namespace XRouteTestClient
                         }
                     }
                     if (checkAllEuro)
-                        tour.wrappedCountryInfos = mergeCountryInfo(tour.wrappedCountryInfos);
+                        advancedTour.wrappedCountryInfos = mergeCountryInfo(advancedTour.wrappedCountryInfos);
                 }
 
                 // since 2009-04.17: BinaryPath in output
-                tbxBinaryPathDescription.Text = tour.route.binaryPathDesc;
+                tbxBinaryPathDescription.Text = advancedTour.route.binaryPathDesc;
 
                 // since 2009-09-17: Texts
                 //if (cbxTexts.Checked)
@@ -581,59 +629,72 @@ namespace XRouteTestClient
                 {
                     if (textForm == null)
                     {
-                        textForm = new TextsForm(tour.route.wrappedTexts);
+                        textForm = new TextsForm(advancedTour.route.wrappedTexts);
                         textForm.Show();
                     }
                     else
                     {
-                        textForm.update(tour.route.wrappedTexts);
+                        textForm.update(advancedTour.route.wrappedTexts);
                         textForm.Visible = true;
                     }
                 }
                 // sind 2009-12-02: TimeEvents
+                // 2014-10-02: disabling because calculateTour is being replaced by calculated Advanced Tour
                 //if ((cbxTimeEvents.Checked) && (tour.wrappedTimeEvents != null))
-                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.TimeEvents)) && (tour.wrappedTimeEvents != null))
+                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.TourEvents)) && (advancedTour.wrappedTourEvents != null))
                 {
-                    if (timeEventForm == null)
+                    if (tourEventForm == null)
                     {
-                        timeEventForm = new TimeEventsForm(tour);
-                        timeEventForm.Show();
+                        tourEventForm = new TourEventForm(advancedTour);
+                        tourEventForm.Show();
                     }
                     else
                     {
-                        timeEventForm.update(tour);
-                        timeEventForm.Visible = true;
+                        tourEventForm.Update(advancedTour);
+                        tourEventForm.Visible = true;
                     }
+
+                    // TODO fix tourEventForm and enable it
+                    //if (timeEventForm == null)
+                    //{
+                    //    timeEventForm = new TimeEventsForm(advancedTour);
+                    //    timeEventForm.Show();
+                    //}
+                    //else
+                    //{
+                    //    timeEventForm.update(advancedTour);
+                    //    timeEventForm.Visible = true;
+                    //}
                 }
 
                 // 2010-05-31 Nodes Available
                 //if ((cbxNodes.Checked) && (tour.route != null) && (tour.route.wrappedNodes != null))
-                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Nodes)) && (tour.route != null) && (tour.route.wrappedNodes != null))
+                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Nodes)) && (advancedTour.route != null) && (advancedTour.route.wrappedNodes != null))
                 {
                     if (nodesForm == null)
                     {
-                        nodesForm = new NodesForm(tour.route);
+                        nodesForm = new NodesForm(advancedTour.route);
                         nodesForm.Show();
                     }
                     else
                     {
-                        nodesForm.update(tour.route);
+                        nodesForm.update(advancedTour.route);
                         nodesForm.Visible = true;
                     }
                 }
 
                 // 2010-09-07 RouteListManoeuvres
                 //if ((cbxRouteListManoeuvres.Checked) && (tour.route != null) && (tour.route.wrappedManoeuvres != null))
-                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.RouteListManoeuvres)) && (tour.route != null) && (tour.route.wrappedManoeuvres != null))
+                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.RouteListManoeuvres)) && (advancedTour.route != null) && (advancedTour.route.wrappedManoeuvres != null))
                 {
                     if (routeListManoeuvre_Form == null)
                     {
-                        routeListManoeuvre_Form = new RouteManoeuvre_Form(tour.route);
+                        routeListManoeuvre_Form = new RouteManoeuvre_Form(advancedTour.route);
                         routeListManoeuvre_Form.Show();
                     }
                     else
                     {
-                        routeListManoeuvre_Form.Update(tour.route);
+                        routeListManoeuvre_Form.Update(advancedTour.route);
                         routeListManoeuvre_Form.Visible = true;
 
                     }
@@ -641,16 +702,16 @@ namespace XRouteTestClient
 
                 // 2010-09-10 Waypoints
                 //if ((cbxWaypoints.Checked) && (tour.route != null) && (tour.route.wrappedStations != null))
-                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Waypoints)) && (tour.route != null) && (tour.route.wrappedStations != null))
+                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Waypoints)) && (advancedTour.route != null) && (advancedTour.route.wrappedStations != null))
                 {
                     if (waypoints_Form == null)
                     {
-                        waypoints_Form = new Waypoint_Form(tour.route);
+                        waypoints_Form = new Waypoint_Form(advancedTour.route);
                         waypoints_Form.Show();
                     }
                     else
                     {
-                        waypoints_Form.update(tour.route);
+                        waypoints_Form.update(advancedTour.route);
                         waypoints_Form.Visible = true;
 
                     }
@@ -658,40 +719,40 @@ namespace XRouteTestClient
 
                 // 2011-02-24 Dynmamic Info
                 //if ((cbxDynamicInfo.Checked) && (tour.route.dynamicInfo != null))
-                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo)) && (tour.route.dynamicInfo != null))
+                if ((lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo)) && (advancedTour.route.dynamicInfo != null))
                 {
                     if (dynamicInfoForm == null)
                     {
-                        dynamicInfoForm = new DynamicInfoForm(tour.route);
+                        dynamicInfoForm = new DynamicInfoForm(advancedTour.route);
                         dynamicInfoForm.Show();
                     }
                     else
                     {
-                        dynamicInfoForm.update(tour.route);
+                        dynamicInfoForm.update(advancedTour.route);
                         dynamicInfoForm.Visible = true;
                     }
                 }
 
                 // 2012-12-29 Emissions
-                if (tour.route.emissions != null)
+                if (advancedTour.route.emissions != null)
                 {
                     if (routeEmissions_Form == null)
                     {
-                        routeEmissions_Form = new Emissions_Form(new Emissions[] { tour.route.emissions });
+                        routeEmissions_Form = new Emissions_Form(new Emissions[] { advancedTour.route.emissions });
                         routeEmissions_Form.Show();
                     }
                     else
                     {
-                        routeEmissions_Form.update(new Emissions[] { tour.route.emissions });
+                        routeEmissions_Form.update(new Emissions[] { advancedTour.route.emissions });
                         routeEmissions_Form.Visible = true;
                     }
                 }
-                if (tour.route.wrappedSegments != null)
+                if (advancedTour.route.wrappedSegments != null)
                 {
-                    if (tour.route.wrappedSegments[0].emissions != null)
+                    if (advancedTour.route.wrappedSegments[0].emissions != null)
                     {
                         List<Emissions> lstEmissions = new List<Emissions>();
-                        foreach (RouteListSegment curRouteListSegment in tour.route.wrappedSegments)
+                        foreach (RouteListSegment curRouteListSegment in advancedTour.route.wrappedSegments)
                         {
                             lstEmissions.Add(curRouteListSegment.emissions);
                         }
@@ -710,17 +771,17 @@ namespace XRouteTestClient
 
 
 
-                if ((tbxServiceMap.Text != "") && (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Map)) && (tour.route.polygon != null))
+                if ((tbxServiceMap.Text != "") && (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Map)) && (advancedTour.route.polygon != null))
                 {
                     List<Layer> listLayer = new List<Layer>();
                     //
-                    CustomLayer clRoute = getRouteLayer(tour.route);
+                    CustomLayer clRoute = getRouteLayer(advancedTour.route);
                     listLayer.Add(clRoute);
-                    listLayer.Add(getRoutePointLayer(tour.route));
+                    listLayer.Add(getRoutePointLayer(advancedTour.route));
                     //
-                    CustomLayer clHasTollTruck = getTollLayer(tour.route, MySegmentAttributes.hasTollTruck);
+                    CustomLayer clHasTollTruck = getTollLayer(advancedTour.route, MySegmentAttributes.hasTollTruck);
                     listLayer.Add(clHasTollTruck);
-                    CustomLayer clHasTollCar = getTollLayer(tour.route, MySegmentAttributes.hasTollCar);
+                    CustomLayer clHasTollCar = getTollLayer(advancedTour.route, MySegmentAttributes.hasTollCar);
                     listLayer.Add(clHasTollCar);
 
                     // since 2009-04-23 display RoadEditor layer
@@ -734,53 +795,54 @@ namespace XRouteTestClient
                     }
 
                     // 20090525: Additional visualization of BoundingRectangles
-                    if (tour.route.wrappedBoundingRectangles != null)
+                    if (advancedTour.route.wrappedBoundingRectangles != null)
                     {
-                        CustomLayer clBoundingRectangles = getBoundingRectangles(tour.route);
+                        CustomLayer clBoundingRectangles = getBoundingRectangles(advancedTour.route);
                         listLayer.Add(clBoundingRectangles);
                     }
                     // Additional visualization of ManoeuvreGroups
-                    if (tour.route.wrappedManoeuvreGroup != null)
+                    if (advancedTour.route.wrappedManoeuvreGroup != null)
                     {
-                        CustomLayer clManoeuvreGroups = getManoeuvreGroupsLayer(tour.route);
+                        CustomLayer clManoeuvreGroups = getManoeuvreGroupsLayer(advancedTour.route);
                         listLayer.Add(clManoeuvreGroups);
                     }
 
-                    if (tour.route.wrappedManoeuvres != null)
+                    if (advancedTour.route.wrappedManoeuvres != null)
                     {
-                        CustomLayer clManoeuvres = getManoeuvresLayer(tour.route);
+                        CustomLayer clManoeuvres = getManoeuvresLayer(advancedTour.route);
                         listLayer.Add(clManoeuvres);
                     }
                     //
-                    CustomLayer clWaypoints = getWaypointsLayer(tour.route);
+                    CustomLayer clWaypoints = getWaypointsLayer(advancedTour.route);
                     listLayer.Add(clWaypoints);
 
                     // TimeEvents in map
-                    if (tour.wrappedTimeEvents != null)
+                    // TODO rewrite timevents to tourevents
+                    if (advancedTour.wrappedTourEvents != null)
                     {
-                        CustomLayer clTimeEvents = getTimeEventsLayer(tour);
-                        listLayer.Add(clTimeEvents);
+                        //CustomLayer clTimeEvents = getTimeEventsLayer(advancedTour);
+                        //listLayer.Add(clTimeEvents);
                     }
 
                     // 2009-07-23: ferry layer
-                    listLayer.Add(getFerryLayer(tour.route));
+                    listLayer.Add(getFerryLayer(advancedTour.route));
 
                     // 2010-03-23: SegmentAttributes
-                    if (tour.route.wrappedSegments != null)
+                    if (advancedTour.route.wrappedSegments != null)
                     {
-                        CustomLayer clSegmentAttributesLayer = getSegmentAttributesLayer(tour);
+                        CustomLayer clSegmentAttributesLayer = getSegmentAttributesLayer(advancedTour);
                         listLayer.Add(clSegmentAttributesLayer);
                     }
 
                     // 2010-11-05: TollSection FROM and TO
 
-                    if ((tour.wrappedCountryInfos != null) && (tour.wrappedCountryInfos[0] != null))
+                    if ((advancedTour.wrappedCountryInfos != null) && (advancedTour.wrappedCountryInfos[0] != null))
                     {
-                        if ((tour.wrappedCountryInfos[0].wrappedTollCostInfos != null) && (tour.wrappedCountryInfos[0].wrappedTollCostInfos.Length > 0))
-                            if (tour.wrappedCountryInfos[0].wrappedTollCostInfos[0] != null)
+                        if ((advancedTour.wrappedCountryInfos[0].wrappedTollCostInfos != null) && (advancedTour.wrappedCountryInfos[0].wrappedTollCostInfos.Length > 0))
+                            if (advancedTour.wrappedCountryInfos[0].wrappedTollCostInfos[0] != null)
                             {
                                 {
-                                    CustomLayer clTollSections = getTollSectionLayer(tour);
+                                    CustomLayer clTollSections = getTollSectionLayer(advancedTour);
                                     listLayer.Add(clTollSections);
                                 }
                             }
@@ -805,10 +867,10 @@ namespace XRouteTestClient
                     mapForm.Show();
                 }
 
-                tbxCountries.Text = ((tour.wrappedCountryInfos != null) ? (tour.wrappedCountryInfos.Length.ToString()) : ("N/A"));
-                tbxDistance.Text = tour.route.info.distance.ToString();
-                tbxTime.Text = displayTime(tour.route.info.time);
-                tbxCost.Text = tour.route.info.cost.ToString();
+                tbxCountries.Text = ((advancedTour.wrappedCountryInfos != null) ? (advancedTour.wrappedCountryInfos.Length.ToString()) : ("N/A"));
+                tbxDistance.Text = advancedTour.route.info.distance.ToString();
+                tbxTime.Text = displayTime(advancedTour.route.info.time);
+                tbxCost.Text = advancedTour.route.info.cost.ToString();
 
                 tbxPartCost.Text = "";
                 tbxPartDistance.Text = "";
@@ -828,9 +890,9 @@ namespace XRouteTestClient
                 }
 
                 lbxOutCountry.Items.Clear();
-                if (tour.wrappedCountryInfos != null)
+                if (advancedTour.wrappedCountryInfos != null)
                 {
-                    foreach (CountryInfo curCountryInfo in tour.wrappedCountryInfos)
+                    foreach (CountryInfo curCountryInfo in advancedTour.wrappedCountryInfos)
                     {
                         double currentToll = 0.0;
                         // ignore the initial SPECIALCHARGE aggregate, therefore
@@ -912,7 +974,7 @@ namespace XRouteTestClient
             clWaypoints.visible = Properties.Settings.Default.Visibility_Waypoints;
             List<XServer.Bitmap> lstWaypointBitmap = new List<XServer.Bitmap>();
             int indexWaypoint = 0;
-            foreach (WayPoint wp in tour.route.wrappedStations)
+            foreach (WayPoint wp in advancedTour.route.wrappedStations)
             {
                 XServer.Bitmap bmpWaypoint = new XServer.Bitmap();
                 bmpWaypoint.descr = (indexWaypoint).ToString() + " : " + displayTime(wp.accTime) + " : " + wp.wayPointType.ToString();
@@ -933,9 +995,9 @@ namespace XRouteTestClient
             }
 
 
-            if (wpdVia != null)
+            if (viaWaypoint != null)
             {
-                lstWaypointBitmap.Add(new XServer.Bitmap(Properties.Settings.Default.Waypoint_FUZZY, wpdVia.wrappedCoords[0], "FuzzyLocation"));
+                lstWaypointBitmap.Add(new XServer.Bitmap(Properties.Settings.Default.Waypoint_FUZZY, viaWaypoint.wrappedCoords[0], "FuzzyLocation"));
             }
 
             clWaypoints.wrappedBitmaps = new Bitmaps[] { new Bitmaps() };
@@ -984,9 +1046,9 @@ namespace XRouteTestClient
         private CustomLayer getManoeuvreGroupsLayer(Route route)
         {
             List<XServer.LineString> lstManoeuvreGroups = new List<XServer.LineString>();
-            for (int i = 0; i < tour.route.wrappedManoeuvreGroup.Length; i++)
+            for (int i = 0; i < advancedTour.route.wrappedManoeuvreGroup.Length; i++)
             {
-                BoundingRectangle boundingRectangle = tour.route.wrappedManoeuvreGroup[i].extend;
+                BoundingRectangle boundingRectangle = advancedTour.route.wrappedManoeuvreGroup[i].extend;
                 List<PlainPoint> lstPlainPoint = new List<PlainPoint>();
                 lstPlainPoint.Add(new PlainPoint(boundingRectangle.leftBottom.point.x, boundingRectangle.leftBottom.point.y));
                 lstPlainPoint.Add(new PlainPoint(boundingRectangle.leftBottom.point.x, boundingRectangle.rightTop.point.y));
@@ -1340,7 +1402,7 @@ namespace XRouteTestClient
             return cl;
         }
 
-        private CustomLayer getSegmentAttributesLayer(Tour tour)
+        private CustomLayer getSegmentAttributesLayer(AdvancedTour advancedTour)
         {
             CustomLayer cl = new CustomLayer();
             cl.centerObjects = true;
@@ -1349,8 +1411,8 @@ namespace XRouteTestClient
             cl.objectInfos = ObjectInfoType.REFERENCEPOINT;
             cl.visible = Properties.Settings.Default.Visibility_Segments;
             List<XServer.Bitmap> lstBmp = new List<XServer.Bitmap>();
-            bool textsAvailable = (tour.route.wrappedTexts != null);
-            foreach (RouteListSegment rls in tour.route.wrappedSegments)
+            bool textsAvailable = (advancedTour.route.wrappedTexts != null);
+            foreach (RouteListSegment rls in advancedTour.route.wrappedSegments)
             {
                 List<string> lstDescr = new List<string>();
                 lstDescr.Add("Segment");
@@ -1359,9 +1421,9 @@ namespace XRouteTestClient
                 lstDescr.Add("NC=" + rls.nC.ToString());
 
                 if ((rls.streetNameIdx >= 0) && (textsAvailable))
-                    lstDescr.Add("streetName = '" + tour.route.wrappedTexts[rls.streetNameIdx] + "'");
+                    lstDescr.Add("streetName = '" + advancedTour.route.wrappedTexts[rls.streetNameIdx] + "'");
                 if ((rls.dirInfoIdx >= 0) && (textsAvailable))
-                    lstDescr.Add("dirInfo = '" + tour.route.wrappedTexts[rls.dirInfoIdx] + "'");
+                    lstDescr.Add("dirInfo = '" + advancedTour.route.wrappedTexts[rls.dirInfoIdx] + "'");
                 string icon;
                 if (rls.segmentAttr != null)
                 {
@@ -1412,7 +1474,7 @@ namespace XRouteTestClient
                 }
                 string descr = String.Join("\r\n", lstDescr.ToArray());
                 XServer.Point point = new XServer.Point();
-                point.point = tour.route.polygon.lineString.wrappedPoints[rls.firstPolyIdx];
+                point.point = advancedTour.route.polygon.lineString.wrappedPoints[rls.firstPolyIdx];
                 XServer.Bitmap bmp = new XServer.Bitmap(icon, point, descr);
                 lstBmp.Add(bmp);
             }
@@ -1460,7 +1522,7 @@ namespace XRouteTestClient
         private void lbxOutCountry_SelectedIndexChanged(object sender, EventArgs e)
         {
             int i = ((ListBox)sender).SelectedIndex;
-            CountryInfo countryInfo = tour.wrappedCountryInfos[i];
+            CountryInfo countryInfo = advancedTour.wrappedCountryInfos[i];
             dgvTollCostInfo.DataSource = countryInfo.wrappedTollCostInfos;
             dgv_perNCRouteInfo.DataSource = countryInfo.wrappedPerNCRouteInfo;
             lbx_PerTypeTollPrice.DataSource = countryInfo.wrappedPerTypeTollPrice;
@@ -1471,7 +1533,7 @@ namespace XRouteTestClient
             tbxPartTime.Text = displayTime(partRouteInfo.time);
             tbxPartDistance.Text = partRouteInfo.distance.ToString();
             tbxPartCost.Text = partRouteInfo.cost.ToString();
-            RouteInfo routeInfo = tour.route.info;
+            RouteInfo routeInfo = advancedTour.route.info;
             tbxPercTime.Text = Convert.ToInt16(100.0 * Convert.ToDouble(partRouteInfo.time) / Convert.ToDouble(routeInfo.time)).ToString();
             tbxPercDistance.Text = Convert.ToInt16(100.0 * Convert.ToDouble(partRouteInfo.distance) / Convert.ToDouble(routeInfo.distance)).ToString();
             tbxPercCost.Text = Convert.ToInt16(100.0 * Convert.ToDouble(partRouteInfo.cost) / Convert.ToDouble(routeInfo.cost)).ToString();
@@ -1653,6 +1715,68 @@ namespace XRouteTestClient
             catch (Exception)
             {
             }
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void breakRuleChkBx_CheckedChanged(object sender, EventArgs e)
+        {
+            drivingPeriodTxtBx.Enabled = ((CheckBox)sender).Checked;
+            breakPeriod1TxtBx.Enabled = ((CheckBox)sender).Checked;
+            breakPeriod2TxtBx.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void load1DriverRegulationsBtn_Click(object sender, EventArgs e)
+        {
+            // break rule
+            drivingPeriodTxtBx.Text = "16200";
+            breakPeriod1TxtBx.Text = "900";
+            breakPeriod2TxtBx.Text = "1800";
+
+            // daily rest rule
+            regularRestPeriodTxtBx.Text = "39600";
+            firstSplitRestPeriodTxtbx.Text = "10800";
+            secondSplitRestPeriodTxtBx.Text = "32400";
+            reducedRestPeriodTxtBx.Text = "32400";
+            numberOfReducedRestPeriodsTxtBx.Text = "3";
+            regularDrivingPeriodTxtBx.Text = "32400";
+            extendedDrivingPeriodTxtBx.Text = "36000";
+            numberOfExtendedDrivingPeriodsTxtBx.Text = "2";
+            maximumPeriodBetweenEndOfDailyRestsTxtBx.Text = "86400";
+
+            // weekly rest rule
+            maximumPeriodBetweenWeeklyRestsTxtBx.Text = "518400";
+            maximumWeeklyDrivingPeriodTxtBx.Text = "201600";
+            maximumBiweeklyDrivingPeriodTxtBx.Text = "324000";
+            weeklyRestPeriodTxtBx.Text = "162000";
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            // break rule
+            drivingPeriodTxtBx.Text = "16200";
+            breakPeriod1TxtBx.Text = "900";
+            breakPeriod2TxtBx.Text = "1800";
+
+            // daily rest rule
+            regularRestPeriodTxtBx.Text = "32400";
+            firstSplitRestPeriodTxtbx.Text = "10800";
+            secondSplitRestPeriodTxtBx.Text = "32400";
+            reducedRestPeriodTxtBx.Text = "32400";
+            numberOfReducedRestPeriodsTxtBx.Text = "3";
+            regularDrivingPeriodTxtBx.Text = "64800";
+            extendedDrivingPeriodTxtBx.Text = "72000";
+            numberOfExtendedDrivingPeriodsTxtBx.Text = "2";
+            maximumPeriodBetweenEndOfDailyRestsTxtBx.Text = "108000";
+
+            // weekly rest rule
+            maximumPeriodBetweenWeeklyRestsTxtBx.Text = "518400";
+            maximumWeeklyDrivingPeriodTxtBx.Text = "403200";
+            maximumBiweeklyDrivingPeriodTxtBx.Text = "648000";
+            weeklyRestPeriodTxtBx.Text = "162000";
         }
     }
 }

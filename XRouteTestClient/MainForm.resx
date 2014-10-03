@@ -112,12 +112,12 @@
     <value>2.0</value>
   </resheader>
   <resheader name="reader">
-    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <resheader name="writer">
-    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
   <data name="labTime.ToolTip" xml:space="preserve">
@@ -691,7 +691,7 @@ currency consists of 1000 subunits, the price is given in 10 subunits.</value>
 sectionID, empty if this country has global toll (vignette).
 NOTE: This is an optional attribute and is set only if the REQUEST_VERSION is set to 1.4.5 or higher</value>
   </data>
-  <metadata name="tollCostInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+  <metadata name="tollCostInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>129, 17</value>
   </metadata>
   <data name="gbxOutCountries.ToolTip" xml:space="preserve">
@@ -871,7 +871,7 @@ options respecting both the defined exceptionPaths and CountryInfoOptions
 NOTE: just route.info.cost / route.info.distance / route.info.time will be set
 to "0" in ExtendedRoute response when all stations are identical</value>
   </data>
-  <data name="radCalcTour.ToolTip" xml:space="preserve">
+  <data name="radCalcAdvTour.ToolTip" xml:space="preserve">
     <value>Calculates a tour considering break and rest rules (defined by the native 
 profile configured in the xRoute profile). All arrival times at stations and 
 segments will be extended by break, rest, waiting times and so on. 
@@ -1187,7 +1187,7 @@ NOTE: If more than one ExceptionPath elements contain a non-empty 'street' attri
     <value>Describes a route path which has to be treated as ExceptionPath in the next route calculation. Use this option to calculate alternative routes, for example. NOTE: Only the first non-empty attribute 'nodes', 'extSegments', 'street', and 'binaryPathDesc' is considered. NOTE: If a street segment occurs in more than one instance of ExceptionPath, the final malus for this street segment will be computed as the average of the given maluses. There is on exception to this rule: If the street segment in question occurs in an ExceptionPath element with a malus of -99, the final malus will also be -99. This mechanism allows the client to compute an alternative route by still forcing xRoute to use a special street segment (e.g. a ferry).
 </value>
   </data>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         AAABAAEAEBAQAAAAAAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAA

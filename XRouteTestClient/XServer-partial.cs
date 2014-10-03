@@ -8,10 +8,30 @@ using System.Collections.Generic;
 
 namespace XServer
 {
+    public partial class TourPointResult
+    {
+        [XmlIgnore]
+        public int breakPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.breakPeriod : 0; } }
+        [XmlIgnore]
+        public int dailyRestPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.dailyRestPeriod : 0; } }
+        [XmlIgnore]
+        public int weeklyRestPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.weeklyRestPeriod : 0; } }
+        [XmlIgnore]
+        public int breakPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.breakPeriod : 0; } }
+        [XmlIgnore]
+        public int dailyRestPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.dailyRestPeriod : 0; } }
+        [XmlIgnore]
+        public int weeklyRestPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.weeklyRestPeriod : 0; } }
+    }
 
+    public partial class TourEvent
+    {
+        [XmlIgnore]
+        public string Violations { get { return (this.wrappedViolations != null) ? string.Join(" ; ", this.wrappedViolations) : null; } }
+        [XmlIgnore]
+        public string Descriptions { get { return (this.wrappedDescriptions != null) ? string.Join(" ; ", this.wrappedDescriptions) : null; } }
+    }
 
-    // 2014-09-16
-    // make segment attrbitues directly vieable from routelistsegment so we can easily populuate datagrid
     public partial class RouteListSegment
     {
         [XmlIgnore]
@@ -53,7 +73,7 @@ namespace XServer
     {
         public override string ToString()
         {
-            return this.condition.Replace("|"," | ");
+            return this.condition.Replace("|", " | ");
         }
     }
     // 2012.10.18 - SpeedLimits
@@ -64,11 +84,11 @@ namespace XServer
             List<string> lstSpeedLimit = new List<string>();
             foreach (SpeedLimit curSpeeedLimit in this.wrappedSpeedLimit)
                 lstSpeedLimit.Add(curSpeeedLimit.ToString());
-            return String.Join(",",lstSpeedLimit.ToArray());
+            return String.Join(",", lstSpeedLimit.ToArray());
         }
     }
-    
-    
+
+
     // 2011.12.29
     public partial class NormSpeed
     {
@@ -93,7 +113,7 @@ namespace XServer
                 return "n/a";
         }
     }
-    
+
     partial class Color
     {
         public Color() : base() { }
@@ -135,9 +155,9 @@ namespace XServer
     {
         public override string ToString()
         {
-            return "["+ x + ";" + y + "]";
+            return "[" + x + ";" + y + "]";
         }
-        
+
         public PlainPoint()
             : base()
         { }
@@ -154,7 +174,8 @@ namespace XServer
     {
         public PlainLineString() : base() { }
 
-        public PlainLineString(PlainPoint[] arrPlainPoint):base()
+        public PlainLineString(PlainPoint[] arrPlainPoint)
+            : base()
         {
             this.wrappedPoints = arrPlainPoint;
         }
@@ -176,7 +197,8 @@ namespace XServer
     partial class Bitmap
     {
         public Bitmap() : base() { }
-        public Bitmap(string name, Point position, string descr):base()
+        public Bitmap(string name, Point position, string descr)
+            : base()
         {
             this.descr = descr;
             this.name = name;
@@ -186,12 +208,14 @@ namespace XServer
 
     public partial class RouteListSegment
     {
-        public string Violations {
-            get {
+        public string Violations
+        {
+            get
+            {
                 if (this.wrappedViolations == null) return null;
-                return string.Join(" ; ",this.wrappedViolations);
+                return string.Join(" ; ", this.wrappedViolations);
             }
-            set {}
+            set { }
         }
     }
 }
