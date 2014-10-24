@@ -244,7 +244,7 @@ namespace XRouteTestClient
                 lbxResultListOptions.Items.Add(curMyResultListOptions);
             }
             //lbxResultListOptions.SelectedIndex = 0;
-
+            lbxResultListOptions.SelectedIndices.Add(0);
             lbxResultListOptions.SelectedIndices.Add(6);
 
             // 2012-12-29 HBEFA and Emissions
@@ -531,9 +531,8 @@ namespace XRouteTestClient
                             dailyRestRuleDisabledSpecified = true,
                             weeklyRestRuleDisabled = !weeklyRestRuleChkBx.Checked,
                             weeklyRestRuleDisabledSpecified = true,
-                            // TODO check if I can do something with working rule
-                            //workingRuleDisabled = !workingRuleChkBx.Checked,
-                            //workingRuleDisabledSpecified = true,
+                            workingRuleDisabled = !workingRuleChkBx.Checked,
+                            workingRuleDisabledSpecified = true,
                         },
                         regulations = new DriverRegulations()
                         {
@@ -563,17 +562,17 @@ namespace XRouteTestClient
                                 maximumWeeklyDrivingPeriod = int.Parse(maximumWeeklyDrivingPeriodTxtBx.Text),
                                 weeklyRestPeriod = int.Parse(weeklyRestPeriodTxtBx.Text),
                             },
-                            //workingRule = new WorkingRule()
-                            //{
-                            //    breakPeriod = int.Parse(breakPeriodTxtBx.Text),
-                            //    extendedBreakPeriod = int.Parse(extendedBreakPeriodTxtBx.Text),
-                            //    maxWorkingPeriodWithoutBreak = int.Parse(maxWorkingPeriodWithoutBreakTxtBx.Text),
-                            //    maxWorkingPeriodWithoutExtendedBreak = int.Parse(maxWorkingPeriodWithoutExtendedBreakTxtBx.Text),
-                            //    minPartialBreakLength = int.Parse(minPartialBreakLengthTxtBx.Text),
-                            //    maxWorkingPeriodWithoutDailyRest = int.Parse(maxWorkingPeriodWithoutDailyRestTxtBx.Text),
-                            //    maxWorkingPeriodPerWeek = int.Parse(maxWorkingPeriodPerWeekTxtBx.Text),
-                            //    dailyRestPeriod = int.Parse(dailyRestPeriodTxtBx.Text),
-                            //},
+                            workingRule = new WorkingRule()
+                            {
+                                breakPeriod = int.Parse(breakPeriodTxtBx.Text),
+                                extendedBreakPeriod = int.Parse(extendedBreakPeriodTxtBx.Text),
+                                maxWorkingPeriodWithoutBreak = int.Parse(maxWorkingPeriodWithoutBreakTxtBx.Text),
+                                maxWorkingPeriodWithoutExtendedBreak = int.Parse(maxWorkingPeriodWithoutExtendedBreakTxtBx.Text),
+                                minPartialBreakLength = int.Parse(minPartialBreakLengthTxtBx.Text),
+                                maxWorkingPeriodWithoutDailyRest = int.Parse(maxWorkingPeriodWithoutDailyRestTxtBx.Text),
+                                maxWorkingPeriodPerWeek = int.Parse(maxWorkingPeriodPerWeekTxtBx.Text),
+                                dailyRestPeriod = int.Parse(dailyRestPeriodTxtBx.Text),
+                            },
                         },
                     };
 
@@ -667,18 +666,6 @@ namespace XRouteTestClient
                         tourEventForm.Update(advancedTour);
                         tourEventForm.Visible = true;
                     }
-
-                    // TODO fix tourEventForm and enable it
-                    //if (timeEventForm == null)
-                    //{
-                    //    timeEventForm = new TimeEventsForm(advancedTour);
-                    //    timeEventForm.Show();
-                    //}
-                    //else
-                    //{
-                    //    timeEventForm.update(advancedTour);
-                    //    timeEventForm.Visible = true;
-                    //}
                 }
 
                 // 2010-05-31 Nodes Available

@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using System.Linq;
 using XServer;
 
 
@@ -47,6 +48,11 @@ namespace XRouteTestClient
             {
                 this.Text = "RouteListSegment / Length = " + route.wrappedSegments.Length;
             }
+            foreach (DataGridViewRow row in dgvRouteListSegment.Rows)
+            {
+                row.HeaderCell.Value = row.Index.ToString();
+            }
+            dgvRouteListSegment.AutoResizeRows();
         }
 
         private void RouteListSegment_Form_FormClosing(object sender, FormClosingEventArgs e)
