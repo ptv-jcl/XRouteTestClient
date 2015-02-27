@@ -226,7 +226,7 @@ namespace XRouteTestClient
 
             // radCalcExtRoute.Checked = Properties.Settings.Default.ExtendedRoute;
             // TODO find better way for default operation
-            radCalcAdvTour.Checked = true;
+            radCalcExtRoute.Checked = true;
             //2010-03-19 Retour
             cbxRetour.Checked = Properties.Settings.Default.RETOUR;
 
@@ -245,7 +245,7 @@ namespace XRouteTestClient
             }
             //lbxResultListOptions.SelectedIndex = 0;
             lbxResultListOptions.SelectedIndices.Add(0);
-            lbxResultListOptions.SelectedIndices.Add(6);
+            lbxResultListOptions.SelectedIndices.Add(1);
 
             // 2012-12-29 HBEFA and Emissions
             foreach (HBEFAVersion curHBEFAVersion in Enum.GetValues(typeof(HBEFAVersion)))
@@ -460,6 +460,8 @@ namespace XRouteTestClient
                 // 2011-12-27 PiggyBack invented with 1.14
                 rlo.segmentAttributePiggybackSpecified = true;
                 rlo.segmentAttributePiggyback = true;
+
+                rlo.speedLimits = cbxSpeedLimits.Checked;
 
                 // 2010-03-19 CountryInfoVehicleOptions
                 List<VehicleOption> lstVehicleOptions = new List<VehicleOption>();
