@@ -18,7 +18,7 @@
     </SccAuxPath>
     <SccProvider>
     </SccProvider>
-    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
@@ -48,6 +48,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -56,6 +57,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <ApplicationIcon>favicon.ico</ApplicationIcon>
@@ -107,11 +109,11 @@
     <Compile Include="TextsForm.Designer.cs">
       <DependentUpon>TextsForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="TimeEventsForm.cs">
+    <Compile Include="TourEventForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="TimeEventsForm.Designer.cs">
-      <DependentUpon>TimeEventsForm.cs</DependentUpon>
+    <Compile Include="TourEventForm.Designer.cs">
+      <DependentUpon>TourEventForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Waypoint_Form.cs">
       <SubType>Form</SubType>
@@ -172,9 +174,8 @@
       <SubType>Designer</SubType>
       <DependentUpon>TextsForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="TimeEventsForm.resx">
-      <SubType>Designer</SubType>
-      <DependentUpon>TimeEventsForm.cs</DependentUpon>
+    <EmbeddedResource Include="TourEventForm.resx">
+      <DependentUpon>TourEventForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Waypoint_Form.resx">
       <SubType>Designer</SubType>
@@ -195,6 +196,8 @@
     <None Include="Properties\DataSources\XServer.SegmentAttributes.datasource" />
     <None Include="Properties\DataSources\XServer.TimeEvent.datasource" />
     <None Include="Properties\DataSources\XServer.TollCostInfo.datasource" />
+    <None Include="Properties\DataSources\XServer.TourEvent.datasource" />
+    <None Include="Properties\DataSources\XServer.TourPointResult.datasource" />
     <None Include="Properties\DataSources\XServer.UniqueGeoID.datasource" />
     <None Include="Properties\DataSources\XServer.WayPoint.datasource" />
     <None Include="Properties\Settings.settings">

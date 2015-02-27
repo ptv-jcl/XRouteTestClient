@@ -193,7 +193,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6350326")]
+        [global::System.Configuration.DefaultSettingValueAttribute("7501785")]
         public double y2 {
             get {
                 return ((double)(this["y2"]));
@@ -205,7 +205,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("676464")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4182599")]
         public double x2 {
             get {
                 return ((double)(this["x2"]));
@@ -217,7 +217,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6467100")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4677217")]
         public double y1 {
             get {
                 return ((double)(this["y1"]));
@@ -229,7 +229,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("668425")]
+        [global::System.Configuration.DefaultSettingValueAttribute("-1017459")]
         public double x1 {
             get {
                 return ((double)(this["x1"]));
