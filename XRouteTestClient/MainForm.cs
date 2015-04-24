@@ -463,6 +463,9 @@ namespace XRouteTestClient
 
                 rlo.speedLimits = cbxSpeedLimits.Checked;
 
+                rlo.featureDescriptionsSpecified = true;
+                rlo.featureDescriptions = cbxFeatureLayerDescriptions.Checked;
+
                 // 2010-03-19 CountryInfoVehicleOptions
                 List<VehicleOption> lstVehicleOptions = new List<VehicleOption>();
                 if (tbxVP_AXLE_WEIGHT.Text != "") lstVehicleOptions.Add(getVehicleOption(VehicleParameter.AXLE_WEIGHT, tbxVP_AXLE_WEIGHT.Text));

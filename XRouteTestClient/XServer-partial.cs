@@ -66,6 +66,16 @@ namespace XServer
         public string additionalInfo { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
         [XmlIgnore]
         public string lowEmissionZoneType { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+        [XmlIgnore]
+        public string FLDescriptions { get { return (this.wrappedFeatureDescriptions != null) ? string.Join(" ; ", (object[])(this.wrappedFeatureDescriptions)) : null; } }
+    }
+
+    public partial class FeatureDescription
+    {
+        public override string ToString()
+        {
+            return this.themeId + this.description;
+        }
     }
 
     // 2012.10.18 - SpeedLimit (invented with 1.14.1)

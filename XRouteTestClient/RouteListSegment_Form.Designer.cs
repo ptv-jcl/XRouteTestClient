@@ -31,9 +31,16 @@ namespace XRouteTestClient
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RouteListSegment_Form));
             this.dgvRouteListSegment = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.routeListSegmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.accDistDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.accTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.additionalREDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FLDescriptions = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.violationsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.speedLimitsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,12 +72,6 @@ namespace XRouteTestClient
             this.streetNameIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.streetNoIdxDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.utcOffsetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.routeListSegmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRouteListSegment)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.routeListSegmentBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -83,6 +84,7 @@ namespace XRouteTestClient
             this.accDistDataGridViewTextBoxColumn,
             this.accTimeDataGridViewTextBoxColumn,
             this.additionalREDataGridViewTextBoxColumn,
+            this.FLDescriptions,
             this.violationsDataGridViewTextBoxColumn,
             this.speedLimitsDataGridViewTextBoxColumn,
             this.countryCodeDataGridViewTextBoxColumn,
@@ -121,6 +123,42 @@ namespace XRouteTestClient
             this.dgvRouteListSegment.Size = new System.Drawing.Size(732, 256);
             this.dgvRouteListSegment.TabIndex = 0;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "normSpeed";
+            this.dataGridViewTextBoxColumn1.HeaderText = "normSpeed";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "normSpeed";
+            this.dataGridViewTextBoxColumn2.HeaderText = "normSpeed";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "speedLimits";
+            this.dataGridViewTextBoxColumn3.HeaderText = "speedLimits";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "normSpeed";
+            this.dataGridViewTextBoxColumn4.HeaderText = "normSpeed";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ToolTipText = resources.GetString("dataGridViewTextBoxColumn4.ToolTipText");
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "speedLimits";
+            this.dataGridViewTextBoxColumn5.HeaderText = "speedLimits";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ToolTipText = resources.GetString("dataGridViewTextBoxColumn5.ToolTipText");
+            // 
+            // routeListSegmentBindingSource
+            // 
+            this.routeListSegmentBindingSource.DataSource = typeof(XServer.RouteListSegment);
+            // 
             // accDistDataGridViewTextBoxColumn
             // 
             this.accDistDataGridViewTextBoxColumn.DataPropertyName = "accDist";
@@ -139,6 +177,13 @@ namespace XRouteTestClient
             this.additionalREDataGridViewTextBoxColumn.HeaderText = "additionalRE";
             this.additionalREDataGridViewTextBoxColumn.Name = "additionalREDataGridViewTextBoxColumn";
             this.additionalREDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // FLDescriptions
+            // 
+            this.FLDescriptions.DataPropertyName = "FLDescriptions";
+            this.FLDescriptions.HeaderText = "FLDescriptions";
+            this.FLDescriptions.Name = "FLDescriptions";
+            this.FLDescriptions.ReadOnly = true;
             // 
             // violationsDataGridViewTextBoxColumn
             // 
@@ -341,42 +386,6 @@ namespace XRouteTestClient
             this.utcOffsetDataGridViewTextBoxColumn.HeaderText = "utcOffset";
             this.utcOffsetDataGridViewTextBoxColumn.Name = "utcOffsetDataGridViewTextBoxColumn";
             // 
-            // routeListSegmentBindingSource
-            // 
-            this.routeListSegmentBindingSource.DataSource = typeof(XServer.RouteListSegment);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "normSpeed";
-            this.dataGridViewTextBoxColumn1.HeaderText = "normSpeed";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "normSpeed";
-            this.dataGridViewTextBoxColumn2.HeaderText = "normSpeed";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "speedLimits";
-            this.dataGridViewTextBoxColumn3.HeaderText = "speedLimits";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "normSpeed";
-            this.dataGridViewTextBoxColumn4.HeaderText = "normSpeed";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ToolTipText = resources.GetString("dataGridViewTextBoxColumn4.ToolTipText");
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "speedLimits";
-            this.dataGridViewTextBoxColumn5.HeaderText = "speedLimits";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ToolTipText = resources.GetString("dataGridViewTextBoxColumn5.ToolTipText");
-            // 
             // RouteListSegment_Form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,6 +414,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.DataGridViewTextBoxColumn accDistDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn accTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn additionalREDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FLDescriptions;
         private System.Windows.Forms.DataGridViewTextBoxColumn violationsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn speedLimitsDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryCodeDataGridViewTextBoxColumn;

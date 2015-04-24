@@ -46,6 +46,7 @@ namespace XRouteTestClient
             this.routePointToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.segmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tollSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.lZVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMap)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -64,7 +65,8 @@ namespace XRouteTestClient
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.layersToolStripMenuItem});
+            this.layersToolStripMenuItem,
+            this.lZVToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(635, 24);
@@ -198,6 +200,13 @@ namespace XRouteTestClient
             this.tollSectionsToolStripMenuItem.Text = "TollSections";
             this.tollSectionsToolStripMenuItem.Click += new System.EventHandler(this.layerToolStripMenuItem_Click);
             // 
+            // lZVToolStripMenuItem
+            // 
+            this.lZVToolStripMenuItem.Name = "lZVToolStripMenuItem";
+            this.lZVToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
+            this.lZVToolStripMenuItem.Text = "LZV";
+            this.lZVToolStripMenuItem.Click += new System.EventHandler(this.lZVToolStripMenuItem_Click);
+            // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,5 +247,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.ToolStripMenuItem routePointToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem segmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tollSectionsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem lZVToolStripMenuItem;
     }
 }

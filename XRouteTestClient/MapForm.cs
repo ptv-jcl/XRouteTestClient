@@ -21,9 +21,9 @@ namespace XRouteTestClient
         ImageInfo imageInfo = new ImageInfo();
         MapParams mapParams = new MapParams();
         Layer[] arrLayer = null;
-        XMapWSService svcMap = new XMapWSService() 
-        { 
-            Credentials = new System.Net.NetworkCredential(Properties.Settings.Default.xmap_username,Properties.Settings.Default.xmap_password)
+        XMapWSService svcMap = new XMapWSService()
+        {
+            Credentials = new System.Net.NetworkCredential(Properties.Settings.Default.xmap_username, Properties.Settings.Default.xmap_password)
         };
         XServer.CallerContext callerContext = null;
 
@@ -31,7 +31,7 @@ namespace XRouteTestClient
         {
             InitializeComponent();
         }
-        public MapForm(string url,MapSection mapSection,Layer[] arrLayer, XServer.CallerContext callerContext)
+        public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext)
         {
             InitializeComponent();
             this.svcMap.Url = url;
@@ -82,9 +82,9 @@ namespace XRouteTestClient
                         if (curLayer.visible)
                             lstVisibleLayers.Add(curLayer);
                     }
-                    
+
                     DateTime dtStart = DateTime.Now;
-                    map = svcMap.renderMap(mapSection, mapParams, imageInfo, lstVisibleLayers.ToArray() , true, callerContext);
+                    map = svcMap.renderMap(mapSection, mapParams, imageInfo, lstVisibleLayers.ToArray(), true, callerContext);
                     DateTime dtStop = DateTime.Now;
                     TimeSpan ts = dtStop.Subtract(dtStart);
                     this.Text = ts.TotalMilliseconds.ToString() + " ms";
@@ -159,8 +159,8 @@ namespace XRouteTestClient
                 mapSection.scrollVertical = scroll;
             }
             else if (e.KeyChar == '5')
-            { 
-                centerLayer(true); 
+            {
+                centerLayer(true);
             }
             else if (e.KeyChar == '0')
             {
@@ -216,9 +216,9 @@ namespace XRouteTestClient
                 {
                     int count = lstMapSection.Count;
                     // jump to the previous mapsection
-                    mapSection = lstMapSection[count-2];
+                    mapSection = lstMapSection[count - 2];
                     // remove the last two entries
-                    lstMapSection.RemoveRange(count-2, 2);
+                    lstMapSection.RemoveRange(count - 2, 2);
                 }
                 else
                 {
@@ -252,7 +252,7 @@ namespace XRouteTestClient
             else
                 lastTooltip = e.Location;
 
-            double mx = (double)(e.X),my = (double)(e.Y);
+            double mx = (double)(e.X), my = (double)(e.Y);
             List<string> lstDescr = new List<string>();
             foreach (ObjectInfos oi in map.wrappedObjects)
             {
@@ -287,6 +287,18 @@ namespace XRouteTestClient
             tsmi.Checked = !(tsmi.Checked);
             switchVisibility(tsmi.Text);
             renderMap();
+        }
+
+        private void lZVToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int len = arrLayer.Length + 1;
+            Layer[] tempArray = new Layer[len];
+            Array.Copy(arrLayer, tempArray, arrLayer.Length);
+            arrLayer = tempArray;
+            arrLayer[arrLayer.Length - 1] = new FeatureLayer() { name = "PTV_PreferredRoutes", visible = true };
+            lZVToolStripMenuItem.Checked = true;
+            lZVToolStripMenuItem.Enabled = false;
+
         }
 
         //private void layersToolStripMenuItem_Click(object sender, EventArgs e)
