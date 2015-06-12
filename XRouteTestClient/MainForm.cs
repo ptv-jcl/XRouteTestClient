@@ -332,7 +332,7 @@ namespace XRouteTestClient
                 ccpCoordFormat.value = cboCoordFormat.SelectedItem.ToString();
                 ccpProfile.value = tbxProfileRoute.Text;
                 // 2012-08-10 XmlSnippet 
-                if (tbxXMLSnippet.Text != "")
+                if (enableSnippetChckBx.Checked)
                 {
                     ccpXmlSnippet.value = tbxXMLSnippet.Text;
                 }
@@ -1771,6 +1771,11 @@ namespace XRouteTestClient
             maximumWeeklyDrivingPeriodTxtBx.Text = "403200";
             maximumBiweeklyDrivingPeriodTxtBx.Text = "648000";
             weeklyRestPeriodTxtBx.Text = "162000";
+        }
+
+        private void enableSnippetChckBx_CheckedChanged(object sender, EventArgs e)
+        {
+            tbxXMLSnippet.Enabled = enableSnippetChckBx.Checked;
         }
     }
 }

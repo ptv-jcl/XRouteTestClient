@@ -301,6 +301,17 @@ namespace XRouteTestClient
 
         }
 
+        private void pTVTrafficIncidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int len = arrLayer.Length + 1;
+            Layer[] tempArray = new Layer[len];
+            Array.Copy(arrLayer, tempArray, arrLayer.Length);
+            arrLayer = tempArray;
+            arrLayer[arrLayer.Length - 1] = new FeatureLayer() { name = "PTV_TrafficIncidents", visible = true };
+            pTVTrafficIncidentsToolStripMenuItem.Checked = true;
+            pTVTrafficIncidentsToolStripMenuItem.Enabled = false;
+        }
+
         //private void layersToolStripMenuItem_Click(object sender, EventArgs e)
         //{
 

@@ -47,6 +47,8 @@ namespace XRouteTestClient
             this.segmentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tollSectionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.lZVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.featureLayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTVTrafficIncidentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMap)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -66,7 +68,8 @@ namespace XRouteTestClient
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.layersToolStripMenuItem,
-            this.lZVToolStripMenuItem});
+            this.lZVToolStripMenuItem,
+            this.featureLayerToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(635, 24);
@@ -207,6 +210,21 @@ namespace XRouteTestClient
             this.lZVToolStripMenuItem.Text = "LZV";
             this.lZVToolStripMenuItem.Click += new System.EventHandler(this.lZVToolStripMenuItem_Click);
             // 
+            // featureLayerToolStripMenuItem
+            // 
+            this.featureLayerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pTVTrafficIncidentsToolStripMenuItem});
+            this.featureLayerToolStripMenuItem.Name = "featureLayerToolStripMenuItem";
+            this.featureLayerToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
+            this.featureLayerToolStripMenuItem.Text = "FeatureLayer";
+            // 
+            // pTVTrafficIncidentsToolStripMenuItem
+            // 
+            this.pTVTrafficIncidentsToolStripMenuItem.Name = "pTVTrafficIncidentsToolStripMenuItem";
+            this.pTVTrafficIncidentsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.pTVTrafficIncidentsToolStripMenuItem.Text = "PTV_TrafficIncidents";
+            this.pTVTrafficIncidentsToolStripMenuItem.Click += new System.EventHandler(this.pTVTrafficIncidentsToolStripMenuItem_Click);
+            // 
             // MapForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -248,5 +266,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.ToolStripMenuItem segmentsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem tollSectionsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem lZVToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem featureLayerToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pTVTrafficIncidentsToolStripMenuItem;
     }
 }
