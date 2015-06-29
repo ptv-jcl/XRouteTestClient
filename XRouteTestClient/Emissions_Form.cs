@@ -44,5 +44,10 @@ namespace XRouteTestClient
 
         }
 
+        private void emissionsBindingSource_CurrentChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

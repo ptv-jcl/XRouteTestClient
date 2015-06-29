@@ -31,29 +31,28 @@ namespace XRouteTestClient
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Emissions_Form));
             this.dgvEmissions = new System.Windows.Forms.DataGridView();
-            this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carbonDioxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.carbonMonoxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ammoniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.benzeneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hydrocarbonsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.leadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.methaneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nitrogenOxidesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nitrousOxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.particlesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sulphurDioxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tolueneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.xyleneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.emissionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.xyleneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tolueneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sulphurDioxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.particlesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nitrousOxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nitrogenOxidesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.methaneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.leadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hydrocarbonsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.benzeneDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ammoniaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carbonMonoxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.carbonDioxideDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fuelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmissions)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emissionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvEmissions
             // 
-            this.dgvEmissions.AutoGenerateColumns = false;
             this.dgvEmissions.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmissions.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.fuelDataGridViewTextBoxColumn,
@@ -71,110 +70,15 @@ namespace XRouteTestClient
             this.sulphurDioxideDataGridViewTextBoxColumn,
             this.tolueneDataGridViewTextBoxColumn,
             this.xyleneDataGridViewTextBoxColumn});
-            this.dgvEmissions.DataSource = this.emissionsBindingSource;
             this.dgvEmissions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvEmissions.Location = new System.Drawing.Point(0, 0);
             this.dgvEmissions.Name = "dgvEmissions";
             this.dgvEmissions.Size = new System.Drawing.Size(617, 164);
             this.dgvEmissions.TabIndex = 0;
             // 
-            // fuelDataGridViewTextBoxColumn
+            // emissionsBindingSource
             // 
-            this.fuelDataGridViewTextBoxColumn.DataPropertyName = "fuel";
-            this.fuelDataGridViewTextBoxColumn.HeaderText = "fuel";
-            this.fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
-            this.fuelDataGridViewTextBoxColumn.ToolTipText = "petrol/fuel [in kg]";
-            // 
-            // carbonDioxideDataGridViewTextBoxColumn
-            // 
-            this.carbonDioxideDataGridViewTextBoxColumn.DataPropertyName = "carbonDioxide";
-            this.carbonDioxideDataGridViewTextBoxColumn.HeaderText = "carbonDioxide";
-            this.carbonDioxideDataGridViewTextBoxColumn.Name = "carbonDioxideDataGridViewTextBoxColumn";
-            this.carbonDioxideDataGridViewTextBoxColumn.ToolTipText = "carbon dioxide [in kg] (total value)";
-            // 
-            // carbonMonoxideDataGridViewTextBoxColumn
-            // 
-            this.carbonMonoxideDataGridViewTextBoxColumn.DataPropertyName = "carbonMonoxide";
-            this.carbonMonoxideDataGridViewTextBoxColumn.HeaderText = "carbonMonoxide";
-            this.carbonMonoxideDataGridViewTextBoxColumn.Name = "carbonMonoxideDataGridViewTextBoxColumn";
-            this.carbonMonoxideDataGridViewTextBoxColumn.ToolTipText = "carbon monoxide [in g]";
-            // 
-            // ammoniaDataGridViewTextBoxColumn
-            // 
-            this.ammoniaDataGridViewTextBoxColumn.DataPropertyName = "ammonia";
-            this.ammoniaDataGridViewTextBoxColumn.HeaderText = "ammonia";
-            this.ammoniaDataGridViewTextBoxColumn.Name = "ammoniaDataGridViewTextBoxColumn";
-            this.ammoniaDataGridViewTextBoxColumn.ToolTipText = "ammonia [in g]";
-            // 
-            // benzeneDataGridViewTextBoxColumn
-            // 
-            this.benzeneDataGridViewTextBoxColumn.DataPropertyName = "benzene";
-            this.benzeneDataGridViewTextBoxColumn.HeaderText = "benzene";
-            this.benzeneDataGridViewTextBoxColumn.Name = "benzeneDataGridViewTextBoxColumn";
-            this.benzeneDataGridViewTextBoxColumn.ToolTipText = "benzene [in g]";
-            // 
-            // hydrocarbonsDataGridViewTextBoxColumn
-            // 
-            this.hydrocarbonsDataGridViewTextBoxColumn.DataPropertyName = "hydrocarbons";
-            this.hydrocarbonsDataGridViewTextBoxColumn.HeaderText = "hydrocarbons";
-            this.hydrocarbonsDataGridViewTextBoxColumn.Name = "hydrocarbonsDataGridViewTextBoxColumn";
-            this.hydrocarbonsDataGridViewTextBoxColumn.ToolTipText = "hydrocarbons, total [in g]";
-            // 
-            // hydrocarbonsExMethaneDataGridViewTextBoxColumn
-            // 
-            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.DataPropertyName = "hydrocarbonsExMethane";
-            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.HeaderText = "hydrocarbonsExMethane";
-            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.Name = "hydrocarbonsExMethaneDataGridViewTextBoxColumn";
-            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.ToolTipText = "hydrocarbons except for methane [in g]";
-            // 
-            // leadDataGridViewTextBoxColumn
-            // 
-            this.leadDataGridViewTextBoxColumn.DataPropertyName = "lead";
-            this.leadDataGridViewTextBoxColumn.HeaderText = "lead";
-            this.leadDataGridViewTextBoxColumn.Name = "leadDataGridViewTextBoxColumn";
-            this.leadDataGridViewTextBoxColumn.ToolTipText = "lead [in g]";
-            // 
-            // methaneDataGridViewTextBoxColumn
-            // 
-            this.methaneDataGridViewTextBoxColumn.DataPropertyName = "methane";
-            this.methaneDataGridViewTextBoxColumn.HeaderText = "methane";
-            this.methaneDataGridViewTextBoxColumn.Name = "methaneDataGridViewTextBoxColumn";
-            this.methaneDataGridViewTextBoxColumn.ToolTipText = "methane [in g]";
-            // 
-            // nitrogenOxidesDataGridViewTextBoxColumn
-            // 
-            this.nitrogenOxidesDataGridViewTextBoxColumn.DataPropertyName = "nitrogenOxides";
-            this.nitrogenOxidesDataGridViewTextBoxColumn.HeaderText = "nitrogenOxides";
-            this.nitrogenOxidesDataGridViewTextBoxColumn.Name = "nitrogenOxidesDataGridViewTextBoxColumn";
-            this.nitrogenOxidesDataGridViewTextBoxColumn.ToolTipText = "nitrogen oxides [in g]";
-            // 
-            // nitrousOxideDataGridViewTextBoxColumn
-            // 
-            this.nitrousOxideDataGridViewTextBoxColumn.DataPropertyName = "nitrousOxide";
-            this.nitrousOxideDataGridViewTextBoxColumn.HeaderText = "nitrousOxide";
-            this.nitrousOxideDataGridViewTextBoxColumn.Name = "nitrousOxideDataGridViewTextBoxColumn";
-            this.nitrousOxideDataGridViewTextBoxColumn.ToolTipText = "nitrous oxide [in g]";
-            // 
-            // particlesDataGridViewTextBoxColumn
-            // 
-            this.particlesDataGridViewTextBoxColumn.DataPropertyName = "particles";
-            this.particlesDataGridViewTextBoxColumn.HeaderText = "particles";
-            this.particlesDataGridViewTextBoxColumn.Name = "particlesDataGridViewTextBoxColumn";
-            this.particlesDataGridViewTextBoxColumn.ToolTipText = "particular mass [in g]";
-            // 
-            // sulphurDioxideDataGridViewTextBoxColumn
-            // 
-            this.sulphurDioxideDataGridViewTextBoxColumn.DataPropertyName = "sulphurDioxide";
-            this.sulphurDioxideDataGridViewTextBoxColumn.HeaderText = "sulphurDioxide";
-            this.sulphurDioxideDataGridViewTextBoxColumn.Name = "sulphurDioxideDataGridViewTextBoxColumn";
-            this.sulphurDioxideDataGridViewTextBoxColumn.ToolTipText = "sulphur dioxide [in g]";
-            // 
-            // tolueneDataGridViewTextBoxColumn
-            // 
-            this.tolueneDataGridViewTextBoxColumn.DataPropertyName = "toluene";
-            this.tolueneDataGridViewTextBoxColumn.HeaderText = "toluene";
-            this.tolueneDataGridViewTextBoxColumn.Name = "tolueneDataGridViewTextBoxColumn";
-            this.tolueneDataGridViewTextBoxColumn.ToolTipText = "toluene [in g] (only HBEFA_2_1)";
+            this.emissionsBindingSource.DataSource = typeof(XServer.Emissions);
             // 
             // xyleneDataGridViewTextBoxColumn
             // 
@@ -183,9 +87,103 @@ namespace XRouteTestClient
             this.xyleneDataGridViewTextBoxColumn.Name = "xyleneDataGridViewTextBoxColumn";
             this.xyleneDataGridViewTextBoxColumn.ToolTipText = "xylene [in g] (only HBEFA_2_1)";
             // 
-            // emissionsBindingSource
+            // tolueneDataGridViewTextBoxColumn
             // 
-            this.emissionsBindingSource.DataSource = typeof(XServer.Emissions);
+            this.tolueneDataGridViewTextBoxColumn.DataPropertyName = "toluene";
+            this.tolueneDataGridViewTextBoxColumn.HeaderText = "toluene";
+            this.tolueneDataGridViewTextBoxColumn.Name = "tolueneDataGridViewTextBoxColumn";
+            this.tolueneDataGridViewTextBoxColumn.ToolTipText = "toluene [in g] (only HBEFA_2_1)";
+            // 
+            // sulphurDioxideDataGridViewTextBoxColumn
+            // 
+            this.sulphurDioxideDataGridViewTextBoxColumn.DataPropertyName = "sulphurDioxide";
+            this.sulphurDioxideDataGridViewTextBoxColumn.HeaderText = "sulphurDioxide";
+            this.sulphurDioxideDataGridViewTextBoxColumn.Name = "sulphurDioxideDataGridViewTextBoxColumn";
+            this.sulphurDioxideDataGridViewTextBoxColumn.ToolTipText = "sulphur dioxide [in g]";
+            // 
+            // particlesDataGridViewTextBoxColumn
+            // 
+            this.particlesDataGridViewTextBoxColumn.DataPropertyName = "particles";
+            this.particlesDataGridViewTextBoxColumn.HeaderText = "particles";
+            this.particlesDataGridViewTextBoxColumn.Name = "particlesDataGridViewTextBoxColumn";
+            this.particlesDataGridViewTextBoxColumn.ToolTipText = "particular mass [in g]";
+            // 
+            // nitrousOxideDataGridViewTextBoxColumn
+            // 
+            this.nitrousOxideDataGridViewTextBoxColumn.DataPropertyName = "nitrousOxide";
+            this.nitrousOxideDataGridViewTextBoxColumn.HeaderText = "nitrousOxide";
+            this.nitrousOxideDataGridViewTextBoxColumn.Name = "nitrousOxideDataGridViewTextBoxColumn";
+            this.nitrousOxideDataGridViewTextBoxColumn.ToolTipText = "nitrous oxide [in g]";
+            // 
+            // nitrogenOxidesDataGridViewTextBoxColumn
+            // 
+            this.nitrogenOxidesDataGridViewTextBoxColumn.DataPropertyName = "nitrogenOxides";
+            this.nitrogenOxidesDataGridViewTextBoxColumn.HeaderText = "nitrogenOxides";
+            this.nitrogenOxidesDataGridViewTextBoxColumn.Name = "nitrogenOxidesDataGridViewTextBoxColumn";
+            this.nitrogenOxidesDataGridViewTextBoxColumn.ToolTipText = "nitrogen oxides [in g]";
+            // 
+            // methaneDataGridViewTextBoxColumn
+            // 
+            this.methaneDataGridViewTextBoxColumn.DataPropertyName = "methane";
+            this.methaneDataGridViewTextBoxColumn.HeaderText = "methane";
+            this.methaneDataGridViewTextBoxColumn.Name = "methaneDataGridViewTextBoxColumn";
+            this.methaneDataGridViewTextBoxColumn.ToolTipText = "methane [in g]";
+            // 
+            // leadDataGridViewTextBoxColumn
+            // 
+            this.leadDataGridViewTextBoxColumn.DataPropertyName = "lead";
+            this.leadDataGridViewTextBoxColumn.HeaderText = "lead";
+            this.leadDataGridViewTextBoxColumn.Name = "leadDataGridViewTextBoxColumn";
+            this.leadDataGridViewTextBoxColumn.ToolTipText = "lead [in g]";
+            // 
+            // hydrocarbonsExMethaneDataGridViewTextBoxColumn
+            // 
+            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.DataPropertyName = "hydrocarbonsExMethane";
+            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.HeaderText = "hydrocarbonsExMethane";
+            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.Name = "hydrocarbonsExMethaneDataGridViewTextBoxColumn";
+            this.hydrocarbonsExMethaneDataGridViewTextBoxColumn.ToolTipText = "hydrocarbons except for methane [in g]";
+            // 
+            // hydrocarbonsDataGridViewTextBoxColumn
+            // 
+            this.hydrocarbonsDataGridViewTextBoxColumn.DataPropertyName = "hydrocarbons";
+            this.hydrocarbonsDataGridViewTextBoxColumn.HeaderText = "hydrocarbons";
+            this.hydrocarbonsDataGridViewTextBoxColumn.Name = "hydrocarbonsDataGridViewTextBoxColumn";
+            this.hydrocarbonsDataGridViewTextBoxColumn.ToolTipText = "hydrocarbons, total [in g]";
+            // 
+            // benzeneDataGridViewTextBoxColumn
+            // 
+            this.benzeneDataGridViewTextBoxColumn.DataPropertyName = "benzene";
+            this.benzeneDataGridViewTextBoxColumn.HeaderText = "benzene";
+            this.benzeneDataGridViewTextBoxColumn.Name = "benzeneDataGridViewTextBoxColumn";
+            this.benzeneDataGridViewTextBoxColumn.ToolTipText = "benzene [in g]";
+            // 
+            // ammoniaDataGridViewTextBoxColumn
+            // 
+            this.ammoniaDataGridViewTextBoxColumn.DataPropertyName = "ammonia";
+            this.ammoniaDataGridViewTextBoxColumn.HeaderText = "ammonia";
+            this.ammoniaDataGridViewTextBoxColumn.Name = "ammoniaDataGridViewTextBoxColumn";
+            this.ammoniaDataGridViewTextBoxColumn.ToolTipText = "ammonia [in g]";
+            // 
+            // carbonMonoxideDataGridViewTextBoxColumn
+            // 
+            this.carbonMonoxideDataGridViewTextBoxColumn.DataPropertyName = "carbonMonoxide";
+            this.carbonMonoxideDataGridViewTextBoxColumn.HeaderText = "carbonMonoxide";
+            this.carbonMonoxideDataGridViewTextBoxColumn.Name = "carbonMonoxideDataGridViewTextBoxColumn";
+            this.carbonMonoxideDataGridViewTextBoxColumn.ToolTipText = "carbon monoxide [in g]";
+            // 
+            // carbonDioxideDataGridViewTextBoxColumn
+            // 
+            this.carbonDioxideDataGridViewTextBoxColumn.DataPropertyName = "carbonDioxide";
+            this.carbonDioxideDataGridViewTextBoxColumn.HeaderText = "carbonDioxide";
+            this.carbonDioxideDataGridViewTextBoxColumn.Name = "carbonDioxideDataGridViewTextBoxColumn";
+            this.carbonDioxideDataGridViewTextBoxColumn.ToolTipText = "carbon dioxide [in kg] (total value)";
+            // 
+            // fuelDataGridViewTextBoxColumn
+            // 
+            this.fuelDataGridViewTextBoxColumn.DataPropertyName = "fuel";
+            this.fuelDataGridViewTextBoxColumn.HeaderText = "fuel";
+            this.fuelDataGridViewTextBoxColumn.Name = "fuelDataGridViewTextBoxColumn";
+            this.fuelDataGridViewTextBoxColumn.ToolTipText = "petrol/fuel [in kg]";
             // 
             // Emissions_Form
             // 
@@ -207,7 +205,6 @@ namespace XRouteTestClient
         #endregion
 
         private System.Windows.Forms.DataGridView dgvEmissions;
-        private System.Windows.Forms.BindingSource emissionsBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn fuelDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carbonDioxideDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn carbonMonoxideDataGridViewTextBoxColumn;
@@ -223,5 +220,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.DataGridViewTextBoxColumn sulphurDioxideDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tolueneDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn xyleneDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource emissionsBindingSource;
     }
 }

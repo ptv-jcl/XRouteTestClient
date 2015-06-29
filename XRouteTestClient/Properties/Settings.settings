@@ -36,7 +36,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="REQUEST_VERSION" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1.18.1</Value>
+      <Value Profile="(Default)">1.20</Value>
     </Setting>
     <Setting Name="COUNTRY_ENCODING" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -60,10 +60,10 @@
       <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="UrlRoute" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://127.0.0.1:50030/xroute/ws/XRoute</Value>
+      <Value Profile="(Default)">https://xroute-tln-eu-n.cloud.ptvgroup.com/xroute/ws/XRoute</Value>
     </Setting>
     <Setting Name="UrlMap" Type="System.String" Scope="User">
-      <Value Profile="(Default)">http://127.0.0.1:50010/xmap/ws/XMap</Value>
+      <Value Profile="(Default)">https://xmap-tln-eu-n.cloud.ptvgroup.com/xmap/ws/XMap</Value>
     </Setting>
     <Setting Name="LinkType_START" Type="System.String" Scope="User">
       <Value Profile="(Default)">AUTO_LINKING</Value>
@@ -445,10 +445,10 @@
       <Value Profile="(Default)">xtok</Value>
     </Setting>
     <Setting Name="xroute_password" Type="System.String" Scope="User">
-      <Value Profile="(Default)">xtok</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="xmap_username" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">xtok</Value>
     </Setting>
     <Setting Name="xmap_password" Type="System.String" Scope="User">
       <Value Profile="(Default)" />

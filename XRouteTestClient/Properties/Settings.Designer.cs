@@ -157,7 +157,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("1.18.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("1.20")]
         public string REQUEST_VERSION {
             get {
                 return ((string)(this["REQUEST_VERSION"]));
@@ -250,7 +250,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1:50030/xroute/ws/XRoute")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://xroute-tln-eu-n.cloud.ptvgroup.com/xroute/ws/XRoute")]
         public string UrlRoute {
             get {
                 return ((string)(this["UrlRoute"]));
@@ -262,7 +262,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("http://127.0.0.1:50010/xmap/ws/XMap")]
+        [global::System.Configuration.DefaultSettingValueAttribute("https://xmap-tln-eu-n.cloud.ptvgroup.com/xmap/ws/XMap")]
         public string UrlMap {
             get {
                 return ((string)(this["UrlMap"]));
@@ -1727,7 +1727,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string xroute_password {
             get {
                 return ((string)(this["xroute_password"]));
@@ -1739,7 +1739,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
         public string xmap_username {
             get {
                 return ((string)(this["xmap_username"]));

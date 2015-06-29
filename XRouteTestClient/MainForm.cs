@@ -45,7 +45,7 @@ namespace XRouteTestClient
             value = Properties.Settings.Default.XMLSNIPPET
         };
 
-        XRouteWSService service = new XRouteWSService() { Credentials = new NetworkCredential(Properties.Settings.Default.xroute_username, Properties.Settings.Default.xroute_password) };
+        XRouteWSService service;
 
         ResultListOptions rlo;
         // the extended forms
@@ -71,6 +71,14 @@ namespace XRouteTestClient
         public MainForm()
         {
             InitializeComponent();
+
+            if(File.Exists(@"d:\xservers\token.txt"))
+            {
+                Properties.Settings.Default.xmap_password =  File.ReadAllText(@"d:\xservers\token.txt");
+                Properties.Settings.Default.xroute_password = Properties.Settings.Default.xmap_password;
+            }
+
+            service = new XRouteWSService() { Credentials = new NetworkCredential(Properties.Settings.Default.xroute_username, Properties.Settings.Default.xroute_password) };
 
             tbxXMLSnippet.Text = Properties.Settings.Default.XMLSNIPPET;
 
