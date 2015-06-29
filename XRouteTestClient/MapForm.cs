@@ -23,7 +23,7 @@ namespace XRouteTestClient
         Layer[] arrLayer = null;
         XMapWSService svcMap = new XMapWSService()
         {
-            Credentials = new System.Net.NetworkCredential(Properties.Settings.Default.xmap_username, Properties.Settings.Default.xmap_password)
+            Credentials = Static.credentials,
         };
         XServer.CallerContext callerContext = null;
 

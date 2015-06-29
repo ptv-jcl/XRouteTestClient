@@ -1716,48 +1716,24 @@ namespace XRouteTestClient.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
-        public string xroute_username {
+        public string xServerUserName {
             get {
-                return ((string)(this["xroute_username"]));
+                return ((string)(this["xServerUserName"]));
             }
             set {
-                this["xroute_username"] = value;
+                this["xServerUserName"] = value;
             }
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string xroute_password {
+        public string xServerPassword {
             get {
-                return ((string)(this["xroute_password"]));
+                return ((string)(this["xServerPassword"]));
             }
             set {
-                this["xroute_password"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("xtok")]
-        public string xmap_username {
-            get {
-                return ((string)(this["xmap_username"]));
-            }
-            set {
-                this["xmap_username"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string xmap_password {
-            get {
-                return ((string)(this["xmap_password"]));
-            }
-            set {
-                this["xmap_password"] = value;
+                this["xServerPassword"] = value;
             }
         }
     }

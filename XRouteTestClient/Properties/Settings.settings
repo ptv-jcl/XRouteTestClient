@@ -441,16 +441,10 @@
 &lt;/Profile&gt;
 </Value>
     </Setting>
-    <Setting Name="xroute_username" Type="System.String" Scope="User">
+    <Setting Name="xServerUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">xtok</Value>
     </Setting>
-    <Setting Name="xroute_password" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="xmap_username" Type="System.String" Scope="User">
-      <Value Profile="(Default)">xtok</Value>
-    </Setting>
-    <Setting Name="xmap_password" Type="System.String" Scope="User">
+    <Setting Name="xServerPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

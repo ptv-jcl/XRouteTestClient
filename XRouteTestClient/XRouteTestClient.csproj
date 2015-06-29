@@ -103,6 +103,7 @@
     <Compile Include="RouteManoeuvre_Form.Designer.cs">
       <DependentUpon>RouteManoeuvre_Form.cs</DependentUpon>
     </Compile>
+    <Compile Include="Static.cs" />
     <Compile Include="TextsForm.cs">
       <SubType>Form</SubType>
     </Compile>
