@@ -237,6 +237,8 @@ namespace XRouteTestClient
 
             cbxDisplayRoadeditorLayer.Checked = Properties.Settings.Default.DisplayRoadEditorLayer;
             countryInfoVehicleOptions = new CountryInfoVehicleOptions();
+            countryInfoVehicleOptions.tollTotals = true;
+            countryInfoVehicleOptions.tollTotalsSpecified = true;
             // 2010-08-25 Fuel costs
             tbxCostsDistance.Text = Properties.Settings.Default.CostsDistance;
             tbxCostsPeriod.Text = Properties.Settings.Default.CostsPeriod;
@@ -1308,7 +1310,7 @@ namespace XRouteTestClient
             LineOptions lineOptions = new LineOptions();
             lineOptions.mainLine = mainLine;
             lineOptions.showFlags = false;
-            lineOptions.transparent = true;
+            lineOptions.transparent = false;
             cl.wrappedLines[0].options = lineOptions;
             return cl;
         }
@@ -1482,6 +1484,10 @@ namespace XRouteTestClient
                 else
                 {
                     icon = Properties.Settings.Default.Icon_Segments_Standard;
+                }
+                if(rls.speedLimits != null )
+                {
+                    lstDescr.Add("SpeedLimits = '" + rls.speedLimits.ToString() + "'");
                 }
                 string descr = String.Join("\r\n", lstDescr.ToArray());
                 XServer.Point point = new XServer.Point();

@@ -224,6 +224,7 @@ namespace XRouteTestClient
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.xmlSnippetTabPage = new System.Windows.Forms.TabPage();
+            this.enableSnippetChckBx = new System.Windows.Forms.CheckBox();
             this.tbxXMLSnippet = new System.Windows.Forms.TextBox();
             this.cbxFeatureLayerDescriptions = new System.Windows.Forms.CheckBox();
             this.gbxCosts = new System.Windows.Forms.GroupBox();
@@ -314,7 +315,6 @@ namespace XRouteTestClient
             this.tollTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vehicleTarifIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tollCostInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.enableSnippetChckBx = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_perNCRouteInfo)).BeginInit();
             this.gbxRoutingOptions.SuspendLayout();
             this.gbxTollCostInfo.SuspendLayout();
@@ -2377,6 +2377,19 @@ namespace XRouteTestClient
             this.xmlSnippetTabPage.TabIndex = 0;
             this.xmlSnippetTabPage.Text = "XML Snippet";
             // 
+            // enableSnippetChckBx
+            // 
+            this.enableSnippetChckBx.AutoSize = true;
+            this.enableSnippetChckBx.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.enableSnippetChckBx.Location = new System.Drawing.Point(6, 6);
+            this.enableSnippetChckBx.Name = "enableSnippetChckBx";
+            this.enableSnippetChckBx.Size = new System.Drawing.Size(98, 17);
+            this.enableSnippetChckBx.TabIndex = 23;
+            this.enableSnippetChckBx.Text = "Enable Snippet";
+            this.toolTip1.SetToolTip(this.enableSnippetChckBx, "If true the XML snippet will be send to the xRoute");
+            this.enableSnippetChckBx.UseVisualStyleBackColor = true;
+            this.enableSnippetChckBx.CheckedChanged += new System.EventHandler(this.enableSnippetChckBx_CheckedChanged);
+            // 
             // tbxXMLSnippet
             // 
             this.tbxXMLSnippet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -3367,19 +3380,6 @@ namespace XRouteTestClient
             // tollCostInfoBindingSource
             // 
             this.tollCostInfoBindingSource.DataSource = typeof(XServer.TollCostInfo);
-            // 
-            // enableSnippetChckBx
-            // 
-            this.enableSnippetChckBx.AutoSize = true;
-            this.enableSnippetChckBx.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.enableSnippetChckBx.Location = new System.Drawing.Point(6, 6);
-            this.enableSnippetChckBx.Name = "enableSnippetChckBx";
-            this.enableSnippetChckBx.Size = new System.Drawing.Size(98, 17);
-            this.enableSnippetChckBx.TabIndex = 23;
-            this.enableSnippetChckBx.Text = "Enable Snippet";
-            this.toolTip1.SetToolTip(this.enableSnippetChckBx, "If true the XML snippet will be send to the xRoute");
-            this.enableSnippetChckBx.UseVisualStyleBackColor = true;
-            this.enableSnippetChckBx.CheckedChanged += new System.EventHandler(this.enableSnippetChckBx_CheckedChanged);
             // 
             // MainForm
             // 

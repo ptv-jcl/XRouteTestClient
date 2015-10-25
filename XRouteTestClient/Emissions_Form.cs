@@ -38,16 +38,5 @@ namespace XRouteTestClient
                 this.Visible = false;
                 e.Cancel = true;
         }
-
-        private void EmissionsForm_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void emissionsBindingSource_CurrentChanged(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }

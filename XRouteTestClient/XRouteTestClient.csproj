@@ -190,6 +190,8 @@
     <None Include="app.config" />
     <None Include="bin\Release\XRouteTestClient.exe.config" />
     <None Include="Properties\DataSources\XServer.Emissions.datasource" />
+    <None Include="Properties\DataSources\XServer.EmissionsHBEFA31.datasource" />
+    <None Include="Properties\DataSources\XServer.EmissionsHBEFA32.datasource" />
     <None Include="Properties\DataSources\XServer.ExtWayPoint.datasource" />
     <None Include="Properties\DataSources\XServer.Route.datasource" />
     <None Include="Properties\DataSources\XServer.RouteListSegment.datasource" />

@@ -120,9 +120,6 @@
   <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="toolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <data name="labTime.ToolTip" xml:space="preserve">
     <value>Travel time in seconds.
 
@@ -268,12 +265,6 @@ of the resulting main-node has the wanted name, take all these entry-nodes.
 Please be aware of the fact that some systems require username and password for the basic authentication.
 Username and passwort are configureable in the test clients config file. Please use the keys
 xroute_username and xroute_password </value>
-  </data>
-  <data name="gbxRoutingOptions.ToolTip" xml:space="preserve">
-    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
-All RoutingOptions are optional and have default values defined in the default properties definition 
-file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
-request it dominates the entry in the appropriate properties definition file.</value>
   </data>
   <data name="tbxSPEED_INFOS.ToolTip" xml:space="preserve">
     <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
@@ -472,6 +463,12 @@ defined in the profile
 Legal values are integers in the range 0..100
 30 - shortest
 90 - fastest</value>
+  </data>
+  <data name="gbxRoutingOptions.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
   </data>
   <data name="tbxROADEDITOR_LAYERNAME.ToolTip" xml:space="preserve">
     <value>This parameter has to be used for roadeditor routing. 
@@ -683,6 +680,17 @@ Username and passwort are configureable in the test clients config file. Please 
 xmap_username and xmap_password
 </value>
   </data>
+  <data name="tollPriceDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
+    <value>Price for the toll section (can be 0 for citytoll/vignette 
+in case of reentering). Please note that the price is given in subunits 
+of the currency, i.e. if currency is Euro, the price is given in Eurocents. If the 
+currency consists of 1000 subunits, the price is given in 10 subunits.</value>
+  </data>
+  <data name="tollSectionNameDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
+    <value>The name for the toll section according to the 
+sectionID, empty if this country has global toll (vignette).
+NOTE: This is an optional attribute and is set only if the REQUEST_VERSION is set to 1.4.5 or higher</value>
+  </data>
   <metadata name="tollCostInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>129, 17</value>
   </metadata>
@@ -739,11 +747,6 @@ of the resulting main-node has the wanted name, take all these entry-nodes.
 2. Otherwise, consider all segments within a given radius.
 </value>
   </data>
-  <data name="gbxCountryInfoOptions.ToolTip" xml:space="preserve">
-    <value>Defines a set of reduction types being relevant for calculating toll costs either in 
-its currency or in euro if desired. All of the costs are calculated per cent.
-Furthermore the generation of detailed toll costs can be activated.</value>
-  </data>
   <data name="tbxTolldate.ToolTip" xml:space="preserve">
     <value>The underlying map may contain different toll scenarios for each country. 
 These scenarios are valid from a specified date. If toll date is set, xRoute
@@ -755,11 +758,10 @@ The first column specifies the scenario id. The second column represents the cou
 id and the 7th coulumn 'VALIDFROM' defines the starting date for this scenario given 
 in the form YYYYMMDD.</value>
   </data>
-  <data name="gbxDynamic.ToolTip" xml:space="preserve">
-    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
-All RoutingOptions are optional and have default values defined in the default properties definition 
-file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
-request it dominates the entry in the appropriate properties definition file.</value>
+  <data name="gbxCountryInfoOptions.ToolTip" xml:space="preserve">
+    <value>Defines a set of reduction types being relevant for calculating toll costs either in 
+its currency or in euro if desired. All of the costs are calculated per cent.
+Furthermore the generation of detailed toll costs can be activated.</value>
   </data>
   <data name="labDYNAMIC_TIME_ON_STATICROUTE.ToolTip" xml:space="preserve">
     <value>Represents the dynamic profile which has to be used for dynamic routing.
@@ -802,6 +804,12 @@ Legal values are strings representing a valid dynamic profile</value>
 NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
 
 Legal values are strings representing a valid dynamic profile</value>
+  </data>
+  <data name="gbxDynamic.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
   </data>
   <data name="gbxRouteInfo.ToolTip" xml:space="preserve">
     <value>Summary information about a single route 
@@ -882,33 +890,6 @@ ORTHOGONAL : additional optional manouvre
 NOTE: This level cannot be requested. All manoeuvres which are additonal manoeuvres like 
 brunnel manoeuvres have detail ORTHOGONAL.
 ALL : all the rest</value>
-  </data>
-  <data name="gbxVehicleParameters.ToolTip" xml:space="preserve">
-    <value>The CountryInfoVehicleOptions object is derived form the CountryInfoOptions with an additional 
-VehicleOption array in order to set vehicle options via request. These vehicle options are used for 
-both, toll calculation and emission calculation. The default values for all vehicle options are taken 
-from the profile used. 
-Vehicle parameters for toll and emission calculation. All VehicleOptions have corresponding 
-default values defined in the properties definition files. Each VehicleOption can be assigned to
-a certain vehicle profile. 
-If a VehicleOption is set in the request it dominates the entry in the appropriate properties 
-definition file.</value>
-  </data>
-  <data name="gbxRoadEditor.ToolTip" xml:space="preserve">
-    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
-All RoutingOptions are optional and have default values defined in the default properties definition 
-file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
-request it dominates the entry in the appropriate properties definition file.</value>
-  </data>
-  <data name="gbxAvoid.ToolTip" xml:space="preserve">
-    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
-All RoutingOptions are optional and have default values defined in the default properties definition 
-file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
-request it dominates the entry in the appropriate properties definition file.</value>
-  </data>
-  <data name="gbxExceptionPath.ToolTip" xml:space="preserve">
-    <value>Describes a route path which has to be treated as ExceptionPath in the next route calculation. Use this option to calculate alternative routes, for example. NOTE: Only the first non-empty attribute 'nodes', 'extSegments', 'street', and 'binaryPathDesc' is considered. NOTE: If a street segment occurs in more than one instance of ExceptionPath, the final malus for this street segment will be computed as the average of the given maluses. There is on exception to this rule: If the street segment in question occurs in an ExceptionPath element with a malus of -99, the final malus will also be -99. This mechanism allows the client to compute an alternative route by still forcing xRoute to use a special street segment (e.g. a ferry).
-</value>
   </data>
   <data name="labCostsDistance.ToolTip" xml:space="preserve">
     <value>This textbox expects a comma separated list of 8 cost values.
@@ -1015,6 +996,17 @@ Legal values are &gt; 0
 Default is 15 tons (suitable for trucks) 
 Note: Set about 1.5 tons as a guide value for cars</value>
   </data>
+  <data name="gbxVehicleParameters.ToolTip" xml:space="preserve">
+    <value>The CountryInfoVehicleOptions object is derived form the CountryInfoOptions with an additional 
+VehicleOption array in order to set vehicle options via request. These vehicle options are used for 
+both, toll calculation and emission calculation. The default values for all vehicle options are taken 
+from the profile used. 
+Vehicle parameters for toll and emission calculation. All VehicleOptions have corresponding 
+default values defined in the properties definition files. Each VehicleOption can be assigned to
+a certain vehicle profile. 
+If a VehicleOption is set in the request it dominates the entry in the appropriate properties 
+definition file.</value>
+  </data>
   <data name="tbxBoundingRectanglesOffset.ToolTip" xml:space="preserve">
     <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
 
@@ -1090,6 +1082,12 @@ attribute must correspond with database entry. In this case the roadeditor has t
 database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
 NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
   </data>
+  <data name="gbxRoadEditor.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
+  </data>
   <data name="tbxAVOID_LOW_EMISSION_ZONES.ToolTip" xml:space="preserve">
     <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
 Legal values are -99 to 2501 and BAN. The default is 2500.
@@ -1103,6 +1101,12 @@ Legal values are -99 to 2501 and BAN. The default is 2500.
 &lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
 =0: No change (Default)
 &gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
+  </data>
+  <data name="gbxAvoid.ToolTip" xml:space="preserve">
+    <value>Represents one routing option. The option type is described by the enumeration RoutingParameter
+All RoutingOptions are optional and have default values defined in the default properties definition 
+file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
+request it dominates the entry in the appropriate properties definition file.</value>
   </data>
   <data name="labGEODATASOURCE_LAYER.ToolTip" xml:space="preserve">
     <value>Adds a geodatasource layer which will be considered when executing the service method in question. 
@@ -1179,20 +1183,10 @@ NOTE: absTimeMalus will be ignored, if this attribute is non-empty, instead relM
 
 NOTE: If more than one ExceptionPath elements contain a non-empty 'street' attribute, only the last occurrence will be considered.</value>
   </data>
-  <data name="tollPriceDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
-    <value>Price for the toll section (can be 0 for citytoll/vignette 
-in case of reentering). Please note that the price is given in subunits 
-of the currency, i.e. if currency is Euro, the price is given in Eurocents. If the 
-currency consists of 1000 subunits, the price is given in 10 subunits.</value>
+  <data name="gbxExceptionPath.ToolTip" xml:space="preserve">
+    <value>Describes a route path which has to be treated as ExceptionPath in the next route calculation. Use this option to calculate alternative routes, for example. NOTE: Only the first non-empty attribute 'nodes', 'extSegments', 'street', and 'binaryPathDesc' is considered. NOTE: If a street segment occurs in more than one instance of ExceptionPath, the final malus for this street segment will be computed as the average of the given maluses. There is on exception to this rule: If the street segment in question occurs in an ExceptionPath element with a malus of -99, the final malus will also be -99. This mechanism allows the client to compute an alternative route by still forcing xRoute to use a special street segment (e.g. a ferry).
+</value>
   </data>
-  <data name="tollSectionNameDataGridViewTextBoxColumn.ToolTipText" xml:space="preserve">
-    <value>The name for the toll section according to the 
-sectionID, empty if this country has global toll (vignette).
-NOTE: This is an optional attribute and is set only if the REQUEST_VERSION is set to 1.4.5 or higher</value>
-  </data>
-  <metadata name="tollCostInfoBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>129, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>

@@ -60,10 +60,10 @@
       <Value Profile="(Default)">30</Value>
     </Setting>
     <Setting Name="UrlRoute" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://xroute-tln-eu-n.cloud.ptvgroup.com/xroute/ws/XRoute</Value>
+      <Value Profile="(Default)">http://localhost:50030/xroute/ws/XRoute</Value>
     </Setting>
     <Setting Name="UrlMap" Type="System.String" Scope="User">
-      <Value Profile="(Default)">https://xmap-tln-eu-n.cloud.ptvgroup.com/xmap/ws/XMap</Value>
+      <Value Profile="(Default)">http://localhost:50010/xmap/ws/XMap</Value>
     </Setting>
     <Setting Name="LinkType_START" Type="System.String" Scope="User">
       <Value Profile="(Default)">AUTO_LINKING</Value>
@@ -142,9 +142,6 @@
     </Setting>
     <Setting Name="ExceptionPath_ExtSegments" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ProfileMap" Type="System.String" Scope="User">
-      <Value Profile="(Default)">greenzones</Value>
     </Setting>
     <Setting Name="AVOID_LOW_EMISSION_ZONES" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -226,9 +223,6 @@
     </Setting>
     <Setting Name="Route_Color" Type="System.Drawing.Color" Scope="User">
       <Value Profile="(Default)">Black</Value>
-    </Setting>
-    <Setting Name="Route_Width" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">2</Value>
     </Setting>
     <Setting Name="Priority_Route" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">25000</Value>
@@ -446,6 +440,12 @@
     </Setting>
     <Setting Name="xServerPassword" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ProfileMap" Type="System.String" Scope="User">
+      <Value Profile="(Default)">greenzones</Value>
+    </Setting>
+    <Setting Name="Route_Width" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">2</Value>
     </Setting>
   </Settings>
 </SettingsFile>

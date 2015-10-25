@@ -195,7 +195,6 @@ namespace XRouteTestClient
             this.Name = "Emissions_Form";
             this.Text = "Emissions_Form";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.EmissionsForm_FormClosing);
-            this.Load += new System.EventHandler(this.EmissionsForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmissions)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emissionsBindingSource)).EndInit();
             this.ResumeLayout(false);
