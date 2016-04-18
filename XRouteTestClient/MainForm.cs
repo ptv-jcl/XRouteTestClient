@@ -72,8 +72,12 @@ namespace XRouteTestClient
         {
             InitializeComponent();
 
-            if (File.Exists(@"d:\xservers\token.txt"))
-                Static.credentials = new NetworkCredential("xtok", File.ReadAllText(@"d:\xservers\token.txt"));
+            if (File.Exists(@"D:\xServers Source\private.txt"))
+                using (var privateReader = new StreamReader(@"D:\xServers Source\private.txt"))
+                {
+                    Static.credentials = new NetworkCredential("xtok", privateReader.ReadLine());
+
+                }
 
             service = new XRouteWSService() { Credentials = Static.credentials };
 
@@ -302,6 +306,7 @@ namespace XRouteTestClient
                 {
                     viaWaypoint = new WaypointDesc()
                     {
+                        linkType = LinkType.AUTO_LINKING,
                         fuzzyRadius = Convert.ToInt32(tbxFuzzyRadius.Text),
                         wrappedCoords = new XServer.Point[] 
                         { 
