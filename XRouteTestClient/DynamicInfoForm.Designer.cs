@@ -40,11 +40,18 @@ namespace XRouteTestClient
             this.tbxDistanceDiff = new System.Windows.Forms.TextBox();
             this.tbxTimeBenefit = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.travelTrendDataGridView = new System.Windows.Forms.DataGridView();
+            this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.travelTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commuterTravelTrendBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DynamicInfo.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelTrendDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commuterTravelTrendBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // DynamicInfo
             // 
+            this.DynamicInfo.Controls.Add(this.travelTrendDataGridView);
             this.DynamicInfo.Controls.Add(this.labTimeLoss);
             this.DynamicInfo.Controls.Add(this.labTimeLoss2);
             this.DynamicInfo.Controls.Add(this.labDistanceDiff);
@@ -56,7 +63,7 @@ namespace XRouteTestClient
             this.DynamicInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DynamicInfo.Location = new System.Drawing.Point(0, 0);
             this.DynamicInfo.Name = "DynamicInfo";
-            this.DynamicInfo.Size = new System.Drawing.Size(339, 79);
+            this.DynamicInfo.Size = new System.Drawing.Size(342, 295);
             this.DynamicInfo.TabIndex = 0;
             this.DynamicInfo.TabStop = false;
             this.DynamicInfo.Text = "DynamicInfo";
@@ -138,11 +145,48 @@ namespace XRouteTestClient
             this.tbxTimeBenefit.TabIndex = 0;
             this.tbxTimeBenefit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // travelTrendDataGridView
+            // 
+            this.travelTrendDataGridView.AllowUserToAddRows = false;
+            this.travelTrendDataGridView.AllowUserToDeleteRows = false;
+            this.travelTrendDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.travelTrendDataGridView.AutoGenerateColumns = false;
+            this.travelTrendDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.travelTrendDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.departureTimeDataGridViewTextBoxColumn,
+            this.travelTimeDataGridViewTextBoxColumn});
+            this.travelTrendDataGridView.DataSource = this.commuterTravelTrendBindingSource;
+            this.travelTrendDataGridView.Location = new System.Drawing.Point(12, 72);
+            this.travelTrendDataGridView.Name = "travelTrendDataGridView";
+            this.travelTrendDataGridView.ReadOnly = true;
+            this.travelTrendDataGridView.Size = new System.Drawing.Size(315, 211);
+            this.travelTrendDataGridView.TabIndex = 8;
+            // 
+            // departureTimeDataGridViewTextBoxColumn
+            // 
+            this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "departureTime";
+            this.departureTimeDataGridViewTextBoxColumn.HeaderText = "departureTime";
+            this.departureTimeDataGridViewTextBoxColumn.Name = "departureTimeDataGridViewTextBoxColumn";
+            this.departureTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // travelTimeDataGridViewTextBoxColumn
+            // 
+            this.travelTimeDataGridViewTextBoxColumn.DataPropertyName = "travelTime";
+            this.travelTimeDataGridViewTextBoxColumn.HeaderText = "travelTime";
+            this.travelTimeDataGridViewTextBoxColumn.Name = "travelTimeDataGridViewTextBoxColumn";
+            this.travelTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // commuterTravelTrendBindingSource
+            // 
+            this.commuterTravelTrendBindingSource.DataSource = typeof(XServer.CommuterTravelTrend);
+            // 
             // DynamicInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(339, 79);
+            this.ClientSize = new System.Drawing.Size(342, 295);
             this.Controls.Add(this.DynamicInfo);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "DynamicInfoForm";
@@ -151,6 +195,8 @@ namespace XRouteTestClient
             this.Load += new System.EventHandler(this.DynamicInfoForm_Load);
             this.DynamicInfo.ResumeLayout(false);
             this.DynamicInfo.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.travelTrendDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commuterTravelTrendBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -167,5 +213,9 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxTimeLoss2;
         private System.Windows.Forms.TextBox tbxDistanceDiff;
         private System.Windows.Forms.TextBox tbxTimeBenefit;
+        private System.Windows.Forms.DataGridView travelTrendDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn travelTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource commuterTravelTrendBindingSource;
     }
 }

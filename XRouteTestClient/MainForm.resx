@@ -432,20 +432,6 @@ NOTE: Only one of the parameters ExludeCountries and RoutingCountries can be set
 
 see also ROUTING_COUNTRIES</value>
   </data>
-  <data name="tbxSPEEDPROFILE.ToolTip" xml:space="preserve">
-    <value>Defines the speed profile
-In general the speed profile is part of a vehicle profile
-if this option is set in the request it dominates the value defined in the profile
-the speed profile has to be described as a string of 16 comma separated values
-representing the 2 speed per network class</value>
-  </data>
-  <data name="labSPEEDPROFILE.ToolTip" xml:space="preserve">
-    <value>Defines the speed profile
-In general the speed profile is part of a vehicle profile
-if this option is set in the request it dominates the value defined in the profile
-the speed profile has to be described as a string of 16 comma separated values
-representing the 2 speed per network class</value>
-  </data>
   <data name="labOPTIMIZATION.ToolTip" xml:space="preserve">
     <value>Defines the optimization
 In general the optimization is part of a vehicle profile

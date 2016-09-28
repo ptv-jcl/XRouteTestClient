@@ -88,8 +88,6 @@ namespace XRouteTestClient
             this.labROUTING_COUNTRIES = new System.Windows.Forms.Label();
             this.labEXCLUDE_COUNTRIES = new System.Windows.Forms.Label();
             this.tbxEXCLUDE_COUNTRIES = new System.Windows.Forms.TextBox();
-            this.tbxSPEEDPROFILE = new System.Windows.Forms.TextBox();
-            this.labSPEEDPROFILE = new System.Windows.Forms.Label();
             this.labOPTIMIZATION = new System.Windows.Forms.Label();
             this.tbxOPTIMIZATION = new System.Windows.Forms.TextBox();
             this.tbxROADEDITOR_LAYERNAME = new System.Windows.Forms.TextBox();
@@ -121,6 +119,19 @@ namespace XRouteTestClient
             this.lbxOutCountry = new System.Windows.Forms.ListBox();
             this.gbxTollCostInfo = new System.Windows.Forms.GroupBox();
             this.dgvTollCostInfo = new System.Windows.Forms.DataGridView();
+            this.tollStationFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollStationToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollDistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollProviderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollProviderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollSectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollSectionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleTarifIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollCostInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbxOutCountries = new System.Windows.Forms.GroupBox();
             this.gbxWaypoints = new System.Windows.Forms.GroupBox();
             this.labFerryId = new System.Windows.Forms.Label();
@@ -224,8 +235,8 @@ namespace XRouteTestClient
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.xmlSnippetTabPage = new System.Windows.Forms.TabPage();
+            this.tbxXMLSnippet = new System.Windows.Forms.RichTextBox();
             this.enableSnippetChckBx = new System.Windows.Forms.CheckBox();
-            this.tbxXMLSnippet = new System.Windows.Forms.TextBox();
             this.cbxFeatureLayerDescriptions = new System.Windows.Forms.CheckBox();
             this.gbxCosts = new System.Windows.Forms.GroupBox();
             this.labCostsPeriod = new System.Windows.Forms.Label();
@@ -302,23 +313,11 @@ namespace XRouteTestClient
             this.gbxOutputCosts = new System.Windows.Forms.GroupBox();
             this.dgvOutputCosts = new System.Windows.Forms.DataGridView();
             this.gbxOutput = new System.Windows.Forms.GroupBox();
-            this.tollStationFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollStationToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollDistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollProviderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollProviderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollSectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollSectionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleTarifIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollCostInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_perNCRouteInfo)).BeginInit();
             this.gbxRoutingOptions.SuspendLayout();
             this.gbxTollCostInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollCostInfo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).BeginInit();
             this.gbxOutCountries.SuspendLayout();
             this.gbxWaypoints.SuspendLayout();
             this.gbxCallerContext.SuspendLayout();
@@ -344,7 +343,6 @@ namespace XRouteTestClient
             this.gbxOutputCosts.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutputCosts)).BeginInit();
             this.gbxOutput.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxStartX
@@ -709,8 +707,6 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.Controls.Add(this.labROUTING_COUNTRIES);
             this.gbxRoutingOptions.Controls.Add(this.labEXCLUDE_COUNTRIES);
             this.gbxRoutingOptions.Controls.Add(this.tbxEXCLUDE_COUNTRIES);
-            this.gbxRoutingOptions.Controls.Add(this.tbxSPEEDPROFILE);
-            this.gbxRoutingOptions.Controls.Add(this.labSPEEDPROFILE);
             this.gbxRoutingOptions.Controls.Add(this.labOPTIMIZATION);
             this.gbxRoutingOptions.Controls.Add(this.tbxOPTIMIZATION);
             this.gbxRoutingOptions.Location = new System.Drawing.Point(201, 144);
@@ -724,7 +720,7 @@ namespace XRouteTestClient
             // labSPEED_INFOS
             // 
             this.labSPEED_INFOS.AutoSize = true;
-            this.labSPEED_INFOS.Location = new System.Drawing.Point(8, 198);
+            this.labSPEED_INFOS.Location = new System.Drawing.Point(6, 42);
             this.labSPEED_INFOS.Name = "labSPEED_INFOS";
             this.labSPEED_INFOS.Size = new System.Drawing.Size(81, 13);
             this.labSPEED_INFOS.TabIndex = 70;
@@ -734,9 +730,9 @@ namespace XRouteTestClient
             // 
             // tbxSPEED_INFOS
             // 
-            this.tbxSPEED_INFOS.Location = new System.Drawing.Point(95, 195);
+            this.tbxSPEED_INFOS.Location = new System.Drawing.Point(124, 38);
             this.tbxSPEED_INFOS.Name = "tbxSPEED_INFOS";
-            this.tbxSPEED_INFOS.Size = new System.Drawing.Size(47, 20);
+            this.tbxSPEED_INFOS.Size = new System.Drawing.Size(38, 20);
             this.tbxSPEED_INFOS.TabIndex = 69;
             this.tbxSPEED_INFOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxSPEED_INFOS, resources.GetString("tbxSPEED_INFOS.ToolTip"));
@@ -937,25 +933,6 @@ namespace XRouteTestClient
             this.tbxEXCLUDE_COUNTRIES.TabIndex = 25;
             this.tbxEXCLUDE_COUNTRIES.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxEXCLUDE_COUNTRIES, resources.GetString("tbxEXCLUDE_COUNTRIES.ToolTip"));
-            // 
-            // tbxSPEEDPROFILE
-            // 
-            this.tbxSPEEDPROFILE.Location = new System.Drawing.Point(124, 39);
-            this.tbxSPEEDPROFILE.Name = "tbxSPEEDPROFILE";
-            this.tbxSPEEDPROFILE.Size = new System.Drawing.Size(38, 20);
-            this.tbxSPEEDPROFILE.TabIndex = 22;
-            this.tbxSPEEDPROFILE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxSPEEDPROFILE, resources.GetString("tbxSPEEDPROFILE.ToolTip"));
-            // 
-            // labSPEEDPROFILE
-            // 
-            this.labSPEEDPROFILE.AutoSize = true;
-            this.labSPEEDPROFILE.Location = new System.Drawing.Point(8, 42);
-            this.labSPEEDPROFILE.Name = "labSPEEDPROFILE";
-            this.labSPEEDPROFILE.Size = new System.Drawing.Size(94, 13);
-            this.labSPEEDPROFILE.TabIndex = 21;
-            this.labSPEEDPROFILE.Text = "SPEED_PROFILE";
-            this.toolTip1.SetToolTip(this.labSPEEDPROFILE, resources.GetString("labSPEEDPROFILE.ToolTip"));
             // 
             // labOPTIMIZATION
             // 
@@ -1243,7 +1220,7 @@ namespace XRouteTestClient
             this.gbxTollCostInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbxTollCostInfo.Location = new System.Drawing.Point(6, 220);
             this.gbxTollCostInfo.Name = "gbxTollCostInfo";
-            this.gbxTollCostInfo.Size = new System.Drawing.Size(1542, 102);
+            this.gbxTollCostInfo.Size = new System.Drawing.Size(1553, 102);
             this.gbxTollCostInfo.TabIndex = 58;
             this.gbxTollCostInfo.TabStop = false;
             this.gbxTollCostInfo.Text = "TollCostInfo";
@@ -1272,8 +1249,101 @@ namespace XRouteTestClient
             this.dgvTollCostInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTollCostInfo.Location = new System.Drawing.Point(3, 16);
             this.dgvTollCostInfo.Name = "dgvTollCostInfo";
-            this.dgvTollCostInfo.Size = new System.Drawing.Size(1536, 83);
+            this.dgvTollCostInfo.Size = new System.Drawing.Size(1547, 83);
             this.dgvTollCostInfo.TabIndex = 19;
+            // 
+            // tollStationFromDataGridViewTextBoxColumn
+            // 
+            this.tollStationFromDataGridViewTextBoxColumn.DataPropertyName = "tollStationFrom";
+            this.tollStationFromDataGridViewTextBoxColumn.HeaderText = "tollStationFrom";
+            this.tollStationFromDataGridViewTextBoxColumn.Name = "tollStationFromDataGridViewTextBoxColumn";
+            this.tollStationFromDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information\r\non the sta" +
+    "rt point of this toll section.";
+            // 
+            // tollStationToDataGridViewTextBoxColumn
+            // 
+            this.tollStationToDataGridViewTextBoxColumn.DataPropertyName = "tollStationTo";
+            this.tollStationToDataGridViewTextBoxColumn.HeaderText = "tollStationTo";
+            this.tollStationToDataGridViewTextBoxColumn.Name = "tollStationToDataGridViewTextBoxColumn";
+            this.tollStationToDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information \r\non the en" +
+    "d point of this toll section.";
+            // 
+            // currencyNameDataGridViewTextBoxColumn
+            // 
+            this.currencyNameDataGridViewTextBoxColumn.DataPropertyName = "currencyName";
+            this.currencyNameDataGridViewTextBoxColumn.HeaderText = "currencyName";
+            this.currencyNameDataGridViewTextBoxColumn.Name = "currencyNameDataGridViewTextBoxColumn";
+            this.currencyNameDataGridViewTextBoxColumn.ToolTipText = "the currency description\r\nNOTE: This is an optional attribute and is set only if " +
+    "\r\nthe REQUEST_VERSION is set to 1.4.5 or higher";
+            // 
+            // streetNameDataGridViewTextBoxColumn
+            // 
+            this.streetNameDataGridViewTextBoxColumn.DataPropertyName = "streetName";
+            this.streetNameDataGridViewTextBoxColumn.HeaderText = "streetName";
+            this.streetNameDataGridViewTextBoxColumn.Name = "streetNameDataGridViewTextBoxColumn";
+            this.streetNameDataGridViewTextBoxColumn.ToolTipText = "the street name";
+            // 
+            // tollDistanceDataGridViewTextBoxColumn
+            // 
+            this.tollDistanceDataGridViewTextBoxColumn.DataPropertyName = "tollDistance";
+            this.tollDistanceDataGridViewTextBoxColumn.HeaderText = "tollDistance";
+            this.tollDistanceDataGridViewTextBoxColumn.Name = "tollDistanceDataGridViewTextBoxColumn";
+            this.tollDistanceDataGridViewTextBoxColumn.ToolTipText = "distance of the toll section (coming out of the map or out of the tolltable)";
+            // 
+            // tollPriceDataGridViewTextBoxColumn
+            // 
+            this.tollPriceDataGridViewTextBoxColumn.DataPropertyName = "tollPrice";
+            this.tollPriceDataGridViewTextBoxColumn.HeaderText = "tollPrice";
+            this.tollPriceDataGridViewTextBoxColumn.Name = "tollPriceDataGridViewTextBoxColumn";
+            this.tollPriceDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollPriceDataGridViewTextBoxColumn.ToolTipText");
+            // 
+            // tollProviderIDDataGridViewTextBoxColumn
+            // 
+            this.tollProviderIDDataGridViewTextBoxColumn.DataPropertyName = "tollProviderID";
+            this.tollProviderIDDataGridViewTextBoxColumn.HeaderText = "tollProviderID";
+            this.tollProviderIDDataGridViewTextBoxColumn.Name = "tollProviderIDDataGridViewTextBoxColumn";
+            this.tollProviderIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll company";
+            // 
+            // tollProviderNameDataGridViewTextBoxColumn
+            // 
+            this.tollProviderNameDataGridViewTextBoxColumn.DataPropertyName = "tollProviderName";
+            this.tollProviderNameDataGridViewTextBoxColumn.HeaderText = "tollProviderName";
+            this.tollProviderNameDataGridViewTextBoxColumn.Name = "tollProviderNameDataGridViewTextBoxColumn";
+            this.tollProviderNameDataGridViewTextBoxColumn.ToolTipText = "the toll provider name according to the providerID \r\nNOTE: This is an optional at" +
+    "tribute and is set only if the REQUEST_VERSION \r\nis set to 1.4.5 or higher";
+            // 
+            // tollSectionIDDataGridViewTextBoxColumn
+            // 
+            this.tollSectionIDDataGridViewTextBoxColumn.DataPropertyName = "tollSectionID";
+            this.tollSectionIDDataGridViewTextBoxColumn.HeaderText = "tollSectionID";
+            this.tollSectionIDDataGridViewTextBoxColumn.Name = "tollSectionIDDataGridViewTextBoxColumn";
+            this.tollSectionIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll section, -1 if this country has global toll (vignette).";
+            // 
+            // tollSectionNameDataGridViewTextBoxColumn
+            // 
+            this.tollSectionNameDataGridViewTextBoxColumn.DataPropertyName = "tollSectionName";
+            this.tollSectionNameDataGridViewTextBoxColumn.HeaderText = "tollSectionName";
+            this.tollSectionNameDataGridViewTextBoxColumn.Name = "tollSectionNameDataGridViewTextBoxColumn";
+            this.tollSectionNameDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollSectionNameDataGridViewTextBoxColumn.ToolTipText");
+            // 
+            // tollTypeDataGridViewTextBoxColumn
+            // 
+            this.tollTypeDataGridViewTextBoxColumn.DataPropertyName = "tollType";
+            this.tollTypeDataGridViewTextBoxColumn.HeaderText = "tollType";
+            this.tollTypeDataGridViewTextBoxColumn.Name = "tollTypeDataGridViewTextBoxColumn";
+            this.tollTypeDataGridViewTextBoxColumn.ToolTipText = "kind of the toll section (national toll, extra toll, ....)";
+            // 
+            // vehicleTarifIDDataGridViewTextBoxColumn
+            // 
+            this.vehicleTarifIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleTarifID";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.HeaderText = "vehicleTarifID";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.Name = "vehicleTarifIDDataGridViewTextBoxColumn";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.ToolTipText = "the vehicle tarif ID\r\nNOTE: This is an optional attribute and is set only if the " +
+    "REQUEST_VERSION \r\nis set to 1.4.5 or higher";
+            // 
+            // tollCostInfoBindingSource
+            // 
+            this.tollCostInfoBindingSource.DataSource = typeof(XServer.TollCostInfo);
             // 
             // gbxOutCountries
             // 
@@ -1782,7 +1852,7 @@ namespace XRouteTestClient
             this.gbxInput.ForeColor = System.Drawing.Color.Black;
             this.gbxInput.Location = new System.Drawing.Point(12, 12);
             this.gbxInput.Name = "gbxInput";
-            this.gbxInput.Size = new System.Drawing.Size(1554, 548);
+            this.gbxInput.Size = new System.Drawing.Size(1565, 548);
             this.gbxInput.TabIndex = 65;
             this.gbxInput.TabStop = false;
             this.gbxInput.Text = "  Input  ";
@@ -1794,10 +1864,10 @@ namespace XRouteTestClient
             | System.Windows.Forms.AnchorStyles.Right)));
             this.tabControl.Controls.Add(this.regulationTabPage);
             this.tabControl.Controls.Add(this.xmlSnippetTabPage);
-            this.tabControl.Location = new System.Drawing.Point(1209, 20);
+            this.tabControl.Location = new System.Drawing.Point(1208, 19);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(336, 522);
+            this.tabControl.Size = new System.Drawing.Size(348, 523);
             this.tabControl.TabIndex = 68;
             // 
             // regulationTabPage
@@ -1863,7 +1933,7 @@ namespace XRouteTestClient
             this.regulationTabPage.Location = new System.Drawing.Point(4, 22);
             this.regulationTabPage.Name = "regulationTabPage";
             this.regulationTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.regulationTabPage.Size = new System.Drawing.Size(328, 496);
+            this.regulationTabPage.Size = new System.Drawing.Size(340, 497);
             this.regulationTabPage.TabIndex = 2;
             this.regulationTabPage.Text = "Regulations";
             // 
@@ -2368,14 +2438,27 @@ namespace XRouteTestClient
             // xmlSnippetTabPage
             // 
             this.xmlSnippetTabPage.BackColor = System.Drawing.Color.PowderBlue;
-            this.xmlSnippetTabPage.Controls.Add(this.enableSnippetChckBx);
             this.xmlSnippetTabPage.Controls.Add(this.tbxXMLSnippet);
+            this.xmlSnippetTabPage.Controls.Add(this.enableSnippetChckBx);
             this.xmlSnippetTabPage.Location = new System.Drawing.Point(4, 22);
             this.xmlSnippetTabPage.Name = "xmlSnippetTabPage";
             this.xmlSnippetTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.xmlSnippetTabPage.Size = new System.Drawing.Size(328, 496);
+            this.xmlSnippetTabPage.Size = new System.Drawing.Size(280, 497);
             this.xmlSnippetTabPage.TabIndex = 0;
             this.xmlSnippetTabPage.Text = "XML Snippet";
+            // 
+            // tbxXMLSnippet
+            // 
+            this.tbxXMLSnippet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbxXMLSnippet.Enabled = false;
+            this.tbxXMLSnippet.Location = new System.Drawing.Point(6, 29);
+            this.tbxXMLSnippet.Name = "tbxXMLSnippet";
+            this.tbxXMLSnippet.Size = new System.Drawing.Size(14, 460);
+            this.tbxXMLSnippet.TabIndex = 24;
+            this.tbxXMLSnippet.Text = "";
+            this.tbxXMLSnippet.WordWrap = false;
             // 
             // enableSnippetChckBx
             // 
@@ -2389,18 +2472,6 @@ namespace XRouteTestClient
             this.toolTip1.SetToolTip(this.enableSnippetChckBx, "If true the XML snippet will be send to the xRoute");
             this.enableSnippetChckBx.UseVisualStyleBackColor = true;
             this.enableSnippetChckBx.CheckedChanged += new System.EventHandler(this.enableSnippetChckBx_CheckedChanged);
-            // 
-            // tbxXMLSnippet
-            // 
-            this.tbxXMLSnippet.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbxXMLSnippet.Enabled = false;
-            this.tbxXMLSnippet.Location = new System.Drawing.Point(3, 29);
-            this.tbxXMLSnippet.Multiline = true;
-            this.tbxXMLSnippet.Name = "tbxXMLSnippet";
-            this.tbxXMLSnippet.Size = new System.Drawing.Size(322, 464);
-            this.tbxXMLSnippet.TabIndex = 69;
             // 
             // cbxFeatureLayerDescriptions
             // 
@@ -3283,110 +3354,17 @@ namespace XRouteTestClient
             this.gbxOutput.ForeColor = System.Drawing.Color.Black;
             this.gbxOutput.Location = new System.Drawing.Point(12, 566);
             this.gbxOutput.Name = "gbxOutput";
-            this.gbxOutput.Size = new System.Drawing.Size(1554, 328);
+            this.gbxOutput.Size = new System.Drawing.Size(1565, 328);
             this.gbxOutput.TabIndex = 66;
             this.gbxOutput.TabStop = false;
             this.gbxOutput.Text = "  Output  ";
-            // 
-            // tollStationFromDataGridViewTextBoxColumn
-            // 
-            this.tollStationFromDataGridViewTextBoxColumn.DataPropertyName = "tollStationFrom";
-            this.tollStationFromDataGridViewTextBoxColumn.HeaderText = "tollStationFrom";
-            this.tollStationFromDataGridViewTextBoxColumn.Name = "tollStationFromDataGridViewTextBoxColumn";
-            this.tollStationFromDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information\r\non the sta" +
-    "rt point of this toll section.";
-            // 
-            // tollStationToDataGridViewTextBoxColumn
-            // 
-            this.tollStationToDataGridViewTextBoxColumn.DataPropertyName = "tollStationTo";
-            this.tollStationToDataGridViewTextBoxColumn.HeaderText = "tollStationTo";
-            this.tollStationToDataGridViewTextBoxColumn.Name = "tollStationToDataGridViewTextBoxColumn";
-            this.tollStationToDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information \r\non the en" +
-    "d point of this toll section.";
-            // 
-            // currencyNameDataGridViewTextBoxColumn
-            // 
-            this.currencyNameDataGridViewTextBoxColumn.DataPropertyName = "currencyName";
-            this.currencyNameDataGridViewTextBoxColumn.HeaderText = "currencyName";
-            this.currencyNameDataGridViewTextBoxColumn.Name = "currencyNameDataGridViewTextBoxColumn";
-            this.currencyNameDataGridViewTextBoxColumn.ToolTipText = "the currency description\r\nNOTE: This is an optional attribute and is set only if " +
-    "\r\nthe REQUEST_VERSION is set to 1.4.5 or higher";
-            // 
-            // streetNameDataGridViewTextBoxColumn
-            // 
-            this.streetNameDataGridViewTextBoxColumn.DataPropertyName = "streetName";
-            this.streetNameDataGridViewTextBoxColumn.HeaderText = "streetName";
-            this.streetNameDataGridViewTextBoxColumn.Name = "streetNameDataGridViewTextBoxColumn";
-            this.streetNameDataGridViewTextBoxColumn.ToolTipText = "the street name";
-            // 
-            // tollDistanceDataGridViewTextBoxColumn
-            // 
-            this.tollDistanceDataGridViewTextBoxColumn.DataPropertyName = "tollDistance";
-            this.tollDistanceDataGridViewTextBoxColumn.HeaderText = "tollDistance";
-            this.tollDistanceDataGridViewTextBoxColumn.Name = "tollDistanceDataGridViewTextBoxColumn";
-            this.tollDistanceDataGridViewTextBoxColumn.ToolTipText = "distance of the toll section (coming out of the map or out of the tolltable)";
-            // 
-            // tollPriceDataGridViewTextBoxColumn
-            // 
-            this.tollPriceDataGridViewTextBoxColumn.DataPropertyName = "tollPrice";
-            this.tollPriceDataGridViewTextBoxColumn.HeaderText = "tollPrice";
-            this.tollPriceDataGridViewTextBoxColumn.Name = "tollPriceDataGridViewTextBoxColumn";
-            this.tollPriceDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollPriceDataGridViewTextBoxColumn.ToolTipText");
-            // 
-            // tollProviderIDDataGridViewTextBoxColumn
-            // 
-            this.tollProviderIDDataGridViewTextBoxColumn.DataPropertyName = "tollProviderID";
-            this.tollProviderIDDataGridViewTextBoxColumn.HeaderText = "tollProviderID";
-            this.tollProviderIDDataGridViewTextBoxColumn.Name = "tollProviderIDDataGridViewTextBoxColumn";
-            this.tollProviderIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll company";
-            // 
-            // tollProviderNameDataGridViewTextBoxColumn
-            // 
-            this.tollProviderNameDataGridViewTextBoxColumn.DataPropertyName = "tollProviderName";
-            this.tollProviderNameDataGridViewTextBoxColumn.HeaderText = "tollProviderName";
-            this.tollProviderNameDataGridViewTextBoxColumn.Name = "tollProviderNameDataGridViewTextBoxColumn";
-            this.tollProviderNameDataGridViewTextBoxColumn.ToolTipText = "the toll provider name according to the providerID \r\nNOTE: This is an optional at" +
-    "tribute and is set only if the REQUEST_VERSION \r\nis set to 1.4.5 or higher";
-            // 
-            // tollSectionIDDataGridViewTextBoxColumn
-            // 
-            this.tollSectionIDDataGridViewTextBoxColumn.DataPropertyName = "tollSectionID";
-            this.tollSectionIDDataGridViewTextBoxColumn.HeaderText = "tollSectionID";
-            this.tollSectionIDDataGridViewTextBoxColumn.Name = "tollSectionIDDataGridViewTextBoxColumn";
-            this.tollSectionIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll section, -1 if this country has global toll (vignette).";
-            // 
-            // tollSectionNameDataGridViewTextBoxColumn
-            // 
-            this.tollSectionNameDataGridViewTextBoxColumn.DataPropertyName = "tollSectionName";
-            this.tollSectionNameDataGridViewTextBoxColumn.HeaderText = "tollSectionName";
-            this.tollSectionNameDataGridViewTextBoxColumn.Name = "tollSectionNameDataGridViewTextBoxColumn";
-            this.tollSectionNameDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollSectionNameDataGridViewTextBoxColumn.ToolTipText");
-            // 
-            // tollTypeDataGridViewTextBoxColumn
-            // 
-            this.tollTypeDataGridViewTextBoxColumn.DataPropertyName = "tollType";
-            this.tollTypeDataGridViewTextBoxColumn.HeaderText = "tollType";
-            this.tollTypeDataGridViewTextBoxColumn.Name = "tollTypeDataGridViewTextBoxColumn";
-            this.tollTypeDataGridViewTextBoxColumn.ToolTipText = "kind of the toll section (national toll, extra toll, ....)";
-            // 
-            // vehicleTarifIDDataGridViewTextBoxColumn
-            // 
-            this.vehicleTarifIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleTarifID";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.HeaderText = "vehicleTarifID";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.Name = "vehicleTarifIDDataGridViewTextBoxColumn";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.ToolTipText = "the vehicle tarif ID\r\nNOTE: This is an optional attribute and is set only if the " +
-    "REQUEST_VERSION \r\nis set to 1.4.5 or higher";
-            // 
-            // tollCostInfoBindingSource
-            // 
-            this.tollCostInfoBindingSource.DataSource = typeof(XServer.TollCostInfo);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1578, 906);
+            this.ClientSize = new System.Drawing.Size(1589, 906);
             this.Controls.Add(this.gbxInput);
             this.Controls.Add(this.gbxOutput);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3399,6 +3377,7 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.PerformLayout();
             this.gbxTollCostInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollCostInfo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).EndInit();
             this.gbxOutCountries.ResumeLayout(false);
             this.gbxOutCountries.PerformLayout();
             this.gbxWaypoints.ResumeLayout(false);
@@ -3444,7 +3423,6 @@ namespace XRouteTestClient
             this.gbxOutputCosts.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOutputCosts)).EndInit();
             this.gbxOutput.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3499,8 +3477,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label labAVOID_HIGHWAYS;
         private System.Windows.Forms.Label labOPTIMIZATION;
         private System.Windows.Forms.TextBox tbxOPTIMIZATION;
-        private System.Windows.Forms.TextBox tbxSPEEDPROFILE;
-        private System.Windows.Forms.Label labSPEEDPROFILE;
         private System.Windows.Forms.TextBox tbxEXCLUDE_COUNTRIES;
         private System.Windows.Forms.TextBox tbxAVOID_RAMPS;
         private System.Windows.Forms.TextBox tbxAVOID_URBAN_AREAS;
@@ -3716,7 +3692,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button load1DriverRegulationsBtn;
-        private System.Windows.Forms.TextBox tbxXMLSnippet;
         private System.Windows.Forms.TextBox dailyRestPeriodTxtBx;
         private System.Windows.Forms.TextBox maxWorkingPeriodPerWeekTxtBx;
         private System.Windows.Forms.TextBox maxWorkingPeriodWithoutDailyRestTxtBx;
@@ -3736,6 +3711,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.CheckBox enableSnippetChckBx;
+        private System.Windows.Forms.RichTextBox tbxXMLSnippet;
     }
 }
 

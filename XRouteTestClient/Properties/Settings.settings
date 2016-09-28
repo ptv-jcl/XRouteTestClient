@@ -5,9 +5,6 @@
     <Setting Name="OPTIMIZATION" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SPEED_PROFILE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
     <Setting Name="AVOID_TOLLROADS" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
@@ -42,19 +39,19 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ProfileRoute" Type="System.String" Scope="User">
-      <Value Profile="(Default)">carfast</Value>
+      <Value Profile="(Default)">truckfast</Value>
     </Setting>
     <Setting Name="y2" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">6661181</Value>
+      <Value Profile="(Default)">52.124376</Value>
     </Setting>
     <Setting Name="x2" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">498064</Value>
+      <Value Profile="(Default)">5.0406243</Value>
     </Setting>
     <Setting Name="y1" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">6648688</Value>
+      <Value Profile="(Default)">51.922923</Value>
     </Setting>
     <Setting Name="x1" Type="System.Double" Scope="User">
-      <Value Profile="(Default)">479526</Value>
+      <Value Profile="(Default)">4.177775</Value>
     </Setting>
     <Setting Name="scroll" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">30</Value>
@@ -72,7 +69,7 @@
       <Value Profile="(Default)">AUTO_LINKING</Value>
     </Setting>
     <Setting Name="COORDFORMAT" Type="System.String" Scope="User">
-      <Value Profile="(Default)">PTV_MERCATOR</Value>
+      <Value Profile="(Default)">OG_GEODECIMAL</Value>
     </Setting>
     <Setting Name="START_TIME" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
@@ -411,29 +408,14 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="SPEED_INFOS" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">true</Value>
     </Setting>
     <Setting Name="XMLSNIPPET" Type="System.String" Scope="User">
       <Value Profile="(Default)">&lt;Profile&gt;
   &lt;Common language="en" majorVersion="1" minorVersion="0"/&gt;
   &lt;Routing majorVersion="2" minorVersion="0"&gt;
-    &lt;Course&gt;
-      &lt;AdditionalDataRules enabled="true"/&gt;
-    &lt;/Course&gt;
-  &lt;/Routing&gt;
-  &lt;FeatureLayer majorVersion="1" minorVersion="0"&gt;
-    &lt;GlobalSettings enableTimeDependency="true"/&gt;
-    &lt;Themes&gt;
-      &lt;Theme id="PTV_TrafficIncidents" enabled="true"&gt;
-        &lt;FeatureDescription includeTimeDomain="true" includeLanguageCode="true"&gt;
-          &lt;Property id="*" included="true"/&gt;
-          &lt;Property id="message" included="true"/&gt;
-        &lt;/FeatureDescription&gt;
-      &lt;/Theme&gt;
-    &lt;/Themes&gt;
-  &lt;/FeatureLayer&gt;
-&lt;/Profile&gt;
-</Value>
+
+&lt;/Profile&gt;</Value>
     </Setting>
     <Setting Name="xServerUserName" Type="System.String" Scope="User">
       <Value Profile="(Default)">xtok</Value>
@@ -442,7 +424,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ProfileMap" Type="System.String" Scope="User">
-      <Value Profile="(Default)">greenzones</Value>
+      <Value Profile="(Default)">gravelpit</Value>
     </Setting>
     <Setting Name="Route_Width" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">2</Value>

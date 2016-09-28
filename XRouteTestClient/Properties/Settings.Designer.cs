@@ -38,18 +38,6 @@ namespace XRouteTestClient.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string SPEED_PROFILE {
-            get {
-                return ((string)(this["SPEED_PROFILE"]));
-            }
-            set {
-                this["SPEED_PROFILE"] = value;
-            }
-        }
-        
-        [global::System.Configuration.UserScopedSettingAttribute()]
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string AVOID_TOLLROADS {
             get {
                 return ((string)(this["AVOID_TOLLROADS"]));
@@ -181,7 +169,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("carfast")]
+        [global::System.Configuration.DefaultSettingValueAttribute("truckfast")]
         public string ProfileRoute {
             get {
                 return ((string)(this["ProfileRoute"]));
@@ -193,7 +181,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6661181")]
+        [global::System.Configuration.DefaultSettingValueAttribute("52.124376")]
         public double y2 {
             get {
                 return ((double)(this["y2"]));
@@ -205,7 +193,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("498064")]
+        [global::System.Configuration.DefaultSettingValueAttribute("5.0406243")]
         public double x2 {
             get {
                 return ((double)(this["x2"]));
@@ -217,7 +205,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("6648688")]
+        [global::System.Configuration.DefaultSettingValueAttribute("51.922923")]
         public double y1 {
             get {
                 return ((double)(this["y1"]));
@@ -229,7 +217,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("479526")]
+        [global::System.Configuration.DefaultSettingValueAttribute("4.1755863")]
         public double x1 {
             get {
                 return ((double)(this["x1"]));
@@ -298,7 +286,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("PTV_MERCATOR")]
+        [global::System.Configuration.DefaultSettingValueAttribute("OG_GEODECMIAL")]
         public string COORDFORMAT {
             get {
                 return ((string)(this["COORDFORMAT"]));
@@ -1648,7 +1636,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("true")]
         public string SPEED_INFOS {
             get {
                 return ((string)(this["SPEED_INFOS"]));
@@ -1660,26 +1648,8 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute(@"<Profile>
-  <Common language=""en"" majorVersion=""1"" minorVersion=""0""/>
-  <Routing majorVersion=""2"" minorVersion=""0"">
-    <Course>
-      <AdditionalDataRules enabled=""true""/>
-    </Course>
-  </Routing>
-  <FeatureLayer majorVersion=""1"" minorVersion=""0"">
-    <GlobalSettings enableTimeDependency=""true""/>
-    <Themes>
-      <Theme id=""PTV_TrafficIncidents"" enabled=""true"">
-        <FeatureDescription includeTimeDomain=""true"" includeLanguageCode=""true"">
-          <Property id=""*"" included=""true""/>
-          <Property id=""message"" included=""true""/>
-        </FeatureDescription>
-      </Theme>
-    </Themes>
-  </FeatureLayer>
-</Profile>
-")]
+        [global::System.Configuration.DefaultSettingValueAttribute("<Profile>\r\n  <Common language=\"en\" majorVersion=\"1\" minorVersion=\"0\"/>\r\n  <Routin" +
+            "g majorVersion=\"2\" minorVersion=\"0\">\r\n\r\n</Profile>")]
         public string XMLSNIPPET {
             get {
                 return ((string)(this["XMLSNIPPET"]));
@@ -1715,7 +1685,7 @@ namespace XRouteTestClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("greenzones")]
+        [global::System.Configuration.DefaultSettingValueAttribute("gravelpit")]
         public string ProfileMap {
             get {
                 return ((string)(this["ProfileMap"]));

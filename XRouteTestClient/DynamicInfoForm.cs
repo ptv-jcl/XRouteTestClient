@@ -33,6 +33,13 @@ namespace XRouteTestClient
                 tbxTimeLoss.Text = di.timeLoss.ToString();
                 tbxTimeLoss2.Text = di.timeLoss2.ToString();
             }
+            var trends = route.info.wrappedTravelTrend;
+            if (trends != null && trends.Length > 0)
+            {
+                commuterTravelTrendBindingSource.DataSource = trends;
+            }
+            else
+                commuterTravelTrendBindingSource.DataSource = null;
         }
 
         private void DynamicInfoForm_FormClosing(object sender, FormClosingEventArgs e)

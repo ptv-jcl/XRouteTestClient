@@ -1,0 +1,20 @@
+<Profile>
+  <Common language="en" majorVersion="1" minorVersion="0"/>
+  <Routing majorVersion="2" minorVersion="0">
+    <Course>
+      <AdditionalDataRules enabled="true"/>
+      <DynamicRouting dynamicTimeOnStaticRoute="true">
+      </DynamicRouting>
+    </Course>
+  </Routing>
+  <FeatureLayer majorVersion="1" minorVersion="0">
+    <GlobalSettings enableTimeDependency="true"/>
+    <Themes>
+      <Theme id="PTV_SpeedPatterns" enabled="true">
+        <FeatureDescription includeTimeDomain="true" includeLanguageCode="true">
+          <Property id="*" included="true"/>
+        </FeatureDescription>
+      </Theme>
+    </Themes>
+  </FeatureLayer>
+</Profile>

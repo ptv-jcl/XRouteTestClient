@@ -39,11 +39,14 @@ namespace XRouteTestClient
         CallerContext cc;
         CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
         public const string xmlSnippetNeutral = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
+
         XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
         {
             key = "ProfileXMLSnippet",
             value = Properties.Settings.Default.XMLSNIPPET
         };
+
+
 
         XRouteWSService service;
 
@@ -78,6 +81,8 @@ namespace XRouteTestClient
                     Static.credentials = new NetworkCredential("xtok", privateReader.ReadLine());
 
                 }
+            if (File.Exists("snippet.xml"))
+                Properties.Settings.Default.XMLSNIPPET = string.Join("\r\n", File.ReadAllLines("snippet.xml"));
 
             service = new XRouteWSService() { Credentials = Static.credentials };
 
@@ -150,7 +155,6 @@ namespace XRouteTestClient
             tbxAVOID_VIGNETTEROADS.Text = Properties.Settings.Default.AVOID_VIGNETTEROADS;
             tbxAVOID_LOW_EMISSION_ZONES.Text = Properties.Settings.Default.AVOID_LOW_EMISSION_ZONES;
             tbxOPTIMIZATION.Text = Properties.Settings.Default.OPTIMIZATION;
-            tbxSPEEDPROFILE.Text = Properties.Settings.Default.SPEED_PROFILE;
             tbxEXCLUDE_COUNTRIES.Text = Properties.Settings.Default.EXCLUDE_COUNTRIES;
             tbxROUTING_COUNTRIES.Text = Properties.Settings.Default.ROUTING_COUNTRIES;
             tbxREQUEST_VERSION.Text = Properties.Settings.Default.REQUEST_VERSION;
@@ -256,7 +260,6 @@ namespace XRouteTestClient
             }
             //lbxResultListOptions.SelectedIndex = 0;
             lbxResultListOptions.SelectedIndices.Add(0);
-            lbxResultListOptions.SelectedIndices.Add(1);
 
             // 2012-12-29 HBEFA and Emissions
             foreach (HBEFAVersion curHBEFAVersion in Enum.GetValues(typeof(HBEFAVersion)))
@@ -308,8 +311,8 @@ namespace XRouteTestClient
                     {
                         linkType = LinkType.AUTO_LINKING,
                         fuzzyRadius = Convert.ToInt32(tbxFuzzyRadius.Text),
-                        wrappedCoords = new XServer.Point[] 
-                        { 
+                        wrappedCoords = new XServer.Point[]
+                        {
                             new XServer.Point()
                             {
                                 point = new PlainPoint()
@@ -365,7 +368,6 @@ namespace XRouteTestClient
                 if (tbxAVOID_LOW_EMISSION_ZONES.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.AVOID_LOW_EMISSION_ZONES, tbxAVOID_LOW_EMISSION_ZONES.Text));
                 //Common
                 if (tbxOPTIMIZATION.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.OPTIMIZATION, tbxOPTIMIZATION.Text));
-                if (tbxSPEEDPROFILE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.SPEED_PROFILE, tbxSPEEDPROFILE.Text));
                 if (tbxEXCLUDE_COUNTRIES.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.EXCLUDE_COUNTRIES, tbxEXCLUDE_COUNTRIES.Text));
                 if (tbxROUTING_COUNTRIES.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROUTING_COUNTRIES, tbxROUTING_COUNTRIES.Text));
                 if (tbxREQUEST_VERSION.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.REQUEST_VERSION, tbxREQUEST_VERSION.Text));
@@ -467,6 +469,13 @@ namespace XRouteTestClient
 
                 // 2011-02-24 DynamicInfo?
                 rlo.dynamicInfo = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo);
+                if (rlo.dynamicInfo)
+                {
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "30", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "10", });
+                    rlo.utcOffsets = true;
+                    rlo.utcOffsetsSpecified = true;
+                }
 
 
                 // 2011-12-27 PiggyBack invented with 1.14
@@ -881,7 +890,11 @@ namespace XRouteTestClient
                         value = tbxProfileMap.Text
                     };
                     ccMap.wrappedProperties = new CallerContextProperty[] { ccpCoordFormat, ccpProfileMap };
-                    MapForm mapForm = new MapForm(tbxServiceMap.Text, null, listLayer.ToArray(), ccMap);
+                    MapForm mapForm = null;
+                    if (string.IsNullOrEmpty(tbxSTART_TIME.Text))
+                        mapForm = new MapForm(tbxServiceMap.Text, null, listLayer.ToArray(), ccMap);
+                    else
+                        mapForm = new MapForm(tbxServiceMap.Text, null, listLayer.ToArray(), ccMap, tbxSTART_TIME.Text);
                     mapForm.Show();
                 }
 
@@ -1490,7 +1503,7 @@ namespace XRouteTestClient
                 {
                     icon = Properties.Settings.Default.Icon_Segments_Standard;
                 }
-                if(rls.speedLimits != null )
+                if (rls.speedLimits != null)
                 {
                     lstDescr.Add("SpeedLimits = '" + rls.speedLimits.ToString() + "'");
                 }
@@ -1517,7 +1530,6 @@ namespace XRouteTestClient
             strBuilder.Append(countryInfo.countryCode);
             return strBuilder.ToString();
         }
-
 
         private string displayTime(int seconds)
         {

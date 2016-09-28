@@ -49,6 +49,10 @@ namespace XRouteTestClient
             this.lZVToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.featureLayerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pTVTrafficIncidentsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTVSpeedPatternsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTVTruckSpeedPatternsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTVTruckAttributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pTVPrefferedRoutesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.pbxMap)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -213,7 +217,11 @@ namespace XRouteTestClient
             // featureLayerToolStripMenuItem
             // 
             this.featureLayerToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.pTVTrafficIncidentsToolStripMenuItem});
+            this.pTVTrafficIncidentsToolStripMenuItem,
+            this.pTVSpeedPatternsToolStripMenuItem,
+            this.pTVTruckSpeedPatternsToolStripMenuItem,
+            this.pTVTruckAttributesToolStripMenuItem,
+            this.pTVPrefferedRoutesToolStripMenuItem});
             this.featureLayerToolStripMenuItem.Name = "featureLayerToolStripMenuItem";
             this.featureLayerToolStripMenuItem.Size = new System.Drawing.Size(86, 20);
             this.featureLayerToolStripMenuItem.Text = "FeatureLayer";
@@ -221,9 +229,37 @@ namespace XRouteTestClient
             // pTVTrafficIncidentsToolStripMenuItem
             // 
             this.pTVTrafficIncidentsToolStripMenuItem.Name = "pTVTrafficIncidentsToolStripMenuItem";
-            this.pTVTrafficIncidentsToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.pTVTrafficIncidentsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.pTVTrafficIncidentsToolStripMenuItem.Text = "PTV_TrafficIncidents";
             this.pTVTrafficIncidentsToolStripMenuItem.Click += new System.EventHandler(this.pTVTrafficIncidentsToolStripMenuItem_Click);
+            // 
+            // pTVSpeedPatternsToolStripMenuItem
+            // 
+            this.pTVSpeedPatternsToolStripMenuItem.Name = "pTVSpeedPatternsToolStripMenuItem";
+            this.pTVSpeedPatternsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.pTVSpeedPatternsToolStripMenuItem.Text = "PTV_SpeedPatterns";
+            this.pTVSpeedPatternsToolStripMenuItem.Click += new System.EventHandler(this.pTVSpeedPatternsToolStripMenuItem_Click);
+            // 
+            // pTVTruckSpeedPatternsToolStripMenuItem
+            // 
+            this.pTVTruckSpeedPatternsToolStripMenuItem.Name = "pTVTruckSpeedPatternsToolStripMenuItem";
+            this.pTVTruckSpeedPatternsToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.pTVTruckSpeedPatternsToolStripMenuItem.Text = "PTV_TruckSpeedPatterns";
+            this.pTVTruckSpeedPatternsToolStripMenuItem.Click += new System.EventHandler(this.pTVTruckSpeedPatternsToolStripMenuItem_Click);
+            // 
+            // pTVTruckAttributesToolStripMenuItem
+            // 
+            this.pTVTruckAttributesToolStripMenuItem.Name = "pTVTruckAttributesToolStripMenuItem";
+            this.pTVTruckAttributesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.pTVTruckAttributesToolStripMenuItem.Text = "PTV_TruckAttributes";
+            this.pTVTruckAttributesToolStripMenuItem.Click += new System.EventHandler(this.pTVTruckAttributesToolStripMenuItem_Click);
+            // 
+            // pTVPrefferedRoutesToolStripMenuItem
+            // 
+            this.pTVPrefferedRoutesToolStripMenuItem.Name = "pTVPrefferedRoutesToolStripMenuItem";
+            this.pTVPrefferedRoutesToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
+            this.pTVPrefferedRoutesToolStripMenuItem.Text = "PTV_PreferredRoutes";
+            this.pTVPrefferedRoutesToolStripMenuItem.Click += new System.EventHandler(this.pTVPrefferedRoutesToolStripMenuItem_Click);
             // 
             // MapForm
             // 
@@ -268,5 +304,9 @@ namespace XRouteTestClient
         private System.Windows.Forms.ToolStripMenuItem lZVToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem featureLayerToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem pTVTrafficIncidentsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pTVSpeedPatternsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pTVTruckSpeedPatternsToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pTVTruckAttributesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pTVPrefferedRoutesToolStripMenuItem;
     }
 }

@@ -74,7 +74,7 @@ namespace XServer
     {
         public override string ToString()
         {
-            return this.themeId + this.description;
+            return this.themeId +": "+ this.description;
         }
     }
 

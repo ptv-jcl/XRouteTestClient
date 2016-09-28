@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using XServer;
@@ -27,11 +28,7 @@ namespace XRouteTestClient
         };
         XServer.CallerContext callerContext = null;
 
-        public MapForm()
-        {
-            InitializeComponent();
-        }
-        public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext)
+        public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext, string timeStamp)
         {
             InitializeComponent();
             this.svcMap.Url = url;
@@ -43,6 +40,7 @@ namespace XRouteTestClient
             }
             this.mapSection = mapSection;
             this.mapParams.showScale = Properties.Settings.Default.ShowScale;
+            this.mapParams.referenceTime = timeStamp;
             this.imageInfo.format = ImageFileFormat.PNG;
             this.arrLayer = arrLayer;
             this.callerContext = callerContext;
@@ -58,6 +56,10 @@ namespace XRouteTestClient
 
         }
 
+        public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext) :
+            this(url, mapSection, arrLayer, callerContext, DateTime.Now.ToString("o"))
+        { }
+
         public void centerLayer(bool center)
         {
             foreach (Layer curLayer in arrLayer)
@@ -66,7 +68,6 @@ namespace XRouteTestClient
                     ((CustomLayer)curLayer).centerObjects = center;
             }
         }
-
 
         public void renderMap()
         {
@@ -106,7 +107,6 @@ namespace XRouteTestClient
             }
         }
 
-
         private void MapForm_Load(object sender, EventArgs e)
         {
 
@@ -114,12 +114,19 @@ namespace XRouteTestClient
 
         private void pbxMap_Click(object sender, EventArgs e)
         {
-            MouseEventArgs a = (MouseEventArgs)e;
-            double dx = -100.0 + 200.0 * Convert.ToDouble(a.X) / Convert.ToDouble(pbxMap.Width);
-            double dy = 100.0 - 200 * Convert.ToDouble(a.Y) / Convert.ToDouble(pbxMap.Height);
-            mapSection.scrollHorizontal = Convert.ToInt32(dx);
-            mapSection.scrollVertical = Convert.ToInt32(dy);
-            renderMap();
+           MouseEventArgs a = (MouseEventArgs)e;
+            if (a.Button != MouseButtons.Right)
+            {
+                double dx = -100.0 + 200.0 * Convert.ToDouble(a.X) / Convert.ToDouble(pbxMap.Width);
+                double dy = 100.0 - 200 * Convert.ToDouble(a.Y) / Convert.ToDouble(pbxMap.Height);
+                mapSection.scrollHorizontal = Convert.ToInt32(dx);
+                mapSection.scrollVertical = Convert.ToInt32(dy);
+                renderMap();
+            }
+            else
+            {
+                
+            }
         }
 
         private void MapForm_KeyPress(object sender, KeyPressEventArgs e)
@@ -247,6 +254,7 @@ namespace XRouteTestClient
 
         private void pbxMap_MouseMove(object sender, MouseEventArgs e)
         {
+            if (map == null) return;
             if (lastTooltip == e.Location)
                 return;
             else
@@ -301,20 +309,45 @@ namespace XRouteTestClient
 
         }
 
-        private void pTVTrafficIncidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void SetVisibilityFeatureLayer(string layerName, ToolStripMenuItem toolStripMenuItem)
         {
-            int len = arrLayer.Length + 1;
-            Layer[] tempArray = new Layer[len];
-            Array.Copy(arrLayer, tempArray, arrLayer.Length);
-            arrLayer = tempArray;
-            arrLayer[arrLayer.Length - 1] = new FeatureLayer() { name = "PTV_TrafficIncidents", visible = true };
-            pTVTrafficIncidentsToolStripMenuItem.Checked = true;
-            pTVTrafficIncidentsToolStripMenuItem.Enabled = false;
+            var featureLayer = arrLayer.FirstOrDefault(l => l.name == layerName);
+            if (featureLayer == null)
+            {
+                featureLayer = new FeatureLayer() { name = layerName };
+                if (layerName == "PTV_TruckAttributes" || layerName == "PTV_TrafficIncidents") (featureLayer as FeatureLayer).objectInfos = ObjectInfoType.REFERENCEPOINT;
+                var layerList = arrLayer.ToList();
+                layerList.Add(featureLayer);
+                arrLayer = layerList.ToArray();
+            }
+            toolStripMenuItem.Checked = !(toolStripMenuItem.Checked);
+            featureLayer.visible = toolStripMenuItem.Checked;
+            renderMap();
         }
 
-        //private void layersToolStripMenuItem_Click(object sender, EventArgs e)
-        //{
+        private void pTVTruckAttributesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_TruckAttributes", (ToolStripMenuItem)sender);
+        }
 
-        //}
+        private void pTVTrafficIncidentsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_TrafficIncidents", (ToolStripMenuItem)sender);
+        }
+
+        private void pTVSpeedPatternsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_SpeedPatterns", (ToolStripMenuItem)sender);
+        }
+
+        private void pTVTruckSpeedPatternsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_TruckSpeedPatterns", (ToolStripMenuItem)sender);
+        }
+
+        private void pTVPrefferedRoutesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_PreferredRoutes", (ToolStripMenuItem)sender);
+        }
     }
 }
