@@ -1,12 +1,5 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using XServer;
-
 
 namespace XRouteTestClient
 {
@@ -16,7 +9,6 @@ namespace XRouteTestClient
         {
             InitializeComponent();
         }
-
 
         public Emissions_Form(Emissions[] arrEmissions)
         {
@@ -35,8 +27,8 @@ namespace XRouteTestClient
 
         private void EmissionsForm_FormClosing(object sender, FormClosingEventArgs e)
         {
-                this.Visible = false;
-                e.Cancel = true;
+            this.Visible = false;
+            e.Cancel = true;
         }
     }
 }

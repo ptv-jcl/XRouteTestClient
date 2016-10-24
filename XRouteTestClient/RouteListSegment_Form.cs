@@ -1,13 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
-using System.Linq;
 using XServer;
-
 
 namespace XRouteTestClient
 {
@@ -24,6 +17,7 @@ namespace XRouteTestClient
             //dgvRouteListSegment.DataSource = route.wrappedSegments;
             updateDGV(route);
         }
+
         public void updateDGV(Route route)
         {
             dgvRouteListSegment.DataSource = route.wrappedSegments;

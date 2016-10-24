@@ -1,25 +1,19 @@
+using Static;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
-using System.Net;
-using System.Web;
-using System.IO;
-using System.Windows.Forms;
-using System.Configuration;
-using System.Xml;
-using XServer;
 using System.Globalization;
-
-
+using System.IO;
+using System.Net;
+using System.Text;
+using System.Windows.Forms;
+using XServer;
 
 namespace XRouteTestClient
 {
-    enum MySegmentAttributes { hasTollTruck, hasTollCar };
+    internal enum MySegmentAttributes
+    { hasTollTruck, hasTollCar };
 
-    enum MyResultListOptions
+    internal enum MyResultListOptions
     {
         Map,
         Segments,
@@ -34,42 +28,49 @@ namespace XRouteTestClient
 
     public partial class MainForm : Form
     {
-        TourPointDesc startTourPoint, destinationTourPoint;
-        WaypointDesc viaWaypoint;
-        CallerContext cc;
-        CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
+        private TourPointDesc startTourPoint, destinationTourPoint;
+        private WaypointDesc viaWaypoint;
+        private CallerContext cc;
+        private CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
         public const string xmlSnippetNeutral = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
 
-        XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
+        private XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
         {
             key = "ProfileXMLSnippet",
             value = Properties.Settings.Default.XMLSNIPPET
         };
 
+        private XRouteWSService service;
 
+        private ResultListOptions rlo;
 
-        XRouteWSService service;
-
-        ResultListOptions rlo;
         // the extended forms
-        RouteListSegment_Form routeListSegment_Form = null;
-        TextsForm textForm = null;
-        TourEventForm tourEventForm = null;
-        NodesForm nodesForm = null;
-        RouteManoeuvre_Form routeListManoeuvre_Form = null; // 2010-09-07
+        private RouteListSegment_Form routeListSegment_Form = null;
+
+        private TextsForm textForm = null;
+        private TourEventForm tourEventForm = null;
+        private NodesForm nodesForm = null;
+        private RouteManoeuvre_Form routeListManoeuvre_Form = null; // 2010-09-07
+
         //CountryInfoOptions countryInfoOptions; obsolete 2010-03-19
-        CountryInfoVehicleOptions countryInfoVehicleOptions;
+        private CountryInfoVehicleOptions countryInfoVehicleOptions;
+
         //ExtendedRoute extendedRoute;
-        AdvancedTour advancedTour = null;
+        private AdvancedTour advancedTour = null;
+
         // 2010-08-26: Cost Computation
-        double[] costVectorDistance = new double[8], costVectorPeriod = new double[8];
+        private double[] costVectorDistance = new double[8], costVectorPeriod = new double[8];
+
         // 2010-09-11 Waypoints
-        Waypoint_Form waypoints_Form = null;
+        private Waypoint_Form waypoints_Form = null;
+
         // 2011-02.24 DynamicInfo
-        DynamicInfoForm dynamicInfoForm = null;
+        private DynamicInfoForm dynamicInfoForm = null;
+
         // 2011-12-29 Emissions
-        Emissions_Form routeEmissions_Form = null;
-        Emissions_Form segmentEmissions_Form = null;
+        private Emissions_Form routeEmissions_Form = null;
+
+        private Emissions_Form segmentEmissions_Form = null;
 
         public MainForm()
         {
@@ -78,13 +79,12 @@ namespace XRouteTestClient
             if (File.Exists(@"D:\xServers Source\private.txt"))
                 using (var privateReader = new StreamReader(@"D:\xServers Source\private.txt"))
                 {
-                    Static.credentials = new NetworkCredential("xtok", privateReader.ReadLine());
-
+                    StaticClass.credentials = new NetworkCredential("xtok", privateReader.ReadLine());
                 }
             if (File.Exists("snippet.xml"))
                 Properties.Settings.Default.XMLSNIPPET = string.Join("\r\n", File.ReadAllLines("snippet.xml"));
 
-            service = new XRouteWSService() { Credentials = Static.credentials };
+            service = new XRouteWSService() { Credentials = StaticClass.credentials };
 
             tbxXMLSnippet.Text = Properties.Settings.Default.XMLSNIPPET;
 
@@ -111,7 +111,6 @@ namespace XRouteTestClient
                 cboDetailLevel.Items.Add(curDetailLevel);
             }
             cboDetailLevel.SelectedItem = Properties.Settings.Default.DetailLevel;
-
 
             //wpdStart = new WaypointDesc();
             startTourPoint = new TourPointDesc()
@@ -212,7 +211,7 @@ namespace XRouteTestClient
             tbxDestY.Text = Properties.Settings.Default.y2.ToString();
             tbxProfileRoute.Text = Properties.Settings.Default.ProfileRoute;
             tbxProfileMap.Text = Properties.Settings.Default.ProfileMap;
-            // since 2009-04-17: fuzzy stop 
+            // since 2009-04-17: fuzzy stop
             tbxFuzzyRadius.Text = Properties.Settings.Default.ViaRadius.ToString();
             tbxViaX.Text = Properties.Settings.Default.ViaX.ToString();
             tbxViaY.Text = Properties.Settings.Default.ViaY.ToString();
@@ -267,7 +266,6 @@ namespace XRouteTestClient
             foreach (EmissionLevel curEmissionLevel in Enum.GetValues(typeof(EmissionLevel)))
                 cboEmissionLevel.Items.Add(curEmissionLevel);
             cboEmissionLevel.SelectedIndex = 0;
-
         }
 
         private void btnAction_Click(object sender, EventArgs e)
@@ -346,7 +344,7 @@ namespace XRouteTestClient
 
                 ccpCoordFormat.value = cboCoordFormat.SelectedItem.ToString();
                 ccpProfile.value = tbxProfileRoute.Text;
-                // 2012-08-10 XmlSnippet 
+                // 2012-08-10 XmlSnippet
                 if (enableSnippetChckBx.Checked)
                 {
                     ccpXmlSnippet.value = tbxXMLSnippet.Text;
@@ -382,7 +380,7 @@ namespace XRouteTestClient
                 // Dynamic
                 if (tbxENABLE_DYNAMIC.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ENABLE_DYNAMIC, tbxENABLE_DYNAMIC.Text));
                 if (tbxDYNAMIC_PROFILE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.DYNAMIC_PROFILE, tbxDYNAMIC_PROFILE.Text));
-                if (tbxSTART_TIME.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.START_TIME, tbxSTART_TIME.Text));
+                if (tbxSTART_TIME.Text != "")                    listRoutingOption.Add(getRoutingOption(RoutingParameter.START_TIME, tbxSTART_TIME.Text));
                 if (tbxIS_DESTTIME.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.IS_DESTTIME, tbxIS_DESTTIME.Text));
                 if (tbxDYNAMIC_TIME_ON_STATICROUTE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.DYNAMIC_TIME_ON_STATICROUTE, tbxDYNAMIC_TIME_ON_STATICROUTE.Text));
                 // RoadEditor
@@ -462,7 +460,7 @@ namespace XRouteTestClient
                     rlo.manoeuvreGroupRatioSpecified = true;
                     rlo.manoeuvreGroupRatio = Convert.ToDouble(tbxManoeuvreGroupsRatio.Text);
                 }
-                // 2009-09-16 Texts 
+                // 2009-09-16 Texts
                 rlo.texts = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Texts);
                 //2010-05-31 Nodes available
                 rlo.nodes = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Nodes);
@@ -471,12 +469,11 @@ namespace XRouteTestClient
                 rlo.dynamicInfo = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo);
                 if (rlo.dynamicInfo)
                 {
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "30", });
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "10", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "50", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "15", });
                     rlo.utcOffsets = true;
                     rlo.utcOffsetsSpecified = true;
                 }
-
 
                 // 2011-12-27 PiggyBack invented with 1.14
                 rlo.segmentAttributePiggybackSpecified = true;
@@ -562,7 +559,6 @@ namespace XRouteTestClient
                         },
                         regulations = new DriverRegulations()
                         {
-
                             breakRule = new BreakRule()
                             {
                                 breakPeriod1 = int.Parse(breakPeriod1TxtBx.Text),
@@ -723,7 +719,6 @@ namespace XRouteTestClient
                     {
                         routeListManoeuvre_Form.Update(advancedTour.route);
                         routeListManoeuvre_Form.Visible = true;
-
                     }
                 }
 
@@ -740,7 +735,6 @@ namespace XRouteTestClient
                     {
                         waypoints_Form.update(advancedTour.route);
                         waypoints_Form.Visible = true;
-
                     }
                 }
 
@@ -795,8 +789,6 @@ namespace XRouteTestClient
                         }
                     }
                 }
-
-
 
                 if ((tbxServiceMap.Text != "") && (lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Map)) && (advancedTour.route.polygon != null))
                 {
@@ -954,7 +946,6 @@ namespace XRouteTestClient
 
                 btnAction.BackColor = System.Drawing.Color.Green;
                 btnAction.Update();
-
             }
             catch (System.Web.Services.Protocols.SoapException soapException)
             {
@@ -964,7 +955,6 @@ namespace XRouteTestClient
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
             }
-
         }
 
         private CustomLayer getTimeEventsLayer(Tour tour)
@@ -1025,7 +1015,6 @@ namespace XRouteTestClient
                 indexWaypoint++;
             }
 
-
             if (viaWaypoint != null)
             {
                 lstWaypointBitmap.Add(new XServer.Bitmap(Properties.Settings.Default.Waypoint_FUZZY, viaWaypoint.wrappedCoords[0], "FuzzyLocation"));
@@ -1038,10 +1027,9 @@ namespace XRouteTestClient
 
         //private CustomLayer getWaypointsLayer(Route route)
         //{
-
         //    CustomLayer clWaypoints = new CustomLayer();
         //    clWaypoints.centerObjects = true;
-        //    clWaypoints.drawPriority = 
+        //    clWaypoints.drawPriority =
         //}
 
         private CustomLayer getManoeuvresLayer(Route route)
@@ -1412,7 +1400,6 @@ namespace XRouteTestClient
                             }
                         });
                     }
-
                 }
                 if (lstLineString.Count > 0)
                 {
@@ -1428,7 +1415,6 @@ namespace XRouteTestClient
                     bitmaps.wrappedBitmaps = lstBItmap.ToArray();
                     cl.wrappedBitmaps = new Bitmaps[] { bitmaps };
                 }
-
             }
             return cl;
         }
@@ -1497,7 +1483,6 @@ namespace XRouteTestClient
                     }
                     if (lstSegmentAttributes.Count > 0)
                         lstDescr.Add(String.Join(",", lstSegmentAttributes.ToArray()));
-
                 }
                 else
                 {
@@ -1521,7 +1506,6 @@ namespace XRouteTestClient
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
         }
 
         private String displayCountryInfo(CountryInfo countryInfo)
@@ -1591,8 +1575,6 @@ namespace XRouteTestClient
                 lstRouteInfo.Add(riCosts);
             }
             dgvOutputCosts.DataSource = lstRouteInfo;
-
-
         }
 
         private LineOptions getLineOptions(BasicDrawingOptions arrows, LinePartOptions mainLine, bool showFlags, LinePartOptions sideLine, bool transparent)
@@ -1605,6 +1587,7 @@ namespace XRouteTestClient
             lineOptions.transparent = transparent;
             return lineOptions;
         }
+
         private LinePartOptions getLinePartOptions(XServer.Color color, bool visible, int width)
         {
             LinePartOptions linePartOptions = new LinePartOptions();
@@ -1613,6 +1596,7 @@ namespace XRouteTestClient
             linePartOptions.width = width;
             return linePartOptions;
         }
+
         private XServer.Color getColor(System.Drawing.Color rgb_color)
         {
             XServer.Color color = new XServer.Color();
@@ -1624,7 +1608,6 @@ namespace XRouteTestClient
 
         private void labROADEDITOR_ATTRIBUTESET_Click(object sender, EventArgs e)
         {
-
         }
 
         private bool segmentHasToll(RouteListSegment rls, MySegmentAttributes segmentAttributes)
@@ -1709,6 +1692,7 @@ namespace XRouteTestClient
         {
             swapStations();
         }
+
         // simple swap of start and destination
         private void swapStations()
         {

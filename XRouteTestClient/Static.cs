@@ -1,14 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace XRouteTestClient
+namespace Static
 {
-    public static class Static
+    public static class StaticClass
     {
-        public  static NetworkCredential credentials = new NetworkCredential(Properties.Settings.Default.xServerUserName, Properties.Settings.Default.xServerPassword);
+        public static NetworkCredential credentials = new NetworkCredential(XRouteTestClient.Properties.Settings.Default.xServerUserName, XRouteTestClient.Properties.Settings.Default.xServerPassword);
     }
 }

@@ -1,20 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using XServer;
-
-
 
 namespace XRouteTestClient
 {
     public partial class Waypoint_Form : Form
     {
-        Route route = null;
-        
+        private Route route = null;
+
         public Waypoint_Form()
         {
             InitializeComponent();
@@ -28,7 +22,6 @@ namespace XRouteTestClient
 
         private void Waypoint_Form_Load(object sender, EventArgs e)
         {
-
         }
 
         public void update(Route route)
@@ -53,9 +46,7 @@ namespace XRouteTestClient
                 dgvExtWaypoints.Visible = false;
                 dgvWaypoints.Visible = true;
             }
-            
-            
-            
+
             if (route.wrappedStations != null)
             {
                 this.Text = "Waypoints / Length = " + route.wrappedStations.Length;

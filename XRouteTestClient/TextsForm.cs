@@ -1,9 +1,4 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 
 namespace XRouteTestClient
@@ -14,12 +9,13 @@ namespace XRouteTestClient
         {
             InitializeComponent();
         }
+
         public TextsForm(string[] texts)
         {
             InitializeComponent();
             dgvTexts.ColumnCount = 2;
             dgvTexts.Columns[0].Name = "index";
-            dgvTexts.Columns[1].Name = "text";            
+            dgvTexts.Columns[1].Name = "text";
             update(texts);
         }
 
@@ -27,10 +23,11 @@ namespace XRouteTestClient
         {
             this.Text = "Texts";
         }
+
         public void update(string[] texts)
         {
             dgvTexts.Rows.Clear();
-            for(int i=0 ; i<texts.Length ; i++)
+            for (int i = 0; i < texts.Length; i++)
             {
                 dgvTexts.Rows.Add(new string[] { i.ToString(), texts[i] });
             }

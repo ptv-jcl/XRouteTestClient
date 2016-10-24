@@ -1,32 +1,29 @@
+using Static;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using XServer;
-
-
 
 namespace XRouteTestClient
 {
     public partial class MapForm : Form
     {
-        System.Drawing.Point lastTooltip = new System.Drawing.Point(-1, -1);
+        private System.Drawing.Point lastTooltip = new System.Drawing.Point(-1, -1);
 
-        List<MapSection> lstMapSection = new List<MapSection>();
-        MapSection mapSection = null;
-        Map map = null;
-        ImageInfo imageInfo = new ImageInfo();
-        MapParams mapParams = new MapParams();
-        Layer[] arrLayer = null;
-        XMapWSService svcMap = new XMapWSService()
+        private List<MapSection> lstMapSection = new List<MapSection>();
+        private MapSection mapSection = null;
+        private Map map = null;
+        private ImageInfo imageInfo = new ImageInfo();
+        private MapParams mapParams = new MapParams();
+        private Layer[] arrLayer = null;
+
+        private XMapWSService svcMap = new XMapWSService()
         {
-            Credentials = Static.credentials,
+            Credentials = StaticClass.credentials,
         };
-        XServer.CallerContext callerContext = null;
+
+        private XServer.CallerContext callerContext = null;
 
         public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext, string timeStamp)
         {
@@ -53,7 +50,6 @@ namespace XRouteTestClient
                     if (curLayer.name == tsmi.Text)
                         tsmi.Checked = curLayer.visible;
             }
-
         }
 
         public MapForm(string url, MapSection mapSection, Layer[] arrLayer, XServer.CallerContext callerContext) :
@@ -109,12 +105,11 @@ namespace XRouteTestClient
 
         private void MapForm_Load(object sender, EventArgs e)
         {
-
         }
 
         private void pbxMap_Click(object sender, EventArgs e)
         {
-           MouseEventArgs a = (MouseEventArgs)e;
+            MouseEventArgs a = (MouseEventArgs)e;
             if (a.Button != MouseButtons.Right)
             {
                 double dx = -100.0 + 200.0 * Convert.ToDouble(a.X) / Convert.ToDouble(pbxMap.Width);
@@ -125,7 +120,6 @@ namespace XRouteTestClient
             }
             else
             {
-                
             }
         }
 
@@ -284,7 +278,7 @@ namespace XRouteTestClient
             }
         }
 
-        double pixDistance(double x1, double y1, double x2, double y2)
+        private double pixDistance(double x1, double y1, double x2, double y2)
         {
             return Math.Abs(x1 - x2) + Math.Abs(y1 - y2);
         }
@@ -306,7 +300,6 @@ namespace XRouteTestClient
             arrLayer[arrLayer.Length - 1] = new FeatureLayer() { name = "PTV_PreferredRoutes", visible = true };
             lZVToolStripMenuItem.Checked = true;
             lZVToolStripMenuItem.Enabled = false;
-
         }
 
         private void SetVisibilityFeatureLayer(string layerName, ToolStripMenuItem toolStripMenuItem)

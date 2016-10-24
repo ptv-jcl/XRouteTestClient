@@ -1,25 +1,33 @@
-using System.Diagnostics;
-using System.Web.Services;
-using System.ComponentModel;
-using System.Web.Services.Protocols;
+using Static;
 using System;
-using System.Xml.Serialization;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 
 namespace XServer
 {
+    public partial class CommuterTravelTrend
+    {
+        [XmlIgnore]
+        public string formattedTime { get { return TimeSpan.FromSeconds(this.travelTime).ToString(); } private set { } }
+    }
+
     public partial class TourPointResult
     {
         [XmlIgnore]
         public int breakPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.breakPeriod : 0; } }
+
         [XmlIgnore]
         public int dailyRestPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.dailyRestPeriod : 0; } }
+
         [XmlIgnore]
         public int weeklyRestPeriodOnRoad { get { return (this.recreationPeriodsOnRoad != null) ? this.recreationPeriodsOnRoad.weeklyRestPeriod : 0; } }
+
         [XmlIgnore]
         public int breakPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.breakPeriod : 0; } }
+
         [XmlIgnore]
         public int dailyRestPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.dailyRestPeriod : 0; } }
+
         [XmlIgnore]
         public int weeklyRestPeriodAtTourPoint { get { return (this.recreationPeriodsAtTourPoint != null) ? this.recreationPeriodsAtTourPoint.weeklyRestPeriod : 0; } }
     }
@@ -28,6 +36,7 @@ namespace XServer
     {
         [XmlIgnore]
         public string Violations { get { return (this.wrappedViolations != null) ? string.Join(" ; ", this.wrappedViolations) : null; } }
+
         [XmlIgnore]
         public string Descriptions { get { return (this.wrappedDescriptions != null) ? string.Join(" ; ", this.wrappedDescriptions) : null; } }
     }
@@ -36,36 +45,52 @@ namespace XServer
     {
         [XmlIgnore]
         public BrunnelCode brunnelCode { get { if (this.segmentAttr != null) return this.segmentAttr.brunnelCode; else return BrunnelCode.NOTHING; } private set { } }
+
         [XmlIgnore]
         public bool isFerry { get { if (this.segmentAttr != null) return this.segmentAttr.isFerry; else return false; } private set { } }
+
         [XmlIgnore]
         public bool isBlockedCar { get { if (this.segmentAttr != null) return this.segmentAttr.isBlockedCar; else return false; } private set { } }
+
         [XmlIgnore]
         public bool isBlockedTruck { get { if (this.segmentAttr != null) return this.segmentAttr.isBlockedTruck; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasTollCar { get { if (this.segmentAttr != null) return this.segmentAttr.hasTollCar; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasTollTruck { get { if (this.segmentAttr != null) return this.segmentAttr.hasTollTruck; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasVignetteCar { get { if (this.segmentAttr != null) return this.segmentAttr.hasVignetteCar; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasVignetteTruck { get { if (this.segmentAttr != null) return this.segmentAttr.hasVignetteTruck; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasExtraToll { get { if (this.segmentAttr != null) return this.segmentAttr.hasExtraToll; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasNamedToll { get { if (this.segmentAttr != null) return this.segmentAttr.hasNamedToll; else return false; } private set { } }
+
         [XmlIgnore]
         public bool hasSeparator { get { if (this.segmentAttr != null) return this.segmentAttr.hasSeparator; else return false; } private set { } }
+
         [XmlIgnore]
         public bool isPedestrianZone { get { if (this.segmentAttr != null) return this.segmentAttr.isPedestrianZone; else return false; } private set { } }
+
         [XmlIgnore]
         public bool isPiggyback { get { if (this.segmentAttr != null) return this.segmentAttr.isPiggyback; else return false; } private set { } }
+
         [XmlIgnore]
         public string additionalRE { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+
         [XmlIgnore]
         public string additionalInfo { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+
         [XmlIgnore]
         public string lowEmissionZoneType { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
+
         [XmlIgnore]
         public string FLDescriptions { get { return (this.wrappedFeatureDescriptions != null) ? string.Join(" ; ", (object[])(this.wrappedFeatureDescriptions)) : null; } }
     }
@@ -74,7 +99,7 @@ namespace XServer
     {
         public override string ToString()
         {
-            return this.themeId +": "+ this.description;
+            return this.themeId + ": " + this.description;
         }
     }
 
@@ -86,6 +111,7 @@ namespace XServer
             return this.condition.Replace("|", " | ");
         }
     }
+
     // 2012.10.18 - SpeedLimits
     public partial class SpeedLimits
     {
@@ -98,7 +124,6 @@ namespace XServer
         }
     }
 
-
     // 2011.12.29
     public partial class NormSpeed
     {
@@ -110,7 +135,6 @@ namespace XServer
 
     public partial class Point : EncodedGeometry
     {
-
         public override string ToString()
         {
             if (this.point != null)
@@ -126,7 +150,9 @@ namespace XServer
 
     partial class Color
     {
-        public Color() : base() { }
+        public Color() : base()
+        {
+        }
 
         public Color(System.Drawing.Color color)
             : base()
@@ -143,7 +169,6 @@ namespace XServer
             this.green = g;
             this.red = r;
         }
-
     }
 
     partial class TollStationDescription : TransientVO
@@ -182,7 +207,9 @@ namespace XServer
 
     partial class PlainLineString
     {
-        public PlainLineString() : base() { }
+        public PlainLineString() : base()
+        {
+        }
 
         public PlainLineString(PlainPoint[] arrPlainPoint)
             : base()
@@ -193,7 +220,10 @@ namespace XServer
 
     partial class MapSection
     {
-        public MapSection() : base() { }
+        public MapSection() : base()
+        {
+        }
+
         public MapSection(XServer.Point center, int scrollH, int ScrollV, int scale, int zoom)
             : base()
         {
@@ -204,9 +234,13 @@ namespace XServer
             this.zoom = zoom;
         }
     }
+
     partial class Bitmap
     {
-        public Bitmap() : base() { }
+        public Bitmap() : base()
+        {
+        }
+
         public Bitmap(string name, Point position, string descr)
             : base()
         {

@@ -1,12 +1,6 @@
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using XServer;
-
 
 namespace XRouteTestClient
 {
@@ -16,11 +10,13 @@ namespace XRouteTestClient
         {
             InitializeComponent();
         }
+
         public RouteManoeuvre_Form(Route route)
         {
             InitializeComponent();
             Update(route);
         }
+
         public void Update(Route route)
         {
             dgvRouteManoeuvre.DataSource = route.wrappedManoeuvres;
@@ -44,7 +40,6 @@ namespace XRouteTestClient
                 dgvRouteManoeuvre.Update();
             }
 
-            
             if (route.wrappedManoeuvres != null)
             {
                 this.Text = "Manoeuvres / Length = " + route.wrappedManoeuvres.Length;
