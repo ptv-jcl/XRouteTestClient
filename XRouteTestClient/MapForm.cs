@@ -18,6 +18,43 @@ namespace XRouteTestClient
         private MapParams mapParams = new MapParams();
         private Layer[] arrLayer = null;
 
+        private const string profileSnippetTemplate =
+@"<?xml version='1.0' encoding='UTF-8'?>
+<Profile xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
+  <FeatureLayer majorVersion='1' minorVersion='0'>
+    <GlobalSettings enableTimeDependency='true'/>
+    <Themes>
+      <Theme id='PTV_TrafficIncidents' enabled='{0}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
+      <Theme id='PTV_SpeedPatterns' enabled='{1}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
+      <Theme id='PTV_TruckSpeedPatterns' enabled='{2}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
+      <Theme id='PTV_TruckAttributes' enabled='{3}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
+      <Theme id='PTV_PreferredRoutes' enabled='{4}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
+    </Themes>
+  </FeatureLayer>
+</Profile>";
+
+        private CallerContextProperty profileSnippetProperty = new CallerContextProperty() { key = "ProfileXMLSnippet", };
+
         private XMapWSService svcMap = new XMapWSService()
         {
             Credentials = StaticClass.credentials,
@@ -40,7 +77,12 @@ namespace XRouteTestClient
             this.mapParams.referenceTime = timeStamp;
             this.imageInfo.format = ImageFileFormat.PNG;
             this.arrLayer = arrLayer;
+
+            var tempPropertyList = callerContext.wrappedProperties.ToList();
+            tempPropertyList.Add(profileSnippetProperty);
+            callerContext.wrappedProperties = tempPropertyList.ToArray();
             this.callerContext = callerContext;
+
             renderMap();
             centerLayer(false);
             // check the status of layers
@@ -315,6 +357,16 @@ namespace XRouteTestClient
             }
             toolStripMenuItem.Checked = !(toolStripMenuItem.Checked);
             featureLayer.visible = toolStripMenuItem.Checked;
+
+            profileSnippetProperty.value = String.Format(
+                profileSnippetTemplate,
+                pTVTrafficIncidentsToolStripMenuItem.Checked.ToString(),
+                pTVSpeedPatternsToolStripMenuItem.Checked.ToString(),
+                pTVTruckSpeedPatternsToolStripMenuItem.Checked.ToString(),
+                pTVTruckAttributesToolStripMenuItem.Checked.ToString(),
+                pTVPrefferedRoutesToolStripMenuItem.Checked.ToString()
+                );
+
             renderMap();
         }
 
