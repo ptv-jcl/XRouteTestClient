@@ -1,8 +1,10 @@
+using NetTopologySuite.IO;
 using Static;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Linq;
 using System.Net;
 using System.Text;
 using System.Windows.Forms;
@@ -11,7 +13,10 @@ using XServer;
 namespace XRouteTestClient
 {
     internal enum MySegmentAttributes
-    { hasTollTruck, hasTollCar };
+    {
+        hasTollTruck,
+        hasTollCar,
+    };
 
     internal enum MyResultListOptions
     {
@@ -23,7 +28,7 @@ namespace XRouteTestClient
         Waypoints,
         TourEvents,
         DynamicInfo,
-        ManoeuvreGroups
+        ManoeuvreGroups,
     };
 
     public partial class MainForm : Form
@@ -31,14 +36,8 @@ namespace XRouteTestClient
         private TourPointDesc startTourPoint, destinationTourPoint;
         private WaypointDesc viaWaypoint;
         private CallerContext cc;
-        private CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry;
+        private CallerContextProperty ccpCoordFormat, ccpProfile, ccpResponseGeometry, ccpXmlSnippet;
         public const string xmlSnippetNeutral = "<?xml version=\"1.0\" encoding=\"UTF-8\"?><Profile><Routing majorVersion=\"2\" minorVersion=\"0\"></Routing></Profile>";
-
-        private XServer.CallerContextProperty ccpXmlSnippet = new XServer.CallerContextProperty()
-        {
-            key = "ProfileXMLSnippet",
-            value = Properties.Settings.Default.XMLSNIPPET
-        };
 
         private XRouteWSService service;
 
@@ -74,6 +73,8 @@ namespace XRouteTestClient
 
         public MainForm()
         {
+            CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+
             InitializeComponent();
 
             if (File.Exists(@"D:\xServers Source\private.txt"))
@@ -82,11 +83,11 @@ namespace XRouteTestClient
                     StaticClass.credentials = new NetworkCredential("xtok", privateReader.ReadLine());
                 }
             if (File.Exists("snippet.xml"))
-                Properties.Settings.Default.XMLSNIPPET = string.Join("\r\n", File.ReadAllLines("snippet.xml"));
+                tbxXMLSnippet.Text = string.Join("\r\n", File.ReadAllLines("snippet.xml")).Replace("\t", "  ");
+            else
+                tbxXMLSnippet.Text = xmlSnippetNeutral;
 
             service = new XRouteWSService() { Credentials = StaticClass.credentials };
-
-            tbxXMLSnippet.Text = Properties.Settings.Default.XMLSNIPPET;
 
             tbxServiceMap.Text = Properties.Settings.Default.UrlMap;
             tbxServiceRoute.Text = Properties.Settings.Default.UrlRoute;
@@ -140,6 +141,11 @@ namespace XRouteTestClient
                 key = "ResponseGeometry",
                 value = "WKB,PLAIN"
             };
+            ccpXmlSnippet = new XServer.CallerContextProperty()
+            {
+                key = "ProfileXMLSnippet",
+                value = tbxXMLSnippet.Text,
+            };
             cc = new XServer.CallerContext()
             {
                 wrappedProperties = new CallerContextProperty[] { ccpProfile, ccpCoordFormat, ccpResponseGeometry, ccpXmlSnippet }
@@ -159,20 +165,13 @@ namespace XRouteTestClient
             tbxREQUEST_VERSION.Text = Properties.Settings.Default.REQUEST_VERSION;
             tbxCOUNTRY_ENCODING.Text = Properties.Settings.Default.COUNTRY_ENCODING;
             tbxROADEDITOR_ADDITIONAL_OPTIONS.Text = Properties.Settings.Default.ROADEDITOR_ADDITIONAL_OPTIONS;
-            tbxSTART_TIME_ROADEDITOR.Text = Properties.Settings.Default.START_TIME_ROADEDITOR;
             tbxLOW_EMISSION_ZONE_TYPE.Text = Properties.Settings.Default.LOW_EMISSION_ZONE_TYPE;
             tbxROUTE_LANGUAGE.Text = Properties.Settings.Default.ROUTE_LANGUAGE;
-            // 2010.12.15
-            tbxGEODATASOURCE_LAYER.Text = Properties.Settings.Default.GEODATASOURCE_LAYER;
             // dynamic tbx's
-            tbxENABLE_DYNAMIC.Text = Properties.Settings.Default.ENABLE_DYNAMIC;
-            tbxDYNAMIC_PROFILE.Text = Properties.Settings.Default.DYNAMIC_PROFILE;
             tbxSTART_TIME.Text = Properties.Settings.Default.START_TIME;
             tbxIS_DESTTIME.Text = Properties.Settings.Default.IS_DESTTIME;
-            tbxDYNAMIC_TIME_ON_STATICROUTE.Text = Properties.Settings.Default.DYNAMIC_TIME_ON_STATICROUTE;
             // new 2009-04-14
             tbxROUTING_RECTANGLE.Text = Properties.Settings.Default.ROUTING_RECTANGLE;
-            tbxDISTANCE_MEASURE.Text = Properties.Settings.Default.DISTANCE_MEASURE;
             tbxROADEDITOR_LAYERNAME.Text = Properties.Settings.Default.ROADEDITOR_LAYERNAME;
             tbxEXPERT_OPTIONS.Text = Properties.Settings.Default.EXPERT_OPTIONS;
             tbxGENERATE_EXTWAYPOINTS.Text = Properties.Settings.Default.GENERATE_EXTWAYPOINTS;
@@ -182,7 +181,6 @@ namespace XRouteTestClient
             // new 2009-04-17
             tbxStreet.Text = Properties.Settings.Default.ExceptionPath_Street;
             tbxBinaryPathDescriptionIn.Text = Properties.Settings.Default.ExceptionPath_BinaryPathDescription;
-            tbxExtSegments.Text = Properties.Settings.Default.ExceptionPath_ExtSegments;
             tbxAbsMalus.Text = Properties.Settings.Default.ExceptionPath_AbsMalus.ToString();
             tbxRelMalus.Text = Properties.Settings.Default.ExceptionPath_RelMalus.ToString();
             // 2010-03-19 VehicleParameters
@@ -239,19 +237,13 @@ namespace XRouteTestClient
             // radCalcExtRoute.Checked = Properties.Settings.Default.ExtendedRoute;
             // TODO find better way for default operation
             radCalcExtRoute.Checked = true;
-            //2010-03-19 Retour
-            cbxRetour.Checked = Properties.Settings.Default.RETOUR;
 
             cbxDisplayRoadeditorLayer.Checked = Properties.Settings.Default.DisplayRoadEditorLayer;
             countryInfoVehicleOptions = new CountryInfoVehicleOptions();
             countryInfoVehicleOptions.tollTotals = true;
             countryInfoVehicleOptions.tollTotalsSpecified = true;
-            // 2010-08-25 Fuel costs
-            tbxCostsDistance.Text = Properties.Settings.Default.CostsDistance;
-            tbxCostsPeriod.Text = Properties.Settings.Default.CostsPeriod;
             // 2011-04-19 TollDate for Scenarios
-            string tolldate = Properties.Settings.Default.Tolldate.ToString();
-            tbxTolldate.Text = ((tolldate != (new System.DateTime().ToString())) ? (tolldate) : (""));
+            tbxTolldate.Text = Properties.Settings.Default.TollDate;
             // 2011-12-29 Result List Elements
             foreach (MyResultListOptions curMyResultListOptions in Enum.GetValues(typeof(MyResultListOptions)))
             {
@@ -270,77 +262,103 @@ namespace XRouteTestClient
 
         private void btnAction_Click(object sender, EventArgs e)
         {
+            btnAction.BackColor = System.Drawing.Color.Yellow;
+            btnAction.Update();
+
+            var prevCursor = Cursor;
+            Cursor = Cursors.WaitCursor;
             try
             {
-                btnAction.BackColor = System.Drawing.Color.Yellow;
-                btnAction.Update();
-
-                // accepting both , and . as decimal separators for easier copy/past from other sources
-                char decimalSeparator = Convert.ToChar(CultureInfo.CurrentCulture.NumberFormat.NumberDecimalSeparator);
-                char notDecimalSeparator = decimalSeparator == '.' ? ',' : '.';
-
                 //setting up waypointdesc
-                startTourPoint.wrappedCoords[0].point.x = Convert.ToDouble(tbxStartX.Text.Replace(notDecimalSeparator, decimalSeparator));
-                startTourPoint.wrappedCoords[0].point.y = Convert.ToDouble(tbxStartY.Text.Replace(notDecimalSeparator, decimalSeparator));
-                startTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeStart.SelectedItem.ToString()));
-                destinationTourPoint.wrappedCoords[0].point.x = Convert.ToDouble(tbxDestX.Text.Replace(notDecimalSeparator, decimalSeparator));
-                destinationTourPoint.wrappedCoords[0].point.y = Convert.ToDouble(tbxDestY.Text.Replace(notDecimalSeparator, decimalSeparator));
-                destinationTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeDest.SelectedItem.ToString()));
-
                 List<WaypointDesc> lstWaypointDesc = new List<WaypointDesc>();
-                lstWaypointDesc.Add(startTourPoint);
-
-                //check if we need the via point or not. If so add it
-                if (tbxFerryId.Text != "")
                 {
-                    WaypointDesc wpdFerry = new WaypointDesc()
+                    double startX, startY, destX, destY;
+                    if (!double.TryParse(tbxStartX.Text.Replace(',', '.'), out startX))
                     {
-                        combinedTransportID = tbxFerryId.Text,
-                        viaType = new ViaType()
-                        {
-                            viaType = ViaTypeEnum.COMBINED_TRANSPORT
-                        }
-                    };
-                    lstWaypointDesc.Add(wpdFerry);
-                }
-                else if ((tbxViaX.Text != "") && (tbxViaY.Text != "") && (tbxFuzzyRadius.Text != ""))
-                {
-                    viaWaypoint = new WaypointDesc()
-                    {
-                        linkType = LinkType.AUTO_LINKING,
-                        fuzzyRadius = Convert.ToInt32(tbxFuzzyRadius.Text),
-                        wrappedCoords = new XServer.Point[]
-                        {
-                            new XServer.Point()
-                            {
-                                point = new PlainPoint()
-                                    {
-                                        x = Convert.ToDouble(tbxViaX.Text.Replace(notDecimalSeparator,decimalSeparator)),
-                                        y = Convert.ToDouble(tbxViaY.Text.Replace(notDecimalSeparator,decimalSeparator)),
-                                    },
-                            },
-                        },
-                        viaType = new ViaType()
-                        {
-                            viaType = ViaTypeEnum.FUZZY,
-                        },
-                    };
-                    lstWaypointDesc.Add(viaWaypoint);
-                }
-                lstWaypointDesc.Add(destinationTourPoint);
-
-                // 2010-03-19 Retour
-                if (cbxRetour.Checked)
-                {
-                    for (int index = lstWaypointDesc.Count - 1; index >= 0; index--)
-                    {
-                        //2014-09-26 remove ferry from retour
-                        if (lstWaypointDesc[index].combinedTransportID != null && lstWaypointDesc[index].combinedTransportID != "") continue;
-                        lstWaypointDesc.Add(lstWaypointDesc[index]);
+                        MessageBox.Show("Start X is not a valid double.");
+                        return;
                     }
-                }
+                    startTourPoint.wrappedCoords[0].point.x = startX;
+                    if (!double.TryParse(tbxStartY.Text.Replace(',', '.'), out startY))
+                    {
+                        MessageBox.Show("Start Y is not a valid double.");
+                        return;
+                    }
+                    startTourPoint.wrappedCoords[0].point.y = startY;
+                    startTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeStart.SelectedItem.ToString()));
 
-                WaypointDesc[] waypointDesc = lstWaypointDesc.ToArray();
+                    if (!double.TryParse(tbxDestX.Text.Replace(',', '.'), out destX))
+                    {
+                        MessageBox.Show("Destination X is not a valid double.");
+                        return;
+                    }
+                    destinationTourPoint.wrappedCoords[0].point.x = destX;
+                    if (!double.TryParse(tbxDestY.Text.Replace(',', '.'), out destY))
+                    {
+                        MessageBox.Show("Destination Y is not a valid double.");
+                        return;
+                    }
+                    destinationTourPoint.wrappedCoords[0].point.y = destY;
+                    destinationTourPoint.linkType = (LinkType)(Enum.Parse(typeof(LinkType), cboLinkTypeDest.SelectedItem.ToString()));
+
+                    lstWaypointDesc.Add(startTourPoint);
+                    //check if we need the via point or not. If so add it
+                    if (tbxFerryId.Text != "")
+                    {
+                        WaypointDesc wpdFerry = new WaypointDesc()
+                        {
+                            combinedTransportID = tbxFerryId.Text,
+                            viaType = new ViaType()
+                            {
+                                viaType = ViaTypeEnum.COMBINED_TRANSPORT
+                            }
+                        };
+                        lstWaypointDesc.Add(wpdFerry);
+                    }
+                    else if ((tbxViaX.Text != "") && (tbxViaY.Text != "") && (tbxFuzzyRadius.Text != ""))
+                    {
+                        double viaX, viaY;
+                        if (!double.TryParse(tbxViaX.Text.Replace(',', '.'), out viaX))
+                        {
+                            MessageBox.Show("Via X is not a valid double.");
+                            return;
+                        }
+                        if (!double.TryParse(tbxViaY.Text.Replace(',', '.'), out viaY))
+                        {
+                            MessageBox.Show("Via Y is not a valid double.");
+                            return;
+                        }
+                        int fuzzyRadius;
+                        if (!int.TryParse(tbxFuzzyRadius.Text, out fuzzyRadius))
+                        {
+                            MessageBox.Show("Fuzzy Radius is not a valid integer.");
+                            return;
+                        }
+
+                        viaWaypoint = new WaypointDesc()
+                        {
+                            linkType = LinkType.AUTO_LINKING,
+                            fuzzyRadius = fuzzyRadius,
+                            wrappedCoords = new XServer.Point[]
+                            {
+                                new XServer.Point()
+                                {
+                                    point = new PlainPoint()
+                                    {
+                                        x = viaX,
+                                        y = viaY,
+                                    },
+                                },
+                            },
+                            viaType = new ViaType()
+                            {
+                                viaType = ViaTypeEnum.FUZZY,
+                            },
+                        };
+                        lstWaypointDesc.Add(viaWaypoint);
+                    }
+                    lstWaypointDesc.Add(destinationTourPoint);
+                }
 
                 ccpCoordFormat.value = cboCoordFormat.SelectedItem.ToString();
                 ccpProfile.value = tbxProfileRoute.Text;
@@ -373,73 +391,99 @@ namespace XRouteTestClient
                 if (tbxROUTE_LANGUAGE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROUTE_LANGUAGE, tbxROUTE_LANGUAGE.Text));
                 if (tbxLOW_EMISSION_ZONE_TYPE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.LOW_EMISSION_ZONE_TYPE, tbxLOW_EMISSION_ZONE_TYPE.Text));
                 if (tbxROUTING_RECTANGLE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROUTING_RECTANGLE, tbxROUTING_RECTANGLE.Text));
-                if (tbxDISTANCE_MEASURE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.DISTANCE_MEASURE, tbxDISTANCE_MEASURE.Text));
                 if (tbxGENERATE_EXTWAYPOINTS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.GENERATE_EXTWAYPOINTS, tbxGENERATE_EXTWAYPOINTS.Text));
                 if (tbxEXPERT_OPTIONS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.EXPERT_OPTIONS, tbxEXPERT_OPTIONS.Text));
                 if (tbxSPEED_INFOS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.SPEED_INFOS, tbxSPEED_INFOS.Text));
                 // Dynamic
-                if (tbxENABLE_DYNAMIC.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ENABLE_DYNAMIC, tbxENABLE_DYNAMIC.Text));
-                if (tbxDYNAMIC_PROFILE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.DYNAMIC_PROFILE, tbxDYNAMIC_PROFILE.Text));
-                if (tbxSTART_TIME.Text != "")                    listRoutingOption.Add(getRoutingOption(RoutingParameter.START_TIME, tbxSTART_TIME.Text));
+                if (tbxSTART_TIME.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.START_TIME, tbxSTART_TIME.Text));
                 if (tbxIS_DESTTIME.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.IS_DESTTIME, tbxIS_DESTTIME.Text));
-                if (tbxDYNAMIC_TIME_ON_STATICROUTE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.DYNAMIC_TIME_ON_STATICROUTE, tbxDYNAMIC_TIME_ON_STATICROUTE.Text));
                 // RoadEditor
                 if (tbxENABLE_ROADEDITOR.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ENABLE_ROADEDITOR, tbxENABLE_ROADEDITOR.Text));
-                if (tbxSTART_TIME_ROADEDITOR.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.START_TIME_ROADEDITOR, tbxSTART_TIME_ROADEDITOR.Text));
                 if (tbxROADEDITOR_ADDITIONAL_OPTIONS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROADEDITOR_ADDITIONAL_OPTIONS, tbxROADEDITOR_ADDITIONAL_OPTIONS.Text));
                 if (tbxALLOW_SEGMENT_VIOLATIONS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ALLOW_SEGMENT_VIOLATIONS, tbxALLOW_SEGMENT_VIOLATIONS.Text));
                 if (tbxCOST_OF_SEGMENT_VIOLATIONS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.COST_OF_SEGMENT_VIOLATIONS, tbxCOST_OF_SEGMENT_VIOLATIONS.Text));
                 if (tbxROADEDITOR_LAYERNAME.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROADEDITOR_LAYERNAME, tbxROADEDITOR_LAYERNAME.Text));
                 // ExceptionPath
-                if (tbxGEODATASOURCE_LAYER.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.GEODATASOURCE_LAYER, tbxGEODATASOURCE_LAYER.Text));
-                // ExceptionPath only when streetname is available
-                ExceptionPath[] arrExceptionpath;
-                // if both properties
-                // - streetname or binaryPathDescription or streetname or nodes
-                // - relative malus or abs malus
-                // are given, the ExceptionPath is created
-                if (((tbxNodes.Text != "") || (tbxExtSegments.Text != "") || (tbxStreet.Text != "") || (tbxBinaryPathDescriptionIn.Text != "")) && ((tbxAbsMalus.Text != "") || (tbxRelMalus.Text != "")))
+                var exceptionPathList = new List<ExceptionPath>();
+                if (!string.IsNullOrEmpty(tbxAbsMalus.Text) || !string.IsNullOrEmpty(tbxRelMalus.Text))
                 {
-                    ExceptionPath ep = new ExceptionPath();
-                    // only the first non empty element is used by the server
-                    if (tbxNodes.Text != "")
+                    if (!string.IsNullOrEmpty(intersectingLineStartXTextBox.Text) && !string.IsNullOrEmpty(intersectingLineStartYTextBox.Text)
+                        && !string.IsNullOrEmpty(intersectingLineEndXTextBox.Text) && !string.IsNullOrEmpty(intersectingLineEndYTextBox.Text))
                     {
-                        string[] lines = tbxNodes.Text.Split(';');
-                        List<UniqueGeoID> lstUniqueGeoID = new List<UniqueGeoID>();
-                        foreach (string curLine in lines)
+                        var exceptionPath = new ExceptionPath();
+                        exceptionPath.intersectingLine = new LineString()
                         {
-                            string[] curLineSplitted = curLine.Split(',');
-                            UniqueGeoID uniqueGeoId = new UniqueGeoID();
-                            uniqueGeoId.iuCode = Convert.ToInt32(curLineSplitted[0]);
-                            uniqueGeoId.n = Convert.ToInt32(curLineSplitted[1]);
-                            uniqueGeoId.tID = Convert.ToInt64(curLineSplitted[2]);
-                            uniqueGeoId.xOff = Convert.ToInt32(curLineSplitted[3]);
-                            uniqueGeoId.yOff = Convert.ToInt32(curLineSplitted[4]);
-                            lstUniqueGeoID.Add(uniqueGeoId);
+                            lineString = new PlainLineString()
+                            {
+                                wrappedPoints = new PlainPoint[]
+                                {
+                                    new PlainPoint(),
+                                    new PlainPoint(),
+                                }
+                            }
+                        };
+                        double startX, startY, endX, endY;
+                        if (!double.TryParse(intersectingLineStartXTextBox.Text.Replace(',', '.'), out startX))
+                        {
+                            MessageBox.Show("Intersecting line start X is not a valid double.");
+                            return;
                         }
-                        ep.wrappedNodes = lstUniqueGeoID.ToArray();
+                        exceptionPath.intersectingLine.lineString.wrappedPoints[0].x = startX;
+                        if (!double.TryParse(intersectingLineStartYTextBox.Text.Replace(',', '.'), out startY))
+                        {
+                            MessageBox.Show("Intersecting line start Y is not a valid double.");
+                            return;
+                        }
+                        exceptionPath.intersectingLine.lineString.wrappedPoints[0].y = startY;
+                        if (!double.TryParse(intersectingLineEndXTextBox.Text.Replace(',', '.'), out endX))
+                        {
+                            MessageBox.Show("Intersecting line end X is not a valid double.");
+                            return;
+                        }
+                        exceptionPath.intersectingLine.lineString.wrappedPoints[1].x = endX;
+                        if (!double.TryParse(intersectingLineEndYTextBox.Text.Replace(',', '.'), out endY))
+                        {
+                            MessageBox.Show("Intersecting line end Y is not a valid double.");
+                            return;
+                        }
+                        exceptionPath.intersectingLine.lineString.wrappedPoints[1].y = endY;
+                        exceptionPathList.Add(exceptionPath);
                     }
-                    ep.extSegments = tbxExtSegments.Text;
-                    ep.street = tbxStreet.Text;
-                    ep.binaryPathDesc = tbxBinaryPathDescriptionIn.Text;
-                    // 2010.12.15: rel or abs malus is checked
-                    if (tbxRelMalus.Text != "")
-                    {
-                        ep.relMalus = Convert.ToInt32(tbxRelMalus.Text);
-                    }
-                    if (tbxAbsMalus.Text != "")
-                    {
-                        ep.absTimeMalusSpecified = true;
-                        ep.absTimeMalus = Convert.ToInt32(tbxAbsMalus.Text);
-                    }
-                    arrExceptionpath = new ExceptionPath[] { ep };
                 }
-                else
+                if (!string.IsNullOrEmpty(tbxStreet.Text))
                 {
-                    arrExceptionpath = null;
+                    var exceptionPath = new ExceptionPath()
+                    {
+                        street = tbxStreet.Text,
+                    };
+                    exceptionPathList.Add(exceptionPath);
                 }
-
-                //
+                if (!string.IsNullOrEmpty(tbxBinaryPathDescriptionIn.Text))
+                {
+                    var exceptionPath = new ExceptionPath()
+                    {
+                        binaryPathDesc = tbxBinaryPathDescriptionIn.Text,
+                    };
+                    exceptionPathList.Add(exceptionPath);
+                }
+                foreach (var exceptionPath in exceptionPathList)
+                {
+                    int relMalus, absMalus;
+                    if (int.TryParse(tbxAbsMalus.Text, out absMalus))
+                    {
+                        exceptionPath.absTimeMalus = absMalus;
+                        exceptionPath.absTimeMalusSpecified = true;
+                    }
+                    else if (int.TryParse(tbxRelMalus.Text, out relMalus))
+                    {
+                        exceptionPath.relMalus = relMalus;
+                    }
+                    else
+                    {
+                        MessageBox.Show("Malus values for the exception paths are not configured correcly.");
+                        return;
+                    }
+                }
 
                 rlo.detailLevel = (DetailLevel)Enum.Parse(typeof(DetailLevel), cboDetailLevel.SelectedItem.ToString());
 
@@ -598,11 +642,11 @@ namespace XRouteTestClient
                         },
                     };
 
-                    advancedTour = service.calculateAdvancedTour(waypointDesc, tourOptions, listRoutingOption.ToArray(), arrExceptionpath, rlo, countryInfoVehicleOptions, cc);
+                    advancedTour = service.calculateAdvancedTour(lstWaypointDesc.ToArray(), tourOptions, listRoutingOption.ToArray(), exceptionPathList.ToArray(), rlo, countryInfoVehicleOptions, cc);
                 }
                 else if (radCalcExtRoute.Checked)
                 {
-                    ExtendedRoute extRoute = service.calculateExtendedRoute(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, countryInfoVehicleOptions, cc); ;
+                    ExtendedRoute extRoute = service.calculateExtendedRoute(lstWaypointDesc.ToArray(), listRoutingOption.ToArray(), exceptionPathList.ToArray(), rlo, countryInfoVehicleOptions, cc); ;
                     advancedTour = new AdvancedTour();
                     advancedTour.route = extRoute.route;
                     advancedTour.wrappedCountryInfos = extRoute.wrappedCountryInfos;
@@ -612,7 +656,7 @@ namespace XRouteTestClient
                 else if (radCalcRoute.Checked)
                 {
                     advancedTour = new AdvancedTour();
-                    advancedTour.route = service.calculateRoute(waypointDesc, listRoutingOption.ToArray(), arrExceptionpath, rlo, cc);
+                    advancedTour.route = service.calculateRoute(lstWaypointDesc.ToArray(), listRoutingOption.ToArray(), exceptionPathList.ToArray(), rlo, cc);
                     advancedTour.wrappedCountryInfos = null;
                     advancedTour.wrappedTourEvents = null;
                     advancedTour.wrappedTourPointResults = null;
@@ -867,14 +911,6 @@ namespace XRouteTestClient
                             }
                     }
 
-                    // 2010.12.15 SMO Layer for GEODATASOURCE
-                    if (cbxGEODATASOURCE_LAYER.Checked && tbxGEODATASOURCE_LAYER.Text != "")
-                    {
-                        SMOLayer geodatasourceLayer = getGeodatasourceLayer();
-                        listLayer.Add(geodatasourceLayer);
-                    }
-
-                    //
                     CallerContext ccMap = new CallerContext();
                     CallerContextProperty ccpProfileMap = new CallerContextProperty()
                     {
@@ -901,16 +937,6 @@ namespace XRouteTestClient
                 tbxPercCost.Text = "";
                 tbxPercDistance.Text = "";
                 tbxPercTime.Text = "";
-
-                // 2010-08-26 Costs...
-
-                string[] strCostVectorDistance = tbxCostsDistance.Text.Split(',');
-                string[] strCostVectorPeriod = tbxCostsPeriod.Text.Split(',');
-                for (int i = 0; i < 8; i++)
-                {
-                    costVectorDistance[i] = Convert.ToDouble(strCostVectorDistance[i]);
-                    costVectorPeriod[i] = Convert.ToDouble(strCostVectorPeriod[i]);
-                }
 
                 lbxOutCountry.Items.Clear();
                 if (advancedTour.wrappedCountryInfos != null)
@@ -954,6 +980,10 @@ namespace XRouteTestClient
             catch (Exception ex)
             {
                 System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+            finally
+            {
+                Cursor = prevCursor;
             }
         }
 
@@ -1197,8 +1227,13 @@ namespace XRouteTestClient
                     lstBitmap.Add(bmp);
                     oldTollState = curTollState;
                 }
-                for (int polyIndex = curRouteListSegment.firstPolyIdx; polyIndex < curRouteListSegment.firstPolyIdx + curRouteListSegment.polyC; polyIndex++)
-                    listPlainPoint.Add(route.polygon.lineString.wrappedPoints[polyIndex]);
+
+                var wkbReader = new WKBReader();
+                var totalLinestring = wkbReader.Read(route.polygon.wkb) as NetTopologySuite.Geometries.LineString;
+                listPlainPoint.AddRange(totalLinestring.Coordinates.ToList().GetRange(curRouteListSegment.firstPolyIdx, curRouteListSegment.polyC).Select(c => new PlainPoint(c.X, c.Y)));
+
+                //for (int polyIndex = curRouteListSegment.firstPolyIdx; polyIndex < curRouteListSegment.firstPolyIdx + curRouteListSegment.polyC; polyIndex++)
+                //    listPlainPoint.Add(route.polygon.lineString.wrappedPoints[polyIndex]);
             }
             // letzte Linie
             if (listPlainPoint.Count > 0)
@@ -1287,17 +1322,6 @@ namespace XRouteTestClient
             }
             else
                 return null;
-        }
-
-        private SMOLayer getGeodatasourceLayer()
-        {
-            SMOLayer smoLayer = new SMOLayer();
-            smoLayer.configuration = "";
-            smoLayer.name = tbxGEODATASOURCE_LAYER.Text;
-            smoLayer.objectInfos = ObjectInfoType.REFERENCEPOINT;
-            smoLayer.smoData = null;
-            smoLayer.visible = true;
-            return smoLayer;
         }
 
         private CustomLayer getRouteLayer(Route route)
@@ -1562,19 +1586,6 @@ namespace XRouteTestClient
             //    tollCostInfo_form.updateDGV(countryInfo.wrappedTollCostInfos);
             //if (!tollCostInfo_form.Visible)
             //    tollCostInfo_form.Show(this);
-
-            // 2010-08-27: Cost aggregation based on cost vectors...
-            List<RouteInfo> lstRouteInfo = new List<RouteInfo>();
-            for (int j = 0; j < countryInfo.wrappedPerNCRouteInfo.Length; j++)
-            {
-                RouteInfo riNC = countryInfo.wrappedPerNCRouteInfo[j];
-                RouteInfo riCosts = new RouteInfo();
-                riCosts.distance = (int)(costVectorDistance[j] * (double)(riNC.distance));
-                riCosts.time = (int)(costVectorPeriod[j] * (double)(riNC.time));
-                riCosts.cost = riCosts.distance + riCosts.time;
-                lstRouteInfo.Add(riCosts);
-            }
-            dgvOutputCosts.DataSource = lstRouteInfo;
         }
 
         private LineOptions getLineOptions(BasicDrawingOptions arrows, LinePartOptions mainLine, bool showFlags, LinePartOptions sideLine, bool transparent)
@@ -1709,33 +1720,7 @@ namespace XRouteTestClient
             swapStations();
         }
 
-        private void tbxCostsDistance_TextChanged(object sender, EventArgs e)
-        {
-            string[] strCosts = tbxCostsDistance.Text.Split(',');
-            try
-            {
-                for (int i = 0; i < 8; i++)
-                    costVectorDistance[i] = Convert.ToDouble(strCosts[i]);
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void tbxCostsPeriod_TextChanged(object sender, EventArgs e)
-        {
-            string[] strCosts = tbxCostsPeriod.Text.Split(',');
-            try
-            {
-                for (int i = 0; i < 8; i++)
-                    costVectorPeriod[i] = Convert.ToDouble(strCosts[i]);
-            }
-            catch (Exception)
-            {
-            }
-        }
-
-        private void load1DriverRegulationsBtn_Click(object sender, EventArgs e)
+        private void load1DriverRegulationsButton_Click(object sender, EventArgs e)
         {
             // break rule
             drivingPeriodTxtBx.Text = "16200";
@@ -1760,7 +1745,7 @@ namespace XRouteTestClient
             weeklyRestPeriodTxtBx.Text = "162000";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void load2DriverRegulationsButton_Click(object sender, EventArgs e)
         {
             // break rule
             drivingPeriodTxtBx.Text = "16200";

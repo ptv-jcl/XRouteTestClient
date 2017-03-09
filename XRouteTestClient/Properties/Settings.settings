@@ -2,432 +2,392 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="XRouteTestClient.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
-    <Setting Name="OPTIMIZATION" Type="System.String" Scope="User">
+    <Setting Name="OPTIMIZATION" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_TOLLROADS" Type="System.String" Scope="User">
+    <Setting Name="AVOID_TOLLROADS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_VIGNETTEROADS" Type="System.String" Scope="User">
+    <Setting Name="AVOID_VIGNETTEROADS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_HIGHWAYS" Type="System.String" Scope="User">
+    <Setting Name="AVOID_HIGHWAYS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_FERRIES" Type="System.String" Scope="User">
+    <Setting Name="AVOID_FERRIES" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_RESIDENTS_ONLY" Type="System.String" Scope="User">
+    <Setting Name="AVOID_RESIDENTS_ONLY" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_URBAN_AREAS" Type="System.String" Scope="User">
+    <Setting Name="AVOID_URBAN_AREAS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="AVOID_RAMPS" Type="System.String" Scope="User">
+    <Setting Name="AVOID_RAMPS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="EXCLUDE_COUNTRIES" Type="System.String" Scope="User">
+    <Setting Name="EXCLUDE_COUNTRIES" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ROUTING_COUNTRIES" Type="System.String" Scope="User">
+    <Setting Name="ROUTING_COUNTRIES" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="REQUEST_VERSION" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1.20</Value>
+    <Setting Name="REQUEST_VERSION" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">1.22</Value>
     </Setting>
-    <Setting Name="COUNTRY_ENCODING" Type="System.String" Scope="User">
+    <Setting Name="COUNTRY_ENCODING" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ProfileRoute" Type="System.String" Scope="User">
+    <Setting Name="ProfileRoute" Type="System.String" Scope="Application">
       <Value Profile="(Default)">truckfast</Value>
     </Setting>
-    <Setting Name="y2" Type="System.Double" Scope="User">
+    <Setting Name="y2" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">52.124376</Value>
     </Setting>
-    <Setting Name="x2" Type="System.Double" Scope="User">
+    <Setting Name="x2" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">5.0406243</Value>
     </Setting>
-    <Setting Name="y1" Type="System.Double" Scope="User">
+    <Setting Name="y1" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">51.922923</Value>
     </Setting>
-    <Setting Name="x1" Type="System.Double" Scope="User">
+    <Setting Name="x1" Type="System.Double" Scope="Application">
       <Value Profile="(Default)">4.177775</Value>
     </Setting>
     <Setting Name="scroll" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">30</Value>
     </Setting>
-    <Setting Name="UrlRoute" Type="System.String" Scope="User">
+    <Setting Name="UrlRoute" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://localhost:50030/xroute/ws/XRoute</Value>
     </Setting>
-    <Setting Name="UrlMap" Type="System.String" Scope="User">
+    <Setting Name="UrlMap" Type="System.String" Scope="Application">
       <Value Profile="(Default)">http://localhost:50010/xmap/ws/XMap</Value>
     </Setting>
-    <Setting Name="LinkType_START" Type="System.String" Scope="User">
+    <Setting Name="LinkType_START" Type="System.String" Scope="Application">
       <Value Profile="(Default)">AUTO_LINKING</Value>
     </Setting>
-    <Setting Name="LinkType_DESTINATION" Type="System.String" Scope="User">
+    <Setting Name="LinkType_DESTINATION" Type="System.String" Scope="Application">
       <Value Profile="(Default)">AUTO_LINKING</Value>
     </Setting>
-    <Setting Name="COORDFORMAT" Type="System.String" Scope="User">
+    <Setting Name="COORDFORMAT" Type="System.String" Scope="Application">
       <Value Profile="(Default)">OG_GEODECIMAL</Value>
     </Setting>
-    <Setting Name="START_TIME" Type="System.String" Scope="User">
+    <Setting Name="START_TIME" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="IS_DESTTIME" Type="System.String" Scope="User">
+    <Setting Name="IS_DESTTIME" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DYNAMIC_PROFILE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ENABLE_DYNAMIC" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ROADEDITOR_ATTRIBUTESET" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DetailLevel" Type="System.String" Scope="User">
+    <Setting Name="DetailLevel" Type="System.String" Scope="Application">
       <Value Profile="(Default)">STANDARD</Value>
     </Setting>
-    <Setting Name="EnableTurningList" Type="System.Boolean" Scope="User">
+    <Setting Name="EnableTurningList" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="LOW_EMISSION_ZONE_TYPE" Type="System.String" Scope="User">
+    <Setting Name="LOW_EMISSION_ZONE_TYPE" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ROUTE_LANGUAGE" Type="System.String" Scope="User">
+    <Setting Name="ROUTE_LANGUAGE" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ROADEDITOR_ADDITIONAL_OPTIONS" Type="System.String" Scope="User">
+    <Setting Name="ROADEDITOR_ADDITIONAL_OPTIONS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="START_TIME_ROADEDITOR" Type="System.String" Scope="User">
+    <Setting Name="ROUTING_RECTANGLE" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DISTANCE_MEASURE" Type="System.String" Scope="User">
+    <Setting Name="ROADEDITOR_LAYERNAME" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ROUTING_RECTANGLE" Type="System.String" Scope="User">
+    <Setting Name="GENERATE_EXTWAYPOINTS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ROADEDITOR_LAYERNAME" Type="System.String" Scope="User">
+    <Setting Name="EXPERT_OPTIONS" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="GENERATE_EXTWAYPOINTS" Type="System.String" Scope="User">
+    <Setting Name="ENABLE_ROADEDITOR" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="EXPERT_OPTIONS" Type="System.String" Scope="User">
+    <Setting Name="ExceptionPath_RelMalus" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ENABLE_ROADEDITOR" Type="System.String" Scope="User">
+    <Setting Name="ExceptionPath_Street" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="STREET" Type="System.String" Scope="User">
+    <Setting Name="ExceptionPath_BinaryPathDescription" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ExceptionPath_AbsMalus" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="ExceptionPath_RelMalus" Type="System.Int32" Scope="User">
-      <Value Profile="(Default)">0</Value>
-    </Setting>
-    <Setting Name="ExceptionPath_Street" Type="System.String" Scope="User">
+    <Setting Name="AVOID_LOW_EMISSION_ZONES" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ExceptionPath_BinaryPathDescription" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ExceptionPath_ExtSegments" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="AVOID_LOW_EMISSION_ZONES" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="DYNAMIC_TIME_ON_STATICROUTE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="ViaRadius" Type="System.Int32" Scope="User">
+    <Setting Name="ViaRadius" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1000</Value>
     </Setting>
-    <Setting Name="ViaX" Type="System.String" Scope="User">
-      <Value Profile="(Default)">932930</Value>
-    </Setting>
-    <Setting Name="ViaY" Type="System.String" Scope="User">
+    <Setting Name="ViaX" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="SegmentAttributes" Type="System.Boolean" Scope="User">
+    <Setting Name="ViaY" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="SegmentAttributes" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="ExtendedRoute" Type="System.Boolean" Scope="User">
+    <Setting Name="ExtendedRoute" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="DisplayRoadEditorLayer" Type="System.Boolean" Scope="User">
+    <Setting Name="DisplayRoadEditorLayer" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="BoundingRectangles_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="BoundingRectangles_Color" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Blue</Value>
     </Setting>
-    <Setting Name="BoundingRectangles_Width" Type="System.Int32" Scope="User">
+    <Setting Name="BoundingRectangles_Width" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="BoundingRectangles_Transparent" Type="System.Boolean" Scope="User">
+    <Setting Name="BoundingRectangles_Transparent" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="BoundingRectanglesC" Type="System.Int32" Scope="User">
+    <Setting Name="BoundingRectanglesC" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="BoundingRectanglesOffset" Type="System.Int32" Scope="User">
+    <Setting Name="BoundingRectanglesOffset" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">0</Value>
     </Setting>
-    <Setting Name="ManoeuvreGroup_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="ManoeuvreGroup_Color" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Lime</Value>
     </Setting>
-    <Setting Name="ManoeuvreGroup_Width" Type="System.Int32" Scope="User">
+    <Setting Name="ManoeuvreGroup_Width" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">3</Value>
     </Setting>
-    <Setting Name="ManoeuvreGroup_Transparent" Type="System.Boolean" Scope="User">
+    <Setting Name="ManoeuvreGroup_Transparent" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ManoeuvreGroup_Enabled" Type="System.Boolean" Scope="User">
+    <Setting Name="ManoeuvreGroup_Enabled" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="ManoeuvreGroup_Ratio" Type="System.String" Scope="User">
+    <Setting Name="ManoeuvreGroup_Ratio" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="Waypoint_START" Type="System.String" Scope="User">
+    <Setting Name="Waypoint_START" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flaggreen.bmp</Value>
     </Setting>
-    <Setting Name="Waypoint_VIA" Type="System.String" Scope="User">
+    <Setting Name="Waypoint_VIA" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flagblue.bmp</Value>
     </Setting>
-    <Setting Name="Waypoint_DEST" Type="System.String" Scope="User">
+    <Setting Name="Waypoint_DEST" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flagred.bmp</Value>
     </Setting>
-    <Setting Name="DefaultIcon" Type="System.String" Scope="User">
+    <Setting Name="DefaultIcon" Type="System.String" Scope="Application">
       <Value Profile="(Default)">location.bmp</Value>
     </Setting>
-    <Setting Name="TimeEventIcon" Type="System.String" Scope="User">
+    <Setting Name="TimeEventIcon" Type="System.String" Scope="Application">
       <Value Profile="(Default)">dealer.bmp</Value>
     </Setting>
-    <Setting Name="SegmentWithTruckToll_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SegmentWithTruckToll_Color" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Magenta</Value>
     </Setting>
-    <Setting Name="SegmentWithoutTruckToll_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="SegmentWithoutTruckToll_Color" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Green</Value>
     </Setting>
-    <Setting Name="SegmentToll_Width" Type="System.Int32" Scope="User">
+    <Setting Name="SegmentToll_Width" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">-8</Value>
     </Setting>
-    <Setting Name="Route_Color" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="Route_Color" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Black</Value>
     </Setting>
-    <Setting Name="Priority_Route" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Route" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">25000</Value>
     </Setting>
-    <Setting Name="Priority_Toll" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Toll" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1100</Value>
     </Setting>
-    <Setting Name="Priority_BoundingRect" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_BoundingRect" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1002</Value>
     </Setting>
-    <Setting Name="Priority_ManoeuvreGroups" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_ManoeuvreGroups" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1003</Value>
     </Setting>
-    <Setting Name="Priority_Manoeuvres" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Manoeuvres" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1004</Value>
     </Setting>
-    <Setting Name="Priority_Waypoints" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Waypoints" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1005</Value>
     </Setting>
-    <Setting Name="Priority_Timeevents" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Timeevents" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1006</Value>
     </Setting>
-    <Setting Name="Visibility_Route" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Route" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Visibility_Toll" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Toll" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Visibility_BoundingRect" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_BoundingRect" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Visibility_ManoeuvreGroups" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_ManoeuvreGroups" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Visibility_Manoeuvres" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Manoeuvres" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Visibility_Waypoints" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Waypoints" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Visibility_Timeevents" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Timeevents" GenerateDefaultValueInCode="false" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Form_RouteListSegment" Type="System.Boolean" Scope="User">
+    <Setting Name="Form_RouteListSegment" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Visibility_Ferries" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Ferries" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Color_Ferries" Type="System.Drawing.Color" Scope="User">
+    <Setting Name="Color_Ferries" Type="System.Drawing.Color" Scope="Application">
       <Value Profile="(Default)">Cyan</Value>
     </Setting>
-    <Setting Name="Width_Ferries" Type="System.Int32" Scope="User">
+    <Setting Name="Width_Ferries" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">-10</Value>
     </Setting>
-    <Setting Name="Priority_Ferries" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Ferries" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1007</Value>
     </Setting>
-    <Setting Name="cbxURL_Map" Type="System.Boolean" Scope="User">
+    <Setting Name="cbxURL_Map" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Waypoint_FUZZY" Type="System.String" Scope="User">
+    <Setting Name="Waypoint_FUZZY" Type="System.String" Scope="Application">
       <Value Profile="(Default)">location_rough.bmp</Value>
     </Setting>
-    <Setting Name="texts" Type="System.Boolean" Scope="User">
+    <Setting Name="texts" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Transparency_Toll" Type="System.Boolean" Scope="User">
+    <Setting Name="Transparency_Toll" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="Priority_RoutePoint" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_RoutePoint" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">1007</Value>
     </Setting>
-    <Setting Name="Visibility_Routepoint" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_Routepoint" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Icon_Routepoint" Type="System.String" Scope="User">
+    <Setting Name="Icon_Routepoint" Type="System.String" Scope="Application">
       <Value Profile="(Default)">location.bmp</Value>
     </Setting>
-    <Setting Name="ShowScale" Type="System.Boolean" Scope="User">
+    <Setting Name="ShowScale" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="RETOUR" Type="System.Boolean" Scope="User">
+    <Setting Name="vp_TYPE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_TOTAL_WEIGHT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_TRAILER_WEIGHT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_AXLE_WEIGTH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_NUMBER_OF_AXLES" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_EMISSION_CLASS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_HEIGHT" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_LENGTH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_WIDTH" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_CYLINDER_CAPACITY" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_NUMBER_OF_PASSENGERS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_TRAILER_HAS_BREAKS" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="vp_FUEL_TYPE" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="Visibility_Segments" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="vp_TYPE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_TOTAL_WEIGHT" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_TRAILER_WEIGHT" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_AXLE_WEIGTH" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_NUMBER_OF_AXLES" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_EMISSION_CLASS" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_HEIGHT" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_LENGTH" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_WIDTH" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_CYLINDER_CAPACITY" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_NUMBER_OF_PASSENGERS" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_TRAILER_HAS_BREAKS" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="vp_FUEL_TYPE" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="Visibility_Segments" Type="System.Boolean" Scope="User">
-      <Value Profile="(Default)">False</Value>
-    </Setting>
-    <Setting Name="Priority_Segments" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_Segments" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">500</Value>
     </Setting>
-    <Setting Name="Icon_Segments_Standard" Type="System.String" Scope="User">
+    <Setting Name="Icon_Segments_Standard" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flagblue.bmp</Value>
     </Setting>
-    <Setting Name="Nodes" Type="System.Boolean" Scope="User">
+    <Setting Name="Nodes" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Icon_Segments_NoStandard_NoAdd" Type="System.String" Scope="User">
+    <Setting Name="Icon_Segments_NoStandard_NoAdd" Type="System.String" Scope="Application">
       <Value Profile="(Default)">n_marker2.bmp</Value>
     </Setting>
-    <Setting Name="Icon_Segments_NoStandard_Add" Type="System.String" Scope="User">
+    <Setting Name="Icon_Segments_NoStandard_Add" Type="System.String" Scope="Application">
       <Value Profile="(Default)">n_marker1.bmp</Value>
     </Setting>
-    <Setting Name="CostsDistance" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1,1,1,1,1,1,1,1</Value>
-    </Setting>
-    <Setting Name="CostsPeriod" Type="System.String" Scope="User">
-      <Value Profile="(Default)">1,1,1,1,1,1,1,1</Value>
-    </Setting>
-    <Setting Name="ROUTELISTMANOEUVRES" Type="System.Boolean" Scope="User">
+    <Setting Name="ROUTELISTMANOEUVRES" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="cbxWaypoints" Type="System.Boolean" Scope="User">
+    <Setting Name="cbxWaypoints" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Icon_Matchpoint" Type="System.String" Scope="User">
+    <Setting Name="Icon_Matchpoint" Type="System.String" Scope="Application">
       <Value Profile="(Default)">location.bmp</Value>
     </Setting>
-    <Setting Name="Priority_TollSections" Type="System.Int32" Scope="User">
+    <Setting Name="Priority_TollSections" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">501</Value>
     </Setting>
-    <Setting Name="Visibility_TollSections" Type="System.Boolean" Scope="User">
+    <Setting Name="Visibility_TollSections" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Icon_TollSection_From" Type="System.String" Scope="User">
+    <Setting Name="Icon_TollSection_From" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flaggreen.bmp</Value>
     </Setting>
-    <Setting Name="Icon_TollSection_To" Type="System.String" Scope="User">
+    <Setting Name="Icon_TollSection_To" Type="System.String" Scope="Application">
       <Value Profile="(Default)">flagred.bmp</Value>
     </Setting>
-    <Setting Name="GEODATASOURCE_LAYER" Type="System.String" Scope="User">
+    <Setting Name="GEODATASOURCE_LAYER" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="DynamicInfo" Type="System.Boolean" Scope="User">
+    <Setting Name="DynamicInfo" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">False</Value>
     </Setting>
-    <Setting Name="Tolldate" Type="System.DateTime" Scope="User">
+    <Setting Name="vp_EMPTY_WEIGHT" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="vp_EMPTY_WEIGHT" Type="System.String" Scope="User">
+    <Setting Name="vp_EMISSION_TECHNOLOGY" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="vp_EMISSION_TECHNOLOGY" Type="System.String" Scope="User">
+    <Setting Name="vp_LOAD_WEIGHT" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="vp_LOAD_WEIGHT" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
-    </Setting>
-    <Setting Name="SPEED_INFOS" Type="System.String" Scope="User">
+    <Setting Name="SPEED_INFOS" Type="System.String" Scope="Application">
       <Value Profile="(Default)">true</Value>
     </Setting>
-    <Setting Name="XMLSNIPPET" Type="System.String" Scope="User">
-      <Value Profile="(Default)">&lt;Profile&gt;
-  &lt;Common language="en" majorVersion="1" minorVersion="0"/&gt;
-  &lt;Routing majorVersion="2" minorVersion="0"&gt;
-
-&lt;/Profile&gt;</Value>
-    </Setting>
-    <Setting Name="xServerUserName" Type="System.String" Scope="User">
+    <Setting Name="xServerUserName" Type="System.String" Scope="Application">
       <Value Profile="(Default)">xtok</Value>
     </Setting>
-    <Setting Name="xServerPassword" Type="System.String" Scope="User">
+    <Setting Name="xServerPassword" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="ProfileMap" Type="System.String" Scope="User">
+    <Setting Name="ProfileMap" Type="System.String" Scope="Application">
       <Value Profile="(Default)">gravelpit</Value>
     </Setting>
-    <Setting Name="Route_Width" Type="System.Int32" Scope="User">
+    <Setting Name="Route_Width" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">2</Value>
+    </Setting>
+    <Setting Name="TollDate" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExceptionPath_AbsMalus" Type="System.String" Scope="Application">
+      <Value Profile="(Default)" />
     </Setting>
   </Settings>
 </SettingsFile>

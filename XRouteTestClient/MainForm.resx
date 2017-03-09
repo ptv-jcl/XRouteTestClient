@@ -476,32 +476,6 @@ attribute must correspond with database entry. In this case the roadeditor has t
 database mode, being set by roadeditor parameter "reDBConnection" in xroute.properties 
 NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
   </data>
-  <data name="labSTART_TIME_ROADEDITOR.ToolTip" xml:space="preserve">
-    <value>Represents the starting time of the route
-
-in case of roadeditor routing
-
-the time has to be described as a string using the TimeInstant syntax
-
-Example: 1999-05-31T13:20:00-05:00
-
-if this parameter isn't set it is assumed as now.
-
-NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
-  </data>
-  <data name="tbxSTART_TIME_ROADEDITOR.ToolTip" xml:space="preserve">
-    <value>Represents the starting time of the route
-
-in case of roadeditor routing
-
-the time has to be described as a string using the TimeInstant syntax
-
-Example: 1999-05-31T13:20:00-05:00
-
-if this parameter isn't set it is assumed as now.
-
-NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.</value>
-  </data>
   <data name="tbxROADEDITOR_ADDITIONAL_OPTIONS.ToolTip" xml:space="preserve">
     <value>Describes additional RoadEditor options. This is a free text option field to set 
 several additional RoadEditor options. 
@@ -519,20 +493,6 @@ Legal values are described in the the enum RoadEditorOptions.
 NOTE: These options don't have any effect on CountryInfoVehicleOptions.
 NOTE: This parameter is only interpreted if ENABLE_ROADEDITOR is true.
 </value>
-  </data>
-  <data name="labDYNAMIC_PROFILE.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
-  </data>
-  <data name="tbxDYNAMIC_PROFILE.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
   </data>
   <data name="tbxSTART_TIME.ToolTip" xml:space="preserve">
     <value>Represents the starting time or the arrival time (if IS_DESTTIME is set to true) of the route
@@ -749,34 +709,6 @@ in the form YYYYMMDD.</value>
 its currency or in euro if desired. All of the costs are calculated per cent.
 Furthermore the generation of detailed toll costs can be activated.</value>
   </data>
-  <data name="labDYNAMIC_TIME_ON_STATICROUTE.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
-  </data>
-  <data name="labENABLE_DYNAMIC.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
-  </data>
-  <data name="tbxENABLE_DYNAMIC.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
-  </data>
-  <data name="tbxDYNAMIC_TIME_ON_STATICROUTE.ToolTip" xml:space="preserve">
-    <value>Represents the dynamic profile which has to be used for dynamic routing.
-
-NOTE: This parameter is only interpreted if ENABLE_DYNAMIC is true.
-
-Legal values are strings representing a valid dynamic profile</value>
-  </data>
   <data name="labIS_DESTTIME.ToolTip" xml:space="preserve">
     <value>Represents the dynamic profile which has to be used for dynamic routing.
 
@@ -876,32 +808,6 @@ ORTHOGONAL : additional optional manouvre
 NOTE: This level cannot be requested. All manoeuvres which are additonal manoeuvres like 
 brunnel manoeuvres have detail ORTHOGONAL.
 ALL : all the rest</value>
-  </data>
-  <data name="labCostsDistance.ToolTip" xml:space="preserve">
-    <value>This textbox expects a comma separated list of 8 cost values.
-They will be multiplied with the distance values of the RouteInfo objects
-and therefore simulate cost computation based on cost/km.
-This is client logic and may be used e.g. for
-20 Euros / 100km highway
-15 Euros / 100km country road.... and so on.</value>
-  </data>
-  <data name="tbxCostsPeriod.ToolTip" xml:space="preserve">
-    <value>This textbox expects a comma separated list of 8 cost values.
-They will be multiplied with the period values of the RouteInfo objects
-and therefore simulate cost computation based on cost/minute.
-This is client logic and may be used e.g. for
-20 Euros / 1hour highway
-15 Euros / 1hour country road.... and so on.
-The basevalue is 1 second, so /hour has to be multiplied with 3600.</value>
-  </data>
-  <data name="tbxCostsDistance.ToolTip" xml:space="preserve">
-    <value>This textbox expects a comma separated list of 8 cost values.
-They will be multiplied with the distance values of the RouteInfo objects
-and therefore simulate cost computation based on cost/km.
-This is client logic and may be used e.g. for
-20 Euros / 100km highway
-15 Euros / 100km country road.... and so on.
-The basevalue is 1 meter, so /100km has to be multiplied with 100000.</value>
   </data>
   <data name="labEMISSION_TECHNOLOGY.ToolTip" xml:space="preserve">
     <value>Describes the technology type of emission reduction for trucks. 
@@ -1093,37 +999,6 @@ Legal values are -99 to 2501 and BAN. The default is 2500.
 All RoutingOptions are optional and have default values defined in the default properties definition 
 file. Each RoutingOption can be assigned to a certain vehicle profile If a RoutingOption is set in the 
 request it dominates the entry in the appropriate properties definition file.</value>
-  </data>
-  <data name="labGEODATASOURCE_LAYER.ToolTip" xml:space="preserve">
-    <value>Adds a geodatasource layer which will be considered when executing the service method in question. 
-The format is &lt;geodatasource configuration&gt;.&lt;layer name&gt;[.&lt;geodata profile&gt;][;&lt;SQL filter&gt;]. 
-When using attribute names, put them into brackets, such as [id] = 42. 
-Examples: 'default.traffic' - 'default.traffic.avoid-all' - 'default.traffic.avoid-all;[id] in (0815,4711)'.
-The SQL filter will be attached at the end of the WHERE clause.
-Valid expressions are comparisons (&lt;, &gt;, =, like, ...). 
-Concatinations of expressions are possible with the SQL operators AND and OR.</value>
-  </data>
-  <data name="labExtSegments.ToolTip" xml:space="preserve">
-    <value>Alternative description representing a route path (optional). This is an external representiation consisting of a list of provider's segment ID's (e.g. NavTeq).
-
-The syntax for this description is: LINESTRINGSEG(&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;[,&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;]*)
-
-&lt;segID&gt; = provider ID &lt;dir&gt; = the digitalization direction &lt;countryCode&gt; = the countryCode representing the country the segment belongs to
-
-Example: LINESTRINGSEG(78620413 0 49,540932189 1 49,540933595 1 49)
-
-NOTE: The SegmentIDs of certain countries will only be taken into account when the corresponding IDMapping layer could be initialized. (see logging of list of countries  initialized when xRoute Server is started)</value>
-  </data>
-  <data name="tbxExtSegments.ToolTip" xml:space="preserve">
-    <value>Alternative description representing a route path (optional). This is an external representiation consisting of a list of provider's segment ID's (e.g. NavTeq).
-
-The syntax for this description is: LINESTRINGSEG(&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;[,&lt;segID&gt; &lt;dir&gt; &lt;countryCode&gt;]*)
-
-&lt;segID&gt; = provider ID &lt;dir&gt; = the digitalization direction &lt;countryCode&gt; = the countryCode representing the country the segment belongs to
-
-Example: LINESTRINGSEG(78620413 0 49,540932189 1 49,540933595 1 49)
-
-NOTE: The SegmentIDs of certain countries will only be taken into account when the corresponding IDMapping layer could be initialized. (see logging of list of countries  initialized when xRoute Server is started)</value>
   </data>
   <data name="tbxAbsMalus.ToolTip" xml:space="preserve">
     <value>Describes an absolute optional Malus in seconds which will be added in total to the segments in the according ExceptionPath. If absTimeMalus is negative, its absolute value will be added to each of the segments in the according ExceptionPath.

@@ -72,8 +72,6 @@ namespace XRouteTestClient
             this.labGENERATE_EXTWAYPOINTS = new System.Windows.Forms.Label();
             this.tbxEXPERT_OPTIONS = new System.Windows.Forms.TextBox();
             this.labEXPERT_OPTIONS = new System.Windows.Forms.Label();
-            this.tbxDISTANCE_MEASURE = new System.Windows.Forms.TextBox();
-            this.labDISTANCE_MEASURE = new System.Windows.Forms.Label();
             this.labROUTING_RECTANGLE = new System.Windows.Forms.Label();
             this.tbxROUTING_RECTANGLE = new System.Windows.Forms.TextBox();
             this.labROUTE_LANGUAGE = new System.Windows.Forms.Label();
@@ -92,12 +90,8 @@ namespace XRouteTestClient
             this.tbxOPTIMIZATION = new System.Windows.Forms.TextBox();
             this.tbxROADEDITOR_LAYERNAME = new System.Windows.Forms.TextBox();
             this.labROADEDITOR_LAYERNAME = new System.Windows.Forms.Label();
-            this.labSTART_TIME_ROADEDITOR = new System.Windows.Forms.Label();
-            this.tbxSTART_TIME_ROADEDITOR = new System.Windows.Forms.TextBox();
             this.tbxROADEDITOR_ADDITIONAL_OPTIONS = new System.Windows.Forms.TextBox();
             this.labROADEDITOR_ADDITIONAL_OPTIONS = new System.Windows.Forms.Label();
-            this.labDYNAMIC_PROFILE = new System.Windows.Forms.Label();
-            this.tbxDYNAMIC_PROFILE = new System.Windows.Forms.TextBox();
             this.tbxSTART_TIME = new System.Windows.Forms.TextBox();
             this.labSTART_TIME = new System.Windows.Forms.Label();
             this.labAVOID_RAMPS = new System.Windows.Forms.Label();
@@ -150,10 +144,6 @@ namespace XRouteTestClient
             this.labTollDate = new System.Windows.Forms.Label();
             this.tbxTolldate = new System.Windows.Forms.TextBox();
             this.gbxDynamic = new System.Windows.Forms.GroupBox();
-            this.labDYNAMIC_TIME_ON_STATICROUTE = new System.Windows.Forms.Label();
-            this.labENABLE_DYNAMIC = new System.Windows.Forms.Label();
-            this.tbxENABLE_DYNAMIC = new System.Windows.Forms.TextBox();
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE = new System.Windows.Forms.TextBox();
             this.labIS_DESTTIME = new System.Windows.Forms.Label();
             this.tbxIS_DESTTIME = new System.Windows.Forms.TextBox();
             this.gbxService = new System.Windows.Forms.GroupBox();
@@ -196,8 +186,8 @@ namespace XRouteTestClient
             this.label25 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.load1DriverRegulationsBtn = new System.Windows.Forms.Button();
+            this.load2DriverRegulationsButton = new System.Windows.Forms.Button();
+            this.load1DriverRegulationsButton = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.weeklyRestPeriodTxtBx = new System.Windows.Forms.TextBox();
             this.maximumBiweeklyDrivingPeriodTxtBx = new System.Windows.Forms.TextBox();
@@ -238,11 +228,6 @@ namespace XRouteTestClient
             this.tbxXMLSnippet = new System.Windows.Forms.RichTextBox();
             this.enableSnippetChckBx = new System.Windows.Forms.CheckBox();
             this.cbxFeatureLayerDescriptions = new System.Windows.Forms.CheckBox();
-            this.gbxCosts = new System.Windows.Forms.GroupBox();
-            this.labCostsPeriod = new System.Windows.Forms.Label();
-            this.labCostsDistance = new System.Windows.Forms.Label();
-            this.tbxCostsPeriod = new System.Windows.Forms.TextBox();
-            this.tbxCostsDistance = new System.Windows.Forms.TextBox();
             this.gbxVehicleParameters = new System.Windows.Forms.GroupBox();
             this.labLOAD_WEIGHT = new System.Windows.Forms.Label();
             this.labEMISSION_TECHNOLOGY = new System.Windows.Forms.Label();
@@ -276,8 +261,6 @@ namespace XRouteTestClient
             this.tbxVP_TYPE = new System.Windows.Forms.TextBox();
             this.tbxVP_TOTAL_WEIGHT = new System.Windows.Forms.TextBox();
             this.labTOTAL_WEIGTH = new System.Windows.Forms.Label();
-            this.gbxRetour = new System.Windows.Forms.GroupBox();
-            this.cbxRetour = new System.Windows.Forms.CheckBox();
             this.gbxBoundingRectangles = new System.Windows.Forms.GroupBox();
             this.tbxBoundingRectanglesOffset = new System.Windows.Forms.TextBox();
             this.tbxBoundingRectanglesC = new System.Windows.Forms.TextBox();
@@ -294,13 +277,11 @@ namespace XRouteTestClient
             this.tbxAVOID_LOW_EMISSION_ZONES = new System.Windows.Forms.TextBox();
             this.labAvoid_Lowemissionzones = new System.Windows.Forms.Label();
             this.gbxExceptionPath = new System.Windows.Forms.GroupBox();
-            this.cbxGEODATASOURCE_LAYER = new System.Windows.Forms.CheckBox();
-            this.labGEODATASOURCE_LAYER = new System.Windows.Forms.Label();
-            this.tbxGEODATASOURCE_LAYER = new System.Windows.Forms.TextBox();
-            this.tbxNodes = new System.Windows.Forms.TextBox();
-            this.labNodes = new System.Windows.Forms.Label();
-            this.labExtSegments = new System.Windows.Forms.Label();
-            this.tbxExtSegments = new System.Windows.Forms.TextBox();
+            this.intersectingLineStartYTextBox = new System.Windows.Forms.TextBox();
+            this.intersectingLineEndYTextBox = new System.Windows.Forms.TextBox();
+            this.intersectingLineStartXTextBox = new System.Windows.Forms.TextBox();
+            this.intersectingLineEndXTextBox = new System.Windows.Forms.TextBox();
+            this.intersectingLineLabel = new System.Windows.Forms.Label();
             this.labBinaryPathDescriptionIn = new System.Windows.Forms.Label();
             this.tbxBinaryPathDescriptionIn = new System.Windows.Forms.TextBox();
             this.labMalus = new System.Windows.Forms.Label();
@@ -310,8 +291,6 @@ namespace XRouteTestClient
             this.labStreet = new System.Windows.Forms.Label();
             this.gbxBinaryPathDescription = new System.Windows.Forms.GroupBox();
             this.tbxBinaryPathDescription = new System.Windows.Forms.TextBox();
-            this.gbxOutputCosts = new System.Windows.Forms.GroupBox();
-            this.dgvOutputCosts = new System.Windows.Forms.DataGridView();
             this.gbxOutput = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_perNCRouteInfo)).BeginInit();
             this.gbxRoutingOptions.SuspendLayout();
@@ -332,16 +311,12 @@ namespace XRouteTestClient
             this.tabControl.SuspendLayout();
             this.regulationTabPage.SuspendLayout();
             this.xmlSnippetTabPage.SuspendLayout();
-            this.gbxCosts.SuspendLayout();
             this.gbxVehicleParameters.SuspendLayout();
-            this.gbxRetour.SuspendLayout();
             this.gbxBoundingRectangles.SuspendLayout();
             this.gbxRoadEditor.SuspendLayout();
             this.gbxAvoid.SuspendLayout();
             this.gbxExceptionPath.SuspendLayout();
             this.gbxBinaryPathDescription.SuspendLayout();
-            this.gbxOutputCosts.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputCosts)).BeginInit();
             this.gbxOutput.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -467,7 +442,7 @@ namespace XRouteTestClient
             this.dgv_perNCRouteInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv_perNCRouteInfo.Location = new System.Drawing.Point(3, 16);
             this.dgv_perNCRouteInfo.Name = "dgv_perNCRouteInfo";
-            this.dgv_perNCRouteInfo.Size = new System.Drawing.Size(204, 176);
+            this.dgv_perNCRouteInfo.Size = new System.Drawing.Size(431, 176);
             this.dgv_perNCRouteInfo.TabIndex = 21;
             // 
             // labDistance
@@ -691,8 +666,6 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.Controls.Add(this.labGENERATE_EXTWAYPOINTS);
             this.gbxRoutingOptions.Controls.Add(this.tbxEXPERT_OPTIONS);
             this.gbxRoutingOptions.Controls.Add(this.labEXPERT_OPTIONS);
-            this.gbxRoutingOptions.Controls.Add(this.tbxDISTANCE_MEASURE);
-            this.gbxRoutingOptions.Controls.Add(this.labDISTANCE_MEASURE);
             this.gbxRoutingOptions.Controls.Add(this.labROUTING_RECTANGLE);
             this.gbxRoutingOptions.Controls.Add(this.tbxROUTING_RECTANGLE);
             this.gbxRoutingOptions.Controls.Add(this.labROUTE_LANGUAGE);
@@ -775,25 +748,6 @@ namespace XRouteTestClient
             this.labEXPERT_OPTIONS.Text = "EXPERT_OPTIONS";
             this.toolTip1.SetToolTip(this.labEXPERT_OPTIONS, "Represents expert options.\r\n   Alternative Routing: Calculate the nth alternative" +
         " route within one request for n <= 5\r\n    Usage: ALT|1000|1");
-            // 
-            // tbxDISTANCE_MEASURE
-            // 
-            this.tbxDISTANCE_MEASURE.Location = new System.Drawing.Point(301, 91);
-            this.tbxDISTANCE_MEASURE.Name = "tbxDISTANCE_MEASURE";
-            this.tbxDISTANCE_MEASURE.Size = new System.Drawing.Size(47, 20);
-            this.tbxDISTANCE_MEASURE.TabIndex = 57;
-            this.tbxDISTANCE_MEASURE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxDISTANCE_MEASURE, "describes the distance measure. Legal laues are KM or MILES. Default: KM");
-            // 
-            // labDISTANCE_MEASURE
-            // 
-            this.labDISTANCE_MEASURE.AutoSize = true;
-            this.labDISTANCE_MEASURE.Location = new System.Drawing.Point(169, 94);
-            this.labDISTANCE_MEASURE.Name = "labDISTANCE_MEASURE";
-            this.labDISTANCE_MEASURE.Size = new System.Drawing.Size(120, 13);
-            this.labDISTANCE_MEASURE.TabIndex = 56;
-            this.labDISTANCE_MEASURE.Text = "DISTANCE_MEASURE";
-            this.toolTip1.SetToolTip(this.labDISTANCE_MEASURE, "describes the distance measure. Legal laues are KM or MILES. Default: KM");
             // 
             // labROUTING_RECTANGLE
             // 
@@ -972,25 +926,6 @@ namespace XRouteTestClient
             this.labROADEDITOR_LAYERNAME.Text = "ROADEDITOR_LAYERNAME (1.8)";
             this.toolTip1.SetToolTip(this.labROADEDITOR_LAYERNAME, resources.GetString("labROADEDITOR_LAYERNAME.ToolTip"));
             // 
-            // labSTART_TIME_ROADEDITOR
-            // 
-            this.labSTART_TIME_ROADEDITOR.AutoSize = true;
-            this.labSTART_TIME_ROADEDITOR.Location = new System.Drawing.Point(6, 100);
-            this.labSTART_TIME_ROADEDITOR.Name = "labSTART_TIME_ROADEDITOR";
-            this.labSTART_TIME_ROADEDITOR.Size = new System.Drawing.Size(153, 13);
-            this.labSTART_TIME_ROADEDITOR.TabIndex = 53;
-            this.labSTART_TIME_ROADEDITOR.Text = "START_TIME_ROADEDITOR";
-            this.toolTip1.SetToolTip(this.labSTART_TIME_ROADEDITOR, resources.GetString("labSTART_TIME_ROADEDITOR.ToolTip"));
-            // 
-            // tbxSTART_TIME_ROADEDITOR
-            // 
-            this.tbxSTART_TIME_ROADEDITOR.Location = new System.Drawing.Point(216, 97);
-            this.tbxSTART_TIME_ROADEDITOR.Name = "tbxSTART_TIME_ROADEDITOR";
-            this.tbxSTART_TIME_ROADEDITOR.Size = new System.Drawing.Size(150, 20);
-            this.tbxSTART_TIME_ROADEDITOR.TabIndex = 52;
-            this.tbxSTART_TIME_ROADEDITOR.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxSTART_TIME_ROADEDITOR, resources.GetString("tbxSTART_TIME_ROADEDITOR.ToolTip"));
-            // 
             // tbxROADEDITOR_ADDITIONAL_OPTIONS
             // 
             this.tbxROADEDITOR_ADDITIONAL_OPTIONS.Location = new System.Drawing.Point(216, 71);
@@ -1010,30 +945,11 @@ namespace XRouteTestClient
             this.labROADEDITOR_ADDITIONAL_OPTIONS.Text = "ROADEDITOR_ADDITIONAL_OPTIONS";
             this.toolTip1.SetToolTip(this.labROADEDITOR_ADDITIONAL_OPTIONS, resources.GetString("labROADEDITOR_ADDITIONAL_OPTIONS.ToolTip"));
             // 
-            // labDYNAMIC_PROFILE
-            // 
-            this.labDYNAMIC_PROFILE.AutoSize = true;
-            this.labDYNAMIC_PROFILE.Location = new System.Drawing.Point(4, 17);
-            this.labDYNAMIC_PROFILE.Name = "labDYNAMIC_PROFILE";
-            this.labDYNAMIC_PROFILE.Size = new System.Drawing.Size(107, 13);
-            this.labDYNAMIC_PROFILE.TabIndex = 42;
-            this.labDYNAMIC_PROFILE.Text = "DYNAMIC_PROFILE";
-            this.toolTip1.SetToolTip(this.labDYNAMIC_PROFILE, resources.GetString("labDYNAMIC_PROFILE.ToolTip"));
-            // 
-            // tbxDYNAMIC_PROFILE
-            // 
-            this.tbxDYNAMIC_PROFILE.Location = new System.Drawing.Point(117, 14);
-            this.tbxDYNAMIC_PROFILE.Name = "tbxDYNAMIC_PROFILE";
-            this.tbxDYNAMIC_PROFILE.Size = new System.Drawing.Size(100, 20);
-            this.tbxDYNAMIC_PROFILE.TabIndex = 39;
-            this.tbxDYNAMIC_PROFILE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxDYNAMIC_PROFILE, resources.GetString("tbxDYNAMIC_PROFILE.ToolTip"));
-            // 
             // tbxSTART_TIME
             // 
-            this.tbxSTART_TIME.Location = new System.Drawing.Point(87, 38);
+            this.tbxSTART_TIME.Location = new System.Drawing.Point(124, 14);
             this.tbxSTART_TIME.Name = "tbxSTART_TIME";
-            this.tbxSTART_TIME.Size = new System.Drawing.Size(130, 20);
+            this.tbxSTART_TIME.Size = new System.Drawing.Size(243, 20);
             this.tbxSTART_TIME.TabIndex = 36;
             this.tbxSTART_TIME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxSTART_TIME, resources.GetString("tbxSTART_TIME.ToolTip"));
@@ -1041,7 +957,7 @@ namespace XRouteTestClient
             // labSTART_TIME
             // 
             this.labSTART_TIME.AutoSize = true;
-            this.labSTART_TIME.Location = new System.Drawing.Point(6, 43);
+            this.labSTART_TIME.Location = new System.Drawing.Point(9, 19);
             this.labSTART_TIME.Name = "labSTART_TIME";
             this.labSTART_TIME.Size = new System.Drawing.Size(75, 13);
             this.labSTART_TIME.TabIndex = 35;
@@ -1534,66 +1450,22 @@ namespace XRouteTestClient
             // gbxDynamic
             // 
             this.gbxDynamic.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxDynamic.Controls.Add(this.labDYNAMIC_TIME_ON_STATICROUTE);
-            this.gbxDynamic.Controls.Add(this.labENABLE_DYNAMIC);
-            this.gbxDynamic.Controls.Add(this.tbxENABLE_DYNAMIC);
-            this.gbxDynamic.Controls.Add(this.tbxDYNAMIC_TIME_ON_STATICROUTE);
             this.gbxDynamic.Controls.Add(this.labIS_DESTTIME);
             this.gbxDynamic.Controls.Add(this.tbxIS_DESTTIME);
-            this.gbxDynamic.Controls.Add(this.labDYNAMIC_PROFILE);
             this.gbxDynamic.Controls.Add(this.labSTART_TIME);
-            this.gbxDynamic.Controls.Add(this.tbxDYNAMIC_PROFILE);
             this.gbxDynamic.Controls.Add(this.tbxSTART_TIME);
             this.gbxDynamic.Location = new System.Drawing.Point(567, 19);
             this.gbxDynamic.Name = "gbxDynamic";
-            this.gbxDynamic.Size = new System.Drawing.Size(373, 88);
+            this.gbxDynamic.Size = new System.Drawing.Size(373, 72);
             this.gbxDynamic.TabIndex = 64;
             this.gbxDynamic.TabStop = false;
-            this.gbxDynamic.Text = "RoutingOptions: Dynamic";
+            this.gbxDynamic.Text = "RoutingOptions: Time related";
             this.toolTip1.SetToolTip(this.gbxDynamic, resources.GetString("gbxDynamic.ToolTip"));
-            // 
-            // labDYNAMIC_TIME_ON_STATICROUTE
-            // 
-            this.labDYNAMIC_TIME_ON_STATICROUTE.AutoSize = true;
-            this.labDYNAMIC_TIME_ON_STATICROUTE.Location = new System.Drawing.Point(129, 68);
-            this.labDYNAMIC_TIME_ON_STATICROUTE.Name = "labDYNAMIC_TIME_ON_STATICROUTE";
-            this.labDYNAMIC_TIME_ON_STATICROUTE.Size = new System.Drawing.Size(192, 13);
-            this.labDYNAMIC_TIME_ON_STATICROUTE.TabIndex = 76;
-            this.labDYNAMIC_TIME_ON_STATICROUTE.Text = "DYNAMIC_TIME_ON_STATICROUTE";
-            this.toolTip1.SetToolTip(this.labDYNAMIC_TIME_ON_STATICROUTE, resources.GetString("labDYNAMIC_TIME_ON_STATICROUTE.ToolTip"));
-            // 
-            // labENABLE_DYNAMIC
-            // 
-            this.labENABLE_DYNAMIC.AutoSize = true;
-            this.labENABLE_DYNAMIC.Location = new System.Drawing.Point(217, 17);
-            this.labENABLE_DYNAMIC.Name = "labENABLE_DYNAMIC";
-            this.labENABLE_DYNAMIC.Size = new System.Drawing.Size(104, 13);
-            this.labENABLE_DYNAMIC.TabIndex = 74;
-            this.labENABLE_DYNAMIC.Text = "ENABLE_DYNAMIC";
-            this.toolTip1.SetToolTip(this.labENABLE_DYNAMIC, resources.GetString("labENABLE_DYNAMIC.ToolTip"));
-            // 
-            // tbxENABLE_DYNAMIC
-            // 
-            this.tbxENABLE_DYNAMIC.Location = new System.Drawing.Point(327, 14);
-            this.tbxENABLE_DYNAMIC.Name = "tbxENABLE_DYNAMIC";
-            this.tbxENABLE_DYNAMIC.Size = new System.Drawing.Size(40, 20);
-            this.tbxENABLE_DYNAMIC.TabIndex = 73;
-            this.tbxENABLE_DYNAMIC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxENABLE_DYNAMIC, resources.GetString("tbxENABLE_DYNAMIC.ToolTip"));
-            // 
-            // tbxDYNAMIC_TIME_ON_STATICROUTE
-            // 
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE.Location = new System.Drawing.Point(327, 64);
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE.Name = "tbxDYNAMIC_TIME_ON_STATICROUTE";
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE.Size = new System.Drawing.Size(40, 20);
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE.TabIndex = 75;
-            this.tbxDYNAMIC_TIME_ON_STATICROUTE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxDYNAMIC_TIME_ON_STATICROUTE, resources.GetString("tbxDYNAMIC_TIME_ON_STATICROUTE.ToolTip"));
             // 
             // labIS_DESTTIME
             // 
             this.labIS_DESTTIME.AutoSize = true;
-            this.labIS_DESTTIME.Location = new System.Drawing.Point(243, 43);
+            this.labIS_DESTTIME.Location = new System.Drawing.Point(6, 45);
             this.labIS_DESTTIME.Name = "labIS_DESTTIME";
             this.labIS_DESTTIME.Size = new System.Drawing.Size(78, 13);
             this.labIS_DESTTIME.TabIndex = 72;
@@ -1602,9 +1474,9 @@ namespace XRouteTestClient
             // 
             // tbxIS_DESTTIME
             // 
-            this.tbxIS_DESTTIME.Location = new System.Drawing.Point(327, 40);
+            this.tbxIS_DESTTIME.Location = new System.Drawing.Point(124, 40);
             this.tbxIS_DESTTIME.Name = "tbxIS_DESTTIME";
-            this.tbxIS_DESTTIME.Size = new System.Drawing.Size(40, 20);
+            this.tbxIS_DESTTIME.Size = new System.Drawing.Size(87, 20);
             this.tbxIS_DESTTIME.TabIndex = 71;
             this.tbxIS_DESTTIME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxIS_DESTTIME, resources.GetString("tbxIS_DESTTIME.ToolTip"));
@@ -1616,7 +1488,7 @@ namespace XRouteTestClient
             this.gbxService.Controls.Add(this.tbxServiceRoute);
             this.gbxService.Controls.Add(this.tbxServiceMap);
             this.gbxService.Controls.Add(this.labServiceMap);
-            this.gbxService.Location = new System.Drawing.Point(568, 471);
+            this.gbxService.Location = new System.Drawing.Point(568, 408);
             this.gbxService.Name = "gbxService";
             this.gbxService.Size = new System.Drawing.Size(373, 71);
             this.gbxService.TabIndex = 20;
@@ -1690,7 +1562,7 @@ namespace XRouteTestClient
             this.gbxPerNCRouteInfo.Controls.Add(this.dgv_perNCRouteInfo);
             this.gbxPerNCRouteInfo.Location = new System.Drawing.Point(765, 19);
             this.gbxPerNCRouteInfo.Name = "gbxPerNCRouteInfo";
-            this.gbxPerNCRouteInfo.Size = new System.Drawing.Size(210, 195);
+            this.gbxPerNCRouteInfo.Size = new System.Drawing.Size(437, 195);
             this.gbxPerNCRouteInfo.TabIndex = 20;
             this.gbxPerNCRouteInfo.TabStop = false;
             this.gbxPerNCRouteInfo.Text = "PerNCRouteInfo";
@@ -1835,9 +1707,7 @@ namespace XRouteTestClient
             this.gbxInput.BackColor = System.Drawing.Color.PowderBlue;
             this.gbxInput.Controls.Add(this.tabControl);
             this.gbxInput.Controls.Add(this.cbxFeatureLayerDescriptions);
-            this.gbxInput.Controls.Add(this.gbxCosts);
             this.gbxInput.Controls.Add(this.gbxVehicleParameters);
-            this.gbxInput.Controls.Add(this.gbxRetour);
             this.gbxInput.Controls.Add(this.gbxBoundingRectangles);
             this.gbxInput.Controls.Add(this.gbxDynamic);
             this.gbxInput.Controls.Add(this.gbxCountryInfoOptions);
@@ -1892,8 +1762,8 @@ namespace XRouteTestClient
             this.regulationTabPage.Controls.Add(this.label25);
             this.regulationTabPage.Controls.Add(this.label26);
             this.regulationTabPage.Controls.Add(this.label27);
-            this.regulationTabPage.Controls.Add(this.button1);
-            this.regulationTabPage.Controls.Add(this.load1DriverRegulationsBtn);
+            this.regulationTabPage.Controls.Add(this.load2DriverRegulationsButton);
+            this.regulationTabPage.Controls.Add(this.load1DriverRegulationsButton);
             this.regulationTabPage.Controls.Add(this.label8);
             this.regulationTabPage.Controls.Add(this.weeklyRestPeriodTxtBx);
             this.regulationTabPage.Controls.Add(this.maximumBiweeklyDrivingPeriodTxtBx);
@@ -2099,25 +1969,25 @@ namespace XRouteTestClient
             this.label27.TabIndex = 113;
             this.label27.Text = "maxWorkingPeriodWithoutBreak";
             // 
-            // button1
+            // load2DriverRegulationsButton
             // 
-            this.button1.Location = new System.Drawing.Point(157, 6);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(145, 23);
-            this.button1.TabIndex = 103;
-            this.button1.Text = "Load 2 drivers regulations";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.load2DriverRegulationsButton.Location = new System.Drawing.Point(157, 6);
+            this.load2DriverRegulationsButton.Name = "load2DriverRegulationsButton";
+            this.load2DriverRegulationsButton.Size = new System.Drawing.Size(145, 23);
+            this.load2DriverRegulationsButton.TabIndex = 103;
+            this.load2DriverRegulationsButton.Text = "Load 2 drivers regulations";
+            this.load2DriverRegulationsButton.UseVisualStyleBackColor = true;
+            this.load2DriverRegulationsButton.Click += new System.EventHandler(this.load2DriverRegulationsButton_Click);
             // 
-            // load1DriverRegulationsBtn
+            // load1DriverRegulationsButton
             // 
-            this.load1DriverRegulationsBtn.Location = new System.Drawing.Point(6, 6);
-            this.load1DriverRegulationsBtn.Name = "load1DriverRegulationsBtn";
-            this.load1DriverRegulationsBtn.Size = new System.Drawing.Size(145, 23);
-            this.load1DriverRegulationsBtn.TabIndex = 102;
-            this.load1DriverRegulationsBtn.Text = "Load 1 driver regulations";
-            this.load1DriverRegulationsBtn.UseVisualStyleBackColor = true;
-            this.load1DriverRegulationsBtn.Click += new System.EventHandler(this.load1DriverRegulationsBtn_Click);
+            this.load1DriverRegulationsButton.Location = new System.Drawing.Point(6, 6);
+            this.load1DriverRegulationsButton.Name = "load1DriverRegulationsButton";
+            this.load1DriverRegulationsButton.Size = new System.Drawing.Size(145, 23);
+            this.load1DriverRegulationsButton.TabIndex = 102;
+            this.load1DriverRegulationsButton.Text = "Load 1 driver regulations";
+            this.load1DriverRegulationsButton.UseVisualStyleBackColor = true;
+            this.load1DriverRegulationsButton.Click += new System.EventHandler(this.load1DriverRegulationsButton_Click);
             // 
             // label8
             // 
@@ -2443,7 +2313,7 @@ namespace XRouteTestClient
             this.xmlSnippetTabPage.Location = new System.Drawing.Point(4, 22);
             this.xmlSnippetTabPage.Name = "xmlSnippetTabPage";
             this.xmlSnippetTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.xmlSnippetTabPage.Size = new System.Drawing.Size(280, 497);
+            this.xmlSnippetTabPage.Size = new System.Drawing.Size(340, 497);
             this.xmlSnippetTabPage.TabIndex = 0;
             this.xmlSnippetTabPage.Text = "XML Snippet";
             // 
@@ -2455,7 +2325,7 @@ namespace XRouteTestClient
             this.tbxXMLSnippet.Enabled = false;
             this.tbxXMLSnippet.Location = new System.Drawing.Point(6, 29);
             this.tbxXMLSnippet.Name = "tbxXMLSnippet";
-            this.tbxXMLSnippet.Size = new System.Drawing.Size(14, 460);
+            this.tbxXMLSnippet.Size = new System.Drawing.Size(328, 460);
             this.tbxXMLSnippet.TabIndex = 24;
             this.tbxXMLSnippet.Text = "";
             this.tbxXMLSnippet.WordWrap = false;
@@ -2484,61 +2354,6 @@ namespace XRouteTestClient
             this.cbxFeatureLayerDescriptions.TabIndex = 48;
             this.cbxFeatureLayerDescriptions.Text = "FL";
             this.cbxFeatureLayerDescriptions.UseVisualStyleBackColor = false;
-            // 
-            // gbxCosts
-            // 
-            this.gbxCosts.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxCosts.Controls.Add(this.labCostsPeriod);
-            this.gbxCosts.Controls.Add(this.labCostsDistance);
-            this.gbxCosts.Controls.Add(this.tbxCostsPeriod);
-            this.gbxCosts.Controls.Add(this.tbxCostsDistance);
-            this.gbxCosts.Location = new System.Drawing.Point(946, 471);
-            this.gbxCosts.Name = "gbxCosts";
-            this.gbxCosts.Size = new System.Drawing.Size(256, 71);
-            this.gbxCosts.TabIndex = 67;
-            this.gbxCosts.TabStop = false;
-            this.gbxCosts.Text = "Costs";
-            this.toolTip1.SetToolTip(this.gbxCosts, "Provide a comma separated string that defines costs for each km. The 8 elements w" +
-        "ill be multiplied with the network  classes distances");
-            // 
-            // labCostsPeriod
-            // 
-            this.labCostsPeriod.AutoSize = true;
-            this.labCostsPeriod.Location = new System.Drawing.Point(6, 45);
-            this.labCostsPeriod.Name = "labCostsPeriod";
-            this.labCostsPeriod.Size = new System.Drawing.Size(36, 13);
-            this.labCostsPeriod.TabIndex = 62;
-            this.labCostsPeriod.Text = "period";
-            // 
-            // labCostsDistance
-            // 
-            this.labCostsDistance.AutoSize = true;
-            this.labCostsDistance.Location = new System.Drawing.Point(6, 19);
-            this.labCostsDistance.Name = "labCostsDistance";
-            this.labCostsDistance.Size = new System.Drawing.Size(47, 13);
-            this.labCostsDistance.TabIndex = 61;
-            this.labCostsDistance.Text = "distance";
-            this.toolTip1.SetToolTip(this.labCostsDistance, resources.GetString("labCostsDistance.ToolTip"));
-            // 
-            // tbxCostsPeriod
-            // 
-            this.tbxCostsPeriod.Location = new System.Drawing.Point(59, 42);
-            this.tbxCostsPeriod.Name = "tbxCostsPeriod";
-            this.tbxCostsPeriod.Size = new System.Drawing.Size(191, 20);
-            this.tbxCostsPeriod.TabIndex = 35;
-            this.tbxCostsPeriod.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxCostsPeriod, resources.GetString("tbxCostsPeriod.ToolTip"));
-            this.tbxCostsPeriod.TextChanged += new System.EventHandler(this.tbxCostsPeriod_TextChanged);
-            // 
-            // tbxCostsDistance
-            // 
-            this.tbxCostsDistance.Location = new System.Drawing.Point(59, 16);
-            this.tbxCostsDistance.Name = "tbxCostsDistance";
-            this.tbxCostsDistance.Size = new System.Drawing.Size(191, 20);
-            this.tbxCostsDistance.TabIndex = 34;
-            this.tbxCostsDistance.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxCostsDistance, resources.GetString("tbxCostsDistance.ToolTip"));
-            this.tbxCostsDistance.TextChanged += new System.EventHandler(this.tbxCostsDistance_TextChanged);
             // 
             // gbxVehicleParameters
             // 
@@ -2919,33 +2734,6 @@ namespace XRouteTestClient
             this.labTOTAL_WEIGTH.Text = "TOTAL_WEIGTH";
             this.toolTip1.SetToolTip(this.labTOTAL_WEIGTH, resources.GetString("labTOTAL_WEIGTH.ToolTip"));
             // 
-            // gbxRetour
-            // 
-            this.gbxRetour.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxRetour.Controls.Add(this.cbxRetour);
-            this.gbxRetour.Location = new System.Drawing.Point(367, 97);
-            this.gbxRetour.Name = "gbxRetour";
-            this.gbxRetour.Size = new System.Drawing.Size(194, 41);
-            this.gbxRetour.TabIndex = 23;
-            this.gbxRetour.TabStop = false;
-            this.gbxRetour.Text = "Retour";
-            this.toolTip1.SetToolTip(this.gbxRetour, "Determines whether the routing is computed based on (Start-Destination) or even w" +
-        "ith (Start-Destination-Start). This refers to client logic!");
-            // 
-            // cbxRetour
-            // 
-            this.cbxRetour.AutoSize = true;
-            this.cbxRetour.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbxRetour.Checked = true;
-            this.cbxRetour.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbxRetour.Location = new System.Drawing.Point(6, 19);
-            this.cbxRetour.Name = "cbxRetour";
-            this.cbxRetour.Size = new System.Drawing.Size(91, 17);
-            this.cbxRetour.TabIndex = 17;
-            this.cbxRetour.Text = "perform retour";
-            this.toolTip1.SetToolTip(this.cbxRetour, "perform retour");
-            this.cbxRetour.UseVisualStyleBackColor = true;
-            // 
             // gbxBoundingRectangles
             // 
             this.gbxBoundingRectangles.BackColor = System.Drawing.Color.PowderBlue;
@@ -3011,13 +2799,11 @@ namespace XRouteTestClient
             this.gbxRoadEditor.Controls.Add(this.labCOST_OF_SEGMENT_VIOLATIONS);
             this.gbxRoadEditor.Controls.Add(this.labROADEDITOR_ADDITIONAL_OPTIONS);
             this.gbxRoadEditor.Controls.Add(this.tbxROADEDITOR_ADDITIONAL_OPTIONS);
-            this.gbxRoadEditor.Controls.Add(this.tbxSTART_TIME_ROADEDITOR);
-            this.gbxRoadEditor.Controls.Add(this.labSTART_TIME_ROADEDITOR);
             this.gbxRoadEditor.Controls.Add(this.tbxROADEDITOR_LAYERNAME);
             this.gbxRoadEditor.Controls.Add(this.labROADEDITOR_LAYERNAME);
-            this.gbxRoadEditor.Location = new System.Drawing.Point(568, 111);
+            this.gbxRoadEditor.Location = new System.Drawing.Point(567, 97);
             this.gbxRoadEditor.Name = "gbxRoadEditor";
-            this.gbxRoadEditor.Size = new System.Drawing.Size(372, 175);
+            this.gbxRoadEditor.Size = new System.Drawing.Size(372, 148);
             this.gbxRoadEditor.TabIndex = 62;
             this.gbxRoadEditor.TabStop = false;
             this.gbxRoadEditor.Text = "RoutingOptions: RoadEditor";
@@ -3026,7 +2812,7 @@ namespace XRouteTestClient
             // labALLOW_SEGMENT_VIOLATIONS
             // 
             this.labALLOW_SEGMENT_VIOLATIONS.AutoSize = true;
-            this.labALLOW_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(6, 126);
+            this.labALLOW_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(6, 100);
             this.labALLOW_SEGMENT_VIOLATIONS.Name = "labALLOW_SEGMENT_VIOLATIONS";
             this.labALLOW_SEGMENT_VIOLATIONS.Size = new System.Drawing.Size(174, 13);
             this.labALLOW_SEGMENT_VIOLATIONS.TabIndex = 73;
@@ -3034,7 +2820,7 @@ namespace XRouteTestClient
             // 
             // tbxALLOW_SEGMENT_VIOLATIONS
             // 
-            this.tbxALLOW_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(216, 123);
+            this.tbxALLOW_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(216, 97);
             this.tbxALLOW_SEGMENT_VIOLATIONS.Name = "tbxALLOW_SEGMENT_VIOLATIONS";
             this.tbxALLOW_SEGMENT_VIOLATIONS.Size = new System.Drawing.Size(150, 20);
             this.tbxALLOW_SEGMENT_VIOLATIONS.TabIndex = 72;
@@ -3053,7 +2839,7 @@ namespace XRouteTestClient
             // 
             // tbxCOST_OF_SEGMENT_VIOLATIONS
             // 
-            this.tbxCOST_OF_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(216, 149);
+            this.tbxCOST_OF_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(216, 123);
             this.tbxCOST_OF_SEGMENT_VIOLATIONS.Name = "tbxCOST_OF_SEGMENT_VIOLATIONS";
             this.tbxCOST_OF_SEGMENT_VIOLATIONS.Size = new System.Drawing.Size(150, 20);
             this.tbxCOST_OF_SEGMENT_VIOLATIONS.TabIndex = 70;
@@ -3072,7 +2858,7 @@ namespace XRouteTestClient
             // labCOST_OF_SEGMENT_VIOLATIONS
             // 
             this.labCOST_OF_SEGMENT_VIOLATIONS.AutoSize = true;
-            this.labCOST_OF_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(6, 155);
+            this.labCOST_OF_SEGMENT_VIOLATIONS.Location = new System.Drawing.Point(6, 129);
             this.labCOST_OF_SEGMENT_VIOLATIONS.Name = "labCOST_OF_SEGMENT_VIOLATIONS";
             this.labCOST_OF_SEGMENT_VIOLATIONS.Size = new System.Drawing.Size(185, 13);
             this.labCOST_OF_SEGMENT_VIOLATIONS.TabIndex = 45;
@@ -3129,13 +2915,11 @@ namespace XRouteTestClient
             // gbxExceptionPath
             // 
             this.gbxExceptionPath.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxExceptionPath.Controls.Add(this.cbxGEODATASOURCE_LAYER);
-            this.gbxExceptionPath.Controls.Add(this.labGEODATASOURCE_LAYER);
-            this.gbxExceptionPath.Controls.Add(this.tbxGEODATASOURCE_LAYER);
-            this.gbxExceptionPath.Controls.Add(this.tbxNodes);
-            this.gbxExceptionPath.Controls.Add(this.labNodes);
-            this.gbxExceptionPath.Controls.Add(this.labExtSegments);
-            this.gbxExceptionPath.Controls.Add(this.tbxExtSegments);
+            this.gbxExceptionPath.Controls.Add(this.intersectingLineStartYTextBox);
+            this.gbxExceptionPath.Controls.Add(this.intersectingLineEndYTextBox);
+            this.gbxExceptionPath.Controls.Add(this.intersectingLineStartXTextBox);
+            this.gbxExceptionPath.Controls.Add(this.intersectingLineEndXTextBox);
+            this.gbxExceptionPath.Controls.Add(this.intersectingLineLabel);
             this.gbxExceptionPath.Controls.Add(this.labBinaryPathDescriptionIn);
             this.gbxExceptionPath.Controls.Add(this.tbxBinaryPathDescriptionIn);
             this.gbxExceptionPath.Controls.Add(this.labMalus);
@@ -3143,102 +2927,75 @@ namespace XRouteTestClient
             this.gbxExceptionPath.Controls.Add(this.tbxRelMalus);
             this.gbxExceptionPath.Controls.Add(this.tbxStreet);
             this.gbxExceptionPath.Controls.Add(this.labStreet);
-            this.gbxExceptionPath.Location = new System.Drawing.Point(567, 290);
+            this.gbxExceptionPath.Location = new System.Drawing.Point(568, 251);
             this.gbxExceptionPath.Name = "gbxExceptionPath";
-            this.gbxExceptionPath.Size = new System.Drawing.Size(373, 175);
+            this.gbxExceptionPath.Size = new System.Drawing.Size(373, 151);
             this.gbxExceptionPath.TabIndex = 60;
             this.gbxExceptionPath.TabStop = false;
             this.gbxExceptionPath.Text = "ExceptionPath";
             this.toolTip1.SetToolTip(this.gbxExceptionPath, resources.GetString("gbxExceptionPath.ToolTip"));
             // 
-            // cbxGEODATASOURCE_LAYER
+            // intersectingLineStartYTextBox
             // 
-            this.cbxGEODATASOURCE_LAYER.AutoSize = true;
-            this.cbxGEODATASOURCE_LAYER.Location = new System.Drawing.Point(303, 150);
-            this.cbxGEODATASOURCE_LAYER.Name = "cbxGEODATASOURCE_LAYER";
-            this.cbxGEODATASOURCE_LAYER.Size = new System.Drawing.Size(58, 17);
-            this.cbxGEODATASOURCE_LAYER.TabIndex = 78;
-            this.cbxGEODATASOURCE_LAYER.Text = "display";
-            this.cbxGEODATASOURCE_LAYER.UseVisualStyleBackColor = true;
+            this.intersectingLineStartYTextBox.Location = new System.Drawing.Point(245, 17);
+            this.intersectingLineStartYTextBox.Name = "intersectingLineStartYTextBox";
+            this.intersectingLineStartYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.intersectingLineStartYTextBox.TabIndex = 80;
+            this.intersectingLineStartYTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labGEODATASOURCE_LAYER
+            // intersectingLineEndYTextBox
             // 
-            this.labGEODATASOURCE_LAYER.AutoSize = true;
-            this.labGEODATASOURCE_LAYER.Location = new System.Drawing.Point(7, 153);
-            this.labGEODATASOURCE_LAYER.Name = "labGEODATASOURCE_LAYER";
-            this.labGEODATASOURCE_LAYER.Size = new System.Drawing.Size(112, 13);
-            this.labGEODATASOURCE_LAYER.TabIndex = 77;
-            this.labGEODATASOURCE_LAYER.Text = "Geodatasource_Layer";
-            this.toolTip1.SetToolTip(this.labGEODATASOURCE_LAYER, resources.GetString("labGEODATASOURCE_LAYER.ToolTip"));
+            this.intersectingLineEndYTextBox.Location = new System.Drawing.Point(245, 42);
+            this.intersectingLineEndYTextBox.Name = "intersectingLineEndYTextBox";
+            this.intersectingLineEndYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.intersectingLineEndYTextBox.TabIndex = 82;
+            this.intersectingLineEndYTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbxGEODATASOURCE_LAYER
+            // intersectingLineStartXTextBox
             // 
-            this.tbxGEODATASOURCE_LAYER.Location = new System.Drawing.Point(162, 148);
-            this.tbxGEODATASOURCE_LAYER.Name = "tbxGEODATASOURCE_LAYER";
-            this.tbxGEODATASOURCE_LAYER.Size = new System.Drawing.Size(135, 20);
-            this.tbxGEODATASOURCE_LAYER.TabIndex = 76;
-            this.tbxGEODATASOURCE_LAYER.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxGEODATASOURCE_LAYER, "alternative binary description representing a route path (optional)\r\n\r\nNOTE: This" +
-        " is an internal format returned by a route calculation\r\n\r\nit is only for purpose" +
-        "s of alternative routing.");
+            this.intersectingLineStartXTextBox.Location = new System.Drawing.Point(124, 17);
+            this.intersectingLineStartXTextBox.Name = "intersectingLineStartXTextBox";
+            this.intersectingLineStartXTextBox.Size = new System.Drawing.Size(115, 20);
+            this.intersectingLineStartXTextBox.TabIndex = 79;
+            this.intersectingLineStartXTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbxNodes
+            // intersectingLineEndXTextBox
             // 
-            this.tbxNodes.Location = new System.Drawing.Point(162, 17);
-            this.tbxNodes.Name = "tbxNodes";
-            this.tbxNodes.Size = new System.Drawing.Size(199, 20);
-            this.tbxNodes.TabIndex = 75;
-            this.tbxNodes.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxNodes, "Array of nodes representing a route path. All nodes have to be connected.");
+            this.intersectingLineEndXTextBox.Location = new System.Drawing.Point(124, 42);
+            this.intersectingLineEndXTextBox.Name = "intersectingLineEndXTextBox";
+            this.intersectingLineEndXTextBox.Size = new System.Drawing.Size(115, 20);
+            this.intersectingLineEndXTextBox.TabIndex = 81;
+            this.intersectingLineEndXTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // labNodes
+            // intersectingLineLabel
             // 
-            this.labNodes.AutoSize = true;
-            this.labNodes.Location = new System.Drawing.Point(7, 20);
-            this.labNodes.Name = "labNodes";
-            this.labNodes.Size = new System.Drawing.Size(71, 13);
-            this.labNodes.TabIndex = 74;
-            this.labNodes.Text = "prio A: Nodes";
-            this.toolTip1.SetToolTip(this.labNodes, "Array of nodes representing a route path. All nodes have to be connected.\r\nREM No" +
+            this.intersectingLineLabel.AutoSize = true;
+            this.intersectingLineLabel.Location = new System.Drawing.Point(7, 20);
+            this.intersectingLineLabel.Name = "intersectingLineLabel";
+            this.intersectingLineLabel.Size = new System.Drawing.Size(85, 13);
+            this.intersectingLineLabel.TabIndex = 74;
+            this.intersectingLineLabel.Text = "Intersecting Line";
+            this.toolTip1.SetToolTip(this.intersectingLineLabel, "Array of nodes representing a route path. All nodes have to be connected.\r\nREM No" +
         "tation:\r\niuCode1,nLevel1,tileID1,xOffset1,yOffset1;iuCode2,nLevel2,tileID2,xOffs" +
         "et2,yOffset2 and so on\r\n");
-            // 
-            // labExtSegments
-            // 
-            this.labExtSegments.AutoSize = true;
-            this.labExtSegments.Location = new System.Drawing.Point(7, 46);
-            this.labExtSegments.Name = "labExtSegments";
-            this.labExtSegments.Size = new System.Drawing.Size(102, 13);
-            this.labExtSegments.TabIndex = 73;
-            this.labExtSegments.Text = "prio B: ExtSegments";
-            this.toolTip1.SetToolTip(this.labExtSegments, resources.GetString("labExtSegments.ToolTip"));
-            // 
-            // tbxExtSegments
-            // 
-            this.tbxExtSegments.Location = new System.Drawing.Point(162, 43);
-            this.tbxExtSegments.Name = "tbxExtSegments";
-            this.tbxExtSegments.Size = new System.Drawing.Size(199, 20);
-            this.tbxExtSegments.TabIndex = 72;
-            this.tbxExtSegments.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxExtSegments, resources.GetString("tbxExtSegments.ToolTip"));
             // 
             // labBinaryPathDescriptionIn
             // 
             this.labBinaryPathDescriptionIn.AutoSize = true;
             this.labBinaryPathDescriptionIn.Location = new System.Drawing.Point(7, 98);
             this.labBinaryPathDescriptionIn.Name = "labBinaryPathDescriptionIn";
-            this.labBinaryPathDescriptionIn.Size = new System.Drawing.Size(145, 13);
+            this.labBinaryPathDescriptionIn.Size = new System.Drawing.Size(111, 13);
             this.labBinaryPathDescriptionIn.TabIndex = 71;
-            this.labBinaryPathDescriptionIn.Text = "prio D: BinaryPathDescription";
+            this.labBinaryPathDescriptionIn.Text = "BinaryPathDescription";
             this.toolTip1.SetToolTip(this.labBinaryPathDescriptionIn, "alternative binary description representing a route path (optional)\r\n\r\nNOTE: This" +
         " is an internal format returned by a route calculation\r\n\r\nit is only for purpose" +
         "s of alternative routing.");
             // 
             // tbxBinaryPathDescriptionIn
             // 
-            this.tbxBinaryPathDescriptionIn.Location = new System.Drawing.Point(162, 95);
+            this.tbxBinaryPathDescriptionIn.Location = new System.Drawing.Point(124, 95);
             this.tbxBinaryPathDescriptionIn.Name = "tbxBinaryPathDescriptionIn";
-            this.tbxBinaryPathDescriptionIn.Size = new System.Drawing.Size(199, 20);
+            this.tbxBinaryPathDescriptionIn.Size = new System.Drawing.Size(239, 20);
             this.tbxBinaryPathDescriptionIn.TabIndex = 70;
             this.tbxBinaryPathDescriptionIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxBinaryPathDescriptionIn, "alternative binary description representing a route path (optional)\r\n\r\nNOTE: This" +
@@ -3256,27 +3013,27 @@ namespace XRouteTestClient
             // 
             // tbxAbsMalus
             // 
-            this.tbxAbsMalus.Location = new System.Drawing.Point(162, 121);
+            this.tbxAbsMalus.Location = new System.Drawing.Point(124, 121);
             this.tbxAbsMalus.Name = "tbxAbsMalus";
-            this.tbxAbsMalus.Size = new System.Drawing.Size(95, 20);
+            this.tbxAbsMalus.Size = new System.Drawing.Size(115, 20);
             this.tbxAbsMalus.TabIndex = 68;
             this.tbxAbsMalus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxAbsMalus, resources.GetString("tbxAbsMalus.ToolTip"));
             // 
             // tbxRelMalus
             // 
-            this.tbxRelMalus.Location = new System.Drawing.Point(263, 121);
+            this.tbxRelMalus.Location = new System.Drawing.Point(245, 121);
             this.tbxRelMalus.Name = "tbxRelMalus";
-            this.tbxRelMalus.Size = new System.Drawing.Size(98, 20);
+            this.tbxRelMalus.Size = new System.Drawing.Size(117, 20);
             this.tbxRelMalus.TabIndex = 67;
             this.tbxRelMalus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxRelMalus, resources.GetString("tbxRelMalus.ToolTip"));
             // 
             // tbxStreet
             // 
-            this.tbxStreet.Location = new System.Drawing.Point(162, 69);
+            this.tbxStreet.Location = new System.Drawing.Point(124, 69);
             this.tbxStreet.Name = "tbxStreet";
-            this.tbxStreet.Size = new System.Drawing.Size(200, 20);
+            this.tbxStreet.Size = new System.Drawing.Size(240, 20);
             this.tbxStreet.TabIndex = 66;
             this.tbxStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxStreet, resources.GetString("tbxStreet.ToolTip"));
@@ -3286,9 +3043,9 @@ namespace XRouteTestClient
             this.labStreet.AutoSize = true;
             this.labStreet.Location = new System.Drawing.Point(7, 72);
             this.labStreet.Name = "labStreet";
-            this.labStreet.Size = new System.Drawing.Size(68, 13);
+            this.labStreet.Size = new System.Drawing.Size(35, 13);
             this.labStreet.TabIndex = 66;
-            this.labStreet.Text = "prio C: Street";
+            this.labStreet.Text = "Street";
             this.toolTip1.SetToolTip(this.labStreet, resources.GetString("labStreet.ToolTip"));
             // 
             // gbxBinaryPathDescription
@@ -3315,36 +3072,12 @@ namespace XRouteTestClient
             this.tbxBinaryPathDescription.Size = new System.Drawing.Size(573, 48);
             this.tbxBinaryPathDescription.TabIndex = 0;
             // 
-            // gbxOutputCosts
-            // 
-            this.gbxOutputCosts.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxOutputCosts.Controls.Add(this.dgvOutputCosts);
-            this.gbxOutputCosts.Location = new System.Drawing.Point(981, 19);
-            this.gbxOutputCosts.Name = "gbxOutputCosts";
-            this.gbxOutputCosts.Size = new System.Drawing.Size(226, 195);
-            this.gbxOutputCosts.TabIndex = 22;
-            this.gbxOutputCosts.TabStop = false;
-            this.gbxOutputCosts.Text = "Costs";
-            this.toolTip1.SetToolTip(this.gbxOutputCosts, "Attention: information displayed in this element is processed at client side! Thi" +
-        "s is just for demonstration!");
-            // 
-            // dgvOutputCosts
-            // 
-            this.dgvOutputCosts.BackgroundColor = System.Drawing.Color.PowderBlue;
-            this.dgvOutputCosts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOutputCosts.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvOutputCosts.Location = new System.Drawing.Point(3, 16);
-            this.dgvOutputCosts.Name = "dgvOutputCosts";
-            this.dgvOutputCosts.Size = new System.Drawing.Size(220, 176);
-            this.dgvOutputCosts.TabIndex = 21;
-            // 
             // gbxOutput
             // 
             this.gbxOutput.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxOutput.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxOutput.Controls.Add(this.gbxOutputCosts);
             this.gbxOutput.Controls.Add(this.gbxTollCostInfo);
             this.gbxOutput.Controls.Add(this.gbxBinaryPathDescription);
             this.gbxOutput.Controls.Add(this.gbxPerNCRouteInfo);
@@ -3404,12 +3137,8 @@ namespace XRouteTestClient
             this.regulationTabPage.PerformLayout();
             this.xmlSnippetTabPage.ResumeLayout(false);
             this.xmlSnippetTabPage.PerformLayout();
-            this.gbxCosts.ResumeLayout(false);
-            this.gbxCosts.PerformLayout();
             this.gbxVehicleParameters.ResumeLayout(false);
             this.gbxVehicleParameters.PerformLayout();
-            this.gbxRetour.ResumeLayout(false);
-            this.gbxRetour.PerformLayout();
             this.gbxBoundingRectangles.ResumeLayout(false);
             this.gbxBoundingRectangles.PerformLayout();
             this.gbxRoadEditor.ResumeLayout(false);
@@ -3420,8 +3149,6 @@ namespace XRouteTestClient
             this.gbxExceptionPath.PerformLayout();
             this.gbxBinaryPathDescription.ResumeLayout(false);
             this.gbxBinaryPathDescription.PerformLayout();
-            this.gbxOutputCosts.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOutputCosts)).EndInit();
             this.gbxOutput.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -3506,8 +3233,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.GroupBox gbxPerNCRouteInfo;
         private System.Windows.Forms.TextBox tbxSTART_TIME;
         private System.Windows.Forms.Label labSTART_TIME;
-        private System.Windows.Forms.Label labDYNAMIC_PROFILE;
-        private System.Windows.Forms.TextBox tbxDYNAMIC_PROFILE;
         private System.Windows.Forms.TextBox tbxLOW_EMISSION_ZONE_TYPE;
         private System.Windows.Forms.Label labLOW_EMISSION_ZONE_TYPE;
         private System.Windows.Forms.GroupBox gbxResultListOptions;
@@ -3516,10 +3241,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxROUTE_LANGUAGE;
         private System.Windows.Forms.TextBox tbxROADEDITOR_ADDITIONAL_OPTIONS;
         private System.Windows.Forms.Label labROADEDITOR_ADDITIONAL_OPTIONS;
-        private System.Windows.Forms.Label labSTART_TIME_ROADEDITOR;
-        private System.Windows.Forms.TextBox tbxSTART_TIME_ROADEDITOR;
-        private System.Windows.Forms.TextBox tbxDISTANCE_MEASURE;
-        private System.Windows.Forms.Label labDISTANCE_MEASURE;
         private System.Windows.Forms.Label labROUTING_RECTANGLE;
         private System.Windows.Forms.TextBox tbxROUTING_RECTANGLE;
         private System.Windows.Forms.ToolTip toolTip1;
@@ -3537,8 +3258,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxBinaryPathDescription;
         private System.Windows.Forms.TextBox tbxBinaryPathDescriptionIn;
         private System.Windows.Forms.Label labBinaryPathDescriptionIn;
-        private System.Windows.Forms.Label labExtSegments;
-        private System.Windows.Forms.TextBox tbxExtSegments;
         private System.Windows.Forms.GroupBox gbxAvoid;
         private System.Windows.Forms.GroupBox gbxDynamic;
         private System.Windows.Forms.GroupBox gbxRoadEditor;
@@ -3565,8 +3284,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.RadioButton radCalcAdvTour;
         private System.Windows.Forms.RadioButton radCalcExtRoute;
         private System.Windows.Forms.RadioButton radCalcRoute;
-        private System.Windows.Forms.GroupBox gbxRetour;
-        private System.Windows.Forms.CheckBox cbxRetour;
         private System.Windows.Forms.GroupBox gbxVehicleParameters;
         private System.Windows.Forms.Label labTYPE;
         private System.Windows.Forms.TextBox tbxVP_TYPE;
@@ -3594,18 +3311,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label labEMISSION_CLASS;
         private System.Windows.Forms.Label labWIDTH;
         private System.Windows.Forms.Label labCYLINDER_CAPACITY;
-        private System.Windows.Forms.TextBox tbxNodes;
-        private System.Windows.Forms.Label labNodes;
-        private System.Windows.Forms.GroupBox gbxOutputCosts;
-        private System.Windows.Forms.DataGridView dgvOutputCosts;
-        private System.Windows.Forms.GroupBox gbxCosts;
-        private System.Windows.Forms.TextBox tbxCostsDistance;
-        private System.Windows.Forms.TextBox tbxCostsPeriod;
-        private System.Windows.Forms.Label labCostsDistance;
-        private System.Windows.Forms.Label labCostsPeriod;
-        private System.Windows.Forms.Label labGEODATASOURCE_LAYER;
-        private System.Windows.Forms.TextBox tbxGEODATASOURCE_LAYER;
-        private System.Windows.Forms.CheckBox cbxGEODATASOURCE_LAYER;
+        private System.Windows.Forms.Label intersectingLineLabel;
         private System.Windows.Forms.TextBox tbxTolldate;
         private System.Windows.Forms.ListBox lbxResultListOptions;
         private System.Windows.Forms.Label labEmissions;
@@ -3632,12 +3338,8 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxGENERATE_EXTWAYPOINTS;
         private System.Windows.Forms.Label labGENERATE_EXTWAYPOINTS;
         private System.Windows.Forms.Label labSPEED_INFOS;
-        private System.Windows.Forms.Label labENABLE_DYNAMIC;
-        private System.Windows.Forms.TextBox tbxENABLE_DYNAMIC;
         private System.Windows.Forms.Label labIS_DESTTIME;
         private System.Windows.Forms.TextBox tbxIS_DESTTIME;
-        private System.Windows.Forms.Label labDYNAMIC_TIME_ON_STATICROUTE;
-        private System.Windows.Forms.TextBox tbxDYNAMIC_TIME_ON_STATICROUTE;
         private System.Windows.Forms.DataGridViewTextBoxColumn tollStationFromDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tollStationToDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn currencyNameDataGridViewTextBoxColumn;
@@ -3690,8 +3392,8 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button load1DriverRegulationsBtn;
+        private System.Windows.Forms.Button load2DriverRegulationsButton;
+        private System.Windows.Forms.Button load1DriverRegulationsButton;
         private System.Windows.Forms.TextBox dailyRestPeriodTxtBx;
         private System.Windows.Forms.TextBox maxWorkingPeriodPerWeekTxtBx;
         private System.Windows.Forms.TextBox maxWorkingPeriodWithoutDailyRestTxtBx;
@@ -3712,6 +3414,10 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.CheckBox enableSnippetChckBx;
         private System.Windows.Forms.RichTextBox tbxXMLSnippet;
+        private System.Windows.Forms.TextBox intersectingLineStartYTextBox;
+        private System.Windows.Forms.TextBox intersectingLineEndYTextBox;
+        private System.Windows.Forms.TextBox intersectingLineStartXTextBox;
+        private System.Windows.Forms.TextBox intersectingLineEndXTextBox;
     }
 }
 
