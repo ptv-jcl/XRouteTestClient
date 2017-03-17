@@ -513,8 +513,8 @@ namespace XRouteTestClient
                 rlo.dynamicInfo = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo);
                 if (rlo.dynamicInfo)
                 {
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "50", });
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "15", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "24", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "60", });
                     rlo.utcOffsets = true;
                     rlo.utcOffsetsSpecified = true;
                 }

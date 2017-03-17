@@ -42,6 +42,7 @@ namespace XRouteTestClient
             this.tbxTimeBenefit = new System.Windows.Forms.TextBox();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.commuterTravelTrendBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.localTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.departureTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.travelTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.formattedTimeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +82,7 @@ namespace XRouteTestClient
             this.travelTrendDataGridView.AutoGenerateColumns = false;
             this.travelTrendDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.travelTrendDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.localTimeDataGridViewTextBoxColumn,
             this.departureTimeDataGridViewTextBoxColumn,
             this.travelTimeDataGridViewTextBoxColumn,
             this.formattedTimeDataGridViewTextBoxColumn});
@@ -170,6 +172,13 @@ namespace XRouteTestClient
             // 
             this.commuterTravelTrendBindingSource.DataSource = typeof(XServer.CommuterTravelTrend);
             // 
+            // localTimeDataGridViewTextBoxColumn
+            // 
+            this.localTimeDataGridViewTextBoxColumn.DataPropertyName = "localTime";
+            this.localTimeDataGridViewTextBoxColumn.HeaderText = "localTime";
+            this.localTimeDataGridViewTextBoxColumn.Name = "localTimeDataGridViewTextBoxColumn";
+            this.localTimeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // departureTimeDataGridViewTextBoxColumn
             // 
             this.departureTimeDataGridViewTextBoxColumn.DataPropertyName = "departureTime";
@@ -224,6 +233,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxTimeBenefit;
         private System.Windows.Forms.DataGridView travelTrendDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn xmlTimeDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn localTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn travelTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formattedTimeDataGridViewTextBoxColumn;
