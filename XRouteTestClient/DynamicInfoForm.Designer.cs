@@ -223,7 +223,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxDistanceDiff;
         private System.Windows.Forms.TextBox tbxTimeBenefit;
         private System.Windows.Forms.DataGridView travelTrendDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xmlTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn departureTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn travelTimeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn formattedTimeDataGridViewTextBoxColumn;

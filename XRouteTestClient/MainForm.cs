@@ -1,4 +1,4 @@
-using NetTopologySuite.IO;
+
 using Static;
 using System;
 using System.Collections.Generic;
@@ -73,7 +73,7 @@ namespace XRouteTestClient
 
         public MainForm()
         {
-            CultureInfo.DefaultThreadCurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
+            System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.InvariantCulture;
 
             InitializeComponent();
 
@@ -1202,12 +1202,8 @@ namespace XRouteTestClient
                     oldTollState = curTollState;
                 }
 
-                var wkbReader = new WKBReader();
-                var totalLinestring = wkbReader.Read(route.polygon.wkb) as NetTopologySuite.Geometries.LineString;
-                listPlainPoint.AddRange(totalLinestring.Coordinates.ToList().GetRange(curRouteListSegment.firstPolyIdx, curRouteListSegment.polyC).Select(c => new PlainPoint(c.X, c.Y)));
-
-                //for (int polyIndex = curRouteListSegment.firstPolyIdx; polyIndex < curRouteListSegment.firstPolyIdx + curRouteListSegment.polyC; polyIndex++)
-                //    listPlainPoint.Add(route.polygon.lineString.wrappedPoints[polyIndex]);
+                for (int polyIndex = curRouteListSegment.firstPolyIdx; polyIndex < curRouteListSegment.firstPolyIdx + curRouteListSegment.polyC; polyIndex++)
+                    listPlainPoint.Add(route.polygon.lineString.wrappedPoints[polyIndex]);
             }
             // letzte Linie
             if (listPlainPoint.Count > 0)

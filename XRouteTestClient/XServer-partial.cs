@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using System.Linq;
 
 namespace XServer
 {
@@ -91,7 +92,7 @@ namespace XServer
         public string lowEmissionZoneType { get { if (this.segmentAttr != null) return this.segmentAttr.additionalRE; else return ""; } private set { } }
 
         [XmlIgnore]
-        public string FLDescriptions { get { return (this.wrappedFeatureDescriptions != null) ? string.Join(" ; ", (object[])(this.wrappedFeatureDescriptions)) : null; } }
+        public string FLDescriptions { get { return (this.wrappedFeatureDescriptions != null) ? string.Join(" ; ",  this.wrappedFeatureDescriptions.Select(fd=>fd.ToString()).ToArray()) : null; } }
     }
 
     public partial class FeatureDescription
