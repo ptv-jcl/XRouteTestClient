@@ -276,16 +276,6 @@ Default is 1
 Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
 "routingParameter.LowEmissionZoneType" in property file</value>
   </data>
-  <data name="tbxGENERATE_EXTWAYPOINTS.ToolTip" xml:space="preserve">
-    <value>The  low emission zone type of the vehicle. The low emission zone can be set by one of these identifiers:         
-0       (NO low emission zone)
-1       (GREEN low emission zone)
-2       (YELLOW low emission zone)
-3       (RED low emission zone)
-Default is 1 
-Note: LOW_EMISSION_ZONE_TYPE will always overwrite the 
-"routingParameter.LowEmissionZoneType" in property file</value>
-  </data>
   <data name="labROUTE_LANGUAGE.ToolTip" xml:space="preserve">
     <value>Defines the language which has to be used for the directions in the route description calculation
 legal values are (ISO 639-1-Codes)
@@ -767,16 +757,6 @@ SEGMENTS	 EmissionLevel	 2	The total amount of emissions and the emissions per s
 STATIONS	 EmissionLevel	 3	The total amount of emissions and the emissions per station.
 ALL	 EmissionLevel	 4	The total amount of emissions and the emissions per segment and per station.</value>
   </data>
-  <data name="labManoeuvreGroupsRatio.ToolTip" xml:space="preserve">
-    <value>Optional value representing the height/width ratio of the ManoevreGroup.extend representing the bounding rectangle.
-If the ratio is 1 height and width are equal.
-NOTE: This parameter is only interpreted if manoeuvreGroups is true</value>
-  </data>
-  <data name="tbxManoeuvreGroupsRatio.ToolTip" xml:space="preserve">
-    <value>Optional value representing the height/width ratio of the ManoevreGroup.extend representing the bounding rectangle.
-If the ratio is 1 height and width are equal.
-NOTE: This parameter is only interpreted if manoeuvreGroups is true</value>
-  </data>
   <data name="radCalcRoute.ToolTip" xml:space="preserve">
     <value>Calculates the detailed route for the given stations, using the specified routing 
 options respecting the defined exceptionPaths  
@@ -898,35 +878,6 @@ default values defined in the properties definition files. Each VehicleOption ca
 a certain vehicle profile. 
 If a VehicleOption is set in the request it dominates the entry in the appropriate properties 
 definition file.</value>
-  </data>
-  <data name="tbxBoundingRectanglesOffset.ToolTip" xml:space="preserve">
-    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
-
-Legal values are -99 to 2501 and BAN. The default is 2500.
-
-&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
-
-=0: No change (Default)
-
-&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
-  </data>
-  <data name="tbxBoundingRectanglesC.ToolTip" xml:space="preserve">
-    <value>The malus or bonus value in percent which has to be added to the base cost value of low-emission zones forbidden for the current vehicle.
-
-Legal values are -99 to 2501 and BAN. The default is 2500.
-
-&lt;0: Bonus (the minumum value -99 will reduce the cost value to a minimum, i.e. the road segments are preferred)
-
-=0: No change (Default)
-
-&gt;0: Malus (the maximum value 2501 or BAN are interpreted as road segments blocked)</value>
-  </data>
-  <data name="labBoundingRectanglesC.ToolTip" xml:space="preserve">
-    <value>Defines whether and how much bounding rectangles for the route has to generated.
-If the count is set to 0, no bounding rectangles are computed
-Legal values are &gt; 0, if the value is greater as the max number of polypoints for this route
-max number of polypoints -1 bounding rectangles are computed
-Default is 0</value>
   </data>
   <data name="tbxALLOW_SEGMENT_VIOLATIONS.ToolTip" xml:space="preserve">
     <value>Represents the starting time of the route

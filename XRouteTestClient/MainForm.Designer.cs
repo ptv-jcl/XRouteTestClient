@@ -68,12 +68,8 @@ namespace XRouteTestClient
             this.gbxRoutingOptions = new System.Windows.Forms.GroupBox();
             this.labSPEED_INFOS = new System.Windows.Forms.Label();
             this.tbxSPEED_INFOS = new System.Windows.Forms.TextBox();
-            this.tbxGENERATE_EXTWAYPOINTS = new System.Windows.Forms.TextBox();
-            this.labGENERATE_EXTWAYPOINTS = new System.Windows.Forms.Label();
             this.tbxEXPERT_OPTIONS = new System.Windows.Forms.TextBox();
             this.labEXPERT_OPTIONS = new System.Windows.Forms.Label();
-            this.labROUTING_RECTANGLE = new System.Windows.Forms.Label();
-            this.tbxROUTING_RECTANGLE = new System.Windows.Forms.TextBox();
             this.labROUTE_LANGUAGE = new System.Windows.Forms.Label();
             this.tbxROUTE_LANGUAGE = new System.Windows.Forms.TextBox();
             this.tbxLOW_EMISSION_ZONE_TYPE = new System.Windows.Forms.TextBox();
@@ -113,19 +109,6 @@ namespace XRouteTestClient
             this.lbxOutCountry = new System.Windows.Forms.ListBox();
             this.gbxTollCostInfo = new System.Windows.Forms.GroupBox();
             this.dgvTollCostInfo = new System.Windows.Forms.DataGridView();
-            this.tollStationFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollStationToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.currencyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollDistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollProviderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollProviderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollSectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollSectionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vehicleTarifIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tollCostInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.gbxOutCountries = new System.Windows.Forms.GroupBox();
             this.gbxWaypoints = new System.Windows.Forms.GroupBox();
             this.labFerryId = new System.Windows.Forms.Label();
@@ -137,7 +120,6 @@ namespace XRouteTestClient
             this.tbxViaY = new System.Windows.Forms.TextBox();
             this.gbxCallerContext = new System.Windows.Forms.GroupBox();
             this.cboCoordFormat = new System.Windows.Forms.ComboBox();
-            this.cbxDisplayRoadeditorLayer = new System.Windows.Forms.CheckBox();
             this.labProfileMap = new System.Windows.Forms.Label();
             this.tbxProfileMap = new System.Windows.Forms.TextBox();
             this.gbxCountryInfoOptions = new System.Windows.Forms.GroupBox();
@@ -157,8 +139,6 @@ namespace XRouteTestClient
             this.labEmissions = new System.Windows.Forms.Label();
             this.cboHBEFAVersion = new System.Windows.Forms.ComboBox();
             this.cboEmissionLevel = new System.Windows.Forms.ComboBox();
-            this.labManoeuvreGroupsRatio = new System.Windows.Forms.Label();
-            this.tbxManoeuvreGroupsRatio = new System.Windows.Forms.TextBox();
             this.lbxResultListOptions = new System.Windows.Forms.ListBox();
             this.radCalcRoute = new System.Windows.Forms.RadioButton();
             this.radCalcExtRoute = new System.Windows.Forms.RadioButton();
@@ -261,11 +241,6 @@ namespace XRouteTestClient
             this.tbxVP_TYPE = new System.Windows.Forms.TextBox();
             this.tbxVP_TOTAL_WEIGHT = new System.Windows.Forms.TextBox();
             this.labTOTAL_WEIGTH = new System.Windows.Forms.Label();
-            this.gbxBoundingRectangles = new System.Windows.Forms.GroupBox();
-            this.tbxBoundingRectanglesOffset = new System.Windows.Forms.TextBox();
-            this.tbxBoundingRectanglesC = new System.Windows.Forms.TextBox();
-            this.labBoundingRectanglesOffset = new System.Windows.Forms.Label();
-            this.labBoundingRectanglesC = new System.Windows.Forms.Label();
             this.gbxRoadEditor = new System.Windows.Forms.GroupBox();
             this.labALLOW_SEGMENT_VIOLATIONS = new System.Windows.Forms.Label();
             this.tbxALLOW_SEGMENT_VIOLATIONS = new System.Windows.Forms.TextBox();
@@ -292,11 +267,24 @@ namespace XRouteTestClient
             this.gbxBinaryPathDescription = new System.Windows.Forms.GroupBox();
             this.tbxBinaryPathDescription = new System.Windows.Forms.TextBox();
             this.gbxOutput = new System.Windows.Forms.GroupBox();
+            this.oldTechTabPage = new System.Windows.Forms.TabPage();
+            this.tollStationFromDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollStationToDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.currencyNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollDistanceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollPriceDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollProviderIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollProviderNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollSectionIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollSectionNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollTypeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vehicleTarifIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tollCostInfoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_perNCRouteInfo)).BeginInit();
             this.gbxRoutingOptions.SuspendLayout();
             this.gbxTollCostInfo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollCostInfo)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).BeginInit();
             this.gbxOutCountries.SuspendLayout();
             this.gbxWaypoints.SuspendLayout();
             this.gbxCallerContext.SuspendLayout();
@@ -312,12 +300,13 @@ namespace XRouteTestClient
             this.regulationTabPage.SuspendLayout();
             this.xmlSnippetTabPage.SuspendLayout();
             this.gbxVehicleParameters.SuspendLayout();
-            this.gbxBoundingRectangles.SuspendLayout();
             this.gbxRoadEditor.SuspendLayout();
             this.gbxAvoid.SuspendLayout();
             this.gbxExceptionPath.SuspendLayout();
             this.gbxBinaryPathDescription.SuspendLayout();
             this.gbxOutput.SuspendLayout();
+            this.oldTechTabPage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tbxStartX
@@ -654,7 +643,7 @@ namespace XRouteTestClient
             // 
             this.tbxServiceRoute.Location = new System.Drawing.Point(82, 16);
             this.tbxServiceRoute.Name = "tbxServiceRoute";
-            this.tbxServiceRoute.Size = new System.Drawing.Size(281, 20);
+            this.tbxServiceRoute.Size = new System.Drawing.Size(266, 20);
             this.tbxServiceRoute.TabIndex = 53;
             // 
             // gbxRoutingOptions
@@ -662,12 +651,6 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.BackColor = System.Drawing.Color.PowderBlue;
             this.gbxRoutingOptions.Controls.Add(this.labSPEED_INFOS);
             this.gbxRoutingOptions.Controls.Add(this.tbxSPEED_INFOS);
-            this.gbxRoutingOptions.Controls.Add(this.tbxGENERATE_EXTWAYPOINTS);
-            this.gbxRoutingOptions.Controls.Add(this.labGENERATE_EXTWAYPOINTS);
-            this.gbxRoutingOptions.Controls.Add(this.tbxEXPERT_OPTIONS);
-            this.gbxRoutingOptions.Controls.Add(this.labEXPERT_OPTIONS);
-            this.gbxRoutingOptions.Controls.Add(this.labROUTING_RECTANGLE);
-            this.gbxRoutingOptions.Controls.Add(this.tbxROUTING_RECTANGLE);
             this.gbxRoutingOptions.Controls.Add(this.labROUTE_LANGUAGE);
             this.gbxRoutingOptions.Controls.Add(this.tbxROUTE_LANGUAGE);
             this.gbxRoutingOptions.Controls.Add(this.tbxLOW_EMISSION_ZONE_TYPE);
@@ -682,9 +665,9 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.Controls.Add(this.tbxEXCLUDE_COUNTRIES);
             this.gbxRoutingOptions.Controls.Add(this.labOPTIMIZATION);
             this.gbxRoutingOptions.Controls.Add(this.tbxOPTIMIZATION);
-            this.gbxRoutingOptions.Location = new System.Drawing.Point(201, 144);
+            this.gbxRoutingOptions.Location = new System.Drawing.Point(463, 160);
             this.gbxRoutingOptions.Name = "gbxRoutingOptions";
-            this.gbxRoutingOptions.Size = new System.Drawing.Size(361, 221);
+            this.gbxRoutingOptions.Size = new System.Drawing.Size(204, 257);
             this.gbxRoutingOptions.TabIndex = 55;
             this.gbxRoutingOptions.TabStop = false;
             this.gbxRoutingOptions.Text = "RoutingOptions: Common";
@@ -703,34 +686,16 @@ namespace XRouteTestClient
             // 
             // tbxSPEED_INFOS
             // 
-            this.tbxSPEED_INFOS.Location = new System.Drawing.Point(124, 38);
+            this.tbxSPEED_INFOS.Location = new System.Drawing.Point(138, 38);
             this.tbxSPEED_INFOS.Name = "tbxSPEED_INFOS";
-            this.tbxSPEED_INFOS.Size = new System.Drawing.Size(38, 20);
+            this.tbxSPEED_INFOS.Size = new System.Drawing.Size(47, 20);
             this.tbxSPEED_INFOS.TabIndex = 69;
             this.tbxSPEED_INFOS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxSPEED_INFOS, resources.GetString("tbxSPEED_INFOS.ToolTip"));
             // 
-            // tbxGENERATE_EXTWAYPOINTS
-            // 
-            this.tbxGENERATE_EXTWAYPOINTS.Location = new System.Drawing.Point(172, 169);
-            this.tbxGENERATE_EXTWAYPOINTS.Name = "tbxGENERATE_EXTWAYPOINTS";
-            this.tbxGENERATE_EXTWAYPOINTS.Size = new System.Drawing.Size(175, 20);
-            this.tbxGENERATE_EXTWAYPOINTS.TabIndex = 67;
-            this.tbxGENERATE_EXTWAYPOINTS.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxGENERATE_EXTWAYPOINTS, resources.GetString("tbxGENERATE_EXTWAYPOINTS.ToolTip"));
-            // 
-            // labGENERATE_EXTWAYPOINTS
-            // 
-            this.labGENERATE_EXTWAYPOINTS.AutoSize = true;
-            this.labGENERATE_EXTWAYPOINTS.Location = new System.Drawing.Point(8, 172);
-            this.labGENERATE_EXTWAYPOINTS.Name = "labGENERATE_EXTWAYPOINTS";
-            this.labGENERATE_EXTWAYPOINTS.Size = new System.Drawing.Size(158, 13);
-            this.labGENERATE_EXTWAYPOINTS.TabIndex = 66;
-            this.labGENERATE_EXTWAYPOINTS.Text = "GENERATE_EXTWAYPOINTS";
-            // 
             // tbxEXPERT_OPTIONS
             // 
-            this.tbxEXPERT_OPTIONS.Location = new System.Drawing.Point(258, 195);
+            this.tbxEXPERT_OPTIONS.Location = new System.Drawing.Point(116, 318);
             this.tbxEXPERT_OPTIONS.Name = "tbxEXPERT_OPTIONS";
             this.tbxEXPERT_OPTIONS.Size = new System.Drawing.Size(90, 20);
             this.tbxEXPERT_OPTIONS.TabIndex = 63;
@@ -741,7 +706,7 @@ namespace XRouteTestClient
             // labEXPERT_OPTIONS
             // 
             this.labEXPERT_OPTIONS.AutoSize = true;
-            this.labEXPERT_OPTIONS.Location = new System.Drawing.Point(148, 198);
+            this.labEXPERT_OPTIONS.Location = new System.Drawing.Point(6, 321);
             this.labEXPERT_OPTIONS.Name = "labEXPERT_OPTIONS";
             this.labEXPERT_OPTIONS.Size = new System.Drawing.Size(104, 13);
             this.labEXPERT_OPTIONS.TabIndex = 61;
@@ -749,33 +714,10 @@ namespace XRouteTestClient
             this.toolTip1.SetToolTip(this.labEXPERT_OPTIONS, "Represents expert options.\r\n   Alternative Routing: Calculate the nth alternative" +
         " route within one request for n <= 5\r\n    Usage: ALT|1000|1");
             // 
-            // labROUTING_RECTANGLE
-            // 
-            this.labROUTING_RECTANGLE.AutoSize = true;
-            this.labROUTING_RECTANGLE.Location = new System.Drawing.Point(8, 120);
-            this.labROUTING_RECTANGLE.Name = "labROUTING_RECTANGLE";
-            this.labROUTING_RECTANGLE.Size = new System.Drawing.Size(128, 13);
-            this.labROUTING_RECTANGLE.TabIndex = 55;
-            this.labROUTING_RECTANGLE.Text = "ROUTING_RECTANGLE";
-            this.toolTip1.SetToolTip(this.labROUTING_RECTANGLE, "Defines a rectangle to use exclusively in route calculation\r\n\r\nthe rectangle is d" +
-        "escribed as a string of comma separated values\r\n\r\nfor the left,top,right and bot" +
-        "tom coordinates");
-            // 
-            // tbxROUTING_RECTANGLE
-            // 
-            this.tbxROUTING_RECTANGLE.Location = new System.Drawing.Point(173, 117);
-            this.tbxROUTING_RECTANGLE.Name = "tbxROUTING_RECTANGLE";
-            this.tbxROUTING_RECTANGLE.Size = new System.Drawing.Size(175, 20);
-            this.tbxROUTING_RECTANGLE.TabIndex = 54;
-            this.tbxROUTING_RECTANGLE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxROUTING_RECTANGLE, "Defines a rectangle to use exclusively in route calculation\r\n\r\nthe rectangle is d" +
-        "escribed as a string of comma separated values\r\n\r\nfor the left,top,right and bot" +
-        "tom coordinates");
-            // 
             // labROUTE_LANGUAGE
             // 
             this.labROUTE_LANGUAGE.AutoSize = true;
-            this.labROUTE_LANGUAGE.Location = new System.Drawing.Point(8, 94);
+            this.labROUTE_LANGUAGE.Location = new System.Drawing.Point(6, 94);
             this.labROUTE_LANGUAGE.Name = "labROUTE_LANGUAGE";
             this.labROUTE_LANGUAGE.Size = new System.Drawing.Size(110, 13);
             this.labROUTE_LANGUAGE.TabIndex = 49;
@@ -784,16 +726,16 @@ namespace XRouteTestClient
             // 
             // tbxROUTE_LANGUAGE
             // 
-            this.tbxROUTE_LANGUAGE.Location = new System.Drawing.Point(124, 91);
+            this.tbxROUTE_LANGUAGE.Location = new System.Drawing.Point(138, 91);
             this.tbxROUTE_LANGUAGE.Name = "tbxROUTE_LANGUAGE";
-            this.tbxROUTE_LANGUAGE.Size = new System.Drawing.Size(39, 20);
+            this.tbxROUTE_LANGUAGE.Size = new System.Drawing.Size(47, 20);
             this.tbxROUTE_LANGUAGE.TabIndex = 48;
             this.tbxROUTE_LANGUAGE.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxROUTE_LANGUAGE, resources.GetString("tbxROUTE_LANGUAGE.ToolTip"));
             // 
             // tbxLOW_EMISSION_ZONE_TYPE
             // 
-            this.tbxLOW_EMISSION_ZONE_TYPE.Location = new System.Drawing.Point(173, 143);
+            this.tbxLOW_EMISSION_ZONE_TYPE.Location = new System.Drawing.Point(6, 215);
             this.tbxLOW_EMISSION_ZONE_TYPE.Name = "tbxLOW_EMISSION_ZONE_TYPE";
             this.tbxLOW_EMISSION_ZONE_TYPE.Size = new System.Drawing.Size(175, 20);
             this.tbxLOW_EMISSION_ZONE_TYPE.TabIndex = 47;
@@ -803,7 +745,7 @@ namespace XRouteTestClient
             // labLOW_EMISSION_ZONE_TYPE
             // 
             this.labLOW_EMISSION_ZONE_TYPE.AutoSize = true;
-            this.labLOW_EMISSION_ZONE_TYPE.Location = new System.Drawing.Point(8, 146);
+            this.labLOW_EMISSION_ZONE_TYPE.Location = new System.Drawing.Point(6, 196);
             this.labLOW_EMISSION_ZONE_TYPE.Name = "labLOW_EMISSION_ZONE_TYPE";
             this.labLOW_EMISSION_ZONE_TYPE.Size = new System.Drawing.Size(160, 13);
             this.labLOW_EMISSION_ZONE_TYPE.TabIndex = 46;
@@ -812,7 +754,7 @@ namespace XRouteTestClient
             // 
             // tbxCOUNTRY_ENCODING
             // 
-            this.tbxCOUNTRY_ENCODING.Location = new System.Drawing.Point(301, 65);
+            this.tbxCOUNTRY_ENCODING.Location = new System.Drawing.Point(138, 168);
             this.tbxCOUNTRY_ENCODING.Name = "tbxCOUNTRY_ENCODING";
             this.tbxCOUNTRY_ENCODING.Size = new System.Drawing.Size(47, 20);
             this.tbxCOUNTRY_ENCODING.TabIndex = 34;
@@ -822,7 +764,7 @@ namespace XRouteTestClient
             // labCOUNTRY_ENCODING
             // 
             this.labCOUNTRY_ENCODING.AutoSize = true;
-            this.labCOUNTRY_ENCODING.Location = new System.Drawing.Point(169, 68);
+            this.labCOUNTRY_ENCODING.Location = new System.Drawing.Point(6, 171);
             this.labCOUNTRY_ENCODING.Name = "labCOUNTRY_ENCODING";
             this.labCOUNTRY_ENCODING.Size = new System.Drawing.Size(123, 13);
             this.labCOUNTRY_ENCODING.TabIndex = 33;
@@ -832,7 +774,7 @@ namespace XRouteTestClient
             // labREQUEST_VERSION
             // 
             this.labREQUEST_VERSION.AutoSize = true;
-            this.labREQUEST_VERSION.Location = new System.Drawing.Point(8, 68);
+            this.labREQUEST_VERSION.Location = new System.Drawing.Point(6, 68);
             this.labREQUEST_VERSION.Name = "labREQUEST_VERSION";
             this.labREQUEST_VERSION.Size = new System.Drawing.Size(113, 13);
             this.labREQUEST_VERSION.TabIndex = 32;
@@ -842,9 +784,9 @@ namespace XRouteTestClient
             // 
             // tbxREQUEST_VERSION
             // 
-            this.tbxREQUEST_VERSION.Location = new System.Drawing.Point(124, 65);
+            this.tbxREQUEST_VERSION.Location = new System.Drawing.Point(138, 65);
             this.tbxREQUEST_VERSION.Name = "tbxREQUEST_VERSION";
-            this.tbxREQUEST_VERSION.Size = new System.Drawing.Size(38, 20);
+            this.tbxREQUEST_VERSION.Size = new System.Drawing.Size(47, 20);
             this.tbxREQUEST_VERSION.TabIndex = 31;
             this.tbxREQUEST_VERSION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxREQUEST_VERSION, "Gives the RequestVersion.\r\n\r\nDefault Version is 1.4.5\r\n\r\nAccording to the Request" +
@@ -852,7 +794,7 @@ namespace XRouteTestClient
             // 
             // tbxROUTING_COUNTRIES
             // 
-            this.tbxROUTING_COUNTRIES.Location = new System.Drawing.Point(301, 39);
+            this.tbxROUTING_COUNTRIES.Location = new System.Drawing.Point(138, 142);
             this.tbxROUTING_COUNTRIES.Name = "tbxROUTING_COUNTRIES";
             this.tbxROUTING_COUNTRIES.Size = new System.Drawing.Size(47, 20);
             this.tbxROUTING_COUNTRIES.TabIndex = 30;
@@ -862,7 +804,7 @@ namespace XRouteTestClient
             // labROUTING_COUNTRIES
             // 
             this.labROUTING_COUNTRIES.AutoSize = true;
-            this.labROUTING_COUNTRIES.Location = new System.Drawing.Point(169, 42);
+            this.labROUTING_COUNTRIES.Location = new System.Drawing.Point(6, 145);
             this.labROUTING_COUNTRIES.Name = "labROUTING_COUNTRIES";
             this.labROUTING_COUNTRIES.Size = new System.Drawing.Size(126, 13);
             this.labROUTING_COUNTRIES.TabIndex = 29;
@@ -872,7 +814,7 @@ namespace XRouteTestClient
             // labEXCLUDE_COUNTRIES
             // 
             this.labEXCLUDE_COUNTRIES.AutoSize = true;
-            this.labEXCLUDE_COUNTRIES.Location = new System.Drawing.Point(169, 16);
+            this.labEXCLUDE_COUNTRIES.Location = new System.Drawing.Point(6, 120);
             this.labEXCLUDE_COUNTRIES.Name = "labEXCLUDE_COUNTRIES";
             this.labEXCLUDE_COUNTRIES.Size = new System.Drawing.Size(126, 13);
             this.labEXCLUDE_COUNTRIES.TabIndex = 28;
@@ -881,7 +823,7 @@ namespace XRouteTestClient
             // 
             // tbxEXCLUDE_COUNTRIES
             // 
-            this.tbxEXCLUDE_COUNTRIES.Location = new System.Drawing.Point(301, 13);
+            this.tbxEXCLUDE_COUNTRIES.Location = new System.Drawing.Point(138, 116);
             this.tbxEXCLUDE_COUNTRIES.Name = "tbxEXCLUDE_COUNTRIES";
             this.tbxEXCLUDE_COUNTRIES.Size = new System.Drawing.Size(47, 20);
             this.tbxEXCLUDE_COUNTRIES.TabIndex = 25;
@@ -891,7 +833,7 @@ namespace XRouteTestClient
             // labOPTIMIZATION
             // 
             this.labOPTIMIZATION.AutoSize = true;
-            this.labOPTIMIZATION.Location = new System.Drawing.Point(8, 17);
+            this.labOPTIMIZATION.Location = new System.Drawing.Point(6, 16);
             this.labOPTIMIZATION.Name = "labOPTIMIZATION";
             this.labOPTIMIZATION.Size = new System.Drawing.Size(84, 13);
             this.labOPTIMIZATION.TabIndex = 20;
@@ -900,9 +842,9 @@ namespace XRouteTestClient
             // 
             // tbxOPTIMIZATION
             // 
-            this.tbxOPTIMIZATION.Location = new System.Drawing.Point(124, 13);
+            this.tbxOPTIMIZATION.Location = new System.Drawing.Point(138, 13);
             this.tbxOPTIMIZATION.Name = "tbxOPTIMIZATION";
-            this.tbxOPTIMIZATION.Size = new System.Drawing.Size(38, 20);
+            this.tbxOPTIMIZATION.Size = new System.Drawing.Size(47, 20);
             this.tbxOPTIMIZATION.TabIndex = 19;
             this.tbxOPTIMIZATION.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxOPTIMIZATION, resources.GetString("tbxOPTIMIZATION.ToolTip"));
@@ -947,9 +889,9 @@ namespace XRouteTestClient
             // 
             // tbxSTART_TIME
             // 
-            this.tbxSTART_TIME.Location = new System.Drawing.Point(124, 14);
+            this.tbxSTART_TIME.Location = new System.Drawing.Point(98, 14);
             this.tbxSTART_TIME.Name = "tbxSTART_TIME";
-            this.tbxSTART_TIME.Size = new System.Drawing.Size(243, 20);
+            this.tbxSTART_TIME.Size = new System.Drawing.Size(250, 20);
             this.tbxSTART_TIME.TabIndex = 36;
             this.tbxSTART_TIME.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxSTART_TIME, resources.GetString("tbxSTART_TIME.ToolTip"));
@@ -1101,7 +1043,7 @@ namespace XRouteTestClient
             // 
             this.tbxServiceMap.Location = new System.Drawing.Point(82, 42);
             this.tbxServiceMap.Name = "tbxServiceMap";
-            this.tbxServiceMap.Size = new System.Drawing.Size(281, 20);
+            this.tbxServiceMap.Size = new System.Drawing.Size(266, 20);
             this.tbxServiceMap.TabIndex = 56;
             // 
             // labServiceMap
@@ -1136,7 +1078,7 @@ namespace XRouteTestClient
             this.gbxTollCostInfo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.gbxTollCostInfo.Location = new System.Drawing.Point(6, 220);
             this.gbxTollCostInfo.Name = "gbxTollCostInfo";
-            this.gbxTollCostInfo.Size = new System.Drawing.Size(1553, 102);
+            this.gbxTollCostInfo.Size = new System.Drawing.Size(1367, 102);
             this.gbxTollCostInfo.TabIndex = 58;
             this.gbxTollCostInfo.TabStop = false;
             this.gbxTollCostInfo.Text = "TollCostInfo";
@@ -1165,101 +1107,8 @@ namespace XRouteTestClient
             this.dgvTollCostInfo.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvTollCostInfo.Location = new System.Drawing.Point(3, 16);
             this.dgvTollCostInfo.Name = "dgvTollCostInfo";
-            this.dgvTollCostInfo.Size = new System.Drawing.Size(1547, 83);
+            this.dgvTollCostInfo.Size = new System.Drawing.Size(1361, 83);
             this.dgvTollCostInfo.TabIndex = 19;
-            // 
-            // tollStationFromDataGridViewTextBoxColumn
-            // 
-            this.tollStationFromDataGridViewTextBoxColumn.DataPropertyName = "tollStationFrom";
-            this.tollStationFromDataGridViewTextBoxColumn.HeaderText = "tollStationFrom";
-            this.tollStationFromDataGridViewTextBoxColumn.Name = "tollStationFromDataGridViewTextBoxColumn";
-            this.tollStationFromDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information\r\non the sta" +
-    "rt point of this toll section.";
-            // 
-            // tollStationToDataGridViewTextBoxColumn
-            // 
-            this.tollStationToDataGridViewTextBoxColumn.DataPropertyName = "tollStationTo";
-            this.tollStationToDataGridViewTextBoxColumn.HeaderText = "tollStationTo";
-            this.tollStationToDataGridViewTextBoxColumn.Name = "tollStationToDataGridViewTextBoxColumn";
-            this.tollStationToDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information \r\non the en" +
-    "d point of this toll section.";
-            // 
-            // currencyNameDataGridViewTextBoxColumn
-            // 
-            this.currencyNameDataGridViewTextBoxColumn.DataPropertyName = "currencyName";
-            this.currencyNameDataGridViewTextBoxColumn.HeaderText = "currencyName";
-            this.currencyNameDataGridViewTextBoxColumn.Name = "currencyNameDataGridViewTextBoxColumn";
-            this.currencyNameDataGridViewTextBoxColumn.ToolTipText = "the currency description\r\nNOTE: This is an optional attribute and is set only if " +
-    "\r\nthe REQUEST_VERSION is set to 1.4.5 or higher";
-            // 
-            // streetNameDataGridViewTextBoxColumn
-            // 
-            this.streetNameDataGridViewTextBoxColumn.DataPropertyName = "streetName";
-            this.streetNameDataGridViewTextBoxColumn.HeaderText = "streetName";
-            this.streetNameDataGridViewTextBoxColumn.Name = "streetNameDataGridViewTextBoxColumn";
-            this.streetNameDataGridViewTextBoxColumn.ToolTipText = "the street name";
-            // 
-            // tollDistanceDataGridViewTextBoxColumn
-            // 
-            this.tollDistanceDataGridViewTextBoxColumn.DataPropertyName = "tollDistance";
-            this.tollDistanceDataGridViewTextBoxColumn.HeaderText = "tollDistance";
-            this.tollDistanceDataGridViewTextBoxColumn.Name = "tollDistanceDataGridViewTextBoxColumn";
-            this.tollDistanceDataGridViewTextBoxColumn.ToolTipText = "distance of the toll section (coming out of the map or out of the tolltable)";
-            // 
-            // tollPriceDataGridViewTextBoxColumn
-            // 
-            this.tollPriceDataGridViewTextBoxColumn.DataPropertyName = "tollPrice";
-            this.tollPriceDataGridViewTextBoxColumn.HeaderText = "tollPrice";
-            this.tollPriceDataGridViewTextBoxColumn.Name = "tollPriceDataGridViewTextBoxColumn";
-            this.tollPriceDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollPriceDataGridViewTextBoxColumn.ToolTipText");
-            // 
-            // tollProviderIDDataGridViewTextBoxColumn
-            // 
-            this.tollProviderIDDataGridViewTextBoxColumn.DataPropertyName = "tollProviderID";
-            this.tollProviderIDDataGridViewTextBoxColumn.HeaderText = "tollProviderID";
-            this.tollProviderIDDataGridViewTextBoxColumn.Name = "tollProviderIDDataGridViewTextBoxColumn";
-            this.tollProviderIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll company";
-            // 
-            // tollProviderNameDataGridViewTextBoxColumn
-            // 
-            this.tollProviderNameDataGridViewTextBoxColumn.DataPropertyName = "tollProviderName";
-            this.tollProviderNameDataGridViewTextBoxColumn.HeaderText = "tollProviderName";
-            this.tollProviderNameDataGridViewTextBoxColumn.Name = "tollProviderNameDataGridViewTextBoxColumn";
-            this.tollProviderNameDataGridViewTextBoxColumn.ToolTipText = "the toll provider name according to the providerID \r\nNOTE: This is an optional at" +
-    "tribute and is set only if the REQUEST_VERSION \r\nis set to 1.4.5 or higher";
-            // 
-            // tollSectionIDDataGridViewTextBoxColumn
-            // 
-            this.tollSectionIDDataGridViewTextBoxColumn.DataPropertyName = "tollSectionID";
-            this.tollSectionIDDataGridViewTextBoxColumn.HeaderText = "tollSectionID";
-            this.tollSectionIDDataGridViewTextBoxColumn.Name = "tollSectionIDDataGridViewTextBoxColumn";
-            this.tollSectionIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll section, -1 if this country has global toll (vignette).";
-            // 
-            // tollSectionNameDataGridViewTextBoxColumn
-            // 
-            this.tollSectionNameDataGridViewTextBoxColumn.DataPropertyName = "tollSectionName";
-            this.tollSectionNameDataGridViewTextBoxColumn.HeaderText = "tollSectionName";
-            this.tollSectionNameDataGridViewTextBoxColumn.Name = "tollSectionNameDataGridViewTextBoxColumn";
-            this.tollSectionNameDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollSectionNameDataGridViewTextBoxColumn.ToolTipText");
-            // 
-            // tollTypeDataGridViewTextBoxColumn
-            // 
-            this.tollTypeDataGridViewTextBoxColumn.DataPropertyName = "tollType";
-            this.tollTypeDataGridViewTextBoxColumn.HeaderText = "tollType";
-            this.tollTypeDataGridViewTextBoxColumn.Name = "tollTypeDataGridViewTextBoxColumn";
-            this.tollTypeDataGridViewTextBoxColumn.ToolTipText = "kind of the toll section (national toll, extra toll, ....)";
-            // 
-            // vehicleTarifIDDataGridViewTextBoxColumn
-            // 
-            this.vehicleTarifIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleTarifID";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.HeaderText = "vehicleTarifID";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.Name = "vehicleTarifIDDataGridViewTextBoxColumn";
-            this.vehicleTarifIDDataGridViewTextBoxColumn.ToolTipText = "the vehicle tarif ID\r\nNOTE: This is an optional attribute and is set only if the " +
-    "REQUEST_VERSION \r\nis set to 1.4.5 or higher";
-            // 
-            // tollCostInfoBindingSource
-            // 
-            this.tollCostInfoBindingSource.DataSource = typeof(XServer.TollCostInfo);
             // 
             // gbxOutCountries
             // 
@@ -1364,16 +1213,15 @@ namespace XRouteTestClient
             // 
             this.gbxCallerContext.BackColor = System.Drawing.Color.PowderBlue;
             this.gbxCallerContext.Controls.Add(this.cboCoordFormat);
-            this.gbxCallerContext.Controls.Add(this.cbxDisplayRoadeditorLayer);
             this.gbxCallerContext.Controls.Add(this.btnAction);
             this.gbxCallerContext.Controls.Add(this.labProfileMap);
             this.gbxCallerContext.Controls.Add(this.tbxProfileMap);
             this.gbxCallerContext.Controls.Add(this.labCoordFormat);
             this.gbxCallerContext.Controls.Add(this.tbxProfileRoute);
             this.gbxCallerContext.Controls.Add(this.labProfileRoute);
-            this.gbxCallerContext.Location = new System.Drawing.Point(322, 371);
+            this.gbxCallerContext.Location = new System.Drawing.Point(6, 379);
             this.gbxCallerContext.Name = "gbxCallerContext";
-            this.gbxCallerContext.Size = new System.Drawing.Size(240, 121);
+            this.gbxCallerContext.Size = new System.Drawing.Size(240, 90);
             this.gbxCallerContext.TabIndex = 21;
             this.gbxCallerContext.TabStop = false;
             this.gbxCallerContext.Text = "CallerContext";
@@ -1386,17 +1234,6 @@ namespace XRouteTestClient
             this.cboCoordFormat.Size = new System.Drawing.Size(146, 21);
             this.cboCoordFormat.TabIndex = 23;
             this.toolTip1.SetToolTip(this.cboCoordFormat, resources.GetString("cboCoordFormat.ToolTip"));
-            // 
-            // cbxDisplayRoadeditorLayer
-            // 
-            this.cbxDisplayRoadeditorLayer.AutoSize = true;
-            this.cbxDisplayRoadeditorLayer.Location = new System.Drawing.Point(9, 89);
-            this.cbxDisplayRoadeditorLayer.Name = "cbxDisplayRoadeditorLayer";
-            this.cbxDisplayRoadeditorLayer.Size = new System.Drawing.Size(205, 17);
-            this.cbxDisplayRoadeditorLayer.TabIndex = 66;
-            this.cbxDisplayRoadeditorLayer.Text = "display ROADEDITOR_LAYERNAME";
-            this.toolTip1.SetToolTip(this.cbxDisplayRoadeditorLayer, "works with binary layers only");
-            this.cbxDisplayRoadeditorLayer.UseVisualStyleBackColor = true;
             // 
             // labProfileMap
             // 
@@ -1423,7 +1260,7 @@ namespace XRouteTestClient
             this.gbxCountryInfoOptions.Controls.Add(this.cbxAllEuro);
             this.gbxCountryInfoOptions.Location = new System.Drawing.Point(367, 19);
             this.gbxCountryInfoOptions.Name = "gbxCountryInfoOptions";
-            this.gbxCountryInfoOptions.Size = new System.Drawing.Size(194, 72);
+            this.gbxCountryInfoOptions.Size = new System.Drawing.Size(207, 72);
             this.gbxCountryInfoOptions.TabIndex = 22;
             this.gbxCountryInfoOptions.TabStop = false;
             this.gbxCountryInfoOptions.Text = "CountryInfoOptions";
@@ -1454,9 +1291,9 @@ namespace XRouteTestClient
             this.gbxDynamic.Controls.Add(this.tbxIS_DESTTIME);
             this.gbxDynamic.Controls.Add(this.labSTART_TIME);
             this.gbxDynamic.Controls.Add(this.tbxSTART_TIME);
-            this.gbxDynamic.Location = new System.Drawing.Point(567, 19);
+            this.gbxDynamic.Location = new System.Drawing.Point(6, 144);
             this.gbxDynamic.Name = "gbxDynamic";
-            this.gbxDynamic.Size = new System.Drawing.Size(373, 72);
+            this.gbxDynamic.Size = new System.Drawing.Size(355, 72);
             this.gbxDynamic.TabIndex = 64;
             this.gbxDynamic.TabStop = false;
             this.gbxDynamic.Text = "RoutingOptions: Time related";
@@ -1474,7 +1311,7 @@ namespace XRouteTestClient
             // 
             // tbxIS_DESTTIME
             // 
-            this.tbxIS_DESTTIME.Location = new System.Drawing.Point(124, 40);
+            this.tbxIS_DESTTIME.Location = new System.Drawing.Point(98, 40);
             this.tbxIS_DESTTIME.Name = "tbxIS_DESTTIME";
             this.tbxIS_DESTTIME.Size = new System.Drawing.Size(87, 20);
             this.tbxIS_DESTTIME.TabIndex = 71;
@@ -1488,9 +1325,9 @@ namespace XRouteTestClient
             this.gbxService.Controls.Add(this.tbxServiceRoute);
             this.gbxService.Controls.Add(this.tbxServiceMap);
             this.gbxService.Controls.Add(this.labServiceMap);
-            this.gbxService.Location = new System.Drawing.Point(568, 408);
+            this.gbxService.Location = new System.Drawing.Point(6, 471);
             this.gbxService.Name = "gbxService";
-            this.gbxService.Size = new System.Drawing.Size(373, 71);
+            this.gbxService.Size = new System.Drawing.Size(355, 71);
             this.gbxService.TabIndex = 20;
             this.gbxService.TabStop = false;
             this.gbxService.Text = "Service";
@@ -1573,19 +1410,20 @@ namespace XRouteTestClient
             // 
             this.gbxResultListOptions.BackColor = System.Drawing.Color.PowderBlue;
             this.gbxResultListOptions.Controls.Add(this.cbxSpeedLimits);
+            this.gbxResultListOptions.Controls.Add(this.cbxFeatureLayerDescriptions);
+            this.gbxResultListOptions.Controls.Add(this.tbxEXPERT_OPTIONS);
+            this.gbxResultListOptions.Controls.Add(this.labEXPERT_OPTIONS);
             this.gbxResultListOptions.Controls.Add(this.labEmissions);
             this.gbxResultListOptions.Controls.Add(this.cboHBEFAVersion);
             this.gbxResultListOptions.Controls.Add(this.cboEmissionLevel);
-            this.gbxResultListOptions.Controls.Add(this.labManoeuvreGroupsRatio);
-            this.gbxResultListOptions.Controls.Add(this.tbxManoeuvreGroupsRatio);
             this.gbxResultListOptions.Controls.Add(this.lbxResultListOptions);
             this.gbxResultListOptions.Controls.Add(this.radCalcRoute);
             this.gbxResultListOptions.Controls.Add(this.radCalcExtRoute);
             this.gbxResultListOptions.Controls.Add(this.radCalcAdvTour);
             this.gbxResultListOptions.Controls.Add(this.cboDetailLevel);
-            this.gbxResultListOptions.Location = new System.Drawing.Point(6, 371);
+            this.gbxResultListOptions.Location = new System.Drawing.Point(367, 102);
             this.gbxResultListOptions.Name = "gbxResultListOptions";
-            this.gbxResultListOptions.Size = new System.Drawing.Size(312, 171);
+            this.gbxResultListOptions.Size = new System.Drawing.Size(312, 345);
             this.gbxResultListOptions.TabIndex = 59;
             this.gbxResultListOptions.TabStop = false;
             this.gbxResultListOptions.Text = "ResultListOptions";
@@ -1593,8 +1431,7 @@ namespace XRouteTestClient
             // cbxSpeedLimits
             // 
             this.cbxSpeedLimits.AutoSize = true;
-            this.cbxSpeedLimits.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbxSpeedLimits.Location = new System.Drawing.Point(176, 108);
+            this.cbxSpeedLimits.Location = new System.Drawing.Point(9, 277);
             this.cbxSpeedLimits.Name = "cbxSpeedLimits";
             this.cbxSpeedLimits.Size = new System.Drawing.Size(83, 17);
             this.cbxSpeedLimits.TabIndex = 47;
@@ -1604,7 +1441,7 @@ namespace XRouteTestClient
             // labEmissions
             // 
             this.labEmissions.AutoSize = true;
-            this.labEmissions.Location = new System.Drawing.Point(6, 134);
+            this.labEmissions.Location = new System.Drawing.Point(6, 250);
             this.labEmissions.Name = "labEmissions";
             this.labEmissions.Size = new System.Drawing.Size(53, 13);
             this.labEmissions.TabIndex = 46;
@@ -1613,7 +1450,7 @@ namespace XRouteTestClient
             // cboHBEFAVersion
             // 
             this.cboHBEFAVersion.FormattingEnabled = true;
-            this.cboHBEFAVersion.Location = new System.Drawing.Point(176, 131);
+            this.cboHBEFAVersion.Location = new System.Drawing.Point(176, 247);
             this.cboHBEFAVersion.Name = "cboHBEFAVersion";
             this.cboHBEFAVersion.Size = new System.Drawing.Size(127, 21);
             this.cboHBEFAVersion.TabIndex = 45;
@@ -1622,30 +1459,11 @@ namespace XRouteTestClient
             // cboEmissionLevel
             // 
             this.cboEmissionLevel.FormattingEnabled = true;
-            this.cboEmissionLevel.Location = new System.Drawing.Point(65, 131);
+            this.cboEmissionLevel.Location = new System.Drawing.Point(65, 247);
             this.cboEmissionLevel.Name = "cboEmissionLevel";
             this.cboEmissionLevel.Size = new System.Drawing.Size(105, 21);
             this.cboEmissionLevel.TabIndex = 44;
             this.toolTip1.SetToolTip(this.cboEmissionLevel, resources.GetString("cboEmissionLevel.ToolTip"));
-            // 
-            // labManoeuvreGroupsRatio
-            // 
-            this.labManoeuvreGroupsRatio.AutoSize = true;
-            this.labManoeuvreGroupsRatio.Location = new System.Drawing.Point(6, 108);
-            this.labManoeuvreGroupsRatio.Name = "labManoeuvreGroupsRatio";
-            this.labManoeuvreGroupsRatio.Size = new System.Drawing.Size(120, 13);
-            this.labManoeuvreGroupsRatio.TabIndex = 33;
-            this.labManoeuvreGroupsRatio.Text = "ManoeuvreGroupsRatio";
-            this.toolTip1.SetToolTip(this.labManoeuvreGroupsRatio, resources.GetString("labManoeuvreGroupsRatio.ToolTip"));
-            // 
-            // tbxManoeuvreGroupsRatio
-            // 
-            this.tbxManoeuvreGroupsRatio.Location = new System.Drawing.Point(132, 105);
-            this.tbxManoeuvreGroupsRatio.Name = "tbxManoeuvreGroupsRatio";
-            this.tbxManoeuvreGroupsRatio.Size = new System.Drawing.Size(38, 20);
-            this.tbxManoeuvreGroupsRatio.TabIndex = 33;
-            this.tbxManoeuvreGroupsRatio.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxManoeuvreGroupsRatio, resources.GetString("tbxManoeuvreGroupsRatio.ToolTip"));
             // 
             // lbxResultListOptions
             // 
@@ -1653,7 +1471,7 @@ namespace XRouteTestClient
             this.lbxResultListOptions.Location = new System.Drawing.Point(6, 42);
             this.lbxResultListOptions.Name = "lbxResultListOptions";
             this.lbxResultListOptions.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
-            this.lbxResultListOptions.Size = new System.Drawing.Size(297, 30);
+            this.lbxResultListOptions.Size = new System.Drawing.Size(297, 173);
             this.lbxResultListOptions.TabIndex = 43;
             // 
             // radCalcRoute
@@ -1694,7 +1512,7 @@ namespace XRouteTestClient
             // cboDetailLevel
             // 
             this.cboDetailLevel.FormattingEnabled = true;
-            this.cboDetailLevel.Location = new System.Drawing.Point(6, 78);
+            this.cboDetailLevel.Location = new System.Drawing.Point(6, 221);
             this.cboDetailLevel.Name = "cboDetailLevel";
             this.cboDetailLevel.Size = new System.Drawing.Size(297, 21);
             this.cboDetailLevel.TabIndex = 16;
@@ -1706,23 +1524,17 @@ namespace XRouteTestClient
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbxInput.BackColor = System.Drawing.Color.PowderBlue;
             this.gbxInput.Controls.Add(this.tabControl);
-            this.gbxInput.Controls.Add(this.cbxFeatureLayerDescriptions);
-            this.gbxInput.Controls.Add(this.gbxVehicleParameters);
-            this.gbxInput.Controls.Add(this.gbxBoundingRectangles);
             this.gbxInput.Controls.Add(this.gbxDynamic);
             this.gbxInput.Controls.Add(this.gbxCountryInfoOptions);
             this.gbxInput.Controls.Add(this.gbxWaypoints);
             this.gbxInput.Controls.Add(this.gbxResultListOptions);
-            this.gbxInput.Controls.Add(this.gbxRoutingOptions);
-            this.gbxInput.Controls.Add(this.gbxRoadEditor);
-            this.gbxInput.Controls.Add(this.gbxAvoid);
             this.gbxInput.Controls.Add(this.gbxExceptionPath);
             this.gbxInput.Controls.Add(this.gbxService);
             this.gbxInput.Controls.Add(this.gbxCallerContext);
             this.gbxInput.ForeColor = System.Drawing.Color.Black;
             this.gbxInput.Location = new System.Drawing.Point(12, 12);
             this.gbxInput.Name = "gbxInput";
-            this.gbxInput.Size = new System.Drawing.Size(1565, 548);
+            this.gbxInput.Size = new System.Drawing.Size(1379, 548);
             this.gbxInput.TabIndex = 65;
             this.gbxInput.TabStop = false;
             this.gbxInput.Text = "  Input  ";
@@ -1732,12 +1544,13 @@ namespace XRouteTestClient
             // 
             this.tabControl.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tabControl.Controls.Add(this.regulationTabPage);
             this.tabControl.Controls.Add(this.xmlSnippetTabPage);
-            this.tabControl.Location = new System.Drawing.Point(1208, 19);
+            this.tabControl.Controls.Add(this.regulationTabPage);
+            this.tabControl.Controls.Add(this.oldTechTabPage);
+            this.tabControl.Location = new System.Drawing.Point(685, 19);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(348, 523);
+            this.tabControl.Size = new System.Drawing.Size(682, 523);
             this.tabControl.TabIndex = 68;
             // 
             // regulationTabPage
@@ -1803,7 +1616,7 @@ namespace XRouteTestClient
             this.regulationTabPage.Location = new System.Drawing.Point(4, 22);
             this.regulationTabPage.Name = "regulationTabPage";
             this.regulationTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.regulationTabPage.Size = new System.Drawing.Size(340, 497);
+            this.regulationTabPage.Size = new System.Drawing.Size(674, 497);
             this.regulationTabPage.TabIndex = 2;
             this.regulationTabPage.Text = "Regulations";
             // 
@@ -2313,7 +2126,7 @@ namespace XRouteTestClient
             this.xmlSnippetTabPage.Location = new System.Drawing.Point(4, 22);
             this.xmlSnippetTabPage.Name = "xmlSnippetTabPage";
             this.xmlSnippetTabPage.Padding = new System.Windows.Forms.Padding(3);
-            this.xmlSnippetTabPage.Size = new System.Drawing.Size(340, 497);
+            this.xmlSnippetTabPage.Size = new System.Drawing.Size(674, 497);
             this.xmlSnippetTabPage.TabIndex = 0;
             this.xmlSnippetTabPage.Text = "XML Snippet";
             // 
@@ -2325,7 +2138,7 @@ namespace XRouteTestClient
             this.tbxXMLSnippet.Enabled = false;
             this.tbxXMLSnippet.Location = new System.Drawing.Point(6, 29);
             this.tbxXMLSnippet.Name = "tbxXMLSnippet";
-            this.tbxXMLSnippet.Size = new System.Drawing.Size(328, 460);
+            this.tbxXMLSnippet.Size = new System.Drawing.Size(662, 460);
             this.tbxXMLSnippet.TabIndex = 24;
             this.tbxXMLSnippet.Text = "";
             this.tbxXMLSnippet.WordWrap = false;
@@ -2347,12 +2160,11 @@ namespace XRouteTestClient
             // 
             this.cbxFeatureLayerDescriptions.AutoSize = true;
             this.cbxFeatureLayerDescriptions.BackColor = System.Drawing.Color.PowderBlue;
-            this.cbxFeatureLayerDescriptions.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.cbxFeatureLayerDescriptions.Location = new System.Drawing.Point(271, 478);
+            this.cbxFeatureLayerDescriptions.Location = new System.Drawing.Point(9, 300);
             this.cbxFeatureLayerDescriptions.Name = "cbxFeatureLayerDescriptions";
-            this.cbxFeatureLayerDescriptions.Size = new System.Drawing.Size(38, 17);
+            this.cbxFeatureLayerDescriptions.Size = new System.Drawing.Size(146, 17);
             this.cbxFeatureLayerDescriptions.TabIndex = 48;
-            this.cbxFeatureLayerDescriptions.Text = "FL";
+            this.cbxFeatureLayerDescriptions.Text = "FeatureLayerDescriptions";
             this.cbxFeatureLayerDescriptions.UseVisualStyleBackColor = false;
             // 
             // gbxVehicleParameters
@@ -2390,7 +2202,7 @@ namespace XRouteTestClient
             this.gbxVehicleParameters.Controls.Add(this.tbxVP_TYPE);
             this.gbxVehicleParameters.Controls.Add(this.tbxVP_TOTAL_WEIGHT);
             this.gbxVehicleParameters.Controls.Add(this.labTOTAL_WEIGTH);
-            this.gbxVehicleParameters.Location = new System.Drawing.Point(946, 19);
+            this.gbxVehicleParameters.Location = new System.Drawing.Point(6, 6);
             this.gbxVehicleParameters.Name = "gbxVehicleParameters";
             this.gbxVehicleParameters.Size = new System.Drawing.Size(256, 446);
             this.gbxVehicleParameters.TabIndex = 65;
@@ -2734,60 +2546,6 @@ namespace XRouteTestClient
             this.labTOTAL_WEIGTH.Text = "TOTAL_WEIGTH";
             this.toolTip1.SetToolTip(this.labTOTAL_WEIGTH, resources.GetString("labTOTAL_WEIGTH.ToolTip"));
             // 
-            // gbxBoundingRectangles
-            // 
-            this.gbxBoundingRectangles.BackColor = System.Drawing.Color.PowderBlue;
-            this.gbxBoundingRectangles.Controls.Add(this.tbxBoundingRectanglesOffset);
-            this.gbxBoundingRectangles.Controls.Add(this.tbxBoundingRectanglesC);
-            this.gbxBoundingRectangles.Controls.Add(this.labBoundingRectanglesOffset);
-            this.gbxBoundingRectangles.Controls.Add(this.labBoundingRectanglesC);
-            this.gbxBoundingRectangles.Location = new System.Drawing.Point(322, 498);
-            this.gbxBoundingRectangles.Name = "gbxBoundingRectangles";
-            this.gbxBoundingRectangles.Size = new System.Drawing.Size(240, 44);
-            this.gbxBoundingRectangles.TabIndex = 65;
-            this.gbxBoundingRectangles.TabStop = false;
-            this.gbxBoundingRectangles.Text = "ResultListOptions: BoundingRectangles";
-            // 
-            // tbxBoundingRectanglesOffset
-            // 
-            this.tbxBoundingRectanglesOffset.Location = new System.Drawing.Point(145, 17);
-            this.tbxBoundingRectanglesOffset.Name = "tbxBoundingRectanglesOffset";
-            this.tbxBoundingRectanglesOffset.Size = new System.Drawing.Size(38, 20);
-            this.tbxBoundingRectanglesOffset.TabIndex = 32;
-            this.tbxBoundingRectanglesOffset.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxBoundingRectanglesOffset, resources.GetString("tbxBoundingRectanglesOffset.ToolTip"));
-            // 
-            // tbxBoundingRectanglesC
-            // 
-            this.tbxBoundingRectanglesC.Location = new System.Drawing.Point(55, 17);
-            this.tbxBoundingRectanglesC.Name = "tbxBoundingRectanglesC";
-            this.tbxBoundingRectanglesC.Size = new System.Drawing.Size(38, 20);
-            this.tbxBoundingRectanglesC.TabIndex = 30;
-            this.tbxBoundingRectanglesC.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.toolTip1.SetToolTip(this.tbxBoundingRectanglesC, resources.GetString("tbxBoundingRectanglesC.ToolTip"));
-            // 
-            // labBoundingRectanglesOffset
-            // 
-            this.labBoundingRectanglesOffset.AutoSize = true;
-            this.labBoundingRectanglesOffset.Location = new System.Drawing.Point(99, 20);
-            this.labBoundingRectanglesOffset.Name = "labBoundingRectanglesOffset";
-            this.labBoundingRectanglesOffset.Size = new System.Drawing.Size(44, 13);
-            this.labBoundingRectanglesOffset.TabIndex = 31;
-            this.labBoundingRectanglesOffset.Text = "...Offset";
-            this.toolTip1.SetToolTip(this.labBoundingRectanglesOffset, "Defines whether bounding rectangles should be expanded by a certain value in mete" +
-        "rs\r\nLegal values are from > 0\r\nDefault is 100\r\nNOTE: This parameter is only inte" +
-        "rpreted if boundingRectanglesC > 0");
-            // 
-            // labBoundingRectanglesC
-            // 
-            this.labBoundingRectanglesC.AutoSize = true;
-            this.labBoundingRectanglesC.Location = new System.Drawing.Point(7, 20);
-            this.labBoundingRectanglesC.Name = "labBoundingRectanglesC";
-            this.labBoundingRectanglesC.Size = new System.Drawing.Size(23, 13);
-            this.labBoundingRectanglesC.TabIndex = 30;
-            this.labBoundingRectanglesC.Text = "...C";
-            this.toolTip1.SetToolTip(this.labBoundingRectanglesC, resources.GetString("labBoundingRectanglesC.ToolTip"));
-            // 
             // gbxRoadEditor
             // 
             this.gbxRoadEditor.BackColor = System.Drawing.Color.PowderBlue;
@@ -2801,7 +2559,7 @@ namespace XRouteTestClient
             this.gbxRoadEditor.Controls.Add(this.tbxROADEDITOR_ADDITIONAL_OPTIONS);
             this.gbxRoadEditor.Controls.Add(this.tbxROADEDITOR_LAYERNAME);
             this.gbxRoadEditor.Controls.Add(this.labROADEDITOR_LAYERNAME);
-            this.gbxRoadEditor.Location = new System.Drawing.Point(567, 97);
+            this.gbxRoadEditor.Location = new System.Drawing.Point(268, 6);
             this.gbxRoadEditor.Name = "gbxRoadEditor";
             this.gbxRoadEditor.Size = new System.Drawing.Size(372, 148);
             this.gbxRoadEditor.TabIndex = 62;
@@ -2885,7 +2643,7 @@ namespace XRouteTestClient
             this.gbxAvoid.Controls.Add(this.labAVOID_RESIDENTS_ONLY);
             this.gbxAvoid.Controls.Add(this.labAVOID_URBAN_AREAS);
             this.gbxAvoid.Controls.Add(this.labAVOID_RAMPS);
-            this.gbxAvoid.Location = new System.Drawing.Point(6, 144);
+            this.gbxAvoid.Location = new System.Drawing.Point(268, 160);
             this.gbxAvoid.Name = "gbxAvoid";
             this.gbxAvoid.Size = new System.Drawing.Size(189, 221);
             this.gbxAvoid.TabIndex = 61;
@@ -2927,9 +2685,9 @@ namespace XRouteTestClient
             this.gbxExceptionPath.Controls.Add(this.tbxRelMalus);
             this.gbxExceptionPath.Controls.Add(this.tbxStreet);
             this.gbxExceptionPath.Controls.Add(this.labStreet);
-            this.gbxExceptionPath.Location = new System.Drawing.Point(568, 251);
+            this.gbxExceptionPath.Location = new System.Drawing.Point(6, 222);
             this.gbxExceptionPath.Name = "gbxExceptionPath";
-            this.gbxExceptionPath.Size = new System.Drawing.Size(373, 151);
+            this.gbxExceptionPath.Size = new System.Drawing.Size(355, 151);
             this.gbxExceptionPath.TabIndex = 60;
             this.gbxExceptionPath.TabStop = false;
             this.gbxExceptionPath.Text = "ExceptionPath";
@@ -2937,17 +2695,17 @@ namespace XRouteTestClient
             // 
             // intersectingLineStartYTextBox
             // 
-            this.intersectingLineStartYTextBox.Location = new System.Drawing.Point(245, 17);
+            this.intersectingLineStartYTextBox.Location = new System.Drawing.Point(234, 17);
             this.intersectingLineStartYTextBox.Name = "intersectingLineStartYTextBox";
-            this.intersectingLineStartYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.intersectingLineStartYTextBox.Size = new System.Drawing.Size(113, 20);
             this.intersectingLineStartYTextBox.TabIndex = 80;
             this.intersectingLineStartYTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // intersectingLineEndYTextBox
             // 
-            this.intersectingLineEndYTextBox.Location = new System.Drawing.Point(245, 42);
+            this.intersectingLineEndYTextBox.Location = new System.Drawing.Point(234, 42);
             this.intersectingLineEndYTextBox.Name = "intersectingLineEndYTextBox";
-            this.intersectingLineEndYTextBox.Size = new System.Drawing.Size(118, 20);
+            this.intersectingLineEndYTextBox.Size = new System.Drawing.Size(113, 20);
             this.intersectingLineEndYTextBox.TabIndex = 82;
             this.intersectingLineEndYTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2955,7 +2713,7 @@ namespace XRouteTestClient
             // 
             this.intersectingLineStartXTextBox.Location = new System.Drawing.Point(124, 17);
             this.intersectingLineStartXTextBox.Name = "intersectingLineStartXTextBox";
-            this.intersectingLineStartXTextBox.Size = new System.Drawing.Size(115, 20);
+            this.intersectingLineStartXTextBox.Size = new System.Drawing.Size(104, 20);
             this.intersectingLineStartXTextBox.TabIndex = 79;
             this.intersectingLineStartXTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2963,7 +2721,7 @@ namespace XRouteTestClient
             // 
             this.intersectingLineEndXTextBox.Location = new System.Drawing.Point(124, 42);
             this.intersectingLineEndXTextBox.Name = "intersectingLineEndXTextBox";
-            this.intersectingLineEndXTextBox.Size = new System.Drawing.Size(115, 20);
+            this.intersectingLineEndXTextBox.Size = new System.Drawing.Size(104, 20);
             this.intersectingLineEndXTextBox.TabIndex = 81;
             this.intersectingLineEndXTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -2995,7 +2753,7 @@ namespace XRouteTestClient
             // 
             this.tbxBinaryPathDescriptionIn.Location = new System.Drawing.Point(124, 95);
             this.tbxBinaryPathDescriptionIn.Name = "tbxBinaryPathDescriptionIn";
-            this.tbxBinaryPathDescriptionIn.Size = new System.Drawing.Size(239, 20);
+            this.tbxBinaryPathDescriptionIn.Size = new System.Drawing.Size(223, 20);
             this.tbxBinaryPathDescriptionIn.TabIndex = 70;
             this.tbxBinaryPathDescriptionIn.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxBinaryPathDescriptionIn, "alternative binary description representing a route path (optional)\r\n\r\nNOTE: This" +
@@ -3015,16 +2773,16 @@ namespace XRouteTestClient
             // 
             this.tbxAbsMalus.Location = new System.Drawing.Point(124, 121);
             this.tbxAbsMalus.Name = "tbxAbsMalus";
-            this.tbxAbsMalus.Size = new System.Drawing.Size(115, 20);
+            this.tbxAbsMalus.Size = new System.Drawing.Size(104, 20);
             this.tbxAbsMalus.TabIndex = 68;
             this.tbxAbsMalus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxAbsMalus, resources.GetString("tbxAbsMalus.ToolTip"));
             // 
             // tbxRelMalus
             // 
-            this.tbxRelMalus.Location = new System.Drawing.Point(245, 121);
+            this.tbxRelMalus.Location = new System.Drawing.Point(234, 121);
             this.tbxRelMalus.Name = "tbxRelMalus";
-            this.tbxRelMalus.Size = new System.Drawing.Size(117, 20);
+            this.tbxRelMalus.Size = new System.Drawing.Size(112, 20);
             this.tbxRelMalus.TabIndex = 67;
             this.tbxRelMalus.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxRelMalus, resources.GetString("tbxRelMalus.ToolTip"));
@@ -3033,7 +2791,7 @@ namespace XRouteTestClient
             // 
             this.tbxStreet.Location = new System.Drawing.Point(124, 69);
             this.tbxStreet.Name = "tbxStreet";
-            this.tbxStreet.Size = new System.Drawing.Size(240, 20);
+            this.tbxStreet.Size = new System.Drawing.Size(224, 20);
             this.tbxStreet.TabIndex = 66;
             this.tbxStreet.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.toolTip1.SetToolTip(this.tbxStreet, resources.GetString("tbxStreet.ToolTip"));
@@ -3087,17 +2845,124 @@ namespace XRouteTestClient
             this.gbxOutput.ForeColor = System.Drawing.Color.Black;
             this.gbxOutput.Location = new System.Drawing.Point(12, 566);
             this.gbxOutput.Name = "gbxOutput";
-            this.gbxOutput.Size = new System.Drawing.Size(1565, 328);
+            this.gbxOutput.Size = new System.Drawing.Size(1379, 328);
             this.gbxOutput.TabIndex = 66;
             this.gbxOutput.TabStop = false;
             this.gbxOutput.Text = "  Output  ";
+            // 
+            // oldTechTabPage
+            // 
+            this.oldTechTabPage.BackColor = System.Drawing.Color.PowderBlue;
+            this.oldTechTabPage.Controls.Add(this.gbxVehicleParameters);
+            this.oldTechTabPage.Controls.Add(this.gbxRoadEditor);
+            this.oldTechTabPage.Controls.Add(this.gbxAvoid);
+            this.oldTechTabPage.Controls.Add(this.gbxRoutingOptions);
+            this.oldTechTabPage.Location = new System.Drawing.Point(4, 22);
+            this.oldTechTabPage.Name = "oldTechTabPage";
+            this.oldTechTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.oldTechTabPage.Size = new System.Drawing.Size(674, 497);
+            this.oldTechTabPage.TabIndex = 3;
+            this.oldTechTabPage.Text = "Old Tech";
+            // 
+            // tollStationFromDataGridViewTextBoxColumn
+            // 
+            this.tollStationFromDataGridViewTextBoxColumn.DataPropertyName = "tollStationFrom";
+            this.tollStationFromDataGridViewTextBoxColumn.HeaderText = "tollStationFrom";
+            this.tollStationFromDataGridViewTextBoxColumn.Name = "tollStationFromDataGridViewTextBoxColumn";
+            this.tollStationFromDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information\r\non the sta" +
+    "rt point of this toll section.";
+            // 
+            // tollStationToDataGridViewTextBoxColumn
+            // 
+            this.tollStationToDataGridViewTextBoxColumn.DataPropertyName = "tollStationTo";
+            this.tollStationToDataGridViewTextBoxColumn.HeaderText = "tollStationTo";
+            this.tollStationToDataGridViewTextBoxColumn.Name = "tollStationToDataGridViewTextBoxColumn";
+            this.tollStationToDataGridViewTextBoxColumn.ToolTipText = "If tollSectionID does not equal -1, this element contains information \r\non the en" +
+    "d point of this toll section.";
+            // 
+            // currencyNameDataGridViewTextBoxColumn
+            // 
+            this.currencyNameDataGridViewTextBoxColumn.DataPropertyName = "currencyName";
+            this.currencyNameDataGridViewTextBoxColumn.HeaderText = "currencyName";
+            this.currencyNameDataGridViewTextBoxColumn.Name = "currencyNameDataGridViewTextBoxColumn";
+            this.currencyNameDataGridViewTextBoxColumn.ToolTipText = "the currency description\r\nNOTE: This is an optional attribute and is set only if " +
+    "\r\nthe REQUEST_VERSION is set to 1.4.5 or higher";
+            // 
+            // streetNameDataGridViewTextBoxColumn
+            // 
+            this.streetNameDataGridViewTextBoxColumn.DataPropertyName = "streetName";
+            this.streetNameDataGridViewTextBoxColumn.HeaderText = "streetName";
+            this.streetNameDataGridViewTextBoxColumn.Name = "streetNameDataGridViewTextBoxColumn";
+            this.streetNameDataGridViewTextBoxColumn.ToolTipText = "the street name";
+            // 
+            // tollDistanceDataGridViewTextBoxColumn
+            // 
+            this.tollDistanceDataGridViewTextBoxColumn.DataPropertyName = "tollDistance";
+            this.tollDistanceDataGridViewTextBoxColumn.HeaderText = "tollDistance";
+            this.tollDistanceDataGridViewTextBoxColumn.Name = "tollDistanceDataGridViewTextBoxColumn";
+            this.tollDistanceDataGridViewTextBoxColumn.ToolTipText = "distance of the toll section (coming out of the map or out of the tolltable)";
+            // 
+            // tollPriceDataGridViewTextBoxColumn
+            // 
+            this.tollPriceDataGridViewTextBoxColumn.DataPropertyName = "tollPrice";
+            this.tollPriceDataGridViewTextBoxColumn.HeaderText = "tollPrice";
+            this.tollPriceDataGridViewTextBoxColumn.Name = "tollPriceDataGridViewTextBoxColumn";
+            this.tollPriceDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollPriceDataGridViewTextBoxColumn.ToolTipText");
+            // 
+            // tollProviderIDDataGridViewTextBoxColumn
+            // 
+            this.tollProviderIDDataGridViewTextBoxColumn.DataPropertyName = "tollProviderID";
+            this.tollProviderIDDataGridViewTextBoxColumn.HeaderText = "tollProviderID";
+            this.tollProviderIDDataGridViewTextBoxColumn.Name = "tollProviderIDDataGridViewTextBoxColumn";
+            this.tollProviderIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll company";
+            // 
+            // tollProviderNameDataGridViewTextBoxColumn
+            // 
+            this.tollProviderNameDataGridViewTextBoxColumn.DataPropertyName = "tollProviderName";
+            this.tollProviderNameDataGridViewTextBoxColumn.HeaderText = "tollProviderName";
+            this.tollProviderNameDataGridViewTextBoxColumn.Name = "tollProviderNameDataGridViewTextBoxColumn";
+            this.tollProviderNameDataGridViewTextBoxColumn.ToolTipText = "the toll provider name according to the providerID \r\nNOTE: This is an optional at" +
+    "tribute and is set only if the REQUEST_VERSION \r\nis set to 1.4.5 or higher";
+            // 
+            // tollSectionIDDataGridViewTextBoxColumn
+            // 
+            this.tollSectionIDDataGridViewTextBoxColumn.DataPropertyName = "tollSectionID";
+            this.tollSectionIDDataGridViewTextBoxColumn.HeaderText = "tollSectionID";
+            this.tollSectionIDDataGridViewTextBoxColumn.Name = "tollSectionIDDataGridViewTextBoxColumn";
+            this.tollSectionIDDataGridViewTextBoxColumn.ToolTipText = "ID for the toll section, -1 if this country has global toll (vignette).";
+            // 
+            // tollSectionNameDataGridViewTextBoxColumn
+            // 
+            this.tollSectionNameDataGridViewTextBoxColumn.DataPropertyName = "tollSectionName";
+            this.tollSectionNameDataGridViewTextBoxColumn.HeaderText = "tollSectionName";
+            this.tollSectionNameDataGridViewTextBoxColumn.Name = "tollSectionNameDataGridViewTextBoxColumn";
+            this.tollSectionNameDataGridViewTextBoxColumn.ToolTipText = resources.GetString("tollSectionNameDataGridViewTextBoxColumn.ToolTipText");
+            // 
+            // tollTypeDataGridViewTextBoxColumn
+            // 
+            this.tollTypeDataGridViewTextBoxColumn.DataPropertyName = "tollType";
+            this.tollTypeDataGridViewTextBoxColumn.HeaderText = "tollType";
+            this.tollTypeDataGridViewTextBoxColumn.Name = "tollTypeDataGridViewTextBoxColumn";
+            this.tollTypeDataGridViewTextBoxColumn.ToolTipText = "kind of the toll section (national toll, extra toll, ....)";
+            // 
+            // vehicleTarifIDDataGridViewTextBoxColumn
+            // 
+            this.vehicleTarifIDDataGridViewTextBoxColumn.DataPropertyName = "vehicleTarifID";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.HeaderText = "vehicleTarifID";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.Name = "vehicleTarifIDDataGridViewTextBoxColumn";
+            this.vehicleTarifIDDataGridViewTextBoxColumn.ToolTipText = "the vehicle tarif ID\r\nNOTE: This is an optional attribute and is set only if the " +
+    "REQUEST_VERSION \r\nis set to 1.4.5 or higher";
+            // 
+            // tollCostInfoBindingSource
+            // 
+            this.tollCostInfoBindingSource.DataSource = typeof(XServer.TollCostInfo);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.PowderBlue;
-            this.ClientSize = new System.Drawing.Size(1589, 906);
+            this.ClientSize = new System.Drawing.Size(1403, 906);
             this.Controls.Add(this.gbxInput);
             this.Controls.Add(this.gbxOutput);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -3110,7 +2975,6 @@ namespace XRouteTestClient
             this.gbxRoutingOptions.PerformLayout();
             this.gbxTollCostInfo.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTollCostInfo)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).EndInit();
             this.gbxOutCountries.ResumeLayout(false);
             this.gbxOutCountries.PerformLayout();
             this.gbxWaypoints.ResumeLayout(false);
@@ -3131,7 +2995,6 @@ namespace XRouteTestClient
             this.gbxResultListOptions.ResumeLayout(false);
             this.gbxResultListOptions.PerformLayout();
             this.gbxInput.ResumeLayout(false);
-            this.gbxInput.PerformLayout();
             this.tabControl.ResumeLayout(false);
             this.regulationTabPage.ResumeLayout(false);
             this.regulationTabPage.PerformLayout();
@@ -3139,8 +3002,6 @@ namespace XRouteTestClient
             this.xmlSnippetTabPage.PerformLayout();
             this.gbxVehicleParameters.ResumeLayout(false);
             this.gbxVehicleParameters.PerformLayout();
-            this.gbxBoundingRectangles.ResumeLayout(false);
-            this.gbxBoundingRectangles.PerformLayout();
             this.gbxRoadEditor.ResumeLayout(false);
             this.gbxRoadEditor.PerformLayout();
             this.gbxAvoid.ResumeLayout(false);
@@ -3150,6 +3011,8 @@ namespace XRouteTestClient
             this.gbxBinaryPathDescription.ResumeLayout(false);
             this.gbxBinaryPathDescription.PerformLayout();
             this.gbxOutput.ResumeLayout(false);
+            this.oldTechTabPage.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tollCostInfoBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3241,8 +3104,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxROUTE_LANGUAGE;
         private System.Windows.Forms.TextBox tbxROADEDITOR_ADDITIONAL_OPTIONS;
         private System.Windows.Forms.Label labROADEDITOR_ADDITIONAL_OPTIONS;
-        private System.Windows.Forms.Label labROUTING_RECTANGLE;
-        private System.Windows.Forms.TextBox tbxROUTING_RECTANGLE;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.TextBox tbxROADEDITOR_LAYERNAME;
         private System.Windows.Forms.Label labROADEDITOR_LAYERNAME;
@@ -3272,15 +3133,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox tbxViaY;
         private System.Windows.Forms.Label labFuzzyRadius;
         private System.Windows.Forms.Label labVia;
-        private System.Windows.Forms.CheckBox cbxDisplayRoadeditorLayer;
         private System.Windows.Forms.BindingSource tollCostInfoBindingSource;
-        private System.Windows.Forms.GroupBox gbxBoundingRectangles;
-        private System.Windows.Forms.Label labBoundingRectanglesOffset;
-        private System.Windows.Forms.Label labBoundingRectanglesC;
-        private System.Windows.Forms.TextBox tbxBoundingRectanglesOffset;
-        private System.Windows.Forms.TextBox tbxBoundingRectanglesC;
-        private System.Windows.Forms.TextBox tbxManoeuvreGroupsRatio;
-        private System.Windows.Forms.Label labManoeuvreGroupsRatio;
         private System.Windows.Forms.RadioButton radCalcAdvTour;
         private System.Windows.Forms.RadioButton radCalcExtRoute;
         private System.Windows.Forms.RadioButton radCalcRoute;
@@ -3335,8 +3188,6 @@ namespace XRouteTestClient
         private System.Windows.Forms.Label labALLOW_SEGMENT_VIOLATIONS;
         private System.Windows.Forms.TextBox tbxALLOW_SEGMENT_VIOLATIONS;
         private System.Windows.Forms.TextBox tbxSPEED_INFOS;
-        private System.Windows.Forms.TextBox tbxGENERATE_EXTWAYPOINTS;
-        private System.Windows.Forms.Label labGENERATE_EXTWAYPOINTS;
         private System.Windows.Forms.Label labSPEED_INFOS;
         private System.Windows.Forms.Label labIS_DESTTIME;
         private System.Windows.Forms.TextBox tbxIS_DESTTIME;
@@ -3418,6 +3269,7 @@ namespace XRouteTestClient
         private System.Windows.Forms.TextBox intersectingLineEndYTextBox;
         private System.Windows.Forms.TextBox intersectingLineStartXTextBox;
         private System.Windows.Forms.TextBox intersectingLineEndXTextBox;
+        private System.Windows.Forms.TabPage oldTechTabPage;
     }
 }
 

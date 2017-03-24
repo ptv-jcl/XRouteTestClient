@@ -171,10 +171,8 @@ namespace XRouteTestClient
             tbxSTART_TIME.Text = Properties.Settings.Default.START_TIME;
             tbxIS_DESTTIME.Text = Properties.Settings.Default.IS_DESTTIME;
             // new 2009-04-14
-            tbxROUTING_RECTANGLE.Text = Properties.Settings.Default.ROUTING_RECTANGLE;
             tbxROADEDITOR_LAYERNAME.Text = Properties.Settings.Default.ROADEDITOR_LAYERNAME;
             tbxEXPERT_OPTIONS.Text = Properties.Settings.Default.EXPERT_OPTIONS;
-            tbxGENERATE_EXTWAYPOINTS.Text = Properties.Settings.Default.GENERATE_EXTWAYPOINTS;
             tbxENABLE_ROADEDITOR.Text = Properties.Settings.Default.ENABLE_ROADEDITOR;
             // 2011-12-29 SPEED_INFOS
             tbxSPEED_INFOS.Text = Properties.Settings.Default.SPEED_INFOS;
@@ -213,10 +211,6 @@ namespace XRouteTestClient
             tbxFuzzyRadius.Text = Properties.Settings.Default.ViaRadius.ToString();
             tbxViaX.Text = Properties.Settings.Default.ViaX.ToString();
             tbxViaY.Text = Properties.Settings.Default.ViaY.ToString();
-            // since 20090525: BoundingRectangles + ManoeuvreGroups
-            tbxBoundingRectanglesC.Text = Properties.Settings.Default.BoundingRectanglesC.ToString();
-            tbxBoundingRectanglesOffset.Text = Properties.Settings.Default.BoundingRectanglesOffset.ToString();
-            tbxManoeuvreGroupsRatio.Text = Properties.Settings.Default.ManoeuvreGroup_Ratio;
             //
             rlo = new ResultListOptions();
             rlo.binaryPathDesc = true;
@@ -238,7 +232,6 @@ namespace XRouteTestClient
             // TODO find better way for default operation
             radCalcExtRoute.Checked = true;
 
-            cbxDisplayRoadeditorLayer.Checked = Properties.Settings.Default.DisplayRoadEditorLayer;
             countryInfoVehicleOptions = new CountryInfoVehicleOptions();
             countryInfoVehicleOptions.tollTotals = true;
             countryInfoVehicleOptions.tollTotalsSpecified = true;
@@ -390,8 +383,6 @@ namespace XRouteTestClient
                 if (tbxCOUNTRY_ENCODING.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.COUNTRY_ENCODING, tbxCOUNTRY_ENCODING.Text));
                 if (tbxROUTE_LANGUAGE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROUTE_LANGUAGE, tbxROUTE_LANGUAGE.Text));
                 if (tbxLOW_EMISSION_ZONE_TYPE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.LOW_EMISSION_ZONE_TYPE, tbxLOW_EMISSION_ZONE_TYPE.Text));
-                if (tbxROUTING_RECTANGLE.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.ROUTING_RECTANGLE, tbxROUTING_RECTANGLE.Text));
-                if (tbxGENERATE_EXTWAYPOINTS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.GENERATE_EXTWAYPOINTS, tbxGENERATE_EXTWAYPOINTS.Text));
                 if (tbxEXPERT_OPTIONS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.EXPERT_OPTIONS, tbxEXPERT_OPTIONS.Text));
                 if (tbxSPEED_INFOS.Text != "") listRoutingOption.Add(getRoutingOption(RoutingParameter.SPEED_INFOS, tbxSPEED_INFOS.Text));
                 // Dynamic
@@ -487,23 +478,6 @@ namespace XRouteTestClient
 
                 rlo.detailLevel = (DetailLevel)Enum.Parse(typeof(DetailLevel), cboDetailLevel.SelectedItem.ToString());
 
-                // 20090525: BoundingRectangles
-                if ((tbxBoundingRectanglesC.Text != "") && (tbxBoundingRectanglesOffset.Text != ""))
-                {
-                    rlo.boundingRectanglesC = Convert.ToInt32(tbxBoundingRectanglesC.Text);
-                    rlo.boundingRectanglesOffset = Convert.ToInt32(tbxBoundingRectanglesOffset.Text);
-                }
-                else
-                {
-                    rlo.boundingRectanglesC = 0;
-                    rlo.boundingRectanglesOffset = 0;
-                }
-                rlo.manoeuvreGroups = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.ManoeuvreGroups);
-                if (tbxManoeuvreGroupsRatio.Text != "")
-                {
-                    rlo.manoeuvreGroupRatioSpecified = true;
-                    rlo.manoeuvreGroupRatio = Convert.ToDouble(tbxManoeuvreGroupsRatio.Text);
-                }
                 // 2009-09-16 Texts
                 rlo.texts = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.Texts);
                 //2010-05-31 Nodes available
@@ -848,7 +822,7 @@ namespace XRouteTestClient
                     listLayer.Add(clHasTollCar);
 
                     // since 2009-04-23 display RoadEditor layer
-                    if ((cbxDisplayRoadeditorLayer.Checked) && (tbxROADEDITOR_LAYERNAME.Text != ""))
+                    if (tbxROADEDITOR_LAYERNAME.Text != "")
                     {
                         RoadEditorLayer roadeditorLayer = new RoadEditorLayer();
                         roadeditorLayer.name = tbxROADEDITOR_LAYERNAME.Text;

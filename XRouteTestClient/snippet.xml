@@ -1,68 +1,15 @@
-<Profile xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-	<FeatureLayer majorVersion="1" minorVersion="0">
-		<GlobalSettings enableTimeDependency="false" enableVehicleDependency="true" />
-		<Themes>
-			<Theme id="PTV_TruckAttributes" enabled="false" />
-			<Theme id="PTV_RestrictionZones" enabled="false" />
-		</Themes>
-	</FeatureLayer>
-	<Routing majorVersion="2" minorVersion="0">
-		<Waypoint maximumDistanceToSegment="50000" />
-		<Course distanceTimeWeighting="91">
-			<BasicDataRules>
-				<VehicleSpecific>
-					<AuthorizedVehicles turningBanCost="2500" />
-					<DeliveryVehicles segmentMalus="2500" />
-					<EmergencyVehicles turningBanCost="2500" segmentMalus="2501" />
-				</VehicleSpecific>
-				<Network>
-					<MalusByNetworkClass malus="0" />
-					<MalusByNetworkClass malus="0" />
-					<MalusByNetworkClass malus="0" />
-					<MalusByNetworkClass malus="10" />
-					<MalusByNetworkClass malus="20" />
-					<MalusByNetworkClass malus="50" />
-					<MalusByNetworkClass malus="100" />
-					<MalusByNetworkClass malus="100" />
-				</Network>
-				<Toll tollMalus="0" extraTollMalus="0" vignetteMalus="0" />
-				<SpecialAreas forbiddenLowEmissionZoneMalus="2500" residentialMalus="0" urbanMalus="0" minimumUrbanNetworkClass="2" />
-				<CombinedTransport ferryMalus="100" piggybackMalus="100" />
-			</BasicDataRules>
-			<AdditionalDataRules enabled="true">
-				<VehicleSpecific enabled="true">
-					<Malus  residential="2500" />
-				</VehicleSpecific>
-			</AdditionalDataRules>
-			<Violations>
-				<SegmentBlockingViolations enabled="true" cost="50000" />
-			</Violations>
-		</Course>
-		<Vehicle>
-			<Physical>
-				<Drive>
-					<Emissions emissionTechnology="EXHAUST_GAS_RECIRCULATION" particleFilterInstalled="false" particleReductionClass="0" emissionClass="EURO_5" lowEmissionZoneType="GREEN" />
-					<Engine cylinderCapacity="12000" fuelType="DIESEL" bioFuelRatio="0" fuelConsumption="30" />
-				</Drive>
-				<Weight emptyWeight="8200" totalPermittedWeight="40000" loadWeight="25500" />
-				<Axle axleLoad="11500" numberOfAxles="5" />
-				<Trailer emptyWeight="6300" />
-				<Dimension height="400" heightAboveFrontAxle="400" length="1650" width="260" />
-			</Physical>
-			<Legal>
-				<LegalCondition isAuthorized="true" isEmergency="true" isDelivery="true" />
-			</Legal>
-			<Load hazardousGoodsType="NONE" loadType="GOODS" tunnelRestrictionCode="NONE" />
-			<Speed speedForAirLineDistance="36" maximumSpeed="255">
-				<SpeedRangeByNetworkClass minimumSpeed="55" maximumSpeed="80" />
-				<SpeedRangeByNetworkClass minimumSpeed="30" maximumSpeed="65" />
-				<SpeedRangeByNetworkClass minimumSpeed="23" maximumSpeed="55" />
-				<SpeedRangeByNetworkClass minimumSpeed="20" maximumSpeed="45" />
-				<SpeedRangeByNetworkClass minimumSpeed="18" maximumSpeed="40" />
-				<SpeedRangeByNetworkClass minimumSpeed="15" maximumSpeed="30" />
-				<SpeedRangeByNetworkClass minimumSpeed="7" maximumSpeed="12" />
-				<SpeedRangeByNetworkClass minimumSpeed="4" maximumSpeed="6" />
-			</Speed>
-		</Vehicle>
-	</Routing>
+<Profile xmlns:ns2="http://www.ptv.de/com/ptvag/xserver/engines/xpoidbaccess">
+  <FeatureLayer majorVersion="1" minorVersion="0">
+    <GlobalSettings enableTimeDependency="true" />
+    <Themes>
+      <Theme id="PTV_TruckSpeedPatterns" enabled="true"/>
+    </Themes>
+  </FeatureLayer>
+  <Routing majorVersion="2" minorVersion="0">
+    <Course>
+      <AdditionalDataRules enabled="true"/>
+      <DynamicRouting limitDynamicSpeedToStaticSpeed="true" dynamicTimeOnStaticRoute="true">
+      </DynamicRouting>
+    </Course>
+  </Routing>
 </Profile>

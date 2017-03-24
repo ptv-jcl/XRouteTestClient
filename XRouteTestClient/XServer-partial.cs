@@ -8,8 +8,6 @@ namespace XServer
     {
         [XmlIgnore]
         public string formattedTime { get { return TimeSpan.FromSeconds(this.travelTime).ToString(); } private set { } }
-        [XmlIgnore]
-        public string localTime { get { return this.departureTime.ToString("yyyy-MM-ddThh:mm:sszzz"); } private set { } }
     }
 
     public partial class TourPointResult
