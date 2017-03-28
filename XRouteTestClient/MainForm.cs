@@ -1546,9 +1546,11 @@ namespace XRouteTestClient
             tbxPartDistance.Text = partRouteInfo.distance.ToString();
             tbxPartCost.Text = partRouteInfo.cost.ToString();
             RouteInfo routeInfo = advancedTour.route.info;
-            tbxPercTime.Text = Convert.ToInt32(100.0 * Convert.ToDouble(partRouteInfo.time) / Convert.ToDouble(routeInfo.time)).ToString();
-            tbxPercDistance.Text = Convert.ToInt32(100.0 * Convert.ToDouble(partRouteInfo.distance) / Convert.ToDouble(routeInfo.distance)).ToString();
-            tbxPercCost.Text = Convert.ToInt32(100.0 * Convert.ToDouble(partRouteInfo.cost) / Convert.ToDouble(routeInfo.cost)).ToString();
+            
+
+            tbxPercTime.Text = Math.Round(100.0 * (double)partRouteInfo.time / (double)routeInfo.time,2).ToString();
+            tbxPercDistance.Text = Math.Round(100.0 * (double)partRouteInfo.distance / (double)routeInfo.distance, 2).ToString();
+            tbxPercCost.Text = Math.Round(100.0 * (double)partRouteInfo.cost / (double)routeInfo.cost, 2).ToString();
 
             //if ((tollCostInfo_form == null) || (tollCostInfo_form.IsDisposed))
             //    tollCostInfo_form = new TollCostInfo_Form(countryInfo.wrappedTollCostInfos);
