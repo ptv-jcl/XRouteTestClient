@@ -49,6 +49,11 @@ namespace XRouteTestClient
           <Property id='*' included='true'/>
         </FeatureDescription>
       </Theme>
+      <Theme id='PTV_RestrictionZones' enabled='{5}'>
+        <FeatureDescription includeTimeDomain='true'>
+          <Property id='*' included='true'/>
+        </FeatureDescription>
+      </Theme>
     </Themes>
   </FeatureLayer>
 </Profile>";
@@ -364,7 +369,8 @@ namespace XRouteTestClient
                 pTVSpeedPatternsToolStripMenuItem.Checked.ToString(),
                 pTVTruckSpeedPatternsToolStripMenuItem.Checked.ToString(),
                 pTVTruckAttributesToolStripMenuItem.Checked.ToString(),
-                pTVPrefferedRoutesToolStripMenuItem.Checked.ToString()
+                pTVPrefferedRoutesToolStripMenuItem.Checked.ToString(),
+                pTVRestrictionZonesToolStripMenuItem.Checked.ToString()
                 );
 
             renderMap();
@@ -393,6 +399,11 @@ namespace XRouteTestClient
         private void pTVPrefferedRoutesToolStripMenuItem_Click(object sender, EventArgs e)
         {
             SetVisibilityFeatureLayer("PTV_PreferredRoutes", (ToolStripMenuItem)sender);
+        }
+
+        private void pTVRestrictionZonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SetVisibilityFeatureLayer("PTV_RestrictionZones", (ToolStripMenuItem)sender);
         }
     }
 }

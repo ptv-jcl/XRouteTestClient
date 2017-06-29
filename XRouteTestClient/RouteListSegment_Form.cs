@@ -33,7 +33,7 @@ namespace XRouteTestClient
                         int index = Convert.ToInt32(curCell.Value);
                         if (index > -1)
                         {
-                            curDataGridViewRow.Cells[curCellName + "_text"].Value = route.wrappedTexts[index];
+                          //  curDataGridViewRow.Cells[curCellName + "_text"].Value = route.wrappedTexts[index];
                         }
                     }
                 }
