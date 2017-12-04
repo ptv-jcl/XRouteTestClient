@@ -93,6 +93,22 @@ namespace XServer
 
         [XmlIgnore]
         public string FLDescriptions { get { return (this.wrappedFeatureDescriptions != null) ? string.Join(" ; ",  this.wrappedFeatureDescriptions.Select(fd=>fd.ToString()).ToArray()) : null; } }
+
+        [XmlIgnore]
+        public Route route = null;
+
+        [XmlIgnore]
+        public string streetName
+        {
+            get
+            {
+                if (this.streetNameIdx == -1) return "";
+                if (route == null) return "";
+                if (route.wrappedTexts == null || route.wrappedTexts.Length == 0) return "";
+                return route.wrappedTexts[this.streetNameIdx];
+            }
+            private set { }
+        }
     }
 
     public partial class FeatureDescription

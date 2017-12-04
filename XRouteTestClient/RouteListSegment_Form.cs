@@ -21,23 +21,23 @@ namespace XRouteTestClient
         public void updateDGV(Route route)
         {
             dgvRouteListSegment.DataSource = route.wrappedSegments;
-            if (route.wrappedTexts != null)
-            {
-                string[] arrCells = { "dirInfoIdxDataGridViewTextBoxColumn", "streetNameIdxDataGridViewTextBoxColumn", "streetNoIdxDataGridViewTextBoxColumn" };
-                for (int i = 0; i < dgvRouteListSegment.Rows.Count; i++)
-                {
-                    DataGridViewRow curDataGridViewRow = dgvRouteListSegment.Rows[i];
-                    foreach (string curCellName in arrCells)
-                    {
-                        DataGridViewCell curCell = curDataGridViewRow.Cells[curCellName];
-                        int index = Convert.ToInt32(curCell.Value);
-                        if (index > -1)
-                        {
-                          //  curDataGridViewRow.Cells[curCellName + "_text"].Value = route.wrappedTexts[index];
-                        }
-                    }
-                }
-            }
+            //if (route.wrappedTexts != null)
+            //{
+            //    string[] arrCells = { "dirInfoIdxDataGridViewTextBoxColumn", "streetNameIdxDataGridViewTextBoxColumn", "streetNoIdxDataGridViewTextBoxColumn" };
+            //    for (int i = 0; i < dgvRouteListSegment.Rows.Count; i++)
+            //    {
+            //        DataGridViewRow curDataGridViewRow = dgvRouteListSegment.Rows[i];
+            //        foreach (string curCellName in arrCells)
+            //        {
+            //            DataGridViewCell curCell = curDataGridViewRow.Cells[curCellName];
+            //            int index = Convert.ToInt32(curCell.Value);
+            //            if (index > -1)
+            //            {
+            //              //  curDataGridViewRow.Cells[curCellName + "_text"].Value = route.wrappedTexts[index];
+            //            }
+            //        }
+            //    }
+            //}
             if (route.wrappedSegments != null)
             {
                 this.Text = "RouteListSegment / Length = " + route.wrappedSegments.Length;

@@ -635,6 +635,10 @@ namespace XRouteTestClient
                     advancedTour.wrappedTourEvents = null;
                     advancedTour.wrappedTourPointResults = null;
                 }
+                if (advancedTour.route.wrappedSegments != null)
+                    foreach (var segment in advancedTour.route.wrappedSegments)
+                        segment.route = advancedTour.route;
+
 
                 DateTime dtStop = DateTime.Now;
                 TimeSpan ts = dtStop.Subtract(dtStart);
@@ -1546,9 +1550,9 @@ namespace XRouteTestClient
             tbxPartDistance.Text = partRouteInfo.distance.ToString();
             tbxPartCost.Text = partRouteInfo.cost.ToString();
             RouteInfo routeInfo = advancedTour.route.info;
-            
 
-            tbxPercTime.Text = Math.Round(100.0 * (double)partRouteInfo.time / (double)routeInfo.time,2).ToString();
+
+            tbxPercTime.Text = Math.Round(100.0 * (double)partRouteInfo.time / (double)routeInfo.time, 2).ToString();
             tbxPercDistance.Text = Math.Round(100.0 * (double)partRouteInfo.distance / (double)routeInfo.distance, 2).ToString();
             tbxPercCost.Text = Math.Round(100.0 * (double)partRouteInfo.cost / (double)routeInfo.cost, 2).ToString();
 
