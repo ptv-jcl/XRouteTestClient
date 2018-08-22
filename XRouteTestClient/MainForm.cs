@@ -354,7 +354,13 @@ namespace XRouteTestClient
                 }
 
                 ccpCoordFormat.value = cboCoordFormat.SelectedItem.ToString();
-                ccpProfile.value = tbxProfileRoute.Text;
+                if (!string.IsNullOrEmpty(tbxProfileRoute.Text))
+                {
+                    ccpProfile.value = tbxProfileRoute.Text;
+                    cc.wrappedProperties = new CallerContextProperty[] { ccpCoordFormat, ccpResponseGeometry, ccpProfile, ccpXmlSnippet };
+                }
+                else
+                    cc.wrappedProperties = new CallerContextProperty[] { ccpCoordFormat, ccpResponseGeometry, ccpXmlSnippet };
                 // 2012-08-10 XmlSnippet
                 if (enableSnippetChckBx.Checked)
                 {

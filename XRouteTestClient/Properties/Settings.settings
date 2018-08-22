@@ -378,7 +378,7 @@
       <Value Profile="(Default)" />
     </Setting>
     <Setting Name="ProfileMap" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">gravelpit</Value>
+      <Value Profile="(Default)">silkysand</Value>
     </Setting>
     <Setting Name="Route_Width" Type="System.Int32" Scope="Application">
       <Value Profile="(Default)">2</Value>

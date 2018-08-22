@@ -3,6 +3,7 @@
     <GlobalSettings enableTimeDependency="true" />
     <Themes>
       <Theme id="PTV_TruckSpeedPatterns" enabled="true"/>
+      <Theme id="PTV_TrafficIncidents" enabled="true"/>
     </Themes>
   </FeatureLayer>
   <Routing majorVersion="2" minorVersion="0">
