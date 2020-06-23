@@ -168,7 +168,10 @@ namespace XRouteTestClient
             tbxLOW_EMISSION_ZONE_TYPE.Text = Properties.Settings.Default.LOW_EMISSION_ZONE_TYPE;
             tbxROUTE_LANGUAGE.Text = Properties.Settings.Default.ROUTE_LANGUAGE;
             // dynamic tbx's
-            tbxSTART_TIME.Text = Properties.Settings.Default.START_TIME;
+            if (string.IsNullOrEmpty(Properties.Settings.Default.START_TIME))
+                tbxSTART_TIME.Text = DateTime.Now.Date.ToString("yyyy-MM-ddTHH:mm:ss");
+            else
+                tbxSTART_TIME.Text = Properties.Settings.Default.START_TIME;
             tbxIS_DESTTIME.Text = Properties.Settings.Default.IS_DESTTIME;
             // new 2009-04-14
             tbxROADEDITOR_LAYERNAME.Text = Properties.Settings.Default.ROADEDITOR_LAYERNAME;
@@ -217,6 +220,8 @@ namespace XRouteTestClient
             rlo.nodes = true;
             rlo.polygon = true;
             rlo.segments = true;
+            rlo.extSegmentsSpecified = false;
+            rlo.extSegments = true;
             rlo.texts = true;
             rlo.manoeuvres = true;
             rlo.segmentAttributes = true;
@@ -493,8 +498,8 @@ namespace XRouteTestClient
                 rlo.dynamicInfo = lbxResultListOptions.SelectedItems.Contains(MyResultListOptions.DynamicInfo);
                 if (rlo.dynamicInfo)
                 {
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = "24", });
-                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "60", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_COUNT, value = $"{24*4}", });
+                    listRoutingOption.Add(new RoutingOption() { parameter = RoutingParameter.DYNAMIC_TRAVEL_TIME_STEP_SIZE, value = "15", });
                     rlo.utcOffsets = true;
                     rlo.utcOffsetsSpecified = true;
                 }
